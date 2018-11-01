@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class RunnerForm : Form
+    public partial class RunnerForm : MetroFramework.Forms.MetroForm
     {
         public RunnerForm()
         {
             InitializeComponent();
+            this.Text = "MARATHON IS";
+            timer1.Tick += timer1_Tick;
+            timer1.Interval = 1000;
+            timer1.Enabled = true;
+            timer1.Start();
         }
     }
 }
