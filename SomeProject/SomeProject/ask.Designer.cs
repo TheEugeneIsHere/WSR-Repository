@@ -79,6 +79,7 @@
             this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile2.UseSelectable = true;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
             // pictureBox1
             // 
@@ -96,8 +97,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackLocation = MetroFramework.Forms.BackLocation.TopLeft;
-            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.None;
             this.ClientSize = new System.Drawing.Size(869, 508);
             this.ControlBox = false;
             this.Controls.Add(this.metroTile2);
@@ -105,7 +104,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
             this.Name = "ask";
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.Flat;
             this.Text = "ask";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

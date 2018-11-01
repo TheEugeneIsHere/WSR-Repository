@@ -31,7 +31,10 @@ namespace SomeProject
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+          
+                Application.Exit();
+            
+               
 
         }
 

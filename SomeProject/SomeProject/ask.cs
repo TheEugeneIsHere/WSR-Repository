@@ -44,5 +44,12 @@ namespace SomeProject
             Login log = new Login();
             log.Show();
         }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            registration reg = new registration();
+            this.Hide();
+            reg.ShowDialog();
+        }
     }
 }
