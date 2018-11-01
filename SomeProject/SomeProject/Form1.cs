@@ -21,7 +21,6 @@ namespace SomeProject
             TimeSpan timeremaining = voteTime - DateTime.Now;
             metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
         }
-        //ну допустим...
         Form1 f1;
         private void metroTile1_Click(object sender, EventArgs e)
         {
@@ -33,12 +32,8 @@ namespace SomeProject
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-          
+        { 
                 Application.Exit();
-            
-               
-
         }
 
         private void metroTile4_Click(object sender, EventArgs e)
@@ -46,6 +41,13 @@ namespace SomeProject
             this.Hide();
             Login log = new Login();
             log.ShowDialog();
+        }
+
+        private void metroTile5_Click(object sender, EventArgs e)
+        {
+            AdminForm admOneLove = new AdminForm();
+            this.Hide();
+            admOneLove.Visible = true;
         }
     }
 }
