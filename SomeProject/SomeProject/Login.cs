@@ -93,20 +93,23 @@ namespace SomeProject
                 if (role == Role.A)
                 {
                     var form = new AdminForm();
-                    form.ShowDialog();
                     this.Hide();
+                    form.ShowDialog();
+                    
                 }
                 else if (role == Role.C)
                 {
                     var form = new CoordinatorForm();
+                     this.Hide();
                     form.ShowDialog();
-                    this.Hide();
+                   
                 }
                 else if (role == Role.R)
                 {
                     var form = new RunnerForm();
-                    form.ShowDialog();
                     this.Hide();
+                    form.ShowDialog();
+                    
                 }
             }
         }
