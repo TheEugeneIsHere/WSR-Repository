@@ -121,6 +121,9 @@
     <EmbeddedResource Include="registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RunnerForm.resx">
+      <DependentUpon>RunnerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
