@@ -52,7 +52,7 @@ namespace SomeProject
         static Role GetRole(string login, string password)
         {
             Role role = Role.Failed;
-            using (var connection = new SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=WSR;Trusted_Connection=Yes;"))
+            using (var connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=WSR;Trusted_Connection=Yes;"))
             {
                 connection.Open();
                 var command = new SqlCommand("Select RoleId from users where email=@email and password=@password", connection);
@@ -83,7 +83,7 @@ namespace SomeProject
         }
         private void login()
         {
-            Role role = GetRole(metroTextBox1.Text, metroTextBox.Text);
+            Role role = GetRole(metroTextBox1.Text, metroTextBox2.Text);
             if (role == Role.Failed)
             {
                 MessageBox.Show("Неверный логин или пароль", MessageBoxIcon.Error.ToString(), MessageBoxButtons.OK);
