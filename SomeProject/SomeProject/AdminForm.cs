@@ -34,5 +34,12 @@ namespace SomeProject
             this.Close();
             f1.Visible = true;
         }
+
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            admin_Clarity clarityForm = new admin_Clarity();
+            this.Hide();
+            clarityForm.Show();
+        }
     }
 }
