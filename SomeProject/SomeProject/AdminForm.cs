@@ -16,6 +16,5 @@ namespace SomeProject
         {
             InitializeComponent();
         }
-
     }
 }
