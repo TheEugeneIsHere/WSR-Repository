@@ -32,6 +32,12 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.metroTile3 = new MetroFramework.Controls.MetroTile();
+            this.metroTile4 = new MetroFramework.Controls.MetroTile();
+            this.metroTile5 = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,17 +64,100 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(360, 73);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(121, 25);
+            this.metroLabel2.TabIndex = 10;
+            this.metroLabel2.Text = "Меню бегуна";
+            // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Location = new System.Drawing.Point(449, 143);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(167, 81);
+            this.metroTile1.TabIndex = 11;
+            this.metroTile1.Text = "Мои результаты";
+            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile1.UseSelectable = true;
+            // 
+            // metroTile2
+            // 
+            this.metroTile2.ActiveControl = null;
+            this.metroTile2.Location = new System.Drawing.Point(235, 143);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.Size = new System.Drawing.Size(167, 81);
+            this.metroTile2.TabIndex = 11;
+            this.metroTile2.Text = "Регистрация на \r\nмарафон";
+            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile2.UseSelectable = true;
+            // 
+            // metroTile3
+            // 
+            this.metroTile3.ActiveControl = null;
+            this.metroTile3.Location = new System.Drawing.Point(235, 230);
+            this.metroTile3.Name = "metroTile3";
+            this.metroTile3.Size = new System.Drawing.Size(167, 81);
+            this.metroTile3.TabIndex = 11;
+            this.metroTile3.Text = "Редактирование\r\nпрофиля";
+            this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile3.UseSelectable = true;
+            // 
+            // metroTile4
+            // 
+            this.metroTile4.ActiveControl = null;
+            this.metroTile4.Location = new System.Drawing.Point(235, 317);
+            this.metroTile4.Name = "metroTile4";
+            this.metroTile4.Size = new System.Drawing.Size(381, 81);
+            this.metroTile4.TabIndex = 11;
+            this.metroTile4.Text = "Контакты";
+            this.metroTile4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile4.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile4.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile4.UseSelectable = true;
+            // 
+            // metroTile5
+            // 
+            this.metroTile5.ActiveControl = null;
+            this.metroTile5.Location = new System.Drawing.Point(449, 230);
+            this.metroTile5.Name = "metroTile5";
+            this.metroTile5.Size = new System.Drawing.Size(167, 81);
+            this.metroTile5.TabIndex = 11;
+            this.metroTile5.Text = "Мой спонсор";
+            this.metroTile5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile5.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile5.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile5.UseSelectable = true;
+            // 
             // RunnerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.Controls.Add(this.metroTile5);
+            this.Controls.Add(this.metroTile4);
+            this.Controls.Add(this.metroTile3);
+            this.Controls.Add(this.metroTile2);
+            this.Controls.Add(this.metroTile1);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
             this.Name = "RunnerForm";
             this.Text = "RunnerForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -77,5 +166,11 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroTile metroTile3;
+        private MetroFramework.Controls.MetroTile metroTile4;
+        private MetroFramework.Controls.MetroTile metroTile5;
     }
 }
