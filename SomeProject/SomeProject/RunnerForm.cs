@@ -21,5 +21,11 @@ namespace SomeProject
             timer1.Enabled = true;
             timer1.Start();
         }
+        DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan timeremaining = voteTime - DateTime.Now;
+            metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+        }
     }
 }
