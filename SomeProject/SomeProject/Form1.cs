@@ -21,7 +21,7 @@ namespace SomeProject
             TimeSpan timeremaining = voteTime - DateTime.Now;
             metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
         }
-
+        //ну допустим...
         private void metroTile1_Click(object sender, EventArgs e)
         {
             ask ask = new ask();
