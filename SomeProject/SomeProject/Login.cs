@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +43,72 @@ namespace SomeProject
             this.Hide();
             Form1 f1 = new Form1();
             f1.Show();
+        }
+        enum Role { Failed, R, C, A }
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            login();
+        }
+        static Role GetRole(string login, string password)
+        {
+            Role role = Role.Failed;
+            using (var connection = new SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=WSR;Trusted_Connection=Yes;"))
+            {
+                connection.Open();
+                var command = new SqlCommand("Select RoleId from users where email=@email and password=@password", connection);
+                command.Parameters.AddWithValue("@email", login);
+                command.Parameters.AddWithValue("@password", password);
+                using (var dataReader = command.ExecuteReader())
+                {
+                    if (dataReader.Read())
+                    {
+                        if ((string)dataReader["Roleid"] == "R")
+                        {
+                            role = Role.R;
+                        }
+                        if ((string)dataReader["Roleid"] == "A")
+                        {
+                            role = Role.A;
+                        }
+                        if ((string)dataReader["Roleid"] == "C")
+                        {
+                            role = Role.C;
+                        }
+
+
+                    }
+                }
+                return role;
+            }
+        }
+        private void login()
+        {
+            Role role = GetRole(metroTextBox1.Text, metroTextBox.Text);
+            if (role == Role.Failed)
+            {
+                MessageBox.Show("Неверный логин или пароль", MessageBoxIcon.Error.ToString(), MessageBoxButtons.OK);
+            }
+            else
+            {
+                if (role == Role.A)
+                {
+                    var form = new AdminForm();
+                    form.ShowDialog();
+                    this.Hide();
+                }
+                else if (role == Role.C)
+                {
+                    var form = new CoordinatorForm();
+                    form.ShowDialog();
+                    this.Hide();
+                }
+                else if (role == Role.R)
+                {
+                    var form = new RunnerForm();
+                    form.ShowDialog();
+                    this.Hide();
+                }
+            }
         }
     }
 }

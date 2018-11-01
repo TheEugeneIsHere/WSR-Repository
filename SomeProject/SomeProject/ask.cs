@@ -35,7 +35,7 @@ namespace SomeProject
         {
             Form1 f1 = new Form1();
             this.Close();
-            f1.Show();
+            f1.Visible=true;
         }
 
         private void metroTile1_Click(object sender, EventArgs e)

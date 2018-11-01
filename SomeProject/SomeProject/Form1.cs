@@ -22,10 +22,13 @@ namespace SomeProject
             metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
         }
         //ну допустим...
+        Form1 f1;
         private void metroTile1_Click(object sender, EventArgs e)
         {
+            f1 = new Form1();
+
             ask ask = new ask();
-            this.Hide();
+            f1.Visible = false;
             ask.ShowDialog();
         }
 
