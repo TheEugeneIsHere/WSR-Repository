@@ -17,10 +17,6 @@ namespace SomeProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            // Внесено нереально нужное изменение
-            // В Program.cs
-            // От этого наш курсач сдастся в овер10 раз быстрее
-            // Блябуду нахуй
         }
     }
 }
