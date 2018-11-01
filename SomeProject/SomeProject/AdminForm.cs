@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class AdminForm : Form
+    public partial class AdminForm : MetroFramework.Forms.MetroForm
     {
         public AdminForm()
         {
             InitializeComponent();
         }
+
     }
 }
