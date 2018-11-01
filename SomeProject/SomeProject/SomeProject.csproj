@@ -156,5 +156,23 @@
   <ItemGroup>
     <None Include="Resources\icons8-администратор-240.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users_admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_Volounters.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_Blago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_Inventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_Admin.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
