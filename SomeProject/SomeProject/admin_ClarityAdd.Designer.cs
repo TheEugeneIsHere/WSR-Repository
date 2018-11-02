@@ -46,6 +46,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,6 +176,7 @@
             this.metroButton1.TabIndex = 24;
             this.metroButton1.Text = "Сохранить";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroButton2
             // 
@@ -294,6 +296,7 @@
             this.metroButton3.TabIndex = 31;
             this.metroButton3.Text = "Просмотр..";
             this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // admin_ClarityAdd
             // 
@@ -347,5 +350,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private System.Windows.Forms.PictureBox pictureBox3;
         private MetroFramework.Controls.MetroButton metroButton3;
+        private System.Windows.Forms.Timer timer2;
     }
 }

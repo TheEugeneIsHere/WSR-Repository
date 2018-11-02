@@ -34,5 +34,41 @@ namespace SomeProject
             this.Hide();
             clarityForm.Show();
         }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog imageSelector = new OpenFileDialog();
+            imageSelector.Filter = "JPEG|*.jpg,*.jpeg,*.jpe,*.jfif|PNG|*.png|All files (*.*)|*.*";
+            imageSelector.Title = "Выберите логотип..";
+            Bitmap logo;
+
+            if (imageSelector.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    logo = new Bitmap(imageSelector.FileName);
+                    pictureBox3.Image = logo;
+                    pictureBox3.Invalidate();
+                    metroTextBox3.Text = imageSelector.SafeFileName;
+                }
+                catch
+                { 
+                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (metroTextBox1.Text != "")
+            {
+                //Здесь что-то сложное будет, наверное
+            }
+            else
+            {
+                MessageBox.Show("Введите название организации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
