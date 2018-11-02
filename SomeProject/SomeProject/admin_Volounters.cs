@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_ClarityControl : MetroFramework.Forms.MetroForm
+    public partial class admin_Volounters : MetroFramework.Forms.MetroForm
     {
-        public admin_ClarityControl()
+        public admin_Volounters()
         {
             InitializeComponent();
             timer1.Tick += timer1_Tick;
@@ -26,6 +26,13 @@ namespace SomeProject
         {
             TimeSpan timeremaining = voteTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AdminForm AdminForm = new AdminForm();
+            this.Hide();
+            AdminForm.Show();
         }
     }
 }

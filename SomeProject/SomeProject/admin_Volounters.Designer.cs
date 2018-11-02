@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class admin_ClarityControl
+    partial class admin_Volounters
     {
         /// <summary>
         /// Required designer variable.
@@ -63,6 +63,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // metroLabel2
             // 
@@ -89,7 +90,7 @@
             this.metroLabel4.Text = "Loading...";
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // admin_ClarityControl
+            // admin_Volounters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +99,7 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "admin_ClarityControl";
+            this.Name = "admin_Volounters";
             this.Resizable = false;
             this.Text = "Administation Menu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

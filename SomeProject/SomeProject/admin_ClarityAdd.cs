@@ -70,5 +70,12 @@ namespace SomeProject
                 MessageBox.Show("Введите название организации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            admin_Clarity adminMenu_Clarity = new admin_Clarity();
+            this.Close();
+            adminMenu_Clarity.Show();
+        }
     }
 }

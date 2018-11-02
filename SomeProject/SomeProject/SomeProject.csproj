@@ -73,11 +73,11 @@
     <Compile Include="admin_ClarityAdd.Designer.cs">
       <DependentUpon>admin_ClarityAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_ClarityControl.cs">
+    <Compile Include="admin_Volounters.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_ClarityControl.Designer.cs">
-      <DependentUpon>admin_ClarityControl.cs</DependentUpon>
+    <Compile Include="admin_Volounters.Designer.cs">
+      <DependentUpon>admin_Volounters.cs</DependentUpon>
     </Compile>
     <Compile Include="ask.cs">
       <SubType>Form</SubType>
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="admin_ClarityAdd.resx">
       <DependentUpon>admin_ClarityAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_ClarityControl.resx">
-      <DependentUpon>admin_ClarityControl.cs</DependentUpon>
+    <EmbeddedResource Include="admin_Volounters.resx">
+      <DependentUpon>admin_Volounters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ask.resx">
       <DependentUpon>ask.cs</DependentUpon>
