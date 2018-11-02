@@ -31,22 +31,22 @@ namespace SomeProject
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
+            f1.Show();
             this.Close();
-            f1.Visible = true;
         }
 
         private void metroTile3_Click(object sender, EventArgs e)
         {
             admin_Clarity clarityForm = new admin_Clarity();
-            this.Hide();
             clarityForm.Show();
+            this.Close();
         }
 
         private void metroTile4_Click(object sender, EventArgs e)
         {
             admin_Volounters admin_Volounters = new admin_Volounters();
-            this.Hide();
             admin_Volounters.Show();
+            this.Close();
         }
     }
 }

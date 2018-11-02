@@ -46,8 +46,8 @@ namespace SomeProject
         private void metroTile5_Click(object sender, EventArgs e)
         {
             AdminForm admOneLove = new AdminForm();
+            admOneLove.Show();
             this.Hide();
-            admOneLove.Visible = true;
         }
     }
 }

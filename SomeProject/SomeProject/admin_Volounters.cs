@@ -19,6 +19,10 @@ namespace SomeProject
             timer1.Interval = 1000;
             timer1.Enabled = true;
             timer1.Start();
+            Random rnd = new Random();
+            metroLabel3.Text = Convert.ToString(rnd.Next(100, 999)); // Ну это чисто по-приколу
+            // Нада не забыть заменить её на подругзку из БД. Хотя я и так не забуду
+            // Но всё равно лучше оставить здесь огромные зеленые буковки
         }
         DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
 
@@ -31,14 +35,20 @@ namespace SomeProject
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             AdminForm AdminForm = new AdminForm();
-            this.Hide();
             AdminForm.Show();
+            this.Close();
         }
-
         private void metroComboBox1_TextUpdate(object sender, EventArgs e)
         {
             // Когда это произошло, обновить дата грид.
             // Если невозможно присобачить кнопку обновления как в оригинале
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            admin_VolountersAdd VolountersAddForm  = new admin_VolountersAdd();
+            VolountersAddForm.Show();
+            this.Close();
         }
     }
 }

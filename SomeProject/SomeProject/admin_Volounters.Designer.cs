@@ -58,10 +58,9 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.Location = new System.Drawing.Point(441, 71);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel2.Location = new System.Drawing.Point(307, 60);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(254, 25);
+            this.metroLabel2.Size = new System.Drawing.Size(240, 25);
             this.metroLabel2.TabIndex = 28;
             this.metroLabel2.Text = "Управление волонтёрами";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,10 +70,9 @@
             this.metroLabel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(27, 563);
-            this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel4.Location = new System.Drawing.Point(20, 458);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(1105, 37);
+            this.metroLabel4.Size = new System.Drawing.Size(829, 30);
             this.metroLabel4.TabIndex = 29;
             this.metroLabel4.Text = "Loading...";
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -83,10 +81,9 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(478, 129);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel1.Location = new System.Drawing.Point(345, 102);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(138, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(124, 19);
             this.metroLabel1.TabIndex = 30;
             this.metroLabel1.Text = "Всего волонтёров:";
             // 
@@ -95,8 +92,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(618, 127);
-            this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel3.Location = new System.Drawing.Point(469, 99);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(42, 25);
             this.metroLabel3.TabIndex = 31;
@@ -129,8 +125,7 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.Maroon;
-            this.metroGrid1.Location = new System.Drawing.Point(31, 160);
-            this.metroGrid1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroGrid1.Location = new System.Drawing.Point(23, 130);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -143,17 +138,16 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1097, 373);
+            this.metroGrid1.Size = new System.Drawing.Size(823, 303);
             this.metroGrid1.TabIndex = 32;
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(792, 548);
-            this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel5.Location = new System.Drawing.Point(594, 445);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(124, 20);
+            this.metroLabel5.Size = new System.Drawing.Size(114, 19);
             this.metroLabel5.TabIndex = 33;
             this.metroLabel5.Text = "Сортировать по:";
             // 
@@ -161,17 +155,16 @@
             // 
             this.metroComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
+            this.metroComboBox1.ItemHeight = 23;
             this.metroComboBox1.Items.AddRange(new object[] {
             "Фамилии",
             "Имени",
             "Стране",
             "Полу"});
-            this.metroComboBox1.Location = new System.Drawing.Point(949, 540);
-            this.metroComboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroComboBox1.Location = new System.Drawing.Point(712, 439);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.PromptText = "Фамилии";
-            this.metroComboBox1.Size = new System.Drawing.Size(177, 30);
+            this.metroComboBox1.Size = new System.Drawing.Size(134, 29);
             this.metroComboBox1.TabIndex = 34;
             this.metroComboBox1.UseSelectable = true;
             this.metroComboBox1.TextUpdate += new System.EventHandler(this.metroComboBox1_TextUpdate);
@@ -180,22 +173,21 @@
             // 
             this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light;
-            this.metroButton1.Location = new System.Drawing.Point(31, 540);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroButton1.Location = new System.Drawing.Point(23, 439);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(179, 36);
+            this.metroButton1.Size = new System.Drawing.Size(134, 29);
             this.metroButton1.TabIndex = 35;
             this.metroButton1.Text = "Загрузка волонтёров";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::SomeProject.Properties.Resources.exit_Admin;
-            this.pictureBox2.Location = new System.Drawing.Point(1081, 95);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(811, 77);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 43);
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 26;
             this.pictureBox2.TabStop = false;
@@ -204,10 +196,9 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
-            this.pictureBox1.Location = new System.Drawing.Point(51, 95);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 77);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 43);
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
@@ -215,9 +206,9 @@
             // 
             // admin_Volounters
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1159, 625);
+            this.ClientSize = new System.Drawing.Size(869, 508);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.metroLabel5);
@@ -228,9 +219,7 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "admin_Volounters";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Resizable = false;
             this.Text = "Administation Menu";
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();

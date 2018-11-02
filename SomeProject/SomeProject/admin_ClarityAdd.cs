@@ -31,15 +31,17 @@ namespace SomeProject
         private void metroButton2_Click(object sender, EventArgs e)
         {
             admin_Clarity clarityForm = new admin_Clarity();
-            this.Hide();
             clarityForm.Show();
+            this.Close();
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog imageSelector = new OpenFileDialog();
-            imageSelector.Filter = "JPEG|*.jpg,*.jpeg,*.jpe,*.jfif|PNG|*.png|All files (*.*)|*.*";
-            imageSelector.Title = "Выберите логотип..";
+            OpenFileDialog imageSelector = new OpenFileDialog
+            {
+                Filter = "JPEG|*.jpg,*.jpeg,*.jpe,*.jfif|PNG|*.png|All files (*.*)|*.*",
+                Title = "Выберите логотип.."
+            };
             Bitmap logo;
 
             if (imageSelector.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -74,8 +76,8 @@ namespace SomeProject
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             admin_Clarity adminMenu_Clarity = new admin_Clarity();
-            this.Close();
             adminMenu_Clarity.Show();
+            this.Close();
         }
     }
 }

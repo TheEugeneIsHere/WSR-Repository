@@ -43,7 +43,6 @@
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -233,6 +232,7 @@
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
             this.metroTextBox3.WaterMark = "charity_logo.png";
+            this.metroTextBox3.ReadOnly = true;
             this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox3.SelectedText = "";
             this.metroTextBox3.SelectionLength = 0;
@@ -258,9 +258,9 @@
             // metroButton3
             // 
             this.metroButton3.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.metroButton3.Location = new System.Drawing.Point(673, 231);
+            this.metroButton3.Location = new System.Drawing.Point(669, 231);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(83, 23);
+            this.metroButton3.Size = new System.Drawing.Size(75, 23);
             this.metroButton3.TabIndex = 31;
             this.metroButton3.Text = "Просмотр..";
             this.metroButton3.UseSelectable = true;
@@ -268,6 +268,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::SomeProject.Properties.Resources.Wikivoyage_logo_svg;
             this.pictureBox3.Location = new System.Drawing.Point(511, 291);
             this.pictureBox3.Name = "pictureBox3";
@@ -351,6 +352,5 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private System.Windows.Forms.PictureBox pictureBox3;
         private MetroFramework.Controls.MetroButton metroButton3;
-        private System.Windows.Forms.Timer timer2;
     }
 }
