@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -58,7 +57,7 @@
             // metroGrid1
             // 
             this.metroGrid1.AllowUserToResizeRows = false;
-            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -95,19 +94,8 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(678, 277);
+            this.metroGrid1.Size = new System.Drawing.Size(678, 319);
             this.metroGrid1.TabIndex = 16;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.Location = new System.Drawing.Point(215, 101);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(454, 19);
-            this.metroLabel2.TabIndex = 17;
-            this.metroLabel2.Text = "*На самом деле, снизу metroGridView, просто его не видно да*";
-            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroLabel3
             // 
@@ -154,7 +142,6 @@
             this.ClientSize = new System.Drawing.Size(869, 508);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
@@ -173,7 +160,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroGrid metroGrid1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroButton metroButton1;

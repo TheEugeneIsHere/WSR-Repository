@@ -34,5 +34,11 @@ namespace SomeProject
             this.Hide();
             AdminForm.Show();
         }
+
+        private void metroComboBox1_TextUpdate(object sender, EventArgs e)
+        {
+            // Когда это произошло, обновить дата грид.
+            // Если невозможно присобачить кнопку обновления как в оригинале
+        }
     }
 }
