@@ -48,5 +48,12 @@ namespace SomeProject
             admin_Volounters.Show();
             this.Close();
         }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            admin_Users UsersForm = new admin_Users();
+            UsersForm.Show();
+            this.Close();
+        }
     }
 }

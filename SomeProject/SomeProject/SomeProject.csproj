@@ -73,6 +73,24 @@
     <Compile Include="admin_ClarityAdd.Designer.cs">
       <DependentUpon>admin_ClarityAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="admin_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_Users.Designer.cs">
+      <DependentUpon>admin_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin_UsersAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_UsersAdd.Designer.cs">
+      <DependentUpon>admin_UsersAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin_UsersEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_UsersEdit.Designer.cs">
+      <DependentUpon>admin_UsersEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="admin_Volounters.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +149,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin_ClarityAdd.resx">
       <DependentUpon>admin_ClarityAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_Users.resx">
+      <DependentUpon>admin_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_UsersAdd.resx">
+      <DependentUpon>admin_UsersAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_UsersEdit.resx">
+      <DependentUpon>admin_UsersEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admin_Volounters.resx">
       <DependentUpon>admin_Volounters.cs</DependentUpon>
