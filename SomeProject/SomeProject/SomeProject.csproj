@@ -67,6 +67,12 @@
     <Compile Include="admin_Clarity.Designer.cs">
       <DependentUpon>admin_Clarity.cs</DependentUpon>
     </Compile>
+    <Compile Include="admin_ClarityAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_ClarityAdd.Designer.cs">
+      <DependentUpon>admin_ClarityAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="ask.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin_Clarity.resx">
       <DependentUpon>admin_Clarity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_ClarityAdd.resx">
+      <DependentUpon>admin_ClarityAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ask.resx">
       <DependentUpon>ask.cs</DependentUpon>
@@ -182,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit_Admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wikivoyage-logo.svg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

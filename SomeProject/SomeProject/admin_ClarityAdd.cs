@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_Clarity : MetroFramework.Forms.MetroForm
+    public partial class admin_ClarityAdd : MetroFramework.Forms.MetroForm
     {
-        public admin_Clarity()
+        public admin_ClarityAdd()
         {
             InitializeComponent();
             timer1.Tick += timer1_Tick;
@@ -22,24 +22,17 @@ namespace SomeProject
         }
         DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            AdminForm adminMenu = new AdminForm();
-            this.Close();
-            adminMenu.Show();
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = voteTime - DateTime.Now;
-            metroLabel3.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void metroButton2_Click(object sender, EventArgs e)
         {
-            admin_ClarityAdd clarityFormAdd = new admin_ClarityAdd();
+            admin_Clarity clarityForm = new admin_Clarity();
             this.Hide();
-            clarityFormAdd.Show();
+            clarityForm.Show();
         }
     }
 }
