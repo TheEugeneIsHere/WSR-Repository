@@ -47,9 +47,10 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(215, 60);
+            this.metroLabel1.Location = new System.Drawing.Point(366, 74);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(456, 25);
+            this.metroLabel1.Size = new System.Drawing.Size(484, 25);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Управление благотворительными организациями";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -81,7 +82,8 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(94, 136);
+            this.metroGrid1.Location = new System.Drawing.Point(125, 167);
+            this.metroGrid1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -94,7 +96,7 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(678, 319);
+            this.metroGrid1.Size = new System.Drawing.Size(904, 393);
             this.metroGrid1.TabIndex = 16;
             // 
             // metroLabel3
@@ -102,9 +104,10 @@
             this.metroLabel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(20, 458);
+            this.metroLabel3.Location = new System.Drawing.Point(27, 563);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(829, 30);
+            this.metroLabel3.Size = new System.Drawing.Size(1105, 37);
             this.metroLabel3.TabIndex = 18;
             this.metroLabel3.Text = "Loading...";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,9 +118,10 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(393, 97);
+            this.metroButton1.Location = new System.Drawing.Point(524, 119);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(119, 23);
+            this.metroButton1.Size = new System.Drawing.Size(159, 28);
             this.metroButton1.TabIndex = 19;
             this.metroButton1.Text = "Добавить";
             this.metroButton1.UseSelectable = true;
@@ -127,9 +131,10 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(51, 95);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(47, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -137,15 +142,17 @@
             // 
             // admin_Clarity
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 508);
+            this.ClientSize = new System.Drawing.Size(1159, 625);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "admin_Clarity";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Resizable = false;
             this.Text = "Administration Menu";
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();

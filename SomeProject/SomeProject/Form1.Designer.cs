@@ -43,9 +43,10 @@
             this.metroLabel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(20, 458);
+            this.metroLabel1.Location = new System.Drawing.Point(27, 563);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(829, 30);
+            this.metroLabel1.Size = new System.Drawing.Size(1105, 37);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Loading...";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -57,9 +58,11 @@
             // metroTile4
             // 
             this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(732, 397);
+            this.metroTile4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroTile4.Location = new System.Drawing.Point(976, 489);
+            this.metroTile4.Margin = new System.Windows.Forms.Padding(4);
             this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(85, 41);
+            this.metroTile4.Size = new System.Drawing.Size(113, 50);
             this.metroTile4.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile4.TabIndex = 12;
             this.metroTile4.Text = "LOGIN";
@@ -70,9 +73,11 @@
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(228, 126);
+            this.metroTile1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroTile1.Location = new System.Drawing.Point(304, 155);
+            this.metroTile1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(450, 67);
+            this.metroTile1.Size = new System.Drawing.Size(600, 82);
             this.metroTile1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile1.TabIndex = 9;
             this.metroTile1.Text = "Я хочу стать бегуном";
@@ -88,9 +93,11 @@
             // metroTile3
             // 
             this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(228, 272);
+            this.metroTile3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroTile3.Location = new System.Drawing.Point(304, 335);
+            this.metroTile3.Margin = new System.Windows.Forms.Padding(4);
             this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(450, 67);
+            this.metroTile3.Size = new System.Drawing.Size(600, 82);
             this.metroTile3.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile3.TabIndex = 11;
             this.metroTile3.Text = "Я хочу узнать больше о событии";
@@ -104,9 +111,11 @@
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(228, 199);
+            this.metroTile2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroTile2.Location = new System.Drawing.Point(304, 245);
+            this.metroTile2.Margin = new System.Windows.Forms.Padding(4);
             this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(450, 67);
+            this.metroTile2.Size = new System.Drawing.Size(600, 82);
             this.metroTile2.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile2.TabIndex = 10;
             this.metroTile2.Text = "Я хочу стать спонсором бегуна";
@@ -120,9 +129,10 @@
             // metroTile5
             // 
             this.metroTile5.ActiveControl = null;
-            this.metroTile5.Location = new System.Drawing.Point(20, 356);
+            this.metroTile5.Location = new System.Drawing.Point(27, 438);
+            this.metroTile5.Margin = new System.Windows.Forms.Padding(4);
             this.metroTile5.Name = "metroTile5";
-            this.metroTile5.Size = new System.Drawing.Size(119, 82);
+            this.metroTile5.Size = new System.Drawing.Size(159, 101);
             this.metroTile5.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile5.TabIndex = 13;
             this.metroTile5.Text = "Я Денис";
@@ -137,18 +147,20 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(869, 508);
+            this.ClientSize = new System.Drawing.Size(1159, 625);
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroLabel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Resizable = false;
             this.Text = "MARATHON INFORMATION SYSTEM";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
