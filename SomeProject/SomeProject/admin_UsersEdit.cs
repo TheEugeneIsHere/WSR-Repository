@@ -103,6 +103,5 @@ namespace SomeProject
         {
             error.Clear();
         }
-        //Писос
 }
 }
