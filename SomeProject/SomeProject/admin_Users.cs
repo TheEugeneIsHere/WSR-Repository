@@ -51,5 +51,12 @@ namespace SomeProject
             userAddForm.Show();
             this.Close();
         }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            admin_UsersEdit UsersEditForm = new admin_UsersEdit();
+            UsersEditForm.Show();
+            this.Close();
+        }
     }
 }

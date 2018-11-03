@@ -87,7 +87,7 @@ namespace SomeProject
             {
                 error.SetIconAlignment(metroTextBox5,ErrorIconAlignment.MiddleLeft);
                 error.SetError(metroTextBox5, "Ошибка");
-                MessageBox.Show("Введите пароль заново", "Введённые пароли отличаются", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Введённые пароли отличаются", "Введите пароль заново", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if ((metroTextBox4.Text == "") || (metroTextBox5.Text == ""))
