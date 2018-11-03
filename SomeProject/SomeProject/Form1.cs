@@ -49,5 +49,12 @@ namespace SomeProject
             this.Hide();
             admOneLove.Visible = true;
         }
+
+        private void metroTile6_Click(object sender, EventArgs e)
+        {
+            RunnerForm runOneLove = new RunnerForm();
+            this.Hide();
+            runOneLove.Visible = true;
+        }
     }
 }
