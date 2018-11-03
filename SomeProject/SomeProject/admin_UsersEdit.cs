@@ -103,5 +103,5 @@ namespace SomeProject
         {
             error.Clear();
         }
-}
+    }
 }
