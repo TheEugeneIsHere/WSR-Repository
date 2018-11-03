@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_Volounters : MetroFramework.Forms.MetroForm
+    public partial class admin_Users : MetroFramework.Forms.MetroForm
     {
-        public admin_Volounters()
+        public admin_Users()
         {
             InitializeComponent();
             timer1.Tick += timer1_Tick;
@@ -34,21 +34,20 @@ namespace SomeProject
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            AdminForm AdminForm = new AdminForm();
-            AdminForm.Show();
+            AdminForm admForm = new AdminForm();
+            admForm.Show();
             this.Close();
         }
-        private void metroComboBox1_TextUpdate(object sender, EventArgs e)
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-            // Когда это произошло, обновить дата грид.
-            // Если невозможно присобачить кнопку обновления как в оригинале
+            // Здесь что-то будет происходить, как можно догадаться.
+            // Скорее всего обновление Грида, ибо кнопка по сути для поиска/обновления
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            admin_VolountersAdd VolountersAddForm  = new admin_VolountersAdd();
-            VolountersAddForm.Show();
-            this.Close();
+            // Переход на другую форму
         }
     }
 }

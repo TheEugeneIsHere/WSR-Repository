@@ -13,9 +13,9 @@ namespace SomeProject
             timer1.Interval = 1000;
             timer1.Enabled = true;
             timer1.Start();
-          
         }
         DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = voteTime - DateTime.Now;
@@ -46,8 +46,8 @@ namespace SomeProject
         private void metroTile5_Click(object sender, EventArgs e)
         {
             AdminForm admOneLove = new AdminForm();
+            admOneLove.Show();
             this.Hide();
-            admOneLove.Visible = true;
         }
 
         private void metroTile6_Click(object sender, EventArgs e)

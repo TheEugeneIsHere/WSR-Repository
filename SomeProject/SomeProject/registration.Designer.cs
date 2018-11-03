@@ -170,7 +170,7 @@
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Email";
+            this.metroTextBox1.WaterMark = "Email";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;
@@ -202,7 +202,7 @@
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '*';
-            this.metroTextBox2.PromptText = "Пароль";
+            this.metroTextBox2.WaterMark = "Пароль";
             this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox2.SelectedText = "";
             this.metroTextBox2.SelectionLength = 0;
@@ -234,7 +234,7 @@
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '*';
-            this.metroTextBox3.PromptText = "Повторите пароль";
+            this.metroTextBox3.WaterMark = "Повторите пароль";
             this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox3.SelectedText = "";
             this.metroTextBox3.SelectionLength = 0;
@@ -266,7 +266,7 @@
             this.metroTextBox4.MaxLength = 32767;
             this.metroTextBox4.Name = "metroTextBox4";
             this.metroTextBox4.PasswordChar = '\0';
-            this.metroTextBox4.PromptText = "Имя";
+            this.metroTextBox4.WaterMark = "Имя";
             this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox4.SelectedText = "";
             this.metroTextBox4.SelectionLength = 0;
@@ -298,7 +298,7 @@
             this.metroTextBox5.MaxLength = 32767;
             this.metroTextBox5.Name = "metroTextBox5";
             this.metroTextBox5.PasswordChar = '\0';
-            this.metroTextBox5.PromptText = "Фамилия";
+            this.metroTextBox5.WaterMark = "Фамилия";
             this.metroTextBox5.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox5.SelectedText = "";
             this.metroTextBox5.SelectionLength = 0;
@@ -330,7 +330,7 @@
             this.metroTextBox7.MaxLength = 32767;
             this.metroTextBox7.Name = "metroTextBox7";
             this.metroTextBox7.PasswordChar = '\0';
-            this.metroTextBox7.PromptText = "Здесь будет путь, надеюсь";
+            this.metroTextBox7.WaterMark = "Здесь будет путь, надеюсь";
             this.metroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox7.SelectedText = "";
             this.metroTextBox7.SelectionLength = 0;
@@ -428,7 +428,7 @@
             this.metroTextBox8.MaxLength = 32767;
             this.metroTextBox8.Name = "metroTextBox8";
             this.metroTextBox8.PasswordChar = '\0';
-            this.metroTextBox8.PromptText = "Россиюшкааа";
+            this.metroTextBox8.WaterMark = "Россиюшкааа";
             this.metroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox8.SelectedText = "";
             this.metroTextBox8.SelectionLength = 0;

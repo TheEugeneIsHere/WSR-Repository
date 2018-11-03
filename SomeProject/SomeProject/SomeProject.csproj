@@ -32,6 +32,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -73,11 +83,35 @@
     <Compile Include="admin_ClarityAdd.Designer.cs">
       <DependentUpon>admin_ClarityAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="admin_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_Users.Designer.cs">
+      <DependentUpon>admin_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin_UsersAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_UsersAdd.Designer.cs">
+      <DependentUpon>admin_UsersAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin_UsersEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_UsersEdit.Designer.cs">
+      <DependentUpon>admin_UsersEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="admin_Volounters.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="admin_Volounters.Designer.cs">
       <DependentUpon>admin_Volounters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin_VolountersAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_VolountersAdd.Designer.cs">
+      <DependentUpon>admin_VolountersAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="ask.cs">
       <SubType>Form</SubType>
@@ -126,8 +160,20 @@
     <EmbeddedResource Include="admin_ClarityAdd.resx">
       <DependentUpon>admin_ClarityAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="admin_Users.resx">
+      <DependentUpon>admin_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_UsersAdd.resx">
+      <DependentUpon>admin_UsersAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_UsersEdit.resx">
+      <DependentUpon>admin_UsersEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="admin_Volounters.resx">
       <DependentUpon>admin_Volounters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_VolountersAdd.resx">
+      <DependentUpon>admin_VolountersAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ask.resx">
       <DependentUpon>ask.cs</DependentUpon>
@@ -203,6 +249,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Wikivoyage-logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\aBrandNewIcon.ico" />
+    <None Include="Resources\refresh_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

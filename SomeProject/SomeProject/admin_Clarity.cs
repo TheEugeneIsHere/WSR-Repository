@@ -25,8 +25,8 @@ namespace SomeProject
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             AdminForm adminMenu = new AdminForm();
-            this.Close();
             adminMenu.Show();
+            this.Close();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -38,8 +38,8 @@ namespace SomeProject
         private void metroButton1_Click(object sender, EventArgs e)
         {
             admin_ClarityAdd clarityFormAdd = new admin_ClarityAdd();
-            this.Hide();
             clarityFormAdd.Show();
+            this.Hide();
         }
     }
 }
