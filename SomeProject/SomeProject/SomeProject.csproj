@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>project_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -251,6 +250,7 @@
     <None Include="Resources\Wikivoyage-logo.svg.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="project_icon.ico" />
     <Content Include="Resources\aBrandNewIcon.ico" />
     <None Include="Resources\refresh_icon.png" />
   </ItemGroup>

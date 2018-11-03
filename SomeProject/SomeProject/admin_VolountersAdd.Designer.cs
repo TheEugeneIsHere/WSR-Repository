@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_VolountersAdd));
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -150,7 +151,7 @@
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.WaterMark = "volounters_list.csv";
+            this.metroTextBox1.PromptText = "volounters_list.csv";
             this.metroTextBox1.ReadOnly = true;
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
@@ -229,6 +230,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabel4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "admin_VolountersAdd";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);

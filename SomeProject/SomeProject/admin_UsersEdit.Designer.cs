@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_UsersEdit));
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
@@ -401,6 +402,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel12);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "admin_UsersEdit";
             this.Resizable = false;
             this.Text = "Administration Menu";
