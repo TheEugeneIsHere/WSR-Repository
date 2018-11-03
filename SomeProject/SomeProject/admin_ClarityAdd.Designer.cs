@@ -93,7 +93,7 @@
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.WaterMark = "Наименование организации";
+            this.metroTextBox1.PromptText = "Наименование организации";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;
@@ -136,7 +136,7 @@
             this.metroTextBox2.Multiline = true;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.WaterMark = "Описание благотворительной организации";
+            this.metroTextBox2.PromptText = "Описание благотворительной организации";
             this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox2.SelectedText = "";
             this.metroTextBox2.SelectionLength = 0;
@@ -172,7 +172,7 @@
             this.metroButton1.Location = new System.Drawing.Point(333, 432);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(83, 23);
-            this.metroButton1.TabIndex = 24;
+            this.metroButton1.TabIndex = 30;
             this.metroButton1.Text = "Сохранить";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
@@ -184,7 +184,7 @@
             this.metroButton2.Location = new System.Drawing.Point(438, 432);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(83, 23);
-            this.metroButton2.TabIndex = 25;
+            this.metroButton2.TabIndex = 28;
             this.metroButton2.Text = "Отмена";
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
@@ -231,7 +231,7 @@
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.WaterMark = "charity_logo.png";
+            this.metroTextBox3.PromptText = "charity_logo.png";
             this.metroTextBox3.ReadOnly = true;
             this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox3.SelectedText = "";
@@ -239,7 +239,7 @@
             this.metroTextBox3.SelectionStart = 0;
             this.metroTextBox3.ShortcutsEnabled = true;
             this.metroTextBox3.Size = new System.Drawing.Size(146, 23);
-            this.metroTextBox3.TabIndex = 28;
+            this.metroTextBox3.TabIndex = 24;
             this.metroTextBox3.UseSelectable = true;
             this.metroTextBox3.WaterMark = "charity_logo.png";
             this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -261,7 +261,7 @@
             this.metroButton3.Location = new System.Drawing.Point(669, 231);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(75, 23);
-            this.metroButton3.TabIndex = 31;
+            this.metroButton3.TabIndex = 25;
             this.metroButton3.Text = "Просмотр..";
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
@@ -325,6 +325,7 @@
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.Text = "Administration Menu";
+            this.Click += new System.EventHandler(this.metroButton3_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
