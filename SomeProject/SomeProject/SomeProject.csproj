@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>aBrandNewIcon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -250,12 +251,8 @@
     <None Include="Resources\Wikivoyage-logo.svg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="aBrandNewIcon.ico" />
-    <Content Include="Burn.ico" />
-    <Content Include="fedukOneLove.ico" />
-    <Content Include="icon.ico" />
     <Content Include="Resources\aBrandNewIcon.ico" />
-    <Content Include="кек.ico" />
+    <None Include="Resources\refresh_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
