@@ -249,7 +249,7 @@
             this.metroComboBox2.Size = new System.Drawing.Size(134, 29);
             this.metroComboBox2.TabIndex = 65;
             this.metroComboBox2.UseSelectable = true;
-            this.metroComboBox2.TextUpdate += new System.EventHandler(this.metroComboBox2_TextUpdate);
+            this.metroComboBox2.TextChanged += new System.EventHandler(this.metroComboBox2_TextChanged);
             // 
             // metroTextBox3
             // 

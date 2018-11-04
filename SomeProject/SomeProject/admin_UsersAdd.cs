@@ -21,7 +21,8 @@ namespace SomeProject
             timer1.Start();
         }
         DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
-        ErrorProvider error = new ErrorProvider();
+        ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = voteTime - DateTime.Now;
@@ -53,7 +54,7 @@ namespace SomeProject
                 }
                 e.Handled = true;
             }
-            else { error.Clear(); }
+            else { error.SetError(metroTextBox3, String.Empty); }
         }
 
         private void metroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -64,7 +65,7 @@ namespace SomeProject
                 e.Handled = true;
                 error.SetError(metroTextBox1, "Ошибка");
             }
-            else { error.Clear(); }
+            else { error.SetError(metroTextBox1, String.Empty); }
         }
 
         private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -78,53 +79,71 @@ namespace SomeProject
                 }
                 e.Handled = true;
             }
-            else { error.Clear(); }
+            else { error.SetError(metroTextBox2, String.Empty); }
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            string errorLog ="Исправьте следующие ошибки: \n\n";
+            int errorCount = 0;
+            if (metroTextBox3.Text == "")
+            {
+                error.SetError(metroTextBox3, "Ошибка");
+                ++errorCount;
+                errorLog += errorCount+". Отсутствует Имя пользователя\n";
+               // MessageBox.Show("Не введено Имя пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (metroTextBox2.Text == "")
+            {
+                error.SetError(metroTextBox2, "Ошибка");
+                ++errorCount;
+                errorLog += errorCount + ". Отсутствует Фамилия пользователя\n";
+                // MessageBox.Show("Не введена Фамилия пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (!metroTextBox1.Text.Contains('@'))
+            {
+                error.SetError(metroTextBox1, "Ошибка");
+                ++errorCount;
+                errorLog += errorCount + ". Неправильно введён Email-адрес\n";
+                //MessageBox.Show("Неправильно введён Email-адрес", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (metroComboBox2.Text == "")
+            {
+                error.SetError(metroComboBox2, "Ошибка");
+                ++errorCount;
+                errorLog += errorCount + ". Отсутствует Роль пользователя\n";
+                //MessageBox.Show("Не выбрана роль пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             if (metroTextBox4.Text != metroTextBox5.Text)
             {
                 error.SetIconAlignment(metroTextBox5,ErrorIconAlignment.MiddleLeft);
                 error.SetError(metroTextBox5, "Ошибка");
-                MessageBox.Show("Введённые пароли отличаются", "Введите пароль заново", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ++errorCount;
+                errorLog += errorCount + ". Введённые пароли отличаются\n";
+                //MessageBox.Show("Введённые пароли отличаются", "Введите пароль заново", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if ((metroTextBox4.Text == "") || (metroTextBox5.Text == ""))
             {
                 error.SetIconAlignment(metroTextBox5, ErrorIconAlignment.MiddleLeft);
                 error.SetError(metroTextBox5, "Ошибка");
-                MessageBox.Show("Введите пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ++errorCount;
+                errorLog += errorCount + ". Введите пароль\n";
+                //MessageBox.Show("Введите пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            if (!metroTextBox1.Text.Contains('@'))
+            if (errorCount != 0)
             {
-                error.SetError(metroTextBox1, "Ошибка");
-                MessageBox.Show("Неправильно введён Email-адрес", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            if (metroComboBox2.Text == "")
-            {
-                error.SetError(metroComboBox2, "Ошибка");
-                MessageBox.Show("Не выбрана роль пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            if (metroTextBox3.Text == "")
-            {
-                error.SetError(metroTextBox3, "Ошибка");
-                MessageBox.Show("Не введено Имя пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            if (metroTextBox2.Text == "")
-            {
-                error.SetError(metroTextBox2, "Ошибка");
-                MessageBox.Show("Не введена Фамилия пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorLog, "Произошла ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void metroComboBox2_TextUpdate(object sender, EventArgs e)
+        private void metroComboBox2_TextChanged(object sender, EventArgs e)
         {
-            error.Clear();
+            error.SetError(metroComboBox2, String.Empty);
         }
     }
 }
