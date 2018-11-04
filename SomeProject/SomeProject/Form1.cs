@@ -56,5 +56,12 @@ namespace SomeProject
             this.Hide();
             runOneLove.Visible = true;
         }
+
+        private void metroTile7_Click(object sender, EventArgs e)
+        {
+            BMIcalc calculatorForm = new BMIcalc();
+            calculatorForm.Show();
+            this.Hide();
+        }
     }
 }

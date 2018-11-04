@@ -135,6 +135,7 @@ namespace SomeProject
                 errorLog += errorCount + ". Введите пароль\n";
                 //MessageBox.Show("Введите пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             if (errorCount != 0)
             {
                 MessageBox.Show(errorLog, "Произошла ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);

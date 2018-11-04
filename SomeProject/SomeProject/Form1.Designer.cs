@@ -33,11 +33,12 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
+            this.metroTile7 = new MetroFramework.Controls.MetroTile();
+            this.metroTile6 = new MetroFramework.Controls.MetroTile();
+            this.metroTile5 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile5 = new MetroFramework.Controls.MetroTile();
-            this.metroTile6 = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -59,7 +60,7 @@
             // metroTile4
             // 
             this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(732, 397);
+            this.metroTile4.Location = new System.Drawing.Point(730, 397);
             this.metroTile4.Name = "metroTile4";
             this.metroTile4.Size = new System.Drawing.Size(85, 41);
             this.metroTile4.Style = MetroFramework.MetroColorStyle.Blue;
@@ -69,73 +70,22 @@
             this.metroTile4.UseSelectable = true;
             this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
             // 
-            // metroTile1
+            // metroTile7
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(228, 126);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(450, 67);
-            this.metroTile1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile1.TabIndex = 9;
-            this.metroTile1.Text = "Я хочу стать бегуном";
-            this.metroTile1.TileCount = 1;
-            this.metroTile1.TileImage = global::SomeProject.Properties.Resources.icons8_упражнение_26;
-            this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.UseStyleColors = true;
-            this.metroTile1.UseTileImage = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
-            // 
-            // metroTile3
-            // 
-            this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(228, 272);
-            this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(450, 67);
-            this.metroTile3.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile3.TabIndex = 11;
-            this.metroTile3.Text = "Я хочу узнать больше о событии";
-            this.metroTile3.TileCount = 3;
-            this.metroTile3.TileImage = global::SomeProject.Properties.Resources.icons8_о_нас_26;
-            this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile3.UseSelectable = true;
-            this.metroTile3.UseTileImage = true;
-            // 
-            // metroTile2
-            // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(228, 199);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(450, 67);
-            this.metroTile2.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile2.TabIndex = 10;
-            this.metroTile2.Text = "Я хочу стать спонсором бегуна";
-            this.metroTile2.TileCount = 2;
-            this.metroTile2.TileImage = global::SomeProject.Properties.Resources.icons8_краудфандинг_24;
-            this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile2.UseSelectable = true;
-            this.metroTile2.UseTileImage = true;
-            // 
-            // metroTile5
-            // 
-            this.metroTile5.ActiveControl = null;
-            this.metroTile5.Location = new System.Drawing.Point(20, 356);
-            this.metroTile5.Name = "metroTile5";
-            this.metroTile5.Size = new System.Drawing.Size(119, 82);
-            this.metroTile5.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile5.TabIndex = 13;
-            this.metroTile5.Text = "Я Денис";
-            this.metroTile5.TileCount = 69;
-            this.metroTile5.TileImage = global::SomeProject.Properties.Resources.icons8_упражнение_26;
-            this.metroTile5.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile5.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile5.UseSelectable = true;
-            this.metroTile5.UseStyleColors = true;
-            this.metroTile5.UseTileImage = true;
-            this.metroTile5.Click += new System.EventHandler(this.metroTile5_Click);
+            this.metroTile7.ActiveControl = null;
+            this.metroTile7.Location = new System.Drawing.Point(210, 317);
+            this.metroTile7.Name = "metroTile7";
+            this.metroTile7.Size = new System.Drawing.Size(450, 67);
+            this.metroTile7.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile7.TabIndex = 14;
+            this.metroTile7.Text = "BMI-калькулятор";
+            this.metroTile7.TileCount = 4;
+            this.metroTile7.TileImage = global::SomeProject.Properties.Resources.bmiCalc;
+            this.metroTile7.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile7.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile7.UseSelectable = true;
+            this.metroTile7.UseTileImage = true;
+            this.metroTile7.Click += new System.EventHandler(this.metroTile7_Click);
             // 
             // metroTile6
             // 
@@ -155,12 +105,81 @@
             this.metroTile6.UseTileImage = true;
             this.metroTile6.Click += new System.EventHandler(this.metroTile6_Click);
             // 
+            // metroTile5
+            // 
+            this.metroTile5.ActiveControl = null;
+            this.metroTile5.Location = new System.Drawing.Point(20, 356);
+            this.metroTile5.Name = "metroTile5";
+            this.metroTile5.Size = new System.Drawing.Size(119, 82);
+            this.metroTile5.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile5.TabIndex = 13;
+            this.metroTile5.Text = "Я Денис";
+            this.metroTile5.TileCount = 69;
+            this.metroTile5.TileImage = global::SomeProject.Properties.Resources.icons8_упражнение_26;
+            this.metroTile5.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile5.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile5.UseSelectable = true;
+            this.metroTile5.UseStyleColors = true;
+            this.metroTile5.UseTileImage = true;
+            this.metroTile5.Click += new System.EventHandler(this.metroTile5_Click);
+            // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Location = new System.Drawing.Point(210, 98);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(450, 67);
+            this.metroTile1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile1.TabIndex = 9;
+            this.metroTile1.Text = "Я хочу стать бегуном";
+            this.metroTile1.TileCount = 1;
+            this.metroTile1.TileImage = global::SomeProject.Properties.Resources.icons8_упражнение_26;
+            this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile1.UseSelectable = true;
+            this.metroTile1.UseStyleColors = true;
+            this.metroTile1.UseTileImage = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
+            // metroTile3
+            // 
+            this.metroTile3.ActiveControl = null;
+            this.metroTile3.Location = new System.Drawing.Point(210, 244);
+            this.metroTile3.Name = "metroTile3";
+            this.metroTile3.Size = new System.Drawing.Size(450, 67);
+            this.metroTile3.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile3.TabIndex = 11;
+            this.metroTile3.Text = "Я хочу узнать больше о событии";
+            this.metroTile3.TileCount = 3;
+            this.metroTile3.TileImage = global::SomeProject.Properties.Resources.icons8_о_нас_26;
+            this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile3.UseSelectable = true;
+            this.metroTile3.UseTileImage = true;
+            // 
+            // metroTile2
+            // 
+            this.metroTile2.ActiveControl = null;
+            this.metroTile2.Location = new System.Drawing.Point(210, 171);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.Size = new System.Drawing.Size(450, 67);
+            this.metroTile2.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile2.TabIndex = 10;
+            this.metroTile2.Text = "Я хочу стать спонсором бегуна";
+            this.metroTile2.TileCount = 2;
+            this.metroTile2.TileImage = global::SomeProject.Properties.Resources.icons8_краудфандинг_24;
+            this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile2.UseSelectable = true;
+            this.metroTile2.UseTileImage = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.Controls.Add(this.metroTile7);
             this.Controls.Add(this.metroTile6);
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroTile4);
@@ -188,6 +207,7 @@
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile5;
         private MetroFramework.Controls.MetroTile metroTile6;
+        private MetroFramework.Controls.MetroTile metroTile7;
     }
 }
 
