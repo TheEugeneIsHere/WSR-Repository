@@ -47,7 +47,16 @@ namespace SomeProject
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            // Переход на другую форму
+            admin_UsersAdd userAddForm = new admin_UsersAdd();
+            userAddForm.Show();
+            this.Close();
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            admin_UsersEdit UsersEditForm = new admin_UsersEdit();
+            UsersEditForm.Show();
+            this.Close();
         }
     }
 }

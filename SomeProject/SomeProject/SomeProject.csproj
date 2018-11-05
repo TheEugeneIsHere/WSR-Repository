@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>project_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -119,6 +118,12 @@
     <Compile Include="ask.Designer.cs">
       <DependentUpon>ask.cs</DependentUpon>
     </Compile>
+    <Compile Include="BMIcalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BMIcalc.Designer.cs">
+      <DependentUpon>BMIcalc.cs</DependentUpon>
+    </Compile>
     <Compile Include="CoordinatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +144,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +188,9 @@
     <EmbeddedResource Include="ask.resx">
       <DependentUpon>ask.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BMIcalc.resx">
+      <DependentUpon>BMIcalc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,14 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,7 +259,11 @@
     <None Include="Resources\Wikivoyage-logo.svg.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="project_icon.ico" />
     <Content Include="Resources\aBrandNewIcon.ico" />
+    <None Include="Resources\woman.png" />
+    <None Include="Resources\man.png" />
+    <None Include="Resources\bmiCalc.png" />
     <None Include="Resources\refresh_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
