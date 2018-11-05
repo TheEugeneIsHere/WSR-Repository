@@ -52,9 +52,9 @@ namespace SomeProject
 
         private void metroTile6_Click(object sender, EventArgs e)
         {
-            RunnerForm runOneLove = new RunnerForm();
+            RunnerForm run = new RunnerForm();
+            run.Show();
             this.Hide();
-            runOneLove.Visible = true;
         }
     }
 }
