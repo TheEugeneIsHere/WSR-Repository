@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_ClarityAdd : MetroFramework.Forms.MetroForm
+    public partial class admin_CharityAdd : MetroFramework.Forms.MetroForm
     {
-        public admin_ClarityAdd()
+        public admin_CharityAdd()
         {
             InitializeComponent();
             timer1.Tick += timer1_Tick;
@@ -30,7 +30,7 @@ namespace SomeProject
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            admin_Clarity clarityForm = new admin_Clarity();
+            admin_Charity clarityForm = new admin_Charity();
             clarityForm.Show();
             this.Close();
         }
@@ -75,7 +75,7 @@ namespace SomeProject
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            admin_Clarity adminMenu_Clarity = new admin_Clarity();
+            admin_Charity adminMenu_Clarity = new admin_Charity();
             adminMenu_Clarity.Show();
             this.Close();
         }
