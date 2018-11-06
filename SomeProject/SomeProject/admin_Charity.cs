@@ -56,11 +56,11 @@ namespace SomeProject
                 //SqlDataReader reader = command.ExecuteReader(); // Объект читающий данные из таблицы БД
 
                 SqlDataAdapter ad = new SqlDataAdapter("Select CharityLogo, CharityName, CharityDescription from Charity", connection);
-                ad.Fill(wSRDataSet, "Charity");
+                ad.Fill(wSRDataSet1, "Charity");
                 // var logos = new DataGridViewImageColumn();
                 // logos.Name = "Логотип";
                 // wSRDataSet.Charity.Columns.Add(logos);
-                metroGrid1.DataSource = wSRDataSet.Tables[0];
+                metroGrid1.DataSource = wSRDataSet1.Tables[0];
                 
                 //List<string[]> data = new List<string[]>();
                 //while (reader.Read())

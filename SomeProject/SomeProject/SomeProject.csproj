@@ -43,7 +43,7 @@
   <PropertyGroup />
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -184,6 +184,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WSRDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSRDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +262,17 @@
     </None>
     <None Include="WSRDataSet.xss">
       <DependentUpon>WSRDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSet1.xsc">
+      <DependentUpon>WSRDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WSRDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSRDataSet1.xss">
+      <DependentUpon>WSRDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
