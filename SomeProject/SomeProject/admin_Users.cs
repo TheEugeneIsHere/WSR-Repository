@@ -13,7 +13,7 @@ namespace SomeProject
 {
     public partial class admin_Users : MetroFramework.Forms.MetroForm
     {
-        public static string query = "SELECT FirstName, LastName, Email, RoleID FROM Users";
+        private static string query = "SELECT FirstName, LastName, Email, RoleID FROM Users";
         public admin_Users()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace SomeProject
             this.Close();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
         {
             wSRDataSetUsers.Clear();
             UsersLoad(query);
@@ -79,9 +79,6 @@ namespace SomeProject
         {
             wSRDataSetUsers.Clear();
             string Role = "";
-            //if (metroComboBox2.Text == "Администратор") { Role = "A"; }
-            //else if (metroComboBox2.Text == "Бегун") { Role = "R"; }
-            //else Role = "C";
             switch (metroComboBox2.Text)
             {
                 case "Администратор":
@@ -98,7 +95,7 @@ namespace SomeProject
                     break;
             }
 
-            if (Role=="")
+            if (Role == "")
             {
                 query = "SELECT FirstName,LastName,Email, RoleID FROM Users";
             }
