@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,16 @@ namespace SomeProject
 {
     public partial class admin_Users : MetroFramework.Forms.MetroForm
     {
+        public static string query = "SELECT FirstName, LastName, Email, RoleID FROM Users";
         public admin_Users()
         {
             InitializeComponent();
+            UsersLoad(query);
             timer1.Tick += timer1_Tick;
             timer1.Interval = 1000;
             timer1.Enabled = true;
             timer1.Start();
             Random rnd = new Random();
-            metroLabel3.Text = Convert.ToString(rnd.Next(100, 999)); // Ну это чисто по-приколу
             // Нада не забыть заменить её на подругзку из БД. Хотя я и так не забуду
             // Но всё равно лучше оставить здесь огромные зеленые буковки
         }
@@ -41,8 +43,8 @@ namespace SomeProject
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            // Здесь что-то будет происходить, как можно догадаться.
-            // Скорее всего обновление Грида, ибо кнопка по сути для поиска/обновления
+            wSRDataSetUsers.Clear();
+            UsersLoad(query);
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -57,6 +59,52 @@ namespace SomeProject
             admin_UsersEdit UsersEditForm = new admin_UsersEdit();
             UsersEditForm.Show();
             this.Close();
+        }
+
+        private void UsersLoad(string query)
+        {
+            using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
+                "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
+                "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                connection.Open();
+                SqlDataAdapter ad = new SqlDataAdapter(query, connection);
+                ad.Fill(wSRDataSetUsers, "Users");
+                metroGrid1.DataSource = wSRDataSetUsers.Tables[0];
+                connection.Close();
+            }
+        }
+
+        private void metroComboBox2_TextChanged(object sender, EventArgs e)
+        {
+            wSRDataSetUsers.Clear();
+            string Role = "";
+            //if (metroComboBox2.Text == "Администратор") { Role = "A"; }
+            //else if (metroComboBox2.Text == "Бегун") { Role = "R"; }
+            //else Role = "C";
+            switch (metroComboBox2.Text)
+            {
+                case "Администратор":
+                    Role = "A";
+                    break;
+                case "Бегун":
+                    Role = "R";
+                    break;
+                case "Координатор":
+                    Role = "C";
+                    break;
+                default:
+                    Role = "";
+                    break;
+            }
+
+            if (Role=="")
+            {
+                query = "SELECT FirstName,LastName,Email, RoleID FROM Users";
+            }
+            else
+                query = "SELECT FirstName,LastName,Email, RoleID FROM Users WHERE RoleID='" + Role + "'";
+            UsersLoad(query);
         }
     }
 }

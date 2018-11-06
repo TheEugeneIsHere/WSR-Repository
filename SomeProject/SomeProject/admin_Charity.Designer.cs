@@ -35,20 +35,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_Charity));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.charityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wSRDataSetCharity = new SomeProject.WSRDataSetCharity();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.charityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wSRDataSet1 = new SomeProject.WSRDataSet1();
-            this.charityTableAdapter = new SomeProject.WSRDataSet1TableAdapters.CharityTableAdapter();
-            this.CharityLogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CharityName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CharityDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.charityTableAdapter = new SomeProject.WSRDataSetCharityTableAdapters.CharityTableAdapter();
+            this.charityLogoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.charityNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.charityDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -83,9 +83,9 @@
             this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CharityLogo,
-            this.CharityName,
-            this.CharityDescription});
+            this.charityLogoDataGridViewTextBoxColumn,
+            this.charityNameDataGridViewTextBoxColumn,
+            this.charityDescriptionDataGridViewTextBoxColumn});
             this.metroGrid1.DataSource = this.charityBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -114,6 +114,16 @@
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.Size = new System.Drawing.Size(768, 319);
             this.metroGrid1.TabIndex = 16;
+            // 
+            // charityBindingSource
+            // 
+            this.charityBindingSource.DataMember = "Charity";
+            this.charityBindingSource.DataSource = this.wSRDataSetCharity;
+            // 
+            // wSRDataSetCharity
+            // 
+            this.wSRDataSetCharity.DataSetName = "WSRDataSetCharity";
+            this.wSRDataSetCharity.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroLabel3
             // 
@@ -153,41 +163,30 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // charityBindingSource
-            // 
-            this.charityBindingSource.DataMember = "Charity";
-            this.charityBindingSource.DataSource = this.wSRDataSet1;
-            // 
-            // wSRDataSet1
-            // 
-            this.wSRDataSet1.DataSetName = "WSRDataSet1";
-            this.wSRDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // charityTableAdapter
             // 
             this.charityTableAdapter.ClearBeforeFill = true;
             // 
-            // CharityLogo
+            // charityLogoDataGridViewTextBoxColumn
             // 
-            this.CharityLogo.DataPropertyName = "CharityLogo";
-            this.CharityLogo.HeaderText = "CharityLogo";
-            this.CharityLogo.Name = "CharityLogo";
-            this.CharityLogo.ReadOnly = true;
-            this.CharityLogo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.charityLogoDataGridViewTextBoxColumn.DataPropertyName = "CharityLogo";
+            this.charityLogoDataGridViewTextBoxColumn.HeaderText = "CharityLogo";
+            this.charityLogoDataGridViewTextBoxColumn.Name = "charityLogoDataGridViewTextBoxColumn";
+            this.charityLogoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // CharityName
+            // charityNameDataGridViewTextBoxColumn
             // 
-            this.CharityName.DataPropertyName = "CharityName";
-            this.CharityName.HeaderText = "CharityName";
-            this.CharityName.Name = "CharityName";
-            this.CharityName.ReadOnly = true;
+            this.charityNameDataGridViewTextBoxColumn.DataPropertyName = "CharityName";
+            this.charityNameDataGridViewTextBoxColumn.HeaderText = "CharityName";
+            this.charityNameDataGridViewTextBoxColumn.Name = "charityNameDataGridViewTextBoxColumn";
+            this.charityNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // CharityDescription
+            // charityDescriptionDataGridViewTextBoxColumn
             // 
-            this.CharityDescription.DataPropertyName = "CharityDescription";
-            this.CharityDescription.HeaderText = "CharityDescription";
-            this.CharityDescription.Name = "CharityDescription";
-            this.CharityDescription.ReadOnly = true;
+            this.charityDescriptionDataGridViewTextBoxColumn.DataPropertyName = "CharityDescription";
+            this.charityDescriptionDataGridViewTextBoxColumn.HeaderText = "CharityDescription";
+            this.charityDescriptionDataGridViewTextBoxColumn.Name = "charityDescriptionDataGridViewTextBoxColumn";
+            this.charityDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // admin_Charity
             // 
@@ -204,9 +203,9 @@
             this.Resizable = false;
             this.Text = "Administration Menu";
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,11 +219,11 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private WSRDataSet1 wSRDataSet1;
+        private WSRDataSetCharity wSRDataSetCharity;
         private System.Windows.Forms.BindingSource charityBindingSource;
-        private WSRDataSet1TableAdapters.CharityTableAdapter charityTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CharityLogo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CharityName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CharityDescription;
+        private WSRDataSetCharityTableAdapters.CharityTableAdapter charityTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn charityLogoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn charityNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn charityDescriptionDataGridViewTextBoxColumn;
     }
 }

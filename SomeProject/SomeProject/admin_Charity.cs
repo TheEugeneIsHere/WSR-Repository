@@ -16,7 +16,7 @@ namespace SomeProject
         public admin_Charity()
         {
             InitializeComponent();
-            ClarityLoad();
+            CharityLoad();
             timer1.Tick += timer1_Tick;
             timer1.Interval = 1000;
             timer1.Enabled = true;
@@ -44,7 +44,7 @@ namespace SomeProject
             this.Hide();
         }
 
-        private void ClarityLoad()
+        private void CharityLoad()
         {
             using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
                 "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
@@ -55,13 +55,13 @@ namespace SomeProject
                 //SqlCommand command = new SqlCommand(query, connection); // Создан объект для выполнения запроса к БД
                 //SqlDataReader reader = command.ExecuteReader(); // Объект читающий данные из таблицы БД
 
-                SqlDataAdapter ad = new SqlDataAdapter("Select CharityLogo, CharityName, CharityDescription from Charity", connection);
-                ad.Fill(wSRDataSet1, "Charity");
+                SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityLogo, CharityName, CharityDescription FROM Charity", connection);
+                ad.Fill(wSRDataSetCharity, "Charity");
                 // var logos = new DataGridViewImageColumn();
                 // logos.Name = "Логотип";
                 // wSRDataSet.Charity.Columns.Add(logos);
-                metroGrid1.DataSource = wSRDataSet1.Tables[0];
-                
+                metroGrid1.DataSource = wSRDataSetCharity.Tables[0];
+                connection.Close();
                 //List<string[]> data = new List<string[]>();
                 //while (reader.Read())
                 //{
@@ -74,7 +74,6 @@ namespace SomeProject
                 //}
                 //// Каким-то макаром нужно закинуть сюда ещё логотипы
                 //reader.Close();
-                //connection.Close();
 
                 //foreach (string[] s in data)
                 //    wSRDataSet.Charity.Rows.Add(s);

@@ -189,6 +189,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WSRDataSetCharity1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSRDataSetCharity1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WSRDataSetUsers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +283,28 @@
     </None>
     <None Include="WSRDataSet1.xss">
       <DependentUpon>WSRDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetCharity1.xsc">
+      <DependentUpon>WSRDataSetCharity1.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetCharity1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WSRDataSetCharity1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSRDataSetCharity1.xss">
+      <DependentUpon>WSRDataSetCharity1.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetUsers.xsc">
+      <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetUsers.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WSRDataSetUsers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSRDataSetUsers.xss">
+      <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
