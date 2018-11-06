@@ -34,5 +34,26 @@ namespace SomeProject
             Login log = new Login();
             log.Show();
         }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            regmar reg = new regmar();
+            this.Hide();
+            reg.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login log = new Login();
+            log.Visible = true;
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            moirez moi = new moirez();
+            this.Hide();
+            moi.ShowDialog();
+        }
     }
 }

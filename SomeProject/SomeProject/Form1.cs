@@ -25,10 +25,9 @@ namespace SomeProject
         Form1 f1;
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            f1 = new Form1();
-
+          
             ask ask = new ask();
-            f1.Visible = false;
+            this.Visible = false;
             ask.ShowDialog();
         }
 

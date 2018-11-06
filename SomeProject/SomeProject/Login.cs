@@ -58,7 +58,7 @@ namespace SomeProject
                 "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 connection.Open();
-                var command = new SqlCommand("Select RoleId from users where email=@email and password=@password", connection);
+                var command = new SqlCommand("SELECT RoleId FROM Users WHERE email=@email and password=@password", connection);
                 command.Parameters.AddWithValue("@email", login);
                 command.Parameters.AddWithValue("@password", password);
                 using (var dataReader = command.ExecuteReader())
