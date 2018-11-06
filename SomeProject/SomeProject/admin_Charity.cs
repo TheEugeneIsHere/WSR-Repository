@@ -51,33 +51,28 @@ namespace SomeProject
                 "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 connection.Open();
-                //string query = "SELECT CharityLogo, CharityName, CharityDescription FROM Charity"; // Строка запроса
-                //SqlCommand command = new SqlCommand(query, connection); // Создан объект для выполнения запроса к БД
-                //SqlDataReader reader = command.ExecuteReader(); // Объект читающий данные из таблицы БД
+                string query = "SELECT CharityId, CharityName, CharityDescription FROM Charity"; // Строка запроса
+                SqlCommand command = new SqlCommand(query, connection); // Создан объект для выполнения запроса к БД
+                SqlDataReader reader = command.ExecuteReader(); // Объект читающий данные из таблицы БД
+               // var logos = new DataGridViewImageColumn();
+               // logos.Name = "Логотип";
+               // wSRDataSet.Charity.Columns.Add(logos);
 
-                SqlDataAdapter ad = new SqlDataAdapter("Select CharityLogo, CharityName, CharityDescription from Charity", connection);
-                ad.Fill(wSRDataSet, "Charity");
-                // var logos = new DataGridViewImageColumn();
-                // logos.Name = "Логотип";
-                // wSRDataSet.Charity.Columns.Add(logos);
-                metroGrid1.DataSource = wSRDataSet.Tables[0];
-                
-                //List<string[]> data = new List<string[]>();
-                //while (reader.Read())
-                //{
-                //    data.Add(new string[3]);
+                List<string[]> data = new List<string[]>();
+                while (reader.Read())
+                {
+                    data.Add(new string[3]);
 
+                    data[data.Count - 1][0] = reader[0].ToString();
+                    data[data.Count - 1][1] = reader[1].ToString();
+                    data[data.Count - 1][2] = reader[2].ToString();
+                }
+                // Каким-то макаром нужно закинуть сюда ещё логотипы
+                reader.Close();
+                connection.Close();
 
-                //    data[data.Count - 1][0] = reader[0].ToString();
-                //    data[data.Count - 1][1] = reader[1].ToString();
-                //    data[data.Count - 1][2] = reader[2].ToString();
-                //}
-                //// Каким-то макаром нужно закинуть сюда ещё логотипы
-                //reader.Close();
-                //connection.Close();
-
-                //foreach (string[] s in data)
-                //    wSRDataSet.Charity.Rows.Add(s);
+                foreach (string[] s in data)
+                    wSRDataSet.Charity.Rows.Add(s);
             }
         }
     }
