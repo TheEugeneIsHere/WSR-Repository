@@ -170,6 +170,7 @@
             this.metroRadioButton1.TabStop = true;
             this.metroRadioButton1.Text = "Вариант А($0): Номер бегуна+\r\nRFID браслет.";
             this.metroRadioButton1.UseSelectable = true;
+            this.metroRadioButton1.CheckedChanged += new System.EventHandler(this.metroRadioButton1_CheckedChanged);
             // 
             // metroRadioButton2
             // 
@@ -180,6 +181,7 @@
             this.metroRadioButton2.TabIndex = 13;
             this.metroRadioButton2.Text = "Вариант В($20): вариант А+\r\nбейсболка+бутылка воды.";
             this.metroRadioButton2.UseSelectable = true;
+            this.metroRadioButton2.CheckedChanged += new System.EventHandler(this.metroRadioButton2_CheckedChanged);
             // 
             // metroRadioButton3
             // 
@@ -190,6 +192,7 @@
             this.metroRadioButton3.TabIndex = 14;
             this.metroRadioButton3.Text = "Вариант С($45): вариант В+\r\nфутболка+сувенирный буклет.";
             this.metroRadioButton3.UseSelectable = true;
+            this.metroRadioButton3.CheckedChanged += new System.EventHandler(this.metroRadioButton3_CheckedChanged);
             // 
             // metroLabel8
             // 
@@ -244,6 +247,7 @@
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // bunifuFlatButton2
             // 
@@ -290,6 +294,7 @@
             this.bunifuCheckbox1.Name = "bunifuCheckbox1";
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 17;
+            this.bunifuCheckbox1.OnChange += new System.EventHandler(this.bunifuCheckbox1_OnChange);
             // 
             // bunifuCheckbox2
             // 
@@ -302,6 +307,7 @@
             this.bunifuCheckbox2.Name = "bunifuCheckbox2";
             this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox2.TabIndex = 17;
+            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
             // bunifuCheckbox3
             // 
@@ -314,13 +320,14 @@
             this.bunifuCheckbox3.Name = "bunifuCheckbox3";
             this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox3.TabIndex = 17;
+            this.bunifuCheckbox3.OnChange += new System.EventHandler(this.bunifuCheckbox3_OnChange);
             // 
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.Location = new System.Drawing.Point(127, 190);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(194, 19);
+            this.metroLabel10.Size = new System.Drawing.Size(192, 19);
             this.metroLabel10.TabIndex = 18;
             this.metroLabel10.Text = "42km Полный марафон ($145)";
             // 
@@ -329,7 +336,7 @@
             this.metroLabel11.AutoSize = true;
             this.metroLabel11.Location = new System.Drawing.Point(127, 217);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(164, 19);
+            this.metroLabel11.Size = new System.Drawing.Size(162, 19);
             this.metroLabel11.TabIndex = 18;
             this.metroLabel11.Text = "21km Полумарафон ($75)";
             // 
