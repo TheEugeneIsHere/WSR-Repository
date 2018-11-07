@@ -103,5 +103,33 @@ namespace SomeProject
                 query = "SELECT FirstName,LastName,Email, RoleID FROM Users WHERE RoleID='" + Role + "'";
             UsersLoad(query);
         }
+
+        private void metroComboBox1_TextChanged(object sender, EventArgs e)
+        {
+            string sort = string.Empty;
+            switch (metroComboBox1.Text)
+            {
+                case "Фамилии":
+                    sort = "LastName";
+                    break;
+                case "Имени":
+                    sort = "FirstName";
+                    break;
+                default:
+                    sort = "RoleId";
+                    break;
+            }
+
+            wSRDataSetUsers.Clear();
+
+            if (sort == "")
+            {
+                query = "SELECT FirstName, LastName, Email, RoleId FROM Users";
+            }
+            else
+                query = "SELECT FirstName, LastName, Email, RoleId FROM Users ORDER BY '" + sort + "';";
+
+            UsersLoad(query);
+        }
     }
 }

@@ -102,11 +102,13 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.ForeColor = System.Drawing.Color.Red;
             this.metroLabel3.Location = new System.Drawing.Point(471, 99);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(42, 25);
+            this.metroLabel3.Size = new System.Drawing.Size(116, 25);
             this.metroLabel3.TabIndex = 31;
-            this.metroLabel3.Text = "213";
+            this.metroLabel3.Text = "Сделай меня";
+            this.metroLabel3.UseCustomForeColor = true;
             // 
             // metroGrid1
             // 

@@ -56,6 +56,7 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.usersTableAdapter = new SomeProject.WSRDataSetUsersTableAdapters.UsersTableAdapter();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetUsers)).BeginInit();
@@ -239,14 +240,14 @@
             this.metroComboBox1.Items.AddRange(new object[] {
             "Имени",
             "Фамилии",
-            "Полу",
-            "Стране"});
+            "Роли"});
             this.metroComboBox1.Location = new System.Drawing.Point(165, 415);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.PromptText = "Имени";
             this.metroComboBox1.Size = new System.Drawing.Size(134, 29);
             this.metroComboBox1.TabIndex = 43;
             this.metroComboBox1.UseSelectable = true;
+            this.metroComboBox1.TextChanged += new System.EventHandler(this.metroComboBox1_TextChanged);
             // 
             // metroLabel6
             // 
@@ -349,11 +350,27 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // metroLabel5
+            // 
+            this.metroLabel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel5.ForeColor = System.Drawing.Color.Red;
+            this.metroLabel5.Location = new System.Drawing.Point(346, 16);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(503, 25);
+            this.metroLabel5.TabIndex = 49;
+            this.metroLabel5.Text = "Необходима настройка сортировок для работы вместе";
+            this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel5.UseCustomForeColor = true;
+            // 
             // admin_Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.pictureBox3);
@@ -409,5 +426,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleIdDataGridViewTextBoxColumn;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
     }
 }
