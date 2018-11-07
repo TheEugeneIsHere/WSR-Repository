@@ -55,5 +55,19 @@ namespace SomeProject
             this.Hide();
             moi.ShowDialog();
         }
+
+        private void metroTile5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            sponsor spons = new sponsor();
+            spons.ShowDialog();
+        }
+
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            editrunnerprofile edit = new editrunnerprofile();
+            edit.ShowDialog();
+        }
     }
 }
