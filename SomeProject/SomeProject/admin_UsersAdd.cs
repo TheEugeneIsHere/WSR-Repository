@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace SomeProject
 {
     public partial class admin_UsersAdd : MetroFramework.Forms.MetroForm
     {
+        private static string query, userRole = string.Empty; //
         public admin_UsersAdd()
         {
             InitializeComponent();
@@ -117,6 +119,15 @@ namespace SomeProject
                 errorLog += errorCount + ". Отсутствует Роль пользователя\n";
                 //MessageBox.Show("Не выбрана роль пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                switch (metroComboBox2.Text)
+                {
+                    case "Администратор": userRole = "A"; break;
+                    case "Бегун": userRole = "R"; break;
+                    case "Координатор": userRole = "C"; break;
+                }
+            }
 
             if (metroTextBox4.Text != metroTextBox5.Text)
             {
@@ -140,11 +151,42 @@ namespace SomeProject
             {
                 MessageBox.Show(errorLog, "Произошла ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                query = "INSERT [Users] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES" +
+                        "(N'" + metroTextBox1.Text + "', N'" + metroTextBox4.Text + "', N'" + metroTextBox3.Text +
+                        "', N'" + metroTextBox2.Text + "', N'" + userRole + "');";
+                UsersAdd(query);
+                
+            }
+
         }
 
         private void metroComboBox2_TextChanged(object sender, EventArgs e)
         {
             error.SetError(metroComboBox2, String.Empty);
+        }
+
+        private void UsersAdd(string query)
+        {
+            using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
+                "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
+                "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand register = new SqlCommand(query, connection);
+                    register.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    connection.Close();
+                }
+        }
         }
     }
 }

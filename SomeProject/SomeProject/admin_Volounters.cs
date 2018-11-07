@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,17 +13,16 @@ namespace SomeProject
 {
     public partial class admin_Volounters : MetroFramework.Forms.MetroForm
     {
+        private static string query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer";
         public admin_Volounters()
         {
             InitializeComponent();
+            VolountersLoad(query);
             timer1.Tick += timer1_Tick;
             timer1.Interval = 1000;
             timer1.Enabled = true;
             timer1.Start();
-            Random rnd = new Random();
-            metroLabel3.Text = Convert.ToString(rnd.Next(100, 999)); // Ну это чисто по-приколу
-            // Нада не забыть заменить её на подругзку из БД. Хотя я и так не забуду
-            // Но всё равно лучше оставить здесь огромные зеленые буковки
+            metroLabel3.Text = "Сделай меня";
         }
         DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
 
@@ -38,17 +38,66 @@ namespace SomeProject
             AdminForm.Show();
             this.Close();
         }
-        private void metroComboBox1_TextUpdate(object sender, EventArgs e)
-        {
-            // Когда это произошло, обновить дата грид.
-            // Если невозможно присобачить кнопку обновления как в оригинале
-        }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            admin_VolountersAdd VolountersAddForm  = new admin_VolountersAdd();
+            admin_VolountersAdd VolountersAddForm = new admin_VolountersAdd();
             VolountersAddForm.Show();
             this.Close();
+        }
+
+        private void VolountersLoad(string query)
+        {
+            using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
+                "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
+                "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlDataAdapter ad = new SqlDataAdapter(query, connection);
+                    ad.Fill(wSRDataSetVolounters, "Volunteer");
+                    metroGrid1.DataSource = wSRDataSetVolounters.Tables[0];
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    connection.Close();
+                }
+            }
+
+        }
+
+        private void metroComboBox1_TextChanged(object sender, EventArgs e)
+        {
+            string sort = string.Empty;
+            switch (metroComboBox1.Text)
+            {
+                case "Фамилии":
+                    sort = "LastName";
+                    break;
+                case "Полу":
+                    sort = "Gender";
+                    break;
+                case "Стране":
+                    sort = "CountryCode";
+                    break;
+                default:
+                    sort = "FirstName";
+                    break;
+            }
+
+            wSRDataSetVolounters.Clear();
+
+            if (sort == "")
+            {
+                query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer";
+            }
+            else
+                query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer ORDER BY '" + sort + "';";
+
+            VolountersLoad(query);
         }
     }
 }

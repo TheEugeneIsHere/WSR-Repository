@@ -202,6 +202,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WSRDataSetVolounters.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSRDataSetVolounters.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +313,17 @@
     </None>
     <None Include="WSRDataSetUsers.xss">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetVolounters.xsc">
+      <DependentUpon>WSRDataSetVolounters.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetVolounters.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WSRDataSetVolounters.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSRDataSetVolounters.xss">
+      <DependentUpon>WSRDataSetVolounters.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
