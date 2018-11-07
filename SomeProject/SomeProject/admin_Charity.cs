@@ -15,6 +15,7 @@ namespace SomeProject
     {
         public admin_Charity()
         {
+            // Хуй и анальная вагина
             InitializeComponent();
             CharityLoad();
             timer1.Tick += timer1_Tick;
