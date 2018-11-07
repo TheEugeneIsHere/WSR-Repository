@@ -72,7 +72,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(84, 168);
+            this.metroLabel2.Location = new System.Drawing.Point(81, 168);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(99, 19);
             this.metroLabel2.TabIndex = 2;
@@ -143,7 +143,7 @@
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[0];
             this.metroTextBox2.Location = new System.Drawing.Point(186, 360);
-            this.metroTextBox2.MaxLength = 32767;
+            this.metroTextBox2.MaxLength = 4;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
             this.metroTextBox2.PromptText = "$500";
@@ -158,6 +158,8 @@
             this.metroTextBox2.WaterMark = "$500";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox2.TextChanged += new System.EventHandler(this.metroTextBox2_TextChanged);
+            this.metroTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox2_KeyPress);
             // 
             // metroRadioButton1
             // 
@@ -207,6 +209,16 @@
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "Visa",
+            "Mastercad",
+            "Карта-Лента",
+            "Купончик из газеты",
+            "Транспортная карта Стрелка",
+            "Транспондер",
+            "Удостоверение военнослужащего",
+            "Свидетельство об аборте",
+            "Купон на шаурму"});
             this.metroComboBox1.Location = new System.Drawing.Point(186, 325);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.PromptText = "Фонд кошелек";
@@ -327,7 +339,7 @@
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.Location = new System.Drawing.Point(127, 190);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(192, 19);
+            this.metroLabel10.Size = new System.Drawing.Size(194, 19);
             this.metroLabel10.TabIndex = 18;
             this.metroLabel10.Text = "42km Полный марафон ($145)";
             // 
@@ -336,7 +348,7 @@
             this.metroLabel11.AutoSize = true;
             this.metroLabel11.Location = new System.Drawing.Point(127, 217);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(162, 19);
+            this.metroLabel11.Size = new System.Drawing.Size(164, 19);
             this.metroLabel11.TabIndex = 18;
             this.metroLabel11.Text = "21km Полумарафон ($75)";
             // 
@@ -357,13 +369,13 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 44);
             this.label1.TabIndex = 19;
-            this.label1.Text = "$185";
+            this.label1.Text = "0$";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 48);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 58);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

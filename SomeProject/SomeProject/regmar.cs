@@ -22,6 +22,8 @@ namespace SomeProject
         }
         DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
         int distance = 0, stoim=0,vznos = 0, variant = 0,itog=0;
+        ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
+
         private void timer1_Tick(object sender, EventArgs e)
         {
              TimeSpan timeremaining = voteTime - DateTime.Now;
@@ -43,6 +45,8 @@ namespace SomeProject
                 stoim = 145;
                 bunifuCheckbox2.Checked = false;
                 bunifuCheckbox3.Checked = false;
+                itog = vznos + stoim + variant;
+                label1.Text = itog + "$";
             }
         }
 
@@ -63,15 +67,77 @@ namespace SomeProject
                 variant = 20;
                 metroRadioButton1.Checked = false;
                 metroRadioButton3.Checked = false;
+                itog = vznos + stoim + variant;
+                label1.Text = itog + "$";
             }
+        }
+
+        private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+            if (!Char.IsDigit(e.KeyChar)&& e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+         
+        }
+
+      
+
+        private void metroTextBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (metroTextBox2.Text == string.Empty)
+            {
+                vznos = 0;
+                itog = vznos + stoim + variant;
+                label1.Text = itog + "$";
+            }
+            else
+            {
+                vznos = Convert.ToInt32(metroTextBox2.Text);
+                itog = vznos + stoim + variant;
+                label1.Text = itog + "$";
+            }
+            
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            vznos =Convert.ToInt32( metroTextBox2.Text);
-            itog = vznos + stoim + variant;
-            label1.Text = itog + "$";
-            MessageBox.Show("В теории вы зареганы, по факту система не работает...","Продам гараж");
+            int errorcount=0;
+            string errorLog = "Исправьте ошибки:\n";
+            if (metroComboBox1.Text == "")
+            {
+                error.SetError(metroComboBox1, "Ошибка");
+                errorcount++;
+                errorLog += errorcount + ". Не выбран способ оплаты\n";
+            }
+            if (metroTextBox2.Text == "")
+            {
+                error.SetError(metroTextBox2, "Ошибка");
+                errorcount++;
+                errorLog += errorcount + ". Не указан взнос\n";
+            }
+            if (bunifuCheckbox1.Checked==false  
+                  &&bunifuCheckbox2.Checked == false 
+                    && bunifuCheckbox3.Checked == false)
+            {
+                error.SetError(metroLabel2, "Ошибка");
+                errorcount++;
+                errorLog += errorcount + ". Не выбран вид марафона\n";
+            }
+            if (errorcount != 0)
+            {
+                MessageBox.Show(errorLog, "Произошла ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+
+                vznos = Convert.ToInt32(metroTextBox2.Text);
+                itog = vznos + stoim + variant;
+                label1.Text = itog + "$";
+                MessageBox.Show("В теории вы зареганы, по факту система не работает...", "Продам гараж");
+
+            }
         }
 
         private void metroRadioButton3_CheckedChanged(object sender, EventArgs e)
@@ -81,6 +147,8 @@ namespace SomeProject
                 variant = 45;
                 metroRadioButton2.Checked = false;
                 metroRadioButton1.Checked = false;
+                itog = vznos + stoim + variant;
+                label1.Text = itog + "$";
             }
         }
 
@@ -92,6 +160,8 @@ namespace SomeProject
                 stoim = 75;
                 bunifuCheckbox1.Checked = false;
                 bunifuCheckbox3.Checked = false;
+                itog = vznos + stoim + variant;
+                label1.Text = itog + "$";
             }
         }
 
@@ -103,6 +173,8 @@ namespace SomeProject
                 stoim = 20;
                 bunifuCheckbox1.Checked = false;
                 bunifuCheckbox2.Checked = false;
+                itog = vznos + stoim + variant;
+                label1.Text = itog + "$";
             }
         }
     }
