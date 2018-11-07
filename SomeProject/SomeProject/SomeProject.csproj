@@ -182,20 +182,10 @@
     <Compile Include="RunnerForm.Designer.cs">
       <DependentUpon>RunnerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="WSRDataSet.Designer.cs">
+    <Compile Include="WSRDataSetCharity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WSRDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="WSRDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WSRDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="WSRDataSetCharity1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WSRDataSetCharity1.xsd</DependentUpon>
+      <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </Compile>
     <Compile Include="WSRDataSetUsers.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -270,38 +260,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="WSRDataSet.xsc">
-      <DependentUpon>WSRDataSet.xsd</DependentUpon>
+    <None Include="WSRDataSetCharity.xsc">
+      <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSet.xsd">
+    <None Include="WSRDataSetCharity.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WSRDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>WSRDataSetCharity.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSRDataSet.xss">
-      <DependentUpon>WSRDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="WSRDataSet1.xsc">
-      <DependentUpon>WSRDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="WSRDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WSRDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="WSRDataSet1.xss">
-      <DependentUpon>WSRDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="WSRDataSetCharity1.xsc">
-      <DependentUpon>WSRDataSetCharity1.xsd</DependentUpon>
-    </None>
-    <None Include="WSRDataSetCharity1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WSRDataSetCharity1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="WSRDataSetCharity1.xss">
-      <DependentUpon>WSRDataSetCharity1.xsd</DependentUpon>
+    <None Include="WSRDataSetCharity.xss">
+      <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </None>
     <None Include="WSRDataSetUsers.xsc">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>

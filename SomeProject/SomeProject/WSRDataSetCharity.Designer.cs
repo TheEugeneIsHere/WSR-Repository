@@ -201,7 +201,7 @@ namespace SomeProject {
         private void InitClass() {
             this.DataSetName = "WSRDataSetCharity";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/WSRDataSetCharity.xsd";
+            this.Namespace = "http://tempuri.org/WSRDataSetCharity1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCharity = new CharityDataTable();
