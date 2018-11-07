@@ -51,7 +51,6 @@ namespace SomeProject
         }
         static Role GetRole(string login, string password)
         {
-            
             Role role = Role.Failed;
             using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
                 "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
