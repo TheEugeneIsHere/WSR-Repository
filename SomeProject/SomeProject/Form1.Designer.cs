@@ -39,7 +39,6 @@
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile8 = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -174,31 +173,12 @@
             this.metroTile2.UseSelectable = true;
             this.metroTile2.UseTileImage = true;
             // 
-            // metroTile8
-            // 
-            this.metroTile8.ActiveControl = null;
-            this.metroTile8.Location = new System.Drawing.Point(691, 63);
-            this.metroTile8.Name = "metroTile8";
-            this.metroTile8.Size = new System.Drawing.Size(140, 82);
-            this.metroTile8.Style = MetroFramework.MetroColorStyle.Red;
-            this.metroTile8.TabIndex = 15;
-            this.metroTile8.Text = "МАКСИМУ!!!";
-            this.metroTile8.TileCount = 69;
-            this.metroTile8.TileImage = global::SomeProject.Properties.Resources.icons8_упражнение_26;
-            this.metroTile8.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile8.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile8.UseSelectable = true;
-            this.metroTile8.UseStyleColors = true;
-            this.metroTile8.UseTileImage = true;
-            this.metroTile8.Click += new System.EventHandler(this.metroTile8_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(869, 508);
-            this.Controls.Add(this.metroTile8);
             this.Controls.Add(this.metroTile7);
             this.Controls.Add(this.metroTile6);
             this.Controls.Add(this.metroTile5);
@@ -228,7 +208,6 @@
         private MetroFramework.Controls.MetroTile metroTile5;
         private MetroFramework.Controls.MetroTile metroTile6;
         private MetroFramework.Controls.MetroTile metroTile7;
-        private MetroFramework.Controls.MetroTile metroTile8;
     }
 }
 
