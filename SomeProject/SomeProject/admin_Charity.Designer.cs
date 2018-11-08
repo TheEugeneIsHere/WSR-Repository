@@ -99,6 +99,7 @@
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.Location = new System.Drawing.Point(48, 136);
+            this.metroGrid1.MultiSelect = false;
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.ReadOnly = true;
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -169,24 +170,30 @@
             // 
             // charityLogoDataGridViewTextBoxColumn
             // 
+            this.charityLogoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.charityLogoDataGridViewTextBoxColumn.DataPropertyName = "CharityLogo";
-            this.charityLogoDataGridViewTextBoxColumn.HeaderText = "CharityLogo";
+            this.charityLogoDataGridViewTextBoxColumn.HeaderText = "Логотип организации";
             this.charityLogoDataGridViewTextBoxColumn.Name = "charityLogoDataGridViewTextBoxColumn";
             this.charityLogoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.charityLogoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // charityNameDataGridViewTextBoxColumn
             // 
+            this.charityNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.charityNameDataGridViewTextBoxColumn.DataPropertyName = "CharityName";
-            this.charityNameDataGridViewTextBoxColumn.HeaderText = "CharityName";
+            this.charityNameDataGridViewTextBoxColumn.HeaderText = "Название организации";
             this.charityNameDataGridViewTextBoxColumn.Name = "charityNameDataGridViewTextBoxColumn";
             this.charityNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.charityNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // charityDescriptionDataGridViewTextBoxColumn
             // 
+            this.charityDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.charityDescriptionDataGridViewTextBoxColumn.DataPropertyName = "CharityDescription";
-            this.charityDescriptionDataGridViewTextBoxColumn.HeaderText = "CharityDescription";
+            this.charityDescriptionDataGridViewTextBoxColumn.HeaderText = "Описание организации";
             this.charityDescriptionDataGridViewTextBoxColumn.Name = "charityDescriptionDataGridViewTextBoxColumn";
             this.charityDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.charityDescriptionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // admin_Charity
             // 
