@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace SomeProject
 {
     public partial class admin_CharityAdd : MetroFramework.Forms.MetroForm
     {
+        SqlConnection con = connection.AzureConnection();
+
         public admin_CharityAdd()
         {
             InitializeComponent();
@@ -20,12 +23,11 @@ namespace SomeProject
             timer1.Enabled = true;
             timer1.Start();
         }
-        DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = voteTime - DateTime.Now;
-            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            metroLabel4.Text = connection.timeremaining.Days + " дней " + connection.timeremaining.Hours +
+            " часов и " + connection.timeremaining.Minutes + " минут до сдачи курсового";
         }
 
         private void metroButton2_Click(object sender, EventArgs e)

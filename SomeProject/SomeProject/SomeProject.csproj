@@ -109,17 +109,17 @@
     <Compile Include="admin_UsersEdit.Designer.cs">
       <DependentUpon>admin_UsersEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_Volounters.cs">
+    <Compile Include="admin_Volunteer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_Volounters.Designer.cs">
-      <DependentUpon>admin_Volounters.cs</DependentUpon>
+    <Compile Include="admin_Volunteer.Designer.cs">
+      <DependentUpon>admin_Volunteer.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_VolountersAdd.cs">
+    <Compile Include="admin_VolunteerAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_VolountersAdd.Designer.cs">
-      <DependentUpon>admin_VolountersAdd.cs</DependentUpon>
+    <Compile Include="admin_VolunteerAdd.Designer.cs">
+      <DependentUpon>admin_VolunteerAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="ask.cs">
       <SubType>Form</SubType>
@@ -139,6 +139,7 @@
     <Compile Include="CoordinatorForm.Designer.cs">
       <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="connection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,11 +216,11 @@
     <EmbeddedResource Include="admin_UsersEdit.resx">
       <DependentUpon>admin_UsersEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_Volounters.resx">
-      <DependentUpon>admin_Volounters.cs</DependentUpon>
+    <EmbeddedResource Include="admin_Volunteer.resx">
+      <DependentUpon>admin_Volunteer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_VolountersAdd.resx">
-      <DependentUpon>admin_VolountersAdd.cs</DependentUpon>
+    <EmbeddedResource Include="admin_VolunteerAdd.resx">
+      <DependentUpon>admin_VolunteerAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ask.resx">
       <DependentUpon>ask.cs</DependentUpon>

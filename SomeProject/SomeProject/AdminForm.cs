@@ -20,12 +20,11 @@ namespace SomeProject
             timer1.Enabled = true;
             timer1.Start();
         }
-        DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = voteTime - DateTime.Now;
-            metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            metroLabel1.Text = connection.timeremaining.Days + " дней " + connection.timeremaining.Hours +
+            " часов и " + connection.timeremaining.Minutes + " минут до сдачи курсового";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -44,7 +43,7 @@ namespace SomeProject
 
         private void metroTile4_Click(object sender, EventArgs e)
         {
-            admin_Volounters admin_Volounters = new admin_Volounters();
+            admin_Volunteer admin_Volounters = new admin_Volunteer();
             admin_Volounters.Show();
             this.Close();
         }

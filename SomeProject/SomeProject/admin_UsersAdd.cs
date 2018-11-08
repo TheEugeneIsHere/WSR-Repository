@@ -13,7 +13,9 @@ namespace SomeProject
 {
     public partial class admin_UsersAdd : MetroFramework.Forms.MetroForm
     {
-        private static string query, userRole = string.Empty; //
+        private static string query, Role = string.Empty;
+        SqlConnection con = connection.AzureConnection();
+
         public admin_UsersAdd()
         {
             InitializeComponent();
@@ -22,13 +24,12 @@ namespace SomeProject
             timer1.Enabled = true;
             timer1.Start();
         }
-        DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
         ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = voteTime - DateTime.Now;
-            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            metroLabel4.Text = connection.timeremaining.Days + " дней " + connection.timeremaining.Hours +
+            " часов и " + connection.timeremaining.Minutes + " минут до сдачи курсового";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -123,9 +124,9 @@ namespace SomeProject
             {
                 switch (metroComboBox2.Text)
                 {
-                    case "Администратор": userRole = "A"; break;
-                    case "Бегун": userRole = "R"; break;
-                    case "Координатор": userRole = "C"; break;
+                    case "Администратор": Role = "A"; break;
+                    case "Бегун": Role = "R"; break;
+                    case "Координатор": Role = "C"; break;
                 }
             }
 
@@ -155,7 +156,7 @@ namespace SomeProject
             {
                 query = "INSERT [Users] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES" +
                         "(N'" + metroTextBox1.Text + "', N'" + metroTextBox4.Text + "', N'" + metroTextBox3.Text +
-                        "', N'" + metroTextBox2.Text + "', N'" + userRole + "');";
+                        "', N'" + metroTextBox2.Text + "', N'" + Role + "');";
                 UsersAdd(query);
                 
             }
@@ -169,24 +170,24 @@ namespace SomeProject
 
         private void UsersAdd(string query)
         {
-            using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
-                "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
-                "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-            {
+            //using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
+            //    "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
+            //    "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            //{
                 try
                 {
-                    connection.Open();
-                    SqlCommand register = new SqlCommand(query, connection);
+                    con.Open();
+                    SqlCommand register = new SqlCommand(query, con);
                     register.ExecuteNonQuery();
-                    connection.Close();
+                    con.Close();
                     MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    connection.Close();
+                    con.Close();
                 }
-        }
+        //}
         }
     }
 }
