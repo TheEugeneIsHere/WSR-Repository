@@ -39,10 +39,6 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wSRDataSetUsers = new SomeProject.WSRDataSetUsers();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
@@ -56,6 +52,11 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.usersTableAdapter = new SomeProject.WSRDataSetUsersTableAdapters.UsersTableAdapter();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editUserButton = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetUsers)).BeginInit();
@@ -134,7 +135,8 @@
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
-            this.roleIdDataGridViewTextBoxColumn});
+            this.roleIdDataGridViewTextBoxColumn,
+            this.editUserButton});
             this.metroGrid1.DataSource = this.usersBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -162,30 +164,7 @@
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.Size = new System.Drawing.Size(791, 250);
             this.metroGrid1.TabIndex = 39;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // roleIdDataGridViewTextBoxColumn
-            // 
-            this.roleIdDataGridViewTextBoxColumn.DataPropertyName = "RoleId";
-            this.roleIdDataGridViewTextBoxColumn.HeaderText = "RoleId";
-            this.roleIdDataGridViewTextBoxColumn.Name = "roleIdDataGridViewTextBoxColumn";
+            this.metroGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
             // 
             // usersBindingSource
             // 
@@ -347,6 +326,36 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email-адрес";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // roleIdDataGridViewTextBoxColumn
+            // 
+            this.roleIdDataGridViewTextBoxColumn.DataPropertyName = "RoleId";
+            this.roleIdDataGridViewTextBoxColumn.HeaderText = "Роль";
+            this.roleIdDataGridViewTextBoxColumn.Name = "roleIdDataGridViewTextBoxColumn";
+            // 
+            // editUserButton
+            // 
+            this.editUserButton.HeaderText = "Редактировать";
+            this.editUserButton.Name = "editUserButton";
+            this.editUserButton.ReadOnly = true;
+            // 
             // admin_Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,5 +416,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn editUserButton;
     }
 }

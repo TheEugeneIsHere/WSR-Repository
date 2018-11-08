@@ -435,7 +435,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroLabel metroLabel12;
+        protected MetroFramework.Controls.MetroLabel metroLabel11;
     }
 }

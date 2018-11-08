@@ -191,5 +191,17 @@ namespace SomeProject
             //    query = "SELECT FirstName, LastName, Email, RoleId FROM Users ORDER BY '" + sort + "';";
             //UsersLoad(query);
         }
+
+        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //////////////////////////var GridSender = (WSRDataSetUsers)sender;
+            //////////////////////////if (GridSender.Tables[0].Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >=0) 
+            //////////////////////////{
+            //////////////////////////    //admin_UsersEdit userEdit = new admin_UsersEdit();
+            //////////////////////////    //userEdit.Show();
+            //////////////////////////    //this.Close();
+            //////////////////////////    metroLabel1.Text = GridSender.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            //////////////////////////}
+        }
     }
 }

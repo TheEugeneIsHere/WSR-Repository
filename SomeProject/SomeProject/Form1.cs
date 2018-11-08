@@ -24,10 +24,9 @@ namespace SomeProject
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-          
             ask ask = new ask();
-            this.Visible = false;
             ask.ShowDialog();
+            this.Hide();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -37,9 +36,9 @@ namespace SomeProject
 
         private void metroTile4_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Login log = new Login();
             log.ShowDialog();
+            this.Hide();
         }
 
         private void metroTile5_Click(object sender, EventArgs e)
