@@ -140,6 +140,12 @@
       <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="connection.cs" />
+    <Compile Include="editrunnerprofile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editrunnerprofile.Designer.cs">
+      <DependentUpon>editrunnerprofile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,12 @@
     </Compile>
     <Compile Include="RunnerForm.Designer.cs">
       <DependentUpon>RunnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sponsor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sponsor.Designer.cs">
+      <DependentUpon>sponsor.cs</DependentUpon>
     </Compile>
     <Compile Include="WSRDataSetCharity.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -228,6 +240,9 @@
     <EmbeddedResource Include="BMIcalc.resx">
       <DependentUpon>BMIcalc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="editrunnerprofile.resx">
+      <DependentUpon>editrunnerprofile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RunnerForm.resx">
       <DependentUpon>RunnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sponsor.resx">
+      <DependentUpon>sponsor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
