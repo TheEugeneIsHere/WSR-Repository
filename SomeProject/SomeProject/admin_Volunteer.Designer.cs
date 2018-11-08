@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class admin_Volounters
+    partial class admin_Volunteer
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_Volounters));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_Volunteer));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -44,7 +44,7 @@
             this.countryCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.volunteerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wSRDataSetVolounters = new SomeProject.WSRDataSetVolounters();
+            this.wSRDataSetVolunteer = new SomeProject.WSRDataSetVolounters();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -53,7 +53,7 @@
             this.volunteerTableAdapter = new SomeProject.WSRDataSetVolountersTableAdapters.VolunteerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.volunteerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetVolounters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetVolunteer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -105,10 +105,8 @@
             this.metroLabel3.ForeColor = System.Drawing.Color.Red;
             this.metroLabel3.Location = new System.Drawing.Point(471, 99);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(116, 25);
+            this.metroLabel3.Size = new System.Drawing.Size(0, 0);
             this.metroLabel3.TabIndex = 31;
-            this.metroLabel3.Text = "Сделай меня";
-            this.metroLabel3.UseCustomForeColor = true;
             // 
             // metroGrid1
             // 
@@ -187,12 +185,12 @@
             // volunteerBindingSource
             // 
             this.volunteerBindingSource.DataMember = "Volunteer";
-            this.volunteerBindingSource.DataSource = this.wSRDataSetVolounters;
+            this.volunteerBindingSource.DataSource = this.wSRDataSetVolunteer;
             // 
-            // wSRDataSetVolounters
+            // wSRDataSetVolunteer
             // 
-            this.wSRDataSetVolounters.DataSetName = "WSRDataSetVolounters";
-            this.wSRDataSetVolounters.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.wSRDataSetVolunteer.DataSetName = "WSRDataSetVolunteer";
+            this.wSRDataSetVolunteer.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroLabel5
             // 
@@ -261,7 +259,7 @@
             // 
             this.volunteerTableAdapter.ClearBeforeFill = true;
             // 
-            // admin_Volounters
+            // admin_Volunteer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -277,12 +275,12 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "admin_Volounters";
+            this.Name = "admin_Volunteer";
             this.Resizable = false;
             this.Text = "Administation Menu";
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.volunteerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetVolounters)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetVolunteer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -303,7 +301,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private WSRDataSetVolounters wSRDataSetVolounters;
+        private WSRDataSetVolounters wSRDataSetVolunteer;
         private System.Windows.Forms.BindingSource volunteerBindingSource;
         private WSRDataSetVolountersTableAdapters.VolunteerTableAdapter volunteerTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;

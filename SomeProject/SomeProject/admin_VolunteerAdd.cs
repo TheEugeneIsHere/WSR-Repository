@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_VolountersAdd : MetroFramework.Forms.MetroForm
+    public partial class admin_VolunteerAdd : MetroFramework.Forms.MetroForm
     {
-        public admin_VolountersAdd()
+        public admin_VolunteerAdd()
         {
             InitializeComponent();
             timer1.Tick += timer1_Tick;
@@ -20,17 +20,16 @@ namespace SomeProject
             timer1.Enabled = true;
             timer1.Start();
         }
-        DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
-
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = voteTime - DateTime.Now;
-            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            metroLabel4.Text = connection.timeremaining.Days + " дней " + connection.timeremaining.Hours +
+            " часов и " + connection.timeremaining.Minutes + " минут до сдачи курсового";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            admin_Volounters VolountersForm = new admin_Volounters();
+            admin_Volunteer VolountersForm = new admin_Volunteer();
             VolountersForm.Show();
             this.Close();
         }

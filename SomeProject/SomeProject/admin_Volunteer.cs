@@ -11,25 +11,28 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_Volounters : MetroFramework.Forms.MetroForm
+    public partial class admin_Volunteer : MetroFramework.Forms.MetroForm
     {
+        SqlConnection con = connection.AzureConnection();
         private static string query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer";
-        public admin_Volounters()
+
+        public admin_Volunteer()
         {
             InitializeComponent();
+            con.Open();
             VolountersLoad(query);
+            con.Close();
             timer1.Tick += timer1_Tick;
             timer1.Interval = 1000;
             timer1.Enabled = true;
             timer1.Start();
-            metroLabel3.Text = "Сделай меня";
         }
-        DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = voteTime - DateTime.Now;
-            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            //TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            metroLabel4.Text = connection.timeremaining.Days + " дней " + connection.timeremaining.Hours +
+                " часов и " + connection.timeremaining.Minutes + " минут до сдачи курсового";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -41,31 +44,31 @@ namespace SomeProject
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            admin_VolountersAdd VolountersAddForm = new admin_VolountersAdd();
+            admin_VolunteerAdd VolountersAddForm = new admin_VolunteerAdd();
             VolountersAddForm.Show();
             this.Close();
         }
 
         private void VolountersLoad(string query)
         {
-            using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
-                "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
-                "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-            {
+            //using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
+            //    "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
+            //    "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            //{
                 try
                 {
-                    connection.Open();
-                    SqlDataAdapter ad = new SqlDataAdapter(query, connection);
-                    ad.Fill(wSRDataSetVolounters, "Volunteer");
-                    metroGrid1.DataSource = wSRDataSetVolounters.Tables[0];
-                    connection.Close();
+                    SqlDataAdapter ad = new SqlDataAdapter(query, con);
+                    SqlCommand usersCount = new SqlCommand("SELECT COUNT(*) FROM Volunteer",con);
+                    metroLabel3.Text = usersCount.ExecuteScalar().ToString();
+                    ad.Fill(wSRDataSetVolunteer, "Volunteer");
+                    metroGrid1.DataSource = wSRDataSetVolunteer.Tables[0];
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    connection.Close();
+                    con.Close();
                 }
-            }
+            //}
 
         }
 
@@ -88,7 +91,7 @@ namespace SomeProject
                     break;
             }
 
-            wSRDataSetVolounters.Clear();
+            wSRDataSetVolunteer.Clear();
 
             if (sort == "")
             {
@@ -97,7 +100,9 @@ namespace SomeProject
             else
                 query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer ORDER BY '" + sort + "';";
 
+            con.Open();
             VolountersLoad(query);
+            con.Close();
         }
     }
 }
