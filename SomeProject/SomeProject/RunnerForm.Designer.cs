@@ -58,14 +58,14 @@
             // 
             // metroLabel2
             // 
-            this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(360, 73);
+            this.metroLabel2.Location = new System.Drawing.Point(179, 73);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(121, 25);
+            this.metroLabel2.Size = new System.Drawing.Size(500, 25);
             this.metroLabel2.TabIndex = 10;
-            this.metroLabel2.Text = "Меню бегуна";
+            this.metroLabel2.Text = "Добро пожаловать, *вставить*";
+            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroTile1
             // 
@@ -165,7 +165,6 @@
             this.Text = "RunnerForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

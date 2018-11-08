@@ -22,6 +22,7 @@ namespace SomeProject
             timer1.Interval = 1000;
             timer1.Enabled = true;
             timer1.Start();
+            
 
         }
         DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
@@ -60,6 +61,7 @@ namespace SomeProject
                 var command = new SqlCommand("SELECT RoleId FROM Users WHERE email=@email and password=@password", connection);
                 command.Parameters.AddWithValue("@email", login);
                 command.Parameters.AddWithValue("@password", password);
+
                 using (var dataReader = command.ExecuteReader())
                 {
                     if (dataReader.Read())
@@ -67,6 +69,7 @@ namespace SomeProject
                         if ((string)dataReader["Roleid"] == "R")
                         {
                             role = Role.R;
+                           
                         }
                         if ((string)dataReader["Roleid"] == "A")
                         {
@@ -102,8 +105,9 @@ namespace SomeProject
                 else if (role == Role.C)
                 {
                     var form = new CoordinatorForm();
-                     this.Hide();
+                    this.Hide();
                     form.ShowDialog();
+
                    
                 }
                 else if (role == Role.R)
@@ -115,5 +119,19 @@ namespace SomeProject
                 }
             }
         }
+
+        /*временный мусор*/
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            metroTextBox1.Text = "a.adkin@dayrep.net";
+            metroTextBox2.Text = "jwZh2x@p";
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            metroTextBox1.Text = "leila.azedeva@mskills.com";
+            metroTextBox2.Text = "MvTQ3itX";
+        }
+        /*конец временного мусора*/
     }
 }

@@ -34,7 +34,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile7 = new MetroFramework.Controls.MetroTile();
-            this.metroTile6 = new MetroFramework.Controls.MetroTile();
             this.metroTile5 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
@@ -86,24 +85,6 @@
             this.metroTile7.UseSelectable = true;
             this.metroTile7.UseTileImage = true;
             this.metroTile7.Click += new System.EventHandler(this.metroTile7_Click);
-            // 
-            // metroTile6
-            // 
-            this.metroTile6.ActiveControl = null;
-            this.metroTile6.Location = new System.Drawing.Point(20, 257);
-            this.metroTile6.Name = "metroTile6";
-            this.metroTile6.Size = new System.Drawing.Size(119, 82);
-            this.metroTile6.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile6.TabIndex = 13;
-            this.metroTile6.Text = "Maxik";
-            this.metroTile6.TileCount = 96;
-            this.metroTile6.TileImage = global::SomeProject.Properties.Resources.icons8_упражнение_26;
-            this.metroTile6.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile6.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile6.UseSelectable = true;
-            this.metroTile6.UseStyleColors = true;
-            this.metroTile6.UseTileImage = true;
-            this.metroTile6.Click += new System.EventHandler(this.metroTile6_Click);
             // 
             // metroTile5
             // 
@@ -180,7 +161,6 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(869, 508);
             this.Controls.Add(this.metroTile7);
-            this.Controls.Add(this.metroTile6);
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile1);
@@ -206,7 +186,6 @@
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile5;
-        private MetroFramework.Controls.MetroTile metroTile6;
         private MetroFramework.Controls.MetroTile metroTile7;
     }
 }

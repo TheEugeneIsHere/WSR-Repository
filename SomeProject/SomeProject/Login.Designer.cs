@@ -40,6 +40,8 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroButton4 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(308, 60);
+            this.metroLabel2.Location = new System.Drawing.Point(334, 63);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(180, 25);
             this.metroLabel2.TabIndex = 3;
@@ -194,12 +196,34 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(275, 370);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(75, 23);
+            this.metroButton3.TabIndex = 9;
+            this.metroButton3.Text = "бегун";
+            this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
+            // 
+            // metroButton4
+            // 
+            this.metroButton4.Location = new System.Drawing.Point(395, 370);
+            this.metroButton4.Name = "metroButton4";
+            this.metroButton4.Size = new System.Drawing.Size(75, 23);
+            this.metroButton4.TabIndex = 9;
+            this.metroButton4.Text = "одмен";
+            this.metroButton4.UseSelectable = true;
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
             this.ControlBox = false;
+            this.Controls.Add(this.metroButton4);
+            this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
@@ -231,5 +255,7 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton metroButton4;
     }
 }

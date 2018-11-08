@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,9 @@ namespace SomeProject
             timer1.Interval = 1000;
             timer1.Enabled = true;
             timer1.Start();
+            // chtoto();
+            // metroLabel2.Text = "Добро пожаловать, " + fname + " " + lname;
+            metroLabel2.Text = "Меню бегуна";
         }
         DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
         private void timer1_Tick(object sender, EventArgs e)
@@ -69,5 +73,22 @@ namespace SomeProject
             editrunnerprofile edit = new editrunnerprofile();
             edit.ShowDialog();
         }
+        private string fname;
+        private string lname;
+        /*private void chtoto()
+        {
+            SqlConnection con = connection.AzureConnection();
+            con.Open();
+            var command = new SqlCommand("SELECt @FirstName=FirstName,@LastName=LastName FROM Users WHERE email=@email and password=@password", con);
+            SqlParameter FirstName, LastName;
+            FirstName = command.Parameters.Add("FirstName", SqlDbType.VarChar, 20);
+            FirstName.Direction = ParameterDirection.Output;
+            LastName = command.Parameters.Add("LastName", SqlDbType.VarChar, 20);
+            LastName.Direction = ParameterDirection.Output;
+            command.ExecuteNonQuery();
+            MessageBox.Show(Convert.ToString(FirstName));
+            fname = Convert.ToString(FirstName);
+            lname = Convert.ToString(LastName);
+        }*/
     }
 }
