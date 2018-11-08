@@ -9,8 +9,7 @@ namespace SomeProject
 {
     class connection
     {
-        private static DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
-        public static TimeSpan timeremaining = voteTime - DateTime.Now;
+        public static DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
         //public void (string query)
         //{
         //    using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +

@@ -61,6 +61,8 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // metroLabel1
@@ -213,7 +215,7 @@
             this.metroLabel8.Text = "поле 4: описание поля";
             this.metroLabel8.UseCustomForeColor = true;
             // 
-            // admin_VolountersAdd
+            // admin_VolunteerAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -232,7 +234,7 @@
             this.Controls.Add(this.metroLabel4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "admin_VolountersAdd";
+            this.Name = "admin_VolunteerAdd";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Resizable = false;
             this.Text = "Administation Menu";

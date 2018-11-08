@@ -35,6 +35,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_Charity));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.charityLogoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.charityNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.charityDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.charityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wSRDataSetCharity = new SomeProject.WSRDataSetCharity();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -42,9 +45,6 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.charityTableAdapter = new SomeProject.WSRDataSetCharityTableAdapters.CharityTableAdapter();
-            this.charityLogoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.charityNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.charityDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity)).BeginInit();
@@ -116,6 +116,33 @@
             this.metroGrid1.Size = new System.Drawing.Size(768, 319);
             this.metroGrid1.TabIndex = 16;
             // 
+            // charityLogoDataGridViewTextBoxColumn
+            // 
+            this.charityLogoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.charityLogoDataGridViewTextBoxColumn.DataPropertyName = "CharityLogo";
+            this.charityLogoDataGridViewTextBoxColumn.HeaderText = "Логотип организации";
+            this.charityLogoDataGridViewTextBoxColumn.Name = "charityLogoDataGridViewTextBoxColumn";
+            this.charityLogoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.charityLogoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // charityNameDataGridViewTextBoxColumn
+            // 
+            this.charityNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.charityNameDataGridViewTextBoxColumn.DataPropertyName = "CharityName";
+            this.charityNameDataGridViewTextBoxColumn.HeaderText = "Название организации";
+            this.charityNameDataGridViewTextBoxColumn.Name = "charityNameDataGridViewTextBoxColumn";
+            this.charityNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.charityNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // charityDescriptionDataGridViewTextBoxColumn
+            // 
+            this.charityDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.charityDescriptionDataGridViewTextBoxColumn.DataPropertyName = "CharityDescription";
+            this.charityDescriptionDataGridViewTextBoxColumn.HeaderText = "Описание организации";
+            this.charityDescriptionDataGridViewTextBoxColumn.Name = "charityDescriptionDataGridViewTextBoxColumn";
+            this.charityDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.charityDescriptionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // charityBindingSource
             // 
             this.charityBindingSource.DataMember = "Charity";
@@ -140,6 +167,8 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // metroButton1
@@ -167,33 +196,6 @@
             // charityTableAdapter
             // 
             this.charityTableAdapter.ClearBeforeFill = true;
-            // 
-            // charityLogoDataGridViewTextBoxColumn
-            // 
-            this.charityLogoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.charityLogoDataGridViewTextBoxColumn.DataPropertyName = "CharityLogo";
-            this.charityLogoDataGridViewTextBoxColumn.HeaderText = "Логотип организации";
-            this.charityLogoDataGridViewTextBoxColumn.Name = "charityLogoDataGridViewTextBoxColumn";
-            this.charityLogoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.charityLogoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // charityNameDataGridViewTextBoxColumn
-            // 
-            this.charityNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.charityNameDataGridViewTextBoxColumn.DataPropertyName = "CharityName";
-            this.charityNameDataGridViewTextBoxColumn.HeaderText = "Название организации";
-            this.charityNameDataGridViewTextBoxColumn.Name = "charityNameDataGridViewTextBoxColumn";
-            this.charityNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.charityNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // charityDescriptionDataGridViewTextBoxColumn
-            // 
-            this.charityDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.charityDescriptionDataGridViewTextBoxColumn.DataPropertyName = "CharityDescription";
-            this.charityDescriptionDataGridViewTextBoxColumn.HeaderText = "Описание организации";
-            this.charityDescriptionDataGridViewTextBoxColumn.Name = "charityDescriptionDataGridViewTextBoxColumn";
-            this.charityDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.charityDescriptionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // admin_Charity
             // 

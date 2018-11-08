@@ -54,6 +54,9 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tag = "Таймер до забега";
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // metroTile4
@@ -180,13 +183,13 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile5;
         private MetroFramework.Controls.MetroTile metroTile7;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -19,8 +19,6 @@ namespace SomeProject
         {
             InitializeComponent();
             timer1.Tick += timer1_Tick;
-            timer1.Interval = 1000;
-            timer1.Enabled = true;
             timer1.Start();
         }
 
@@ -28,8 +26,9 @@ namespace SomeProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            metroLabel4.Text = connection.timeremaining.Days + " дней " + connection.timeremaining.Hours +
-            " часов и " + connection.timeremaining.Minutes + " минут до сдачи курсового";
+            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours +
+            " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
