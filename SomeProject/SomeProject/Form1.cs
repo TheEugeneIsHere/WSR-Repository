@@ -40,13 +40,6 @@ namespace SomeProject
             this.Hide();
         }
 
-        private void metroTile5_Click(object sender, EventArgs e)
-        {
-            AdminForm admOneLove = new AdminForm();
-            admOneLove.Show();
-            this.Hide();
-        }
-
         private void metroTile6_Click(object sender, EventArgs e)
         {
             RunnerForm run = new RunnerForm();
