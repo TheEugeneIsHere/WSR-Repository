@@ -155,11 +155,9 @@ namespace SomeProject
                 gender = metroComboBox1.Text;
                 born = metroDateTime1.Value;
                 /*запросик регистрации*/
-              /*ГЛЯНЬ В ЧЕМ косяк во втором запросе*/
+              
                 string query1 = "INSERT INTO USERS VALUES"+"(N'" + mail + "', N'" + pas + "', N'" + fnm + "', N'" + nm + "', N'R')";
-                 string query2= "INSERT [runner] ([runnerid],[Email], [gender], [dateofbirth], [countrycode]) VALUES" +
-                        "(N'" + id + "', N'" + mail+ "', N'" + gender +
-                        "', N'" + born+ "', N'" + country + "');";
+                string query2 = "set IDENTITY_INSERT [runner] on insert into runner (runnerid,email,gender,dateofbirth,countrycode) " + "values("+id+",'"+mail + "','" + gender + "','" + born + "','" + country+ "') SET IDENTITY_INSERT [runner] off";
                 useradd(query1);
                  register(query2);
             }
@@ -278,14 +276,7 @@ namespace SomeProject
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            metroTextBox1.Text ="rudi213@ya.ru";
-            metroTextBox2.Text ="12345678";
-            metroTextBox3.Text = "12345678";
-            metroTextBox4.Text ="Max";
-            metroTextBox5.Text ="Cat";
-            metroComboBox1.Text = "Male";
-            metroComboBox2.Text = "Russia";
-            metroDateTime1.Value = new DateTime(1999,10,01);
+          
 
         }
     }
