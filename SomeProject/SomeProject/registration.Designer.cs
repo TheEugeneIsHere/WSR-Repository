@@ -52,12 +52,16 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -91,11 +95,12 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(162, 102);
+            this.metroLabel3.Location = new System.Drawing.Point(167, 79);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(549, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(550, 19);
             this.metroLabel3.TabIndex = 5;
-            this.metroLabel3.Text = "Пожалуйста, заполните всю информацию, чтобы зарегестрироваться в качестве бегуна";
+            this.metroLabel3.Text = "Пожалуйста, заполните всю информацию, чтобы зарегистрироваться в качестве бегуна";
+            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // metroLabel4
             // 
@@ -182,6 +187,7 @@
             this.metroTextBox1.WaterMark = "Email";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox1_KeyPress);
             // 
             // metroTextBox2
             // 
@@ -214,6 +220,7 @@
             this.metroTextBox2.WaterMark = "Пароль";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox2_KeyPress);
             // 
             // metroTextBox3
             // 
@@ -246,6 +253,7 @@
             this.metroTextBox3.WaterMark = "Повторите пароль";
             this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox3_KeyPress);
             // 
             // metroTextBox4
             // 
@@ -278,6 +286,7 @@
             this.metroTextBox4.WaterMark = "Имя";
             this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox4_KeyPress);
             // 
             // metroTextBox5
             // 
@@ -310,6 +319,7 @@
             this.metroTextBox5.WaterMark = "Фамилия";
             this.metroTextBox5.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox5.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox5_KeyPress);
             // 
             // metroTextBox7
             // 
@@ -326,7 +336,7 @@
             this.metroTextBox7.CustomButton.UseSelectable = true;
             this.metroTextBox7.CustomButton.Visible = false;
             this.metroTextBox7.Lines = new string[0];
-            this.metroTextBox7.Location = new System.Drawing.Point(513, 297);
+            this.metroTextBox7.Location = new System.Drawing.Point(32, 139);
             this.metroTextBox7.MaxLength = 32767;
             this.metroTextBox7.Name = "metroTextBox7";
             this.metroTextBox7.PasswordChar = '\0';
@@ -346,7 +356,7 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(513, 275);
+            this.metroLabel10.Location = new System.Drawing.Point(32, 97);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(75, 19);
             this.metroLabel10.TabIndex = 6;
@@ -354,7 +364,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(723, 296);
+            this.metroButton1.Location = new System.Drawing.Point(242, 138);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(75, 23);
             this.metroButton1.TabIndex = 10;
@@ -373,7 +383,7 @@
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(513, 381);
+            this.metroLabel12.Location = new System.Drawing.Point(520, 384);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(56, 19);
             this.metroLabel12.TabIndex = 6;
@@ -389,6 +399,7 @@
             this.metroButton2.TabIndex = 10;
             this.metroButton2.Text = "Регистрация";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroButton3
             // 
@@ -403,54 +414,22 @@
             // 
             // metroDateTime1
             // 
-            this.metroDateTime1.Location = new System.Drawing.Point(625, 333);
+            this.metroDateTime1.Location = new System.Drawing.Point(625, 339);
             this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(177, 29);
             this.metroDateTime1.TabIndex = 11;
-            // 
-            // metroTextBox8
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox8.CustomButton.Image = null;
-            this.metroTextBox8.CustomButton.Location = new System.Drawing.Point(159, 1);
-            this.metroTextBox8.CustomButton.Name = "";
-            this.metroTextBox8.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox8.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox8.CustomButton.TabIndex = 1;
-            this.metroTextBox8.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox8.CustomButton.UseSelectable = true;
-            this.metroTextBox8.CustomButton.Visible = false;
-            this.metroTextBox8.Lines = new string[0];
-            this.metroTextBox8.Location = new System.Drawing.Point(625, 381);
-            this.metroTextBox8.MaxLength = 32767;
-            this.metroTextBox8.Name = "metroTextBox8";
-            this.metroTextBox8.PasswordChar = '\0';
-            this.metroTextBox8.PromptText = "Россиюшкааа";
-            this.metroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox8.SelectedText = "";
-            this.metroTextBox8.SelectionLength = 0;
-            this.metroTextBox8.SelectionStart = 0;
-            this.metroTextBox8.ShortcutsEnabled = true;
-            this.metroTextBox8.Size = new System.Drawing.Size(181, 23);
-            this.metroTextBox8.TabIndex = 9;
-            this.metroTextBox8.UseSelectable = true;
-            this.metroTextBox8.WaterMark = "Россиюшкааа";
-            this.metroTextBox8.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox8.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroComboBox1
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
             this.metroComboBox1.Items.AddRange(new object[] {
-            "Мужской",
-            "Женский"});
+            "Male",
+            "Female"});
             this.metroComboBox1.Location = new System.Drawing.Point(200, 375);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.PromptText = "Мужской";
+            this.metroComboBox1.PromptText = "Male";
             this.metroComboBox1.Size = new System.Drawing.Size(263, 29);
             this.metroComboBox1.TabIndex = 12;
             this.metroComboBox1.UseSelectable = true;
@@ -458,7 +437,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SomeProject.Properties.Resources.icons8_администратор_240;
-            this.pictureBox2.Location = new System.Drawing.Point(662, 171);
+            this.pictureBox2.Location = new System.Drawing.Point(207, 9);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(136, 107);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -477,20 +456,141 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.metroTextBox7);
+            this.groupBox1.Controls.Add(this.metroButton1);
+            this.groupBox1.Controls.Add(this.metroLabel10);
+            this.groupBox1.Enabled = false;
+            this.groupBox1.Location = new System.Drawing.Point(488, 147);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(349, 173);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ЗАБОРОНЕНО";
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // metroComboBox2
+            // 
+            this.metroComboBox2.FormattingEnabled = true;
+            this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.Items.AddRange(new object[] {
+            "Andorra",
+            "Argentina",
+            "Australia",
+            "Austria",
+            "Belgium",
+            "Botswana",
+            "Brazil",
+            "Bulgaria",
+            "Central African Republic",
+            "Canada",
+            "Chile",
+            "China",
+            "Ivory Coast",
+            "Cameroon",
+            "Colombia",
+            "Croatia",
+            "Czech Republic",
+            "Denmark",
+            "Dominican Republic",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Spain",
+            "Estonia",
+            "Finland",
+            "France",
+            "United Kingdom",
+            "Guinea-Bissau",
+            "Equatorial Guinea",
+            "Germany",
+            "Greece",
+            "Guatemala",
+            "Guinea",
+            "Hong Kong",
+            "Honduras",
+            "Hungary",
+            "Indonesia",
+            "India",
+            "Ireland",
+            "Israel",
+            "Italy",
+            "Jamaica",
+            "Jordan",
+            "Japan",
+            "Kenya",
+            "South Korea",
+            "Saudi Arabia",
+            "Latvia",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Macau",
+            "Madagascar",
+            "Malaysia",
+            "Moldova",
+            "Mexico",
+            "Macedonia",
+            "Mali",
+            "Malta",
+            "Montenegro",
+            "Monaco",
+            "Mauritius",
+            "Nicaragua",
+            "Netherlands",
+            "Niger",
+            "Norway",
+            "New Zealand",
+            "Panama",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Poland",
+            "Portugal",
+            "Puerto Rico",
+            "Qatar",
+            "Romania",
+            "South Africa",
+            "Russia",
+            "Senegal",
+            "Singapore",
+            "Switzerland",
+            "Slovakia",
+            "Sweden",
+            "Thailand",
+            "Chinese Taipei",
+            "Turkey",
+            "United Arab Emirates",
+            "Uruguay",
+            "United States",
+            "Vatican",
+            "Venezuela",
+            "Vietnam"});
+            this.metroComboBox2.Location = new System.Drawing.Point(625, 374);
+            this.metroComboBox2.Name = "metroComboBox2";
+            this.metroComboBox2.PromptText = "Country";
+            this.metroComboBox2.Size = new System.Drawing.Size(177, 29);
+            this.metroComboBox2.TabIndex = 12;
+            this.metroComboBox2.UseSelectable = true;
+            // 
             // registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.metroComboBox2);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.metroDateTime1);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.metroTextBox8);
-            this.Controls.Add(this.metroTextBox7);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.metroTextBox5);
             this.Controls.Add(this.metroTextBox4);
             this.Controls.Add(this.metroTextBox3);
@@ -503,7 +603,6 @@
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.metroLabel11);
-            this.Controls.Add(this.metroLabel10);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.pictureBox1);
@@ -514,6 +613,9 @@
             this.Text = "registration";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,7 +648,10 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox8;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private MetroFramework.Controls.MetroComboBox metroComboBox2;
     }
 }
