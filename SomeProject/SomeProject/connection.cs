@@ -10,6 +10,7 @@ namespace SomeProject
     class connection
     {
         public static DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
+        public static string editMail;
         //public void (string query)
         //{
         //    using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +

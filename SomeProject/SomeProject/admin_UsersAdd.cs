@@ -27,7 +27,7 @@ namespace SomeProject
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = connection.voteTime - DateTime.Now;
-            metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours +
+            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
         }
 
@@ -51,8 +51,7 @@ namespace SomeProject
             {
                 if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
                 {
-                    MessageBox.Show("Используйте английский язык для ввода Имени", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    error.SetError(metroTextBox3, "Ошибка");
+                    error.SetError(metroTextBox3, "Используйте английский язык для ввода Имени");
                 }
                 e.Handled = true;
             }
@@ -63,9 +62,8 @@ namespace SomeProject
         {
             if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
             {
-                MessageBox.Show("Адрес электронной почты не может содержать русские буквы", "Ошибка ввода Email-адреса", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Handled = true;
-                error.SetError(metroTextBox1, "Ошибка");
+                error.SetError(metroTextBox1, "Адрес электронной почты не может содержать русские буквы");
             }
             else { error.SetError(metroTextBox1, String.Empty); }
         }
@@ -76,8 +74,7 @@ namespace SomeProject
             {
                 if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
                 {
-                    MessageBox.Show("Используйте английский язык для ввода Фамилии", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    error.SetError(metroTextBox2, "Ошибка");
+                    error.SetError(metroTextBox2, "Используйте английский язык для ввода Фамилии");
                 }
                 e.Handled = true;
             }
@@ -88,6 +85,27 @@ namespace SomeProject
         {
             string errorLog ="Исправьте следующие ошибки: \n\n";
             int errorCount = 0;
+            SqlCommand isRegistered = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email ='"+metroTextBox1.Text+"'", con);
+            try
+            {
+                con.Open();
+                
+                if (Convert.ToString(isRegistered.ExecuteScalar()) != "0")
+                {
+                    error.SetError(metroTextBox1, "Ошибка");
+                    ++errorCount;
+                    errorLog += errorCount + ". Email-адрес уже зарегистрирован в системе\n";
+                }
+                con.Close();
+                isRegistered.Dispose();
+            }
+            catch (Exception ex)
+            {
+                isRegistered.Dispose();
+                con.Close();
+                MessageBox.Show(ex.ToString());
+            }
+
             if (metroTextBox3.Text == "")
             {
                 error.SetError(metroTextBox3, "Ошибка");

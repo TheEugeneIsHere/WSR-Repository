@@ -195,7 +195,6 @@
     <Compile Include="sponsor.Designer.cs">
       <DependentUpon>sponsor.cs</DependentUpon>
     </Compile>
-    <Compile Include="userEditInfo.cs" />
     <Compile Include="WSRDataSetCharity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

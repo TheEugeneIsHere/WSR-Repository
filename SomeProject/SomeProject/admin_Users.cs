@@ -35,7 +35,7 @@ namespace SomeProject
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = connection.voteTime - DateTime.Now;
-            metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours +
+            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
         }
 
@@ -193,14 +193,25 @@ namespace SomeProject
 
         private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //////////////////////////var GridSender = (WSRDataSetUsers)sender;
-            //////////////////////////if (GridSender.Tables[0].Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >=0) 
-            //////////////////////////{
-            //////////////////////////    //admin_UsersEdit userEdit = new admin_UsersEdit();
-            //////////////////////////    //userEdit.Show();
-            //////////////////////////    //this.Close();
-            //////////////////////////    metroLabel1.Text = GridSender.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            //////////////////////////}
+            if (metroGrid1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >=0)
+            {
+                connection.editMail = metroGrid1.CurrentRow.Cells[2].Value.ToString();
+                con.Open();
+                try
+                {
+                    admin_UsersEdit usersEdit = new admin_UsersEdit();
+                    usersEdit.Show();
+                    this.Close();
+                    SqlCommand userEdit = new SqlCommand("SELECT * FROM Users WHERE Email ='" + connection.editMail + "'", con);
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    con.Close();
+                }
+                //metroLabel1.Text = GridSender.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            }
         }
     }
 }
