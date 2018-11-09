@@ -195,6 +195,12 @@
     <Compile Include="sponsor.Designer.cs">
       <DependentUpon>sponsor.cs</DependentUpon>
     </Compile>
+    <Compile Include="success.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="success.Designer.cs">
+      <DependentUpon>success.cs</DependentUpon>
+    </Compile>
     <Compile Include="WSRDataSetCharity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

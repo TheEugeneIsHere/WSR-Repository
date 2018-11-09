@@ -21,6 +21,7 @@ namespace SomeProject
             timer1.Interval = 1000;
             timer1.Enabled = true;
             timer1.Start();
+           
         }
         SqlConnection con = connection.AzureConnection();
         DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
@@ -47,7 +48,8 @@ namespace SomeProject
         private string gender;
         private string country;
         private DateTime born;
-      
+        private int id;
+
         private void metroButton2_Click(object sender, EventArgs e)
         {
             int errorcount = 0;
@@ -128,8 +130,8 @@ namespace SomeProject
             {
                 mail = metroTextBox1.Text;
                 pas = metroTextBox2.Text;
-                nm = metroTextBox3.Text;
-                fnm = metroTextBox4.Text;
+                nm = metroTextBox4.Text;
+                fnm = metroTextBox5.Text;
                 /*получение кода страны*/
                 SqlCommand getCountryCode = new SqlCommand("SELECT @countrycode=countrycode FROM country WHERE countryname ='" + metroComboBox2.Text + "'", con);
                 try
@@ -153,9 +155,58 @@ namespace SomeProject
                 gender = metroComboBox1.Text;
                 born = metroDateTime1.Value;
                 /*запросик регистрации*/
-                //скоро завезем....
-              
+              /*ГЛЯНЬ В ЧЕМ косяк во втором запросе*/
+                string query1 = "INSERT INTO USERS VALUES"+"(N'" + mail + "', N'" + pas + "', N'" + fnm + "', N'" + nm + "', N'R')";
+                 string query2= "INSERT [runner] ([runnerid],[Email], [gender], [dateofbirth], [countrycode]) VALUES" +
+                        "(N'" + id + "', N'" + mail+ "', N'" + gender +
+                        "', N'" + born+ "', N'" + country + "');";
+                useradd(query1);
+                 register(query2);
             }
+        }
+        private void useradd(string query)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand add = new SqlCommand(query, con);
+                add.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                con.Close();
+            }
+        }
+        private void register(string query)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand register = new SqlCommand(query, con);
+                register.ExecuteNonQuery();
+                con.Close();
+                this.Close();
+                success suc = new success();
+                suc.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                con.Close();
+            }
+        }
+
+        private int generateid()
+        {
+            SqlCommand getid = new SqlCommand("select max(runnerid) from runner",con);
+             con.Open();
+           id=Convert.ToInt32(getid.ExecuteScalar());
+            con.Close();
+            getid.Dispose();
+            return id;
         }
 
         private void metroTextBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -186,45 +237,55 @@ namespace SomeProject
 
         private void metroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
-            {
+           
                 if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
                 {
+                e.Handled = true;
                     errorProvider2.SetError(metroTextBox1, "Используйте английский язык для ввода Email");
                 }
-                e.Handled = true;
-            }
+               
+            
             else { errorProvider2.SetError(metroTextBox1, String.Empty); }
         }
 
         private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
+            if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
             {
-                if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
-                {
-                    errorProvider2.SetError(metroTextBox2, "Используйте английский язык для ввода Пароля");
-                }
                 e.Handled = true;
+                errorProvider2.SetError(metroTextBox3, "Используйте английский язык для ввода Пароля");
             }
             else { errorProvider2.SetError(metroTextBox2, String.Empty); }
         }
 
         private void metroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
-            {
+            
                 if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
                 {
+                e.Handled = true;
                     errorProvider2.SetError(metroTextBox3, "Используйте английский язык для ввода Пароля");
                 }
-                e.Handled = true;
-            }
+                
+           
             else { errorProvider2.SetError(metroTextBox3, String.Empty); }
         }
 
         private void metroLabel3_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            metroTextBox1.Text ="rudi213@ya.ru";
+            metroTextBox2.Text ="12345678";
+            metroTextBox3.Text = "12345678";
+            metroTextBox4.Text ="Max";
+            metroTextBox5.Text ="Cat";
+            metroComboBox1.Text = "Male";
+            metroComboBox2.Text = "Russia";
+            metroDateTime1.Value = new DateTime(1999,10,01);
 
         }
     }

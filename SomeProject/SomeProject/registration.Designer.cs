@@ -411,6 +411,7 @@
             this.metroButton3.TabIndex = 10;
             this.metroButton3.Text = "Отмена";
             this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroDateTime1
             // 
@@ -419,6 +420,7 @@
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(177, 29);
             this.metroDateTime1.TabIndex = 11;
+            this.metroDateTime1.Value = new System.DateTime(2018, 11, 9, 0, 0, 0, 0);
             // 
             // metroComboBox1
             // 
