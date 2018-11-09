@@ -205,10 +205,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </Compile>
-    <Compile Include="WSRDataSetVolounters.Designer.cs">
+    <Compile Include="WSRDataSetVolunteer.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WSRDataSetVolounters.xsd</DependentUpon>
+      <DependentUpon>WSRDataSetVolunteer.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -301,16 +301,16 @@
     <None Include="WSRDataSetUsers.xss">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSetVolounters.xsc">
-      <DependentUpon>WSRDataSetVolounters.xsd</DependentUpon>
+    <None Include="WSRDataSetVolunteer.xsc">
+      <DependentUpon>WSRDataSetVolunteer.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSetVolounters.xsd">
+    <None Include="WSRDataSetVolunteer.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WSRDataSetVolounters.Designer.cs</LastGenOutput>
+      <LastGenOutput>WSRDataSetVolunteer.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSRDataSetVolounters.xss">
-      <DependentUpon>WSRDataSetVolounters.xsd</DependentUpon>
+    <None Include="WSRDataSetVolunteer.xss">
+      <DependentUpon>WSRDataSetVolunteer.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
