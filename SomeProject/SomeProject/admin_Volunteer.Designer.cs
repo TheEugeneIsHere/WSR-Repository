@@ -39,6 +39,10 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.volunteerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wSRDataSetVolunteer = new SomeProject.WSRDataSetVolunteer();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -47,10 +51,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.volunteerTableAdapter = new SomeProject.WSRDataSetVolunteerTableAdapters.VolunteerTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.volunteerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetVolunteer)).BeginInit();
@@ -163,83 +163,6 @@
             this.metroGrid1.Size = new System.Drawing.Size(823, 303);
             this.metroGrid1.TabIndex = 32;
             // 
-            // volunteerBindingSource
-            // 
-            this.volunteerBindingSource.DataMember = "Volunteer";
-            this.volunteerBindingSource.DataSource = this.wSRDataSetVolunteer;
-            // 
-            // wSRDataSetVolunteer
-            // 
-            this.wSRDataSetVolunteer.DataSetName = "WSRDataSetVolunteer";
-            this.wSRDataSetVolunteer.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(594, 445);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(114, 19);
-            this.metroLabel5.TabIndex = 33;
-            this.metroLabel5.Text = "Сортировать по:";
-            // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "Фамилии",
-            "Имени",
-            "Стране",
-            "Полу"});
-            this.metroComboBox1.Location = new System.Drawing.Point(712, 439);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.PromptText = "Фамилии";
-            this.metroComboBox1.Size = new System.Drawing.Size(134, 29);
-            this.metroComboBox1.TabIndex = 34;
-            this.metroComboBox1.UseSelectable = true;
-            this.metroComboBox1.TextChanged += new System.EventHandler(this.metroComboBox1_TextChanged);
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.metroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light;
-            this.metroButton1.Location = new System.Drawing.Point(23, 439);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(134, 29);
-            this.metroButton1.TabIndex = 35;
-            this.metroButton1.Text = "Загрузка волонтёров";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::SomeProject.Properties.Resources.exit_Admin;
-            this.pictureBox2.Location = new System.Drawing.Point(811, 77);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 26;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // volunteerTableAdapter
-            // 
-            this.volunteerTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -281,6 +204,83 @@
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewTextBoxColumn4.Width = 55;
+            // 
+            // volunteerBindingSource
+            // 
+            this.volunteerBindingSource.DataMember = "Volunteer";
+            this.volunteerBindingSource.DataSource = this.wSRDataSetVolunteer;
+            // 
+            // wSRDataSetVolunteer
+            // 
+            this.wSRDataSetVolunteer.DataSetName = "WSRDataSetVolunteer";
+            this.wSRDataSetVolunteer.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.Location = new System.Drawing.Point(594, 445);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(114, 19);
+            this.metroLabel5.TabIndex = 33;
+            this.metroLabel5.Text = "Сортировать по:";
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "Имени",
+            "Фамилии",
+            "Стране",
+            "Полу"});
+            this.metroComboBox1.Location = new System.Drawing.Point(712, 439);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.PromptText = "Имени";
+            this.metroComboBox1.Size = new System.Drawing.Size(134, 29);
+            this.metroComboBox1.TabIndex = 34;
+            this.metroComboBox1.UseSelectable = true;
+            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.metroButton1.Location = new System.Drawing.Point(23, 439);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(134, 29);
+            this.metroButton1.TabIndex = 35;
+            this.metroButton1.Text = "Загрузка волонтёров";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::SomeProject.Properties.Resources.exit_Admin;
+            this.pictureBox2.Location = new System.Drawing.Point(811, 77);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
+            this.pictureBox1.Location = new System.Drawing.Point(38, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // volunteerTableAdapter
+            // 
+            this.volunteerTableAdapter.ClearBeforeFill = true;
             // 
             // admin_Volunteer
             // 

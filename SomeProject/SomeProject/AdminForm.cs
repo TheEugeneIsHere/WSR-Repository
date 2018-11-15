@@ -35,8 +35,8 @@ namespace SomeProject
 
         private void metroTile3_Click(object sender, EventArgs e)
         {
-            admin_Charity clarityForm = new admin_Charity();
-            clarityForm.Show();
+            admin_Charity charityForm = new admin_Charity();
+            charityForm.Show();
             this.Close();
         }
 

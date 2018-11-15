@@ -96,14 +96,15 @@ namespace SomeProject
                     ++errorCount;
                     errorLog += errorCount + ". Email-адрес уже зарегистрирован в системе\n";
                 }
-                con.Close();
-                isRegistered.Dispose();
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
                 isRegistered.Dispose();
                 con.Close();
-                MessageBox.Show(ex.ToString());
             }
 
             if (metroTextBox3.Text == "")
@@ -111,7 +112,6 @@ namespace SomeProject
                 error.SetError(metroTextBox3, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount+". Отсутствует Имя пользователя\n";
-               // MessageBox.Show("Не введено Имя пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (metroTextBox2.Text == "")
@@ -119,7 +119,6 @@ namespace SomeProject
                 error.SetError(metroTextBox2, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount + ". Отсутствует Фамилия пользователя\n";
-                // MessageBox.Show("Не введена Фамилия пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (!metroTextBox1.Text.Contains('@'))
@@ -127,7 +126,6 @@ namespace SomeProject
                 error.SetError(metroTextBox1, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount + ". Неправильно введён Email-адрес\n";
-                //MessageBox.Show("Неправильно введён Email-адрес", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (metroComboBox2.Text == "")
@@ -135,7 +133,6 @@ namespace SomeProject
                 error.SetError(metroComboBox2, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount + ". Отсутствует Роль пользователя\n";
-                //MessageBox.Show("Не выбрана роль пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -153,7 +150,6 @@ namespace SomeProject
                 error.SetError(metroTextBox5, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount + ". Введённые пароли отличаются\n";
-                //MessageBox.Show("Введённые пароли отличаются", "Введите пароль заново", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if ((metroTextBox4.Text == "") || (metroTextBox5.Text == ""))
@@ -162,7 +158,6 @@ namespace SomeProject
                 error.SetError(metroTextBox5, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount + ". Введите пароль\n";
-                //MessageBox.Show("Введите пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (errorCount != 0)
@@ -174,8 +169,8 @@ namespace SomeProject
                 query = "INSERT [Users] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES" +
                         "(N'" + metroTextBox1.Text + "', N'" + metroTextBox4.Text + "', N'" + metroTextBox3.Text +
                         "', N'" + metroTextBox2.Text + "', N'" + Role + "');";
+
                 UsersAdd(query);
-                
             }
 
         }
@@ -187,24 +182,21 @@ namespace SomeProject
 
         private void UsersAdd(string query)
         {
-            //using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
-            //    "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
-            //    "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-            //{
-                try
-                {
-                    con.Open();
-                    SqlCommand register = new SqlCommand(query, con);
-                    register.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    con.Close();
-                }
-        //}
+            try
+            {
+                con.Open();
+                SqlCommand register = new SqlCommand(query, con);
+                register.ExecuteNonQuery();
+                MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }

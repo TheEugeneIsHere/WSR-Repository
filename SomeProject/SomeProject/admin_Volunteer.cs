@@ -14,15 +14,13 @@ namespace SomeProject
     public partial class admin_Volunteer : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
-        private static string query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer";
+        private static string query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer ORDER BY FirstName";
 
         public admin_Volunteer()
         {
             InitializeComponent();
-            con.Open();
-            VolountersLoad(query);
-            con.Close();
-
+            VolunteerLoad(query);
+            VolunteerCount();
             timer1.Tick += timer1_Tick;
             timer1.Start();
         }
@@ -43,35 +41,49 @@ namespace SomeProject
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            admin_VolunteerAdd VolountersAddForm = new admin_VolunteerAdd();
-            VolountersAddForm.Show();
+            admin_VolunteerAdd VolunteerAddForm = new admin_VolunteerAdd();
+            VolunteerAddForm.Show();
             this.Close();
         }
 
-        private void VolountersLoad(string query)
+        private void VolunteerCount()
         {
-            //using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
-            //    "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
-            //    "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-            //{
-                try
-                {
-                    SqlDataAdapter ad = new SqlDataAdapter(query, con);
-                    SqlCommand usersCount = new SqlCommand("SELECT COUNT(*) FROM Volunteer",con);
-                    metroLabel3.Text = usersCount.ExecuteScalar().ToString();
-                    ad.Fill(wSRDataSetVolunteer, "Volunteer");
-                    metroGrid1.DataSource = wSRDataSetVolunteer.Tables[0];
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    con.Close();
-                }
-            //}
-
+            try
+            {
+                con.Open();
+                SqlCommand usersCount = new SqlCommand("SELECT COUNT(*) FROM Volunteer", con);
+                metroLabel3.Text = usersCount.ExecuteScalar().ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
-        private void metroComboBox1_TextChanged(object sender, EventArgs e)
+        private void VolunteerLoad(string query)
+        {
+            try
+            {
+                con.Open();
+                SqlDataAdapter ad = new SqlDataAdapter(query, con);
+                ad.Fill(wSRDataSetVolunteer, "Volunteer");
+                metroGrid1.DataSource = wSRDataSetVolunteer.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sort = string.Empty;
             switch (metroComboBox1.Text)
@@ -91,17 +103,7 @@ namespace SomeProject
             }
 
             wSRDataSetVolunteer.Clear();
-
-            if (sort == "")
-            {
-                query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer";
-            }
-            else
-                query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer ORDER BY '" + sort + "';";
-
-            con.Open();
-            VolountersLoad(query);
-            con.Close();
+            VolunteerLoad("SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer ORDER BY " + sort);
         }
     }
 }

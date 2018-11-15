@@ -39,46 +39,28 @@ namespace SomeProject
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            admin_CharityAdd clarityFormAdd = new admin_CharityAdd();
-            clarityFormAdd.Show();
+            admin_CharityAdd charityFormAdd = new admin_CharityAdd();
+            charityFormAdd.Show();
             this.Hide();
         }
 
         private void CharityLoad()
         {
-            //using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
-            //    "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
-            //    "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-            //{
-
-            //string query = "SELECT CharityLogo, CharityName, CharityDescription FROM Charity"; // Строка запроса
-            //SqlCommand command = new SqlCommand(query, connection); // Создан объект для выполнения запроса к БД
-            //SqlDataReader reader = command.ExecuteReader(); // Объект читающий данные из таблицы БД
-            con.Open();
-            SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityLogo, CharityName, CharityDescription FROM Charity", con);
-            ad.Fill(wSRDataSetCharity, "Charity");
-            metroGrid1.DataSource = wSRDataSetCharity.Tables[0];
-            con.Close();
-            // var logos = new DataGridViewImageColumn();
-            // logos.Name = "Логотип";
-            // wSRDataSet.Charity.Columns.Add(logos);
-
-            //List<string[]> data = new List<string[]>();
-            //while (reader.Read())
-            //{
-            //    data.Add(new string[3]);
-
-
-            //    data[data.Count - 1][0] = reader[0].ToString();
-            //    data[data.Count - 1][1] = reader[1].ToString();
-            //    data[data.Count - 1][2] = reader[2].ToString();
-            //}
-            //// Каким-то макаром нужно закинуть сюда ещё логотипы
-            //reader.Close();
-
-            //foreach (string[] s in data)
-            //    wSRDataSet.Charity.Rows.Add(s);
-            //}
+            try
+            {
+                con.Open();
+                SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityLogo, CharityName, CharityDescription FROM Charity", con);
+                ad.Fill(wSRDataSetCharity, "Charity");
+                metroGrid1.DataSource = wSRDataSetCharity.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
