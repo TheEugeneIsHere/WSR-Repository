@@ -60,13 +60,6 @@ namespace SomeProject
             userAddForm.Show();
             this.Close();
         }
-
-        private void metroTile1_Click(object sender, EventArgs e)
-        {
-            admin_UsersEdit UsersEditForm = new admin_UsersEdit();
-            UsersEditForm.Show();
-            this.Close();
-        }
         
         private void UsersLoad(string query)
         {
@@ -211,6 +204,28 @@ namespace SomeProject
                     con.Close();
                 }
                 //metroLabel1.Text = GridSender.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            }
+        }
+        private void SearchOnEnter (object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                con.Open();
+                SqlCommand searchIsOn = new SqlCommand(query, con);
+                try
+                {
+                    query = "SELECT * FROM Users WHERE Email LIKE '" + metroTextBox1.Text + "%'";
+                    searchIsOn.ExecuteNonQuery();
+                    con.Close();
+                    UsersLoad(query);
+                    searchIsOn.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    con.Close();
+                    searchIsOn.Dispose();
+                }
             }
         }
     }

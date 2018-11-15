@@ -55,7 +55,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.usersTableAdapter = new SomeProject.WSRDataSetUsersTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -70,7 +69,7 @@
             this.metroLabel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(20, 458);
+            this.metroLabel4.Location = new System.Drawing.Point(20, 464);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(829, 30);
             this.metroLabel4.TabIndex = 31;
@@ -89,7 +88,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(299, 57);
+            this.metroLabel1.Location = new System.Drawing.Point(299, 60);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(269, 25);
             this.metroLabel1.TabIndex = 36;
@@ -261,6 +260,7 @@
             this.metroTextBox1.WaterMark = "Поиск пользователей..";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchOnEnter);
             // 
             // metroComboBox1
             // 
@@ -364,18 +364,6 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
-            // metroTile1
-            // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(774, 18);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(75, 23);
-            this.metroTile1.Style = MetroFramework.MetroColorStyle.White;
-            this.metroTile1.TabIndex = 48;
-            this.metroTile1.Text = "metroTile1";
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
-            // 
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
@@ -384,8 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 508);
-            this.Controls.Add(this.metroTile1);
+            this.ClientSize = new System.Drawing.Size(869, 514);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.metroComboBox2);
@@ -432,7 +419,6 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroTile metroTile1;
         private WSRDataSetUsers wSRDataSetUsers;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private WSRDataSetUsersTableAdapters.UsersTableAdapter usersTableAdapter;
