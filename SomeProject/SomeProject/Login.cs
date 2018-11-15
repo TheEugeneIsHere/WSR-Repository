@@ -112,8 +112,10 @@ namespace SomeProject
                 }
                 else if (role == Role.R)
                 {
+                    connection.mail = metroTextBox1.Text;
+                    connection.password = metroTextBox2.Text;
                     var form = new RunnerForm();
-                    this.Hide();
+                    this.Hide();                    
                     form.ShowDialog();
                     
                 }
@@ -123,16 +125,14 @@ namespace SomeProject
         /*временный мусор*/
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            metroTextBox1.Text = "a.adkin@dayrep.net";
-            metroTextBox2.Text = "jwZh2x@p";
-            login(); // А если сделать вот так, тогда даже на Логин нажимать не надо азазаз
+            metroTextBox1.Text = "glypayamasha@yandex.ru";
+            metroTextBox2.Text = "glypaya";
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
             metroTextBox1.Text = "leila.azedeva@mskills.com";
             metroTextBox2.Text = "MvTQ3itX";
-            login(); // Не за что ага
         }
         /*конец временного мусора*/
     }

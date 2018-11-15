@@ -30,5 +30,10 @@ namespace SomeProject
 
             return new SqlConnection(connectionString);
         }
+
+        /*уютный уголок максюши*/
+        public static string mail;
+        public static string password;
+        /*конец уголка*/
     }
 }
