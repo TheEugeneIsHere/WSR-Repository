@@ -178,6 +178,16 @@ namespace SomeProject
         private void metroComboBox2_TextChanged(object sender, EventArgs e)
         {
             error.SetError(metroComboBox2, String.Empty);
+            if (metroComboBox2.Text == "Бегун")
+            {
+                metroPanel1.Visible = true;
+                metroPanel1.Enabled = true;
+            }
+            else
+            {
+                metroPanel1.Visible = false;
+                metroPanel1.Enabled = false;
+            }
         }
 
         private void UsersAdd(string query)
