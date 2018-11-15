@@ -23,7 +23,7 @@ namespace SomeProject
             UsersLoad(query);
             timer1.Tick += timer1_Tick;
             timer1.Start();
-
+            this.Cursor = Cursors.Default;
         }
 
         private void UsersCount()
@@ -60,10 +60,12 @@ namespace SomeProject
 
         private void pictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
         {
-            wSRDataSetUsers.Clear();
             metroComboBox2.SelectedIndex = 0;
-            metroComboBox1.SelectedIndex = 0;
-            UsersLoad("SELECT FirstName, LastName, Email, RoleID FROM Users ORDER BY FirstName");
+            metroComboBox1.SelectedIndex= 0;
+            metroTextBox1.Text = string.Empty;
+            metroComboBox2.Enabled = true;
+            metroComboBox1.Enabled = true;
+            UsersLoad("SELECT FirstName, LastName, Email, RoleID FROM Users");
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -78,9 +80,11 @@ namespace SomeProject
             try
             {
                 con.Open();
+                wSRDataSetUsers.Clear();
                 SqlDataAdapter ad = new SqlDataAdapter(query, con);
                 ad.Fill(wSRDataSetUsers, "Users");
                 metroGrid1.DataSource = wSRDataSetUsers.Tables[0];
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -166,25 +170,21 @@ namespace SomeProject
             }
         }
 
-        private void SearchOnEnter (object sender, KeyEventArgs e)
+        private void SearchOnEnter(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                con.Open();
-                SqlCommand searchIsOn = new SqlCommand(query, con);
                 try
                 {
+                    metroComboBox2.Enabled = false;
+                    metroComboBox1.Enabled = false;
+                    e.SuppressKeyPress = true;
                     query = "SELECT * FROM Users WHERE Email LIKE '" + metroTextBox1.Text + "%'";
-                    searchIsOn.ExecuteNonQuery();
-                    con.Close();
                     UsersLoad(query);
-                    searchIsOn.Dispose();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
-                    con.Close();
-                    searchIsOn.Dispose();
                 }
             }
         }

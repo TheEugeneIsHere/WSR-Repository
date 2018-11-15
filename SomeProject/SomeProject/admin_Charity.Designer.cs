@@ -56,7 +56,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(208, 60);
+            this.metroLabel1.Location = new System.Drawing.Point(208, 51);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(456, 25);
             this.metroLabel1.TabIndex = 0;
@@ -98,7 +98,7 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(48, 136);
+            this.metroGrid1.Location = new System.Drawing.Point(48, 109);
             this.metroGrid1.MultiSelect = false;
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.ReadOnly = true;
@@ -113,7 +113,7 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(768, 319);
+            this.metroGrid1.Size = new System.Drawing.Size(768, 346);
             this.metroGrid1.TabIndex = 16;
             // 
             // charityLogoDataGridViewTextBoxColumn
@@ -173,7 +173,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(377, 88);
+            this.metroButton1.Location = new System.Drawing.Point(377, 80);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(119, 23);
             this.metroButton1.TabIndex = 19;
@@ -185,7 +185,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

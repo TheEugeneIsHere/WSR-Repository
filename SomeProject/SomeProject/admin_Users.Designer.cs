@@ -88,7 +88,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(299, 60);
+            this.metroLabel1.Location = new System.Drawing.Point(299, 51);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(269, 25);
             this.metroLabel1.TabIndex = 36;
@@ -100,7 +100,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(477, 89);
+            this.metroLabel3.Location = new System.Drawing.Point(481, 25);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(0, 0);
             this.metroLabel3.TabIndex = 38;
@@ -109,7 +109,7 @@
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(336, 93);
+            this.metroLabel2.Location = new System.Drawing.Point(340, 29);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(143, 19);
             this.metroLabel2.TabIndex = 37;
@@ -152,7 +152,7 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(38, 126);
+            this.metroGrid1.Location = new System.Drawing.Point(38, 98);
             this.metroGrid1.MultiSelect = false;
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.ReadOnly = true;
@@ -167,7 +167,7 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(791, 250);
+            this.metroGrid1.Size = new System.Drawing.Size(791, 292);
             this.metroGrid1.TabIndex = 39;
             this.metroGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
             // 
@@ -235,7 +235,7 @@
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(131, 1);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(158, 1);
             this.metroTextBox1.CustomButton.Name = "";
             this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -244,23 +244,23 @@
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(676, 380);
+            this.metroTextBox1.Location = new System.Drawing.Point(649, 396);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Поиск пользователей..";
+            this.metroTextBox1.PromptText = "Поиск по Email пользователя..";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(153, 23);
+            this.metroTextBox1.Size = new System.Drawing.Size(180, 23);
             this.metroTextBox1.TabIndex = 40;
             this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "Поиск пользователей..";
+            this.metroTextBox1.WaterMark = "Поиск по Email пользователя..";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchOnEnter);
+            this.metroTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchOnEnter);
             // 
             // metroComboBox1
             // 
@@ -271,7 +271,7 @@
             "Имени",
             "Фамилии",
             "Роли"});
-            this.metroComboBox1.Location = new System.Drawing.Point(165, 415);
+            this.metroComboBox1.Location = new System.Drawing.Point(165, 431);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.PromptText = "Имени";
             this.metroComboBox1.Size = new System.Drawing.Size(134, 29);
@@ -283,7 +283,7 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(50, 421);
+            this.metroLabel6.Location = new System.Drawing.Point(50, 437);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(114, 19);
             this.metroLabel6.TabIndex = 42;
@@ -293,7 +293,7 @@
             // 
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(42, 385);
+            this.metroLabel7.Location = new System.Drawing.Point(42, 401);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(122, 19);
             this.metroLabel7.TabIndex = 44;
@@ -309,7 +309,7 @@
             "Администратор",
             "Бегун",
             "Координатор"});
-            this.metroComboBox2.Location = new System.Drawing.Point(165, 380);
+            this.metroComboBox2.Location = new System.Drawing.Point(165, 396);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.PromptText = "(Все роли)";
             this.metroComboBox2.Size = new System.Drawing.Size(134, 29);
@@ -321,9 +321,9 @@
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::SomeProject.Properties.Resources.refresh_icon;
-            this.pictureBox3.Location = new System.Drawing.Point(643, 379);
+            this.pictureBox3.Location = new System.Drawing.Point(305, 396);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(26, 27);
+            this.pictureBox3.Size = new System.Drawing.Size(31, 29);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 46;
             this.pictureBox3.TabStop = false;
@@ -333,7 +333,7 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::SomeProject.Properties.Resources.exit_Admin;
-            this.pictureBox2.Location = new System.Drawing.Point(811, 77);
+            this.pictureBox2.Location = new System.Drawing.Point(811, 57);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -344,7 +344,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -356,9 +356,9 @@
             // 
             this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton1.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.metroButton1.Location = new System.Drawing.Point(723, 409);
+            this.metroButton1.Location = new System.Drawing.Point(695, 425);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(106, 35);
+            this.metroButton1.Size = new System.Drawing.Size(134, 35);
             this.metroButton1.TabIndex = 47;
             this.metroButton1.Text = "Добавить\r\n пользователя";
             this.metroButton1.UseSelectable = true;

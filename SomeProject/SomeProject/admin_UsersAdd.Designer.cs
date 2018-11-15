@@ -77,7 +77,7 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::SomeProject.Properties.Resources.exit_Admin;
-            this.pictureBox2.Location = new System.Drawing.Point(811, 77);
+            this.pictureBox2.Location = new System.Drawing.Point(811, 57);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -88,7 +88,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -102,7 +102,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(299, 57);
+            this.metroLabel1.Location = new System.Drawing.Point(299, 51);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(314, 25);
             this.metroLabel1.TabIndex = 38;

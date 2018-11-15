@@ -49,6 +49,7 @@ namespace SomeProject
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.AppStarting;
             admin_Users UsersForm = new admin_Users();
             UsersForm.Show();
             this.Close();
