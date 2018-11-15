@@ -182,7 +182,7 @@
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
             this.metroTextBox1.Size = new System.Drawing.Size(263, 23);
-            this.metroTextBox1.TabIndex = 7;
+            this.metroTextBox1.TabIndex = 1;
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMark = "Email";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -215,7 +215,7 @@
             this.metroTextBox2.SelectionStart = 0;
             this.metroTextBox2.ShortcutsEnabled = true;
             this.metroTextBox2.Size = new System.Drawing.Size(263, 23);
-            this.metroTextBox2.TabIndex = 7;
+            this.metroTextBox2.TabIndex = 2;
             this.metroTextBox2.UseSelectable = true;
             this.metroTextBox2.WaterMark = "Пароль";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -248,7 +248,7 @@
             this.metroTextBox3.SelectionStart = 0;
             this.metroTextBox3.ShortcutsEnabled = true;
             this.metroTextBox3.Size = new System.Drawing.Size(263, 23);
-            this.metroTextBox3.TabIndex = 7;
+            this.metroTextBox3.TabIndex = 3;
             this.metroTextBox3.UseSelectable = true;
             this.metroTextBox3.WaterMark = "Повторите пароль";
             this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -281,7 +281,7 @@
             this.metroTextBox4.SelectionStart = 0;
             this.metroTextBox4.ShortcutsEnabled = true;
             this.metroTextBox4.Size = new System.Drawing.Size(263, 23);
-            this.metroTextBox4.TabIndex = 7;
+            this.metroTextBox4.TabIndex = 4;
             this.metroTextBox4.UseSelectable = true;
             this.metroTextBox4.WaterMark = "Имя";
             this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -314,7 +314,7 @@
             this.metroTextBox5.SelectionStart = 0;
             this.metroTextBox5.ShortcutsEnabled = true;
             this.metroTextBox5.Size = new System.Drawing.Size(263, 23);
-            this.metroTextBox5.TabIndex = 7;
+            this.metroTextBox5.TabIndex = 5;
             this.metroTextBox5.UseSelectable = true;
             this.metroTextBox5.WaterMark = "Фамилия";
             this.metroTextBox5.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -396,7 +396,7 @@
             this.metroButton2.Location = new System.Drawing.Point(325, 432);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(109, 23);
-            this.metroButton2.TabIndex = 10;
+            this.metroButton2.TabIndex = 9;
             this.metroButton2.Text = "Регистрация";
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
@@ -415,11 +415,12 @@
             // 
             // metroDateTime1
             // 
+            this.metroDateTime1.CustomFormat = "";
             this.metroDateTime1.Location = new System.Drawing.Point(625, 339);
             this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(177, 29);
-            this.metroDateTime1.TabIndex = 11;
+            this.metroDateTime1.TabIndex = 7;
             this.metroDateTime1.Value = new System.DateTime(2018, 11, 9, 0, 0, 0, 0);
             // 
             // metroComboBox1
@@ -433,7 +434,7 @@
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.PromptText = "Male";
             this.metroComboBox1.Size = new System.Drawing.Size(263, 29);
-            this.metroComboBox1.TabIndex = 12;
+            this.metroComboBox1.TabIndex = 6;
             this.metroComboBox1.UseSelectable = true;
             // 
             // pictureBox2
@@ -578,7 +579,7 @@
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.PromptText = "Country";
             this.metroComboBox2.Size = new System.Drawing.Size(177, 29);
-            this.metroComboBox2.TabIndex = 12;
+            this.metroComboBox2.TabIndex = 8;
             this.metroComboBox2.UseSelectable = true;
             // 
             // registration

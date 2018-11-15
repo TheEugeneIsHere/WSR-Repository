@@ -154,12 +154,14 @@ namespace SomeProject
                 /**/
                 gender = metroComboBox1.Text;
                 born = metroDateTime1.Value;
+                born.ToString("yyyy - MM - dd");
+
                 /*запросик регистрации*/
-              
-                string query1 = "INSERT INTO USERS VALUES"+"(N'" + mail + "', N'" + pas + "', N'" + fnm + "', N'" + nm + "', N'R')";
-                string query2 = "set IDENTITY_INSERT [runner] on insert into runner (runnerid,email,gender,dateofbirth,countrycode) " + "values("+id+",'"+mail + "','" + gender + "','" + born + "','" + country+ "') SET IDENTITY_INSERT [runner] off";
+                id = generateid() + 1;
+                string query1 = "insert [Users]([Email],[FirstName],[LastName],[Password],[RoleId]) values " + "(N'" + mail + "',N'" + nm + "',N'" + fnm + "', N'" + pas + "', N'R')";
+                string query2 = "set IDENTITY_INSERT [runner] on insert [runner]([RunnerId],[Email],[Gender],[DateOfBirth],[CountryCode]) " + "values("+id+",N'"+mail + "',N'" + gender + "','" + born + "',N'" + country+ "'); SET IDENTITY_INSERT [runner] off";
                 useradd(query1);
-                 register(query2);
+                register(query2);
             }
         }
         private void useradd(string query)
@@ -202,6 +204,7 @@ namespace SomeProject
             SqlCommand getid = new SqlCommand("select max(runnerid) from runner",con);
              con.Open();
            id=Convert.ToInt32(getid.ExecuteScalar());
+            
             con.Close();
             getid.Dispose();
             return id;
