@@ -125,14 +125,15 @@ namespace SomeProject
         /*временный мусор*/
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            metroTextBox1.Text = "glypayamasha@yandex.ru";
-            metroTextBox2.Text = "glypaya";
+            metroTextBox1.Text = "a.adkin@dayrep.net";
+            metroTextBox2.Text = "jwZh2x@p";
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
             metroTextBox1.Text = "leila.azedeva@mskills.com";
             metroTextBox2.Text = "MvTQ3itX";
+            login(); // Не за что ага
         }
         /*конец временного мусора*/
     }
