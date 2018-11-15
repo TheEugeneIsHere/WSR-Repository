@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,8 @@ namespace SomeProject
         DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
         int distance = 0, stoim=0,vznos = 0, variant = 0,itog=0;
         ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
-
+        SqlConnection con = connection.AzureConnection();
+    
         private void timer1_Tick(object sender, EventArgs e)
         {
              TimeSpan timeremaining = voteTime - DateTime.Now;
@@ -137,10 +139,32 @@ namespace SomeProject
                 vznos = Convert.ToInt32(metroTextBox2.Text);
                 itog = vznos + stoim + variant;
                 label1.Text = itog + "$";
+                string regdate = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+                Random r = new Random();
+                int charityid = r.Next(1, 10);
+                id = generateid() + 1;
+
+                string query = "";
                 MessageBox.Show("В теории вы зареганы, по факту система не работает...", "Продам гараж");
 
             }
         }
+        private void register(string query)
+        {
+
+        }
+        private int id;
+        private int generateid()
+        {
+            SqlCommand getid = new SqlCommand("select max([RegistrationId]) from registration", con);
+            con.Open();
+            id = Convert.ToInt32(getid.ExecuteScalar());
+
+            con.Close();
+            getid.Dispose();
+            return id;
+        }
+       
 
         private void metroRadioButton3_CheckedChanged(object sender, EventArgs e)
         {
