@@ -95,6 +95,7 @@ namespace SomeProject
             }
             else
             {
+                connection.mail = metroTextBox1.Text;
                 if (role == Role.A)
                 {
                     var form = new AdminForm();
@@ -112,8 +113,15 @@ namespace SomeProject
                 }
                 else if (role == Role.R)
                 {
-                    connection.mail = metroTextBox1.Text;
-                    connection.password = metroTextBox2.Text;
+                    // connection.mail = metroTextBox1.Text;
+                     connection.password = metroTextBox2.Text;
+                    // Из-за этих строк (Их расположения в IF роль = бегун у меня не работает приветствие
+                    // Я особо не вникал, но как по мне без разницы бегун или нет, всё равно надо пихать в connection.mail
+                    // Поэтому я Password здесь оставлю, ашто он не нужен если адмэн как по мне
+                    // А connection.mail присвою в любом случае
+                    // Если что-то из этого критично - пиши, намутим по-другому
+                    // P.S. Я минут 40 всматривался в твой и свой код, не понимая что не так, пока не заметил что connection.mail
+                    // ..находится в блоке If Runner ......
                     var form = new RunnerForm();
                     this.Hide();                    
                     form.ShowDialog();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,32 @@ namespace SomeProject
 {
     public partial class AdminForm : MetroFramework.Forms.MetroForm
     {
+        SqlConnection con = connection.AzureConnection();
+
         public AdminForm()
         {
             InitializeComponent();
+            getLogin();
             timer1.Tick += timer1_Tick;
             timer1.Start();
+        }
+
+        private void getLogin()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand login = new SqlCommand("SELECT FirstName FROM Users WHERE RoleId = 'A' AND Email = '" + connection.mail + "'", con);
+                loginLabel1.Text += login.ExecuteScalar().ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

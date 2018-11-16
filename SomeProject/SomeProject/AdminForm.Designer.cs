@@ -38,6 +38,7 @@
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.loginLabel1 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -156,11 +157,23 @@
             this.metroTile1.UseTileImage = true;
             this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
+            // loginLabel1
+            // 
+            this.loginLabel1.AutoSize = true;
+            this.loginLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.loginLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.loginLabel1.Location = new System.Drawing.Point(313, 57);
+            this.loginLabel1.Name = "loginLabel1";
+            this.loginLabel1.Size = new System.Drawing.Size(179, 25);
+            this.loginLabel1.TabIndex = 16;
+            this.loginLabel1.Text = "Добро пожаловать, ";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.Controls.Add(this.loginLabel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroTile4);
@@ -176,6 +189,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -189,5 +203,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer timer1;
+        private MetroFramework.Controls.MetroLabel loginLabel1;
     }
 }

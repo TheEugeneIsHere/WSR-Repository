@@ -187,7 +187,6 @@ namespace SomeProject
             }
             else
             {
-                MessageBox.Show(runnerDateTime1.Value.ToString("yyyy-MM-dd"));
                 query = "INSERT INTO Users VALUES " +
                         "(N'" + metroTextBox1.Text + "', N'" + metroTextBox4.Text + "', N'" + metroTextBox3.Text +
                         "', N'" + metroTextBox2.Text + "', N'" + Role + "');";
