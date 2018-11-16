@@ -33,7 +33,8 @@ namespace SomeProject
         {
             admin_Charity charityForm = new admin_Charity();
             charityForm.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
@@ -78,7 +79,26 @@ namespace SomeProject
         {
             admin_Charity adminMenu_Clarity = new admin_Charity();
             adminMenu_Clarity.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
+
+        private void GoodbyeUser(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
+                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Yes)
+                {
+                    Application.OpenForms[0].Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
     }
 }

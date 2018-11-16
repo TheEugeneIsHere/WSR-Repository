@@ -211,6 +211,7 @@
             this.Name = "admin_Charity";
             this.Resizable = false;
             this.Text = "Administration Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity)).EndInit();
