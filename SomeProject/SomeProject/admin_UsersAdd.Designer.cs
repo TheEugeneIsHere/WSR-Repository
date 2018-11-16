@@ -121,7 +121,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(132, 219);
+            this.metroLabel2.Location = new System.Drawing.Point(117, 219);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(41, 19);
             this.metroLabel2.TabIndex = 39;
@@ -142,7 +142,7 @@
             this.metroTextBox2.CustomButton.UseSelectable = true;
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(178, 190);
+            this.metroTextBox2.Location = new System.Drawing.Point(163, 190);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -163,7 +163,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(108, 191);
+            this.metroLabel3.Location = new System.Drawing.Point(93, 191);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(65, 19);
             this.metroLabel3.TabIndex = 41;
@@ -184,7 +184,7 @@
             this.metroTextBox3.CustomButton.UseSelectable = true;
             this.metroTextBox3.CustomButton.Visible = false;
             this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(178, 161);
+            this.metroTextBox3.Location = new System.Drawing.Point(163, 161);
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
@@ -205,7 +205,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(138, 163);
+            this.metroLabel5.Location = new System.Drawing.Point(123, 163);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(35, 19);
             this.metroLabel5.TabIndex = 43;
@@ -220,7 +220,7 @@
             "Администратор",
             "Бегун",
             "Координатор"});
-            this.metroComboBox2.Location = new System.Drawing.Point(178, 259);
+            this.metroComboBox2.Location = new System.Drawing.Point(163, 259);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.PromptText = "Выбрать..";
             this.metroComboBox2.Size = new System.Drawing.Size(134, 29);
@@ -231,7 +231,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(135, 263);
+            this.metroLabel6.Location = new System.Drawing.Point(120, 263);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(38, 19);
             this.metroLabel6.TabIndex = 47;
@@ -241,7 +241,7 @@
             // 
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel7.Location = new System.Drawing.Point(132, 117);
+            this.metroLabel7.Location = new System.Drawing.Point(117, 117);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(174, 19);
             this.metroLabel7.TabIndex = 48;
@@ -343,7 +343,7 @@
             // 
             this.metroButton2.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton2.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.metroButton2.Location = new System.Drawing.Point(237, 324);
+            this.metroButton2.Location = new System.Drawing.Point(222, 324);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(83, 23);
             this.metroButton2.TabIndex = 54;
@@ -355,7 +355,7 @@
             // 
             this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton1.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.metroButton1.Location = new System.Drawing.Point(132, 324);
+            this.metroButton1.Location = new System.Drawing.Point(117, 324);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(83, 23);
             this.metroButton1.TabIndex = 55;
@@ -378,7 +378,7 @@
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(178, 219);
+            this.metroTextBox1.Location = new System.Drawing.Point(163, 219);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -398,14 +398,17 @@
             // 
             // runnerDateTime1
             // 
-            this.runnerDateTime1.Location = new System.Drawing.Point(35, 50);
+            this.runnerDateTime1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.runnerDateTime1.CustomFormat = "1/1/1969";
+            this.runnerDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.runnerDateTime1.Location = new System.Drawing.Point(65, 50);
             this.runnerDateTime1.MaxDate = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
             this.runnerDateTime1.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.runnerDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.runnerDateTime1.Name = "runnerDateTime1";
-            this.runnerDateTime1.Size = new System.Drawing.Size(164, 29);
+            this.runnerDateTime1.Size = new System.Drawing.Size(134, 29);
             this.runnerDateTime1.TabIndex = 56;
-            this.runnerDateTime1.Value = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
+            this.runnerDateTime1.Value = new System.DateTime(1969, 1, 1, 0, 0, 0, 0);
             // 
             // runnerCombo1
             // 
@@ -428,8 +431,98 @@
             this.runnerCombo2.FormattingEnabled = true;
             this.runnerCombo2.ItemHeight = 23;
             this.runnerCombo2.Items.AddRange(new object[] {
-            "Мужской",
-            "Женский"});
+            "Andorra",
+            "Argentina",
+            "Australia",
+            "Austria",
+            "Belgium",
+            "Botswana",
+            "Brazil",
+            "Bulgaria",
+            "Central African Republic",
+            "Canada",
+            "Chile",
+            "China",
+            "Ivory Coast",
+            "Cameroon",
+            "Colombia",
+            "Croatia",
+            "Czech Republic",
+            "Denmark",
+            "Dominican Republic",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Spain",
+            "Estonia",
+            "Finland",
+            "France",
+            "United Kingdom",
+            "Guinea-Bissau",
+            "Equatorial Guinea",
+            "Germany",
+            "Greece",
+            "Guatemala",
+            "Guinea",
+            "Hong Kong",
+            "Honduras",
+            "Hungary",
+            "Indonesia",
+            "India",
+            "Ireland",
+            "Israel",
+            "Italy",
+            "Jamaica",
+            "Jordan",
+            "Japan",
+            "Kenya",
+            "South Korea",
+            "Saudi Arabia",
+            "Latvia",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Macau",
+            "Madagascar",
+            "Malaysia",
+            "Moldova",
+            "Mexico",
+            "Macedonia",
+            "Mali",
+            "Malta",
+            "Montenegro",
+            "Monaco",
+            "Mauritius",
+            "Nicaragua",
+            "Netherlands",
+            "Niger",
+            "Norway",
+            "New Zealand",
+            "Panama",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Poland",
+            "Portugal",
+            "Puerto Rico",
+            "Qatar",
+            "Romania",
+            "South Africa",
+            "Russia",
+            "Senegal",
+            "Singapore",
+            "Switzerland",
+            "Slovakia",
+            "Sweden",
+            "Thailand",
+            "Chinese Taipei",
+            "Turkey",
+            "United Arab Emirates",
+            "Uruguay",
+            "United States",
+            "Vatican",
+            "Venezuela",
+            "Vietnam"});
             this.runnerCombo2.Location = new System.Drawing.Point(65, 120);
             this.runnerCombo2.Name = "runnerCombo2";
             this.runnerCombo2.PromptText = "Выбрать..";
@@ -525,6 +618,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "admin_UsersAdd";
             this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.Text = "Administration Menu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

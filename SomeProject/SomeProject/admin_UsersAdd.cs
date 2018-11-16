@@ -83,13 +83,13 @@ namespace SomeProject
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            string errorLog ="Исправьте следующие ошибки: \n\n";
+            string errorLog = "Исправьте следующие ошибки: \n\n";
             int errorCount = 0;
-            SqlCommand isRegistered = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email ='"+metroTextBox1.Text+"'", con);
+            SqlCommand isRegistered = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email ='" + metroTextBox1.Text + "'", con);
+
             try
             {
                 con.Open();
-                
                 if (Convert.ToString(isRegistered.ExecuteScalar()) != "0")
                 {
                     error.SetError(metroTextBox1, "Ошибка");
@@ -111,7 +111,7 @@ namespace SomeProject
             {
                 error.SetError(metroTextBox3, "Ошибка");
                 ++errorCount;
-                errorLog += errorCount+". Отсутствует Имя пользователя\n";
+                errorLog += errorCount + ". Отсутствует Имя пользователя\n";
             }
 
             if (metroTextBox2.Text == "")
@@ -146,10 +146,29 @@ namespace SomeProject
 
             if (metroTextBox4.Text != metroTextBox5.Text)
             {
-                error.SetIconAlignment(metroTextBox5,ErrorIconAlignment.MiddleLeft);
+                error.SetIconAlignment(metroTextBox5, ErrorIconAlignment.MiddleLeft);
                 error.SetError(metroTextBox5, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount + ". Введённые пароли отличаются\n";
+            }
+
+            if (metroPanel1.Enabled)
+            {
+                if (runnerCombo1.Text == "")
+                {
+                    error.SetIconAlignment(runnerCombo1, ErrorIconAlignment.MiddleLeft);
+                    error.SetError(runnerCombo1, "Ошибка");
+                    ++errorCount;
+                    errorLog += errorCount + ". Не указан пол пользователя-бегуна\n";
+                }
+
+                if (runnerCombo2.Text == "")
+                {
+                    error.SetIconAlignment(runnerCombo2, ErrorIconAlignment.MiddleLeft);
+                    error.SetError(runnerCombo2, "Ошибка");
+                    ++errorCount;
+                    errorLog += errorCount + ". Не указана страна пользователя-бегуна\n";
+                }
             }
 
             if ((metroTextBox4.Text == "") || (metroTextBox5.Text == ""))
@@ -166,10 +185,36 @@ namespace SomeProject
             }
             else
             {
-                query = "INSERT [Users] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES" +
-                        "(N'" + metroTextBox1.Text + "', N'" + metroTextBox4.Text + "', N'" + metroTextBox3.Text +
-                        "', N'" + metroTextBox2.Text + "', N'" + Role + "');";
+                if (!metroPanel1.Enabled)
+                {
+                    query = "INSERT [Users] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES " +
+                            "(N'" + metroTextBox1.Text + "', N'" + metroTextBox4.Text + "', N'" + metroTextBox3.Text +
+                            "', N'" + metroTextBox2.Text + "', N'" + Role + "');";
+                }
+                else
+                {
+                    SqlCommand getCode = new SqlCommand("SELECT CountryCode FROM Country WHERE CountryName = '" + runnerCombo2.Text + "'", con);
+                    string gender, countryCode;
+                    gender = countryCode = "";
+                    try
+                    {
+                        con.Open();
+                        countryCode = getCode.ExecuteScalar().ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                    if (runnerCombo1.Text == "Мужской") { gender = "Male"; } else { gender = "Female"; }
 
+                    query += " INSERT [Runner] ([Email], [Gender], [DateOfBirth], [CountryCode]) VALUES " +
+                        "(N'" + metroTextBox1.Text + "', N'" + gender + "', " + runnerDateTime1.Value.ToString("yyyy - MM - dd") +
+                        ", N'" + countryCode +"');";
+                }
                 UsersAdd(query);
             }
 

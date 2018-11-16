@@ -72,7 +72,7 @@ namespace SomeProject
         {
             admin_UsersAdd userAddForm = new admin_UsersAdd();
             userAddForm.Show();
-            this.Close();
+            this.Hide();
         }
         
         private void UsersLoad(string query)
@@ -156,7 +156,7 @@ namespace SomeProject
                 {
                     admin_UsersEdit usersEdit = new admin_UsersEdit();
                     usersEdit.Show();
-                    this.Close();
+                    this.Hide();
                     SqlCommand userEdit = new SqlCommand("SELECT * FROM Users WHERE Email ='" + connection.editMail + "'", con);
                 }
                 catch (Exception ex)
