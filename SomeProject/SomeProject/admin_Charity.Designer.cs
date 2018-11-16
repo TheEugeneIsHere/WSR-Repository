@@ -36,21 +36,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_Charity));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.charityLogoImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.charityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wSRDataSetCharity1 = new SomeProject.WSRDataSetCharity();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.charityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wSRDataSetCharity1 = new SomeProject.WSRDataSetCharity();
             this.charityTableAdapter1 = new SomeProject.WSRDataSetCharityTableAdapters.CharityTableAdapter();
-            this.charityLogoImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -118,6 +118,49 @@
             this.metroGrid1.Size = new System.Drawing.Size(768, 346);
             this.metroGrid1.TabIndex = 16;
             // 
+            // charityLogoImageDataGridViewImageColumn
+            // 
+            this.charityLogoImageDataGridViewImageColumn.DataPropertyName = "CharityLogoImage";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = "System.Drawing.Bitmap";
+            this.charityLogoImageDataGridViewImageColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.charityLogoImageDataGridViewImageColumn.HeaderText = "Логотип";
+            this.charityLogoImageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.charityLogoImageDataGridViewImageColumn.Name = "charityLogoImageDataGridViewImageColumn";
+            this.charityLogoImageDataGridViewImageColumn.ReadOnly = true;
+            this.charityLogoImageDataGridViewImageColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.charityLogoImageDataGridViewImageColumn.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CharityName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Название организации";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CharityDescription";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Описание организации";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // charityBindingSource
+            // 
+            this.charityBindingSource.DataMember = "Charity";
+            this.charityBindingSource.DataSource = this.wSRDataSetCharity1;
+            // 
+            // wSRDataSetCharity1
+            // 
+            this.wSRDataSetCharity1.DataSetName = "WSRDataSetCharity";
+            this.wSRDataSetCharity1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // metroLabel3
             // 
             this.metroLabel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -158,59 +201,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // charityBindingSource
-            // 
-            this.charityBindingSource.DataMember = "Charity";
-            this.charityBindingSource.DataSource = this.wSRDataSetCharity1;
-            // 
-            // wSRDataSetCharity1
-            // 
-            this.wSRDataSetCharity1.DataSetName = "WSRDataSetCharity";
-            this.wSRDataSetCharity1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // charityTableAdapter1
             // 
             this.charityTableAdapter1.ClearBeforeFill = true;
-            // 
-            // charityLogoImageDataGridViewImageColumn
-            // 
-            this.charityLogoImageDataGridViewImageColumn.DataPropertyName = "CharityLogoImage";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "System.Drawing.Bitmap";
-            this.charityLogoImageDataGridViewImageColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.charityLogoImageDataGridViewImageColumn.HeaderText = "Логотип";
-            this.charityLogoImageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.charityLogoImageDataGridViewImageColumn.Name = "charityLogoImageDataGridViewImageColumn";
-            this.charityLogoImageDataGridViewImageColumn.ReadOnly = true;
-            this.charityLogoImageDataGridViewImageColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.charityLogoImageDataGridViewImageColumn.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CharityName";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Название организации";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CharityDescription";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Описание организации";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // metroLabel8
             // 
             this.metroLabel8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel8.Location = new System.Drawing.Point(476, 17);
+            this.metroLabel8.Location = new System.Drawing.Point(493, 32);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(353, 19);
             this.metroLabel8.TabIndex = 32;
@@ -235,9 +235,9 @@
             this.Text = "Administration Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

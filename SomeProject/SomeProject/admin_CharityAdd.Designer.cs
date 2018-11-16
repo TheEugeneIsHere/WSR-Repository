@@ -310,7 +310,7 @@
             this.metroLabel8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel8.Location = new System.Drawing.Point(604, 18);
+            this.metroLabel8.Location = new System.Drawing.Point(580, 30);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(242, 19);
             this.metroLabel8.TabIndex = 31;
