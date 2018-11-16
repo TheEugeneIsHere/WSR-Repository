@@ -399,8 +399,8 @@
             // runnerDateTime1
             // 
             this.runnerDateTime1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.runnerDateTime1.CustomFormat = "1/1/1969";
-            this.runnerDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.runnerDateTime1.CustomFormat = "";
+            this.runnerDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.runnerDateTime1.Location = new System.Drawing.Point(65, 50);
             this.runnerDateTime1.MaxDate = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
             this.runnerDateTime1.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);

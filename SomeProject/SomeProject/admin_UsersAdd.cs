@@ -185,13 +185,12 @@ namespace SomeProject
             }
             else
             {
-                if (!metroPanel1.Enabled)
-                {
-                    query = "INSERT [Users] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES " +
-                            "(N'" + metroTextBox1.Text + "', N'" + metroTextBox4.Text + "', N'" + metroTextBox3.Text +
-                            "', N'" + metroTextBox2.Text + "', N'" + Role + "');";
-                }
-                else
+                MessageBox.Show(runnerDateTime1.Value.ToString("yyyy-MM-dd"));
+                query = "INSERT INTO Users VALUES " +
+                        "(N'" + metroTextBox1.Text + "', N'" + metroTextBox4.Text + "', N'" + metroTextBox3.Text +
+                        "', N'" + metroTextBox2.Text + "', N'" + Role + "');";
+
+                if (metroPanel1.Enabled)
                 {
                     SqlCommand getCode = new SqlCommand("SELECT CountryCode FROM Country WHERE CountryName = '" + runnerCombo2.Text + "'", con);
                     string gender, countryCode;
@@ -211,10 +210,11 @@ namespace SomeProject
                     }
                     if (runnerCombo1.Text == "Мужской") { gender = "Male"; } else { gender = "Female"; }
 
-                    query += " INSERT [Runner] ([Email], [Gender], [DateOfBirth], [CountryCode]) VALUES " +
-                        "(N'" + metroTextBox1.Text + "', N'" + gender + "', " + runnerDateTime1.Value.ToString("yyyy - MM - dd") +
-                        ", N'" + countryCode +"');";
+                    query += "INSERT INTO Runner VALUES " +
+                        "(N'" + metroTextBox1.Text + "', N'" + gender + "', '" + runnerDateTime1.Value.ToString("yyyy-MM-dd") +
+                        "', N'" + countryCode +"');";
                 }
+
                 UsersAdd(query);
             }
 
@@ -243,6 +243,7 @@ namespace SomeProject
                 SqlCommand register = new SqlCommand(query, con);
                 register.ExecuteNonQuery();
                 MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                metroButton1.Enabled = false;
             }
             catch (Exception ex)
             {
