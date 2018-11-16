@@ -36,14 +36,16 @@ namespace SomeProject
         {
             AdminForm AdminForm = new AdminForm();
             AdminForm.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
             admin_VolunteerAdd VolunteerAddForm = new admin_VolunteerAdd();
             VolunteerAddForm.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void VolunteerCount()
@@ -105,5 +107,23 @@ namespace SomeProject
             wSRDataSetVolunteer.Clear();
             VolunteerLoad("SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer ORDER BY " + sort);
         }
+
+        private void GoodbyeUser(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
+                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Yes)
+                {
+                    Application.OpenForms[0].Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
     }
 }

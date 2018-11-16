@@ -314,6 +314,7 @@
             this.Name = "admin_Volunteer";
             this.Resizable = false;
             this.Text = "Administation Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.volunteerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetVolunteer)).EndInit();

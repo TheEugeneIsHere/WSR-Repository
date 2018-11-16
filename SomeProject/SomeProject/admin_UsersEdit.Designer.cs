@@ -408,6 +408,7 @@
             this.Name = "admin_UsersEdit";
             this.Resizable = false;
             this.Text = "Administration Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

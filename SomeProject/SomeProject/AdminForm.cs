@@ -30,21 +30,24 @@ namespace SomeProject
         {
             Form1 f1 = new Form1();
             f1.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void metroTile3_Click(object sender, EventArgs e)
         {
             admin_Charity charityForm = new admin_Charity();
             charityForm.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void metroTile4_Click(object sender, EventArgs e)
         {
             admin_Volunteer admin_Volounters = new admin_Volunteer();
             admin_Volounters.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -52,7 +55,26 @@ namespace SomeProject
             Cursor = Cursors.AppStarting;
             admin_Users UsersForm = new admin_Users();
             UsersForm.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
+
+        private void GoodbyeUser(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
+                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Yes)
+                {
+                    Application.OpenForms[0].Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
     }
 }

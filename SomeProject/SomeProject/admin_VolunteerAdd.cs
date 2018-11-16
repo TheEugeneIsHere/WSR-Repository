@@ -30,7 +30,8 @@ namespace SomeProject
         {
             admin_Volunteer VolountersForm = new admin_Volunteer();
             VolountersForm.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
@@ -63,5 +64,23 @@ namespace SomeProject
             // Можно ещё ProgressBar замутить куда-нить для интима, ну хз
             MessageBox.Show("Этого произойти было не должно"); // Ну а вдруг я что-то не так понял
         }
+
+        private void GoodbyeUser(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
+                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Yes)
+                {
+                    Application.OpenForms[0].Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
     }
 }

@@ -123,6 +123,7 @@
             // 
             this.metroTile2.ActiveControl = null;
             this.metroTile2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroTile2.Enabled = false;
             this.metroTile2.Location = new System.Drawing.Point(211, 179);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(450, 67);
@@ -171,6 +172,7 @@
             this.Name = "AdminForm";
             this.Resizable = false;
             this.Text = "Administration Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

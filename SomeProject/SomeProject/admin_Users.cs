@@ -55,7 +55,8 @@ namespace SomeProject
         {
             AdminForm admForm = new AdminForm();
             admForm.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
@@ -73,6 +74,7 @@ namespace SomeProject
             admin_UsersAdd userAddForm = new admin_UsersAdd();
             userAddForm.Show();
             this.Hide();
+            this.Dispose();
         }
         
         private void UsersLoad(string query)
@@ -150,13 +152,14 @@ namespace SomeProject
         {
             if (metroGrid1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >=0)
             {
+                
                 connection.editMail = metroGrid1.CurrentRow.Cells[2].Value.ToString();
                 con.Open();
                 try
                 {
                     admin_UsersEdit usersEdit = new admin_UsersEdit();
                     usersEdit.Show();
-                    this.Hide();
+                    this.Close();
                     SqlCommand userEdit = new SqlCommand("SELECT * FROM Users WHERE Email ='" + connection.editMail + "'", con);
                 }
                 catch (Exception ex)
@@ -188,5 +191,23 @@ namespace SomeProject
                 }
             }
         }
+
+        private void GoodbyeUser(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
+                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Yes)
+                {
+                    Application.OpenForms[0].Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
     }
 }

@@ -35,14 +35,16 @@ namespace SomeProject
         {
             admin_Users UsersForm = new admin_Users();
             UsersForm.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
             admin_Users UsersForm = new admin_Users();
             UsersForm.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void metroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -243,7 +245,10 @@ namespace SomeProject
                 SqlCommand register = new SqlCommand(query, con);
                 register.ExecuteNonQuery();
                 MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                metroButton1.Enabled = false;
+                admin_Users usersForm = new admin_Users();
+                usersForm.Show();
+                this.Close();
+                this.Dispose();
             }
             catch (Exception ex)
             {
@@ -252,6 +257,23 @@ namespace SomeProject
             finally
             {
                 con.Close();
+            }
+        }
+
+        private void GoodbyeUser(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
+                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Yes)
+                {
+                    Application.OpenForms[0].Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }
