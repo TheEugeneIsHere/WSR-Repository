@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,9 @@ namespace SomeProject
     public partial class admin_CharityAdd : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
+        Bitmap logo;
+        byte[] photo;
+        string filePath;
 
         public admin_CharityAdd()
         {
@@ -41,19 +45,22 @@ namespace SomeProject
         {
             OpenFileDialog imageSelector = new OpenFileDialog
             {
-                Filter = "JPEG|*.jpg,*.jpeg,*.jpe,*.jfif|PNG|*.png|All files (*.*)|*.*",
+                Filter = "PNG|*.png|JPEG|*.jpg,*.jpeg,*.jpe,*.jfif|All files (*.*)|*.*",
                 Title = "Выберите логотип.."
             };
-            Bitmap logo;
 
             if (imageSelector.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 try
                 {
-                    logo = new Bitmap(imageSelector.FileName);
+                    filePath = imageSelector.FileName;
+                    photo = GetPhoto(filePath);
+                    logo = new Bitmap(filePath);
                     pictureBox3.Image = logo;
                     pictureBox3.Invalidate();
-                    metroTextBox3.Text = imageSelector.SafeFileName;
+                    metroTextBox3.Text = filePath;
+                    filePath = imageSelector.SafeFileName;
+                    imageSelector.Dispose();
                 }
                 catch
                 { 
@@ -63,15 +70,64 @@ namespace SomeProject
             }
         }
 
+        private void InsertCharityOrg(string filePath, byte[] photo)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand com = new SqlCommand(
+                   "INSERT INTO Charity (CharityName, CharityDescription, CharityLogoImage, CharityLogo) VALUES (@CharityName, @CharityDescription, @CharityLogoImage, @CharityLogo)", con);
+
+                com.Parameters.Add("@CharityName",
+                    SqlDbType.NVarChar, 100).Value = metroTextBox1.Text;
+                com.Parameters.Add("@CharityDescription",
+                    SqlDbType.NVarChar, 2000).Value = metroTextBox2.Text;
+                com.Parameters.Add("@CharityLogo",
+                   SqlDbType.NVarChar, 50).Value = filePath;
+                com.Parameters.Add("@CharityLogoImage",
+                    SqlDbType.Image, photo.Length).Value = photo;
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+                MessageBox.Show("Успешная вставка");
+            }
+        }
+
+        public static byte[] GetPhoto(string filePath)
+        {
+            FileStream stream = new FileStream(
+                filePath, FileMode.Open, FileAccess.Read);
+            BinaryReader reader = new BinaryReader(stream);
+
+            byte[] photo = reader.ReadBytes((int)stream.Length);
+
+            reader.Close();
+            stream.Close();
+
+            return photo;
+        }
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (metroTextBox1.Text != "")
+            if (metroTextBox1.Text != "" && metroTextBox2.Text != "")
             {
                 //Здесь что-то сложное будет, наверное
+                InsertCharityOrg(filePath, photo);
+                metroTextBox1.Text = string.Empty;
+                metroTextBox2.Text = string.Empty;
+                metroTextBox3.Text = string.Empty;
+
             }
             else
             {
-                MessageBox.Show("Введите название организации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Введите название/описание организации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -51,9 +51,10 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityLogo, CharityName, CharityDescription FROM Charity", con);
-                ad.Fill(wSRDataSetCharity, "Charity");
-                metroGrid1.DataSource = wSRDataSetCharity.Tables[0];
+                SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityName, CharityDescription, CharityLogoImage FROM Charity", con);
+                metroGrid1.Columns[0].DefaultCellStyle.NullValue = (System.Drawing.Image)Properties.Resources.tile_Blago;
+                ad.Fill(wSRDataSetCharity1, "Charity");
+                //metroGrid1.DataSource = wSRDataSetCharity.Tables[0];
             }
             catch (Exception ex)
             {

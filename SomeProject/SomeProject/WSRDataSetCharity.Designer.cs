@@ -201,7 +201,7 @@ namespace SomeProject {
         private void InitClass() {
             this.DataSetName = "WSRDataSetCharity";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/WSRDataSetCharity1.xsd";
+            this.Namespace = "http://tempuri.org/WSRDataSetCharity.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCharity = new CharityDataTable();
@@ -283,7 +283,7 @@ namespace SomeProject {
             
             private global::System.Data.DataColumn columnCharityDescription;
             
-            private global::System.Data.DataColumn columnCharityLogo;
+            private global::System.Data.DataColumn columnCharityLogoImage;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -336,9 +336,9 @@ namespace SomeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CharityLogoColumn {
+            public global::System.Data.DataColumn CharityLogoImageColumn {
                 get {
-                    return this.columnCharityLogo;
+                    return this.columnCharityLogoImage;
                 }
             }
             
@@ -379,12 +379,12 @@ namespace SomeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CharityRow AddCharityRow(string CharityName, string CharityDescription, string CharityLogo) {
+            public CharityRow AddCharityRow(string CharityName, string CharityDescription, byte[] CharityLogoImage) {
                 CharityRow rowCharityRow = ((CharityRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CharityName,
                         CharityDescription,
-                        CharityLogo};
+                        CharityLogoImage};
                 rowCharityRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCharityRow);
                 return rowCharityRow;
@@ -409,7 +409,7 @@ namespace SomeProject {
             internal void InitVars() {
                 this.columnCharityName = base.Columns["CharityName"];
                 this.columnCharityDescription = base.Columns["CharityDescription"];
-                this.columnCharityLogo = base.Columns["CharityLogo"];
+                this.columnCharityLogoImage = base.Columns["CharityLogoImage"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -419,12 +419,11 @@ namespace SomeProject {
                 base.Columns.Add(this.columnCharityName);
                 this.columnCharityDescription = new global::System.Data.DataColumn("CharityDescription", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCharityDescription);
-                this.columnCharityLogo = new global::System.Data.DataColumn("CharityLogo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCharityLogo);
+                this.columnCharityLogoImage = new global::System.Data.DataColumn("CharityLogoImage", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCharityLogoImage);
                 this.columnCharityName.AllowDBNull = false;
                 this.columnCharityName.MaxLength = 100;
                 this.columnCharityDescription.MaxLength = 2000;
-                this.columnCharityLogo.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -594,17 +593,17 @@ namespace SomeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string CharityLogo {
+            public byte[] CharityLogoImage {
                 get {
                     try {
-                        return ((string)(this[this.tableCharity.CharityLogoColumn]));
+                        return ((byte[])(this[this.tableCharity.CharityLogoImageColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CharityLogo\' in table \'Charity\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CharityLogoImage\' in table \'Charity\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCharity.CharityLogoColumn] = value;
+                    this[this.tableCharity.CharityLogoImageColumn] = value;
                 }
             }
             
@@ -622,14 +621,14 @@ namespace SomeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCharityLogoNull() {
-                return this.IsNull(this.tableCharity.CharityLogoColumn);
+            public bool IsCharityLogoImageNull() {
+                return this.IsNull(this.tableCharity.CharityLogoImageColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCharityLogoNull() {
-                this[this.tableCharity.CharityLogoColumn] = global::System.Convert.DBNull;
+            public void SetCharityLogoImageNull() {
+                this[this.tableCharity.CharityLogoImageColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -794,16 +793,16 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
             tableMapping.DataSetTable = "Charity";
             tableMapping.ColumnMappings.Add("CharityName", "CharityName");
             tableMapping.ColumnMappings.Add("CharityDescription", "CharityDescription");
-            tableMapping.ColumnMappings.Add("CharityLogo", "CharityLogo");
+            tableMapping.ColumnMappings.Add("CharityLogoImage", "CharityLogoImage");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Charity] ([CharityName], [CharityDescription], [CharityLogo]) " +
-                "VALUES (@CharityName, @CharityDescription, @CharityLogo)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Charity] ([CharityName], [CharityDescription], [CharityLogoImage]) V" +
+                "ALUES (@CharityName, @CharityDescription, @CharityLogoImage)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CharityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CharityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CharityDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CharityDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CharityLogo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CharityLogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CharityLogoImage", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CharityLogoImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -819,7 +818,8 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CharityName, CharityDescription, CharityLogo FROM dbo.Charity";
+            this._commandCollection[0].CommandText = "SELECT        CharityName, CharityDescription, CharityLogoImage\r\nFROM            " +
+                "Charity";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -880,7 +880,7 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string CharityName, string CharityDescription, string CharityLogo) {
+        public virtual int Insert(string CharityName, string CharityDescription, byte[] CharityLogoImage) {
             if ((CharityName == null)) {
                 throw new global::System.ArgumentNullException("CharityName");
             }
@@ -893,11 +893,11 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(CharityDescription));
             }
-            if ((CharityLogo == null)) {
+            if ((CharityLogoImage == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(CharityLogo));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((byte[])(CharityLogoImage));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
