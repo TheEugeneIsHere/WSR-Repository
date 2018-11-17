@@ -206,6 +206,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WSRDataSetCharity2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSRDataSetCharity2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WSRDataSetCountry.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -308,6 +313,17 @@
     </None>
     <None Include="WSRDataSetCharity.xss">
       <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetCharity2.xsc">
+      <DependentUpon>WSRDataSetCharity2.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetCharity2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WSRDataSetCharity2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSRDataSetCharity2.xss">
+      <DependentUpon>WSRDataSetCharity2.xsd</DependentUpon>
     </None>
     <None Include="WSRDataSetCountry.xsc">
       <DependentUpon>WSRDataSetCountry.xsd</DependentUpon>
