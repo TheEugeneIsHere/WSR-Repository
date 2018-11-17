@@ -53,7 +53,7 @@ namespace SomeProject
                 con.Open();
                 SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityName, CharityDescription, CharityLogo FROM Charity", con);
                 metroGrid1.Columns[0].DefaultCellStyle.NullValue = (System.Drawing.Image)Properties.Resources.tile_Blago;
-                ad.Fill(wSRDataSetCharity2, "Charity");
+                ad.Fill(wSRDataSetCharity, "Charity");
                 //metroGrid1.DataSource = wSRDataSetCharity.Tables[0];
             }
             catch (Exception ex)

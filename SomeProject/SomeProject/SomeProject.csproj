@@ -206,20 +206,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </Compile>
-    <Compile Include="WSRDataSetCharity2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WSRDataSetCharity2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="WSRDataSetCountry.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetCountry.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="WSRDataSetFlags.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WSRDataSetFlags.xsd</DependentUpon>
     </Compile>
     <Compile Include="WSRDataSetUsers.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -314,17 +304,6 @@
     <None Include="WSRDataSetCharity.xss">
       <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSetCharity2.xsc">
-      <DependentUpon>WSRDataSetCharity2.xsd</DependentUpon>
-    </None>
-    <None Include="WSRDataSetCharity2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WSRDataSetCharity2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="WSRDataSetCharity2.xss">
-      <DependentUpon>WSRDataSetCharity2.xsd</DependentUpon>
-    </None>
     <None Include="WSRDataSetCountry.xsc">
       <DependentUpon>WSRDataSetCountry.xsd</DependentUpon>
     </None>
@@ -335,17 +314,6 @@
     </None>
     <None Include="WSRDataSetCountry.xss">
       <DependentUpon>WSRDataSetCountry.xsd</DependentUpon>
-    </None>
-    <None Include="WSRDataSetFlags.xsc">
-      <DependentUpon>WSRDataSetFlags.xsd</DependentUpon>
-    </None>
-    <None Include="WSRDataSetFlags.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WSRDataSetFlags.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="WSRDataSetFlags.xss">
-      <DependentUpon>WSRDataSetFlags.xsd</DependentUpon>
     </None>
     <None Include="WSRDataSetUsers.xsc">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>

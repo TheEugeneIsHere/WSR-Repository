@@ -20,7 +20,7 @@ namespace SomeProject {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("WSRDataSetCharity")]
+    [global::System.Xml.Serialization.XmlRootAttribute("WSRDataSetCharity2")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class WSRDataSetCharity : global::System.Data.DataSet {
         
@@ -199,9 +199,9 @@ namespace SomeProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "WSRDataSetCharity";
+            this.DataSetName = "WSRDataSetCharity2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/WSRDataSetCharity.xsd";
+            this.Namespace = "http://tempuri.org/WSRDataSetCharity2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCharity = new CharityDataTable();
@@ -667,7 +667,7 @@ namespace SomeProject {
         }
     }
 }
-namespace SomeProject.WSRDataSetCharityTableAdapters {
+namespace SomeProject.WSRDataSetCharity2TableAdapters {
     
     
     /// <summary>
@@ -797,8 +797,8 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Charity] ([CharityName], [CharityDescription], [CharityLogo]) VALUES" +
-                " (@CharityName, @CharityDescription, @CharityLogo)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Charity] ([CharityName], [CharityDescription], [CharityLogo]) " +
+                "VALUES (@CharityName, @CharityDescription, @CharityLogo)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CharityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CharityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CharityDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CharityDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -818,8 +818,7 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        CharityName, CharityDescription, CharityLogo\r\nFROM            Chari" +
-                "ty";
+            this._commandCollection[0].CommandText = "SELECT CharityName, CharityDescription, CharityLogo FROM dbo.Charity";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
