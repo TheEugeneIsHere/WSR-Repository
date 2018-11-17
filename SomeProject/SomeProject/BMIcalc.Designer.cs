@@ -293,6 +293,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "BMIcalc";
             this.Resizable = false;
             this.Text = "BMI Calculator";

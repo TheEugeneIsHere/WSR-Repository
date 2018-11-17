@@ -624,6 +624,7 @@
             this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.metroPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "admin_UsersEdit";
             this.Resizable = false;
             this.Text = "Administration Menu";

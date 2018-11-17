@@ -234,6 +234,7 @@
             this.Controls.Add(this.metroLabel4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "admin_VolunteerAdd";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Resizable = false;

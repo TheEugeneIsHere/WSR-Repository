@@ -20,7 +20,7 @@ namespace SomeProject {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("WSRDataSetCharity2")]
+    [global::System.Xml.Serialization.XmlRootAttribute("WSRDataSetCharity")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class WSRDataSetCharity : global::System.Data.DataSet {
         
@@ -199,9 +199,9 @@ namespace SomeProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "WSRDataSetCharity2";
+            this.DataSetName = "WSRDataSetCharity";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/WSRDataSetCharity2.xsd";
+            this.Namespace = "http://tempuri.org/WSRDataSetCharity.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCharity = new CharityDataTable();
@@ -667,7 +667,7 @@ namespace SomeProject {
         }
     }
 }
-namespace SomeProject.WSRDataSetCharity2TableAdapters {
+namespace SomeProject.WSRDataSetCharityTableAdapters {
     
     
     /// <summary>

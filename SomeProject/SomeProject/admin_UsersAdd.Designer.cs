@@ -572,6 +572,7 @@
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "admin_UsersAdd";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;

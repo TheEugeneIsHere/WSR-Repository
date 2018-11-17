@@ -182,6 +182,7 @@
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AdminForm";
             this.Resizable = false;
             this.Text = "Administration Menu";
