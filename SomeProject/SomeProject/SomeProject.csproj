@@ -206,6 +206,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WSRDataSetCountry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSRDataSetCountry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WSRDataSetFlags.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSRDataSetFlags.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WSRDataSetUsers.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -299,6 +309,28 @@
     <None Include="WSRDataSetCharity.xss">
       <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </None>
+    <None Include="WSRDataSetCountry.xsc">
+      <DependentUpon>WSRDataSetCountry.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetCountry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WSRDataSetCountry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSRDataSetCountry.xss">
+      <DependentUpon>WSRDataSetCountry.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetFlags.xsc">
+      <DependentUpon>WSRDataSetFlags.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetFlags.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WSRDataSetFlags.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSRDataSetFlags.xss">
+      <DependentUpon>WSRDataSetFlags.xsd</DependentUpon>
+    </None>
     <None Include="WSRDataSetUsers.xsc">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </None>
@@ -364,6 +396,7 @@
   <ItemGroup>
     <Content Include="project_icon.ico" />
     <Content Include="Resources\aBrandNewIcon.ico" />
+    <None Include="Resources\charityDefaultLogo.png" />
     <None Include="Resources\woman.png" />
     <None Include="Resources\man.png" />
     <None Include="Resources\bmiCalc.png" />

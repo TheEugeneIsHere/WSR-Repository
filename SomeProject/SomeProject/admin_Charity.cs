@@ -35,7 +35,7 @@ namespace SomeProject
         {
             TimeSpan timeremaining = connection.voteTime - DateTime.Now;
             metroLabel3.Text = timeremaining.Days + " дней " + timeremaining.Hours +
-            " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

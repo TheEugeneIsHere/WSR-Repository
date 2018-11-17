@@ -54,14 +54,23 @@
             this.runnerDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.runnerCombo1 = new MetroFramework.Controls.MetroComboBox();
             this.runnerCombo2 = new MetroFramework.Controls.MetroComboBox();
+            this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wSRDataSetCountry = new SomeProject.WSRDataSetCountry();
             this.runnerLabel1 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel2 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel3 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.countryTableAdapter = new SomeProject.WSRDataSetCountryTableAdapters.CountryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).BeginInit();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroLabel4
@@ -121,7 +130,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(117, 219);
+            this.metroLabel2.Location = new System.Drawing.Point(34, 109);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(41, 19);
             this.metroLabel2.TabIndex = 39;
@@ -142,7 +151,7 @@
             this.metroTextBox2.CustomButton.UseSelectable = true;
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(163, 190);
+            this.metroTextBox2.Location = new System.Drawing.Point(80, 80);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -163,7 +172,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(93, 191);
+            this.metroLabel3.Location = new System.Drawing.Point(10, 81);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(65, 19);
             this.metroLabel3.TabIndex = 41;
@@ -184,7 +193,7 @@
             this.metroTextBox3.CustomButton.UseSelectable = true;
             this.metroTextBox3.CustomButton.Visible = false;
             this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(163, 161);
+            this.metroTextBox3.Location = new System.Drawing.Point(80, 51);
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
@@ -205,7 +214,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(123, 163);
+            this.metroLabel5.Location = new System.Drawing.Point(40, 53);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(35, 19);
             this.metroLabel5.TabIndex = 43;
@@ -220,7 +229,7 @@
             "Администратор",
             "Бегун",
             "Координатор"});
-            this.metroComboBox2.Location = new System.Drawing.Point(163, 259);
+            this.metroComboBox2.Location = new System.Drawing.Point(80, 149);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.PromptText = "Выбрать..";
             this.metroComboBox2.Size = new System.Drawing.Size(134, 29);
@@ -231,7 +240,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(120, 263);
+            this.metroLabel6.Location = new System.Drawing.Point(37, 153);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(38, 19);
             this.metroLabel6.TabIndex = 47;
@@ -241,7 +250,7 @@
             // 
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel7.Location = new System.Drawing.Point(117, 117);
+            this.metroLabel7.Location = new System.Drawing.Point(34, 7);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(174, 19);
             this.metroLabel7.TabIndex = 48;
@@ -378,7 +387,7 @@
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(163, 219);
+            this.metroTextBox1.Location = new System.Drawing.Point(80, 109);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -415,9 +424,6 @@
             this.runnerCombo1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.runnerCombo1.FormattingEnabled = true;
             this.runnerCombo1.ItemHeight = 23;
-            this.runnerCombo1.Items.AddRange(new object[] {
-            "Мужской",
-            "Женский"});
             this.runnerCombo1.Location = new System.Drawing.Point(65, 85);
             this.runnerCombo1.Name = "runnerCombo1";
             this.runnerCombo1.PromptText = "Выбрать..";
@@ -428,112 +434,34 @@
             // runnerCombo2
             // 
             this.runnerCombo2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.runnerCombo2.DataSource = this.countryBindingSource;
+            this.runnerCombo2.DropDownHeight = 300;
+            this.runnerCombo2.DropDownWidth = 150;
             this.runnerCombo2.FormattingEnabled = true;
+            this.runnerCombo2.IntegralHeight = false;
             this.runnerCombo2.ItemHeight = 23;
-            this.runnerCombo2.Items.AddRange(new object[] {
-            "Andorra",
-            "Argentina",
-            "Australia",
-            "Austria",
-            "Belgium",
-            "Botswana",
-            "Brazil",
-            "Bulgaria",
-            "Central African Republic",
-            "Canada",
-            "Chile",
-            "China",
-            "Ivory Coast",
-            "Cameroon",
-            "Colombia",
-            "Croatia",
-            "Czech Republic",
-            "Denmark",
-            "Dominican Republic",
-            "Ecuador",
-            "Egypt",
-            "El Salvador",
-            "Spain",
-            "Estonia",
-            "Finland",
-            "France",
-            "United Kingdom",
-            "Guinea-Bissau",
-            "Equatorial Guinea",
-            "Germany",
-            "Greece",
-            "Guatemala",
-            "Guinea",
-            "Hong Kong",
-            "Honduras",
-            "Hungary",
-            "Indonesia",
-            "India",
-            "Ireland",
-            "Israel",
-            "Italy",
-            "Jamaica",
-            "Jordan",
-            "Japan",
-            "Kenya",
-            "South Korea",
-            "Saudi Arabia",
-            "Latvia",
-            "Liechtenstein",
-            "Lithuania",
-            "Luxembourg",
-            "Macau",
-            "Madagascar",
-            "Malaysia",
-            "Moldova",
-            "Mexico",
-            "Macedonia",
-            "Mali",
-            "Malta",
-            "Montenegro",
-            "Monaco",
-            "Mauritius",
-            "Nicaragua",
-            "Netherlands",
-            "Niger",
-            "Norway",
-            "New Zealand",
-            "Panama",
-            "Paraguay",
-            "Peru",
-            "Philippines",
-            "Poland",
-            "Portugal",
-            "Puerto Rico",
-            "Qatar",
-            "Romania",
-            "South Africa",
-            "Russia",
-            "Senegal",
-            "Singapore",
-            "Switzerland",
-            "Slovakia",
-            "Sweden",
-            "Thailand",
-            "Chinese Taipei",
-            "Turkey",
-            "United Arab Emirates",
-            "Uruguay",
-            "United States",
-            "Vatican",
-            "Venezuela",
-            "Vietnam"});
             this.runnerCombo2.Location = new System.Drawing.Point(65, 120);
+            this.runnerCombo2.MaxDropDownItems = 12;
             this.runnerCombo2.Name = "runnerCombo2";
             this.runnerCombo2.PromptText = "Выбрать..";
             this.runnerCombo2.Size = new System.Drawing.Size(134, 29);
             this.runnerCombo2.TabIndex = 58;
             this.runnerCombo2.UseSelectable = true;
             // 
+            // countryBindingSource
+            // 
+            this.countryBindingSource.DataMember = "Country";
+            this.countryBindingSource.DataSource = this.wSRDataSetCountry;
+            // 
+            // wSRDataSetCountry
+            // 
+            this.wSRDataSetCountry.DataSetName = "WSRDataSetCountry";
+            this.wSRDataSetCountry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // runnerLabel1
             // 
             this.runnerLabel1.AutoSize = true;
-            this.runnerLabel1.Location = new System.Drawing.Point(204, 51);
+            this.runnerLabel1.Location = new System.Drawing.Point(204, 52);
             this.runnerLabel1.Name = "runnerLabel1";
             this.runnerLabel1.Size = new System.Drawing.Size(103, 19);
             this.runnerLabel1.TabIndex = 59;
@@ -569,6 +497,7 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.pictureBox3);
             this.metroPanel1.Controls.Add(this.runnerLabel);
             this.metroPanel1.Controls.Add(this.runnerDateTime1);
             this.metroPanel1.Controls.Add(this.runnerCombo1);
@@ -588,6 +517,41 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             this.metroPanel1.Visible = false;
+            this.metroPanel1.EnabledChanged += new System.EventHandler(this.metroPanel1_EnabledChanged);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(29, 120);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 29);
+            this.pictureBox3.TabIndex = 65;
+            this.pictureBox3.TabStop = false;
+            // 
+            // metroPanel2
+            // 
+            this.metroPanel2.Controls.Add(this.metroLabel7);
+            this.metroPanel2.Controls.Add(this.metroTextBox1);
+            this.metroPanel2.Controls.Add(this.metroTextBox2);
+            this.metroPanel2.Controls.Add(this.metroTextBox3);
+            this.metroPanel2.Controls.Add(this.metroComboBox2);
+            this.metroPanel2.Controls.Add(this.metroLabel2);
+            this.metroPanel2.Controls.Add(this.metroLabel3);
+            this.metroPanel2.Controls.Add(this.metroLabel6);
+            this.metroPanel2.Controls.Add(this.metroLabel5);
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(83, 110);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(265, 188);
+            this.metroPanel2.TabIndex = 64;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // countryTableAdapter
+            // 
+            this.countryTableAdapter.ClearBeforeFill = true;
             // 
             // admin_UsersAdd
             // 
@@ -602,19 +566,11 @@
             this.Controls.Add(this.metroTextBox4);
             this.Controls.Add(this.metroTextBox5);
             this.Controls.Add(this.metroLabel8);
-            this.Controls.Add(this.metroLabel7);
-            this.Controls.Add(this.metroLabel6);
-            this.Controls.Add(this.metroLabel5);
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroComboBox2);
-            this.Controls.Add(this.metroTextBox3);
-            this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.metroPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "admin_UsersAdd";
             this.Resizable = false;
@@ -623,8 +579,13 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.metroPanel2.ResumeLayout(false);
+            this.metroPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,5 +622,10 @@
         private MetroFramework.Controls.MetroLabel runnerLabel3;
         private MetroFramework.Controls.MetroLabel runnerLabel;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroPanel metroPanel2;
+        private WSRDataSetCountry wSRDataSetCountry;
+        private System.Windows.Forms.BindingSource countryBindingSource;
+        private WSRDataSetCountryTableAdapters.CountryTableAdapter countryTableAdapter;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

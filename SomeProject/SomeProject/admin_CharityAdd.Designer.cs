@@ -44,10 +44,10 @@
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -270,10 +270,24 @@
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
+            // metroLabel8
+            // 
+            this.metroLabel8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.metroLabel8.Location = new System.Drawing.Point(580, 30);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(242, 19);
+            this.metroLabel8.TabIndex = 31;
+            this.metroLabel8.Text = "Настроить корректную работу кнопок";
+            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel8.UseCustomForeColor = true;
+            // 
             // pictureBox3
             // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::SomeProject.Properties.Resources.Wikivoyage_logo_svg;
+            this.pictureBox3.Image = global::SomeProject.Properties.Resources.charityDefaultLogo;
             this.pictureBox3.Location = new System.Drawing.Point(511, 291);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(131, 119);
@@ -304,19 +318,6 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel8.Location = new System.Drawing.Point(580, 30);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(242, 19);
-            this.metroLabel8.TabIndex = 31;
-            this.metroLabel8.Text = "Настроить корректную работу кнопок";
-            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel8.UseCustomForeColor = true;
             // 
             // admin_CharityAdd
             // 

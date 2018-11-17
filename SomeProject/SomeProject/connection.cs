@@ -9,7 +9,7 @@ namespace SomeProject
 {
     class connection
     {
-        public static DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
+        public static DateTime voteTime = new DateTime(2018, 12, 31, 23, 59, 59);
         public static string editMail; // Возможно, временное решение
 
         public static SqlConnection AzureConnection()

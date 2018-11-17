@@ -28,7 +28,7 @@ namespace SomeProject
         {
             TimeSpan timeremaining = connection.voteTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
-            " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -256,6 +256,30 @@ namespace SomeProject
             finally
             {
                 con.Close();
+            }
+        }
+
+        private void metroPanel1_EnabledChanged(object sender, EventArgs e)
+        {
+            if (metroPanel1.Enabled)
+            {
+
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter ad = new SqlDataAdapter("SELECT CountryName FROM Country", con);
+                    ad.Fill(wSRDataSetCountry, "Country");
+                    runnerCombo2.DataSource = wSRDataSetCountry.Tables[0];
+                    runnerCombo2.DisplayMember = "CountryName";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
         }
 

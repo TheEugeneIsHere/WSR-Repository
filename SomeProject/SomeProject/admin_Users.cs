@@ -48,7 +48,7 @@ namespace SomeProject
         {
             TimeSpan timeremaining = connection.voteTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
-            " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -159,7 +159,8 @@ namespace SomeProject
                 {
                     admin_UsersEdit usersEdit = new admin_UsersEdit();
                     usersEdit.Show();
-                    this.Close();
+                    this.Hide();
+                    this.Dispose();
                     SqlCommand userEdit = new SqlCommand("SELECT * FROM Users WHERE Email ='" + connection.editMail + "'", con);
                 }
                 catch (Exception ex)
