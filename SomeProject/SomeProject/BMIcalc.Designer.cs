@@ -343,6 +343,7 @@
             this.Name = "BMIcalc";
             this.Resizable = false;
             this.Text = "BMI Calculator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.healthStatePic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.womanBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manBox)).EndInit();

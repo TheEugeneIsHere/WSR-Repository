@@ -37,6 +37,7 @@
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -138,12 +139,28 @@
             this.metroTile2.UseSelectable = true;
             this.metroTile2.UseTileImage = true;
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.BackColor = System.Drawing.Color.Black;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.metroLabel2.Location = new System.Drawing.Point(276, 60);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(322, 25);
+            this.metroLabel2.TabIndex = 15;
+            this.metroLabel2.Text = "Запили нам Dark тему, Максюша ;);););)";
+            this.metroLabel2.UseCustomBackColor = true;
+            this.metroLabel2.UseCustomForeColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroTile7);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile1);
@@ -157,6 +174,7 @@
             this.Text = "MARATHON INFORMATION SYSTEM";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -169,6 +187,7 @@
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile7;
         private System.Windows.Forms.Timer timer1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }
 

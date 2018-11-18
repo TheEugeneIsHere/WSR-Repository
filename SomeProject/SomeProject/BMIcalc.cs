@@ -23,7 +23,8 @@ namespace SomeProject
         {
             Form1 MainForm = new Form1();
             MainForm.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -178,6 +179,23 @@ namespace SomeProject
                 }
             }
 
+        }
+
+        private void GoodbyeUser(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
+                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Yes)
+                {
+                    Application.OpenForms[0].Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
     }
