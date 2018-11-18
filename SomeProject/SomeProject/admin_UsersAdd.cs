@@ -283,6 +283,14 @@ namespace SomeProject
             }
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = new Form1();
+            mainForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
