@@ -59,7 +59,6 @@ namespace SomeProject
                     pictureBox3.Image = logo;
                     pictureBox3.Invalidate();
                     metroTextBox3.Text = filePath;
-                    filePath = imageSelector.SafeFileName;
                     imageSelector.Dispose();
                 }
                 catch
@@ -70,22 +69,21 @@ namespace SomeProject
             }
         }
 
-        private void InsertCharityOrg(string filePath, byte[] photo)
+        private void InsertCharityOrg(byte[] photo)
         {
             try
             {
                 con.Open();
                 SqlCommand com = new SqlCommand(
-                   "INSERT INTO Charity (CharityName, CharityDescription, CharityLogoImage, CharityLogo) VALUES (@CharityName, @CharityDescription, @CharityLogoImage, @CharityLogo)", con);
+                   "INSERT INTO Charity (CharityName, CharityDescription, CharityLogo) VALUES (@CharityName, @CharityDescription, @CharityLogo)", con);
 
                 com.Parameters.Add("@CharityName",
                     SqlDbType.NVarChar, 100).Value = metroTextBox1.Text;
                 com.Parameters.Add("@CharityDescription",
                     SqlDbType.NVarChar, 2000).Value = metroTextBox2.Text;
                 com.Parameters.Add("@CharityLogo",
-                   SqlDbType.NVarChar, 50).Value = filePath;
-                com.Parameters.Add("@CharityLogoImage",
                     SqlDbType.Image, photo.Length).Value = photo;
+                MessageBox.Show("Успешная вставка");
 
                 com.ExecuteNonQuery();
             }
@@ -96,7 +94,6 @@ namespace SomeProject
             finally
             {
                 con.Close();
-                MessageBox.Show("Успешная вставка");
             }
         }
 
@@ -119,7 +116,7 @@ namespace SomeProject
             if (metroTextBox1.Text != "" && metroTextBox2.Text != "")
             {
                 //Здесь что-то сложное будет, наверное
-                InsertCharityOrg(filePath, photo);
+                InsertCharityOrg(photo);
                 metroTextBox1.Text = string.Empty;
                 metroTextBox2.Text = string.Empty;
                 metroTextBox3.Text = string.Empty;
