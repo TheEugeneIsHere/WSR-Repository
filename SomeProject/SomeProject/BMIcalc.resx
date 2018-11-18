@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="metroLabel2.Text" xml:space="preserve">
-    <value>  ИМТ- Индекс массы тела (англ. BMI - body mass index ) это величина, 
+    <value>  ИМТ- Индекс массы тела (англ. BMI - body mass index) это величина, 
     применяемая для оценки соответствия роста и массы человека.
   Индекс массы тела рассчитывается по формуле: масса (кг)/ рост2(м2).
 </value>

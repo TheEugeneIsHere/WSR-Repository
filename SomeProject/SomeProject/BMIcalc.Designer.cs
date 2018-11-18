@@ -48,6 +48,7 @@
             this.womanBox = new System.Windows.Forms.PictureBox();
             this.manBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imtTextLabel = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.healthStatePic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.womanBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manBox)).BeginInit();
@@ -61,9 +62,9 @@
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.Location = new System.Drawing.Point(365, 51);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(163, 25);
+            this.metroLabel1.Size = new System.Drawing.Size(102, 25);
             this.metroLabel1.TabIndex = 58;
-            this.metroLabel1.Text = "BMI калькулятор";
+            this.metroLabel1.Text = "Ваш ИМТ:";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroLabel2
@@ -72,7 +73,7 @@
             this.metroLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.metroLabel2.Location = new System.Drawing.Point(5, 130);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(448, 76);
+            this.metroLabel2.Size = new System.Drawing.Size(444, 76);
             this.metroLabel2.TabIndex = 59;
             this.metroLabel2.Text = resources.GetString("metroLabel2.Text");
             this.metroLabel2.UseCustomForeColor = true;
@@ -149,6 +150,7 @@
             this.hCombo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.hCombo.CustomButton.UseSelectable = true;
             this.hCombo.CustomButton.Visible = false;
+            this.hCombo.Enabled = false;
             this.hCombo.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.hCombo.Lines = new string[0];
             this.hCombo.Location = new System.Drawing.Point(154, 354);
@@ -184,6 +186,7 @@
             this.wCombo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.wCombo.CustomButton.UseSelectable = true;
             this.wCombo.CustomButton.Visible = false;
+            this.wCombo.Enabled = false;
             this.wCombo.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.wCombo.Lines = new string[0];
             this.wCombo.Location = new System.Drawing.Point(154, 381);
@@ -225,6 +228,7 @@
             // 
             // metroButton1
             // 
+            this.metroButton1.Enabled = false;
             this.metroButton1.Location = new System.Drawing.Point(100, 410);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(122, 42);
@@ -238,12 +242,13 @@
             this.imtLabel.AutoSize = true;
             this.imtLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.imtLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.imtLabel.Location = new System.Drawing.Point(660, 378);
+            this.imtLabel.Location = new System.Drawing.Point(464, 51);
             this.imtLabel.MaximumSize = new System.Drawing.Size(100, 100);
             this.imtLabel.Name = "imtLabel";
             this.imtLabel.Size = new System.Drawing.Size(27, 25);
             this.imtLabel.TabIndex = 73;
             this.imtLabel.Text = "...";
+            this.imtLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.imtLabel.UseCustomForeColor = true;
             this.imtLabel.UseMnemonic = false;
             this.imtLabel.Visible = false;
@@ -295,11 +300,27 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // imtTextLabel
+            // 
+            this.imtTextLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.imtTextLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.imtTextLabel.Location = new System.Drawing.Point(550, 386);
+            this.imtTextLabel.MaximumSize = new System.Drawing.Size(250, 100);
+            this.imtTextLabel.Name = "imtTextLabel";
+            this.imtTextLabel.Size = new System.Drawing.Size(250, 25);
+            this.imtTextLabel.TabIndex = 74;
+            this.imtTextLabel.Text = "...";
+            this.imtTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.imtTextLabel.UseCustomForeColor = true;
+            this.imtTextLabel.UseMnemonic = false;
+            this.imtTextLabel.Visible = false;
+            // 
             // BMIcalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.Controls.Add(this.imtTextLabel);
             this.Controls.Add(this.imtLabel);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.healthStatePic);
@@ -322,7 +343,6 @@
             this.Name = "BMIcalc";
             this.Resizable = false;
             this.Text = "BMI Calculator";
-            this.Click += new System.EventHandler(this.womanBoxClicked);
             ((System.ComponentModel.ISupportInitialize)(this.healthStatePic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.womanBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manBox)).EndInit();
@@ -352,5 +372,6 @@
         private System.Windows.Forms.PictureBox healthStatePic;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroLabel imtLabel;
+        private MetroFramework.Controls.MetroLabel imtTextLabel;
     }
 }

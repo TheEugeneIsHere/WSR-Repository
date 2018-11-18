@@ -42,16 +42,27 @@ namespace SomeProject
         private void manBoxClicked(object sender, EventArgs e)
         {
             gender = "Man";
-            imtLabel.Visible = false;
+            Control();
             manBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             womanBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             healthStatePic.Image = Properties.Resources.bmiManDefault;
         }
-        
+
+        private void Control()
+        {
+            imtTextLabel.Visible = false;
+            imtLabel.Visible = false;
+            hCombo.Enabled = true;
+            wCombo.Enabled = true;
+            metroButton1.Enabled = true;
+            hCombo.Text = null;
+            wCombo.Text = null;
+        }
+
         private void womanBoxClicked(object sender,EventArgs e)
         {
             gender = "Woman";
-            imtLabel.Visible = false;
+            Control();
             womanBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             manBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             healthStatePic.Image = Properties.Resources.bmiWomanDefault;
@@ -85,15 +96,33 @@ namespace SomeProject
                     result = string.Format("{0:##.##}", imtResult);
                     imtLabel.Text = result;
                     imtLabel.Visible = true;
+                    imtTextLabel.Visible = true;
                 }
             }
         }
 
         private void MeasureResults(double imt)
         {
+            if (imt < 16)
+            {
+                imtLabel.ForeColor = Color.Blue;
+                imtTextLabel.ForeColor = Color.Blue;
+                imtTextLabel.Text = "Выраженный дефицит массы";
+                if (gender =="Man")
+                {
+                    healthStatePic.Image = Properties.Resources.bmiManLack;
+                }
+                else
+                {
+                    healthStatePic.Image = Properties.Resources.bmiWomanLack;
+                }
+            }
+
             if (imt > 16 && imt <18.5)
             {
                 imtLabel.ForeColor = Color.Red;
+                imtTextLabel.ForeColor = Color.Red;
+                imtTextLabel.Text = "Дефицит массы тела";
                 if (gender == "Man")
                 {
                     healthStatePic.Image = Properties.Resources.bmiManLack;
@@ -106,7 +135,9 @@ namespace SomeProject
 
             if (imt >18.5 && imt < 24.99)
             {
-                imtLabel.ForeColor = Color.Green;
+                imtLabel.ForeColor = Color.DarkGreen;
+                imtTextLabel.ForeColor = Color.DarkGreen;
+                imtTextLabel.Text = "Норма";
                 if (gender == "Man")
                 {
                     healthStatePic.Image = Properties.Resources.bmiManGood;
@@ -119,7 +150,9 @@ namespace SomeProject
 
             if (imt>25 && imt<30)
             {
-                imtLabel.ForeColor = Color.Yellow;
+                imtLabel.ForeColor = Color.DarkOrange;
+                imtTextLabel.ForeColor = Color.DarkOrange;
+                imtTextLabel.Text = "Избыточная масса тела";
                 if (gender == "Man")
                 {
                     healthStatePic.Image = Properties.Resources.bmiManSoSo;
@@ -133,6 +166,8 @@ namespace SomeProject
             if (imt>30)
             {
                 imtLabel.ForeColor = Color.Red;
+                imtTextLabel.ForeColor = Color.Red;
+                imtTextLabel.Text = "Ожирение (1 стадия и выше)";
                 if (gender == "Man")
                 {
                     healthStatePic.Image = Properties.Resources.bmiManBad;
@@ -144,5 +179,6 @@ namespace SomeProject
             }
 
         }
+
     }
 }
