@@ -37,20 +37,25 @@
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel1
             // 
+            this.metroLabel1.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.Location = new System.Drawing.Point(20, 458);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(829, 30);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Loading...";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel1.UseStyleColors = true;
             // 
             // timer1
             // 
@@ -139,20 +144,33 @@
             this.metroTile2.UseSelectable = true;
             this.metroTile2.UseTileImage = true;
             // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "Темная",
+            "Светлая"});
+            this.metroComboBox1.Location = new System.Drawing.Point(730, 33);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.PromptText = "Светлая";
+            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
+            this.metroComboBox1.TabIndex = 17;
+            this.metroComboBox1.UseSelectable = true;
+            this.metroComboBox1.TextChanged += new System.EventHandler(this.metroComboBox1_TextChanged);
+            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.BackColor = System.Drawing.Color.Black;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroLabel2.Location = new System.Drawing.Point(276, 60);
+            this.metroLabel2.ForeColor = System.Drawing.Color.Transparent;
+            this.metroLabel2.Location = new System.Drawing.Point(670, 37);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(322, 25);
-            this.metroLabel2.TabIndex = 15;
-            this.metroLabel2.Text = "Запили нам Dark тему, Максюша ;);););)";
-            this.metroLabel2.UseCustomBackColor = true;
-            this.metroLabel2.UseCustomForeColor = true;
+            this.metroLabel2.Size = new System.Drawing.Size(54, 25);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroLabel2.TabIndex = 18;
+            this.metroLabel2.Text = "Тема:";
+            this.metroLabel2.UseStyleColors = true;
             // 
             // Form1
             // 
@@ -161,6 +179,7 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(869, 508);
             this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.metroTile7);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile1);
@@ -187,6 +206,7 @@
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile7;
         private System.Windows.Forms.Timer timer1;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }

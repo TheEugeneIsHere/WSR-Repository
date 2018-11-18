@@ -24,6 +24,7 @@ namespace SomeProject
         /*уютный уголок максюши*/
         public static string mail; // Уот сучка Максюша 
         public static string password;
+        public static bool theme;
         /*конец уголка*/
     }
 }

@@ -143,6 +143,62 @@ namespace SomeProject
             metroTextBox2.Text = "MvTQ3itX";
             login(); // Не за что ага
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            if (connection.theme)
+            {
+                Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel1.Style = MetroFramework.MetroColorStyle.White;
+                metroLabel2.Style = MetroFramework.MetroColorStyle.White;
+                metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel3.Style = MetroFramework.MetroColorStyle.White;
+                metroLabel4.Style = MetroFramework.MetroColorStyle.White;
+                metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroTextBox2.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel5.Style = MetroFramework.MetroColorStyle.White;
+
+            }
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
         /*конец временного мусора*/
     }
 }

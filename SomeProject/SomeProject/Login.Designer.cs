@@ -57,9 +57,12 @@
             this.metroLabel1.Location = new System.Drawing.Point(20, 458);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(829, 30);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Loading...";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel1.UseStyleColors = true;
+            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // metroLabel2
             // 
@@ -69,8 +72,11 @@
             this.metroLabel2.Location = new System.Drawing.Point(334, 63);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(180, 25);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "Форма авторизации";
+            this.metroLabel2.UseStyleColors = true;
+            this.metroLabel2.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
             // metroLabel3
             // 
@@ -78,9 +84,12 @@
             this.metroLabel3.Location = new System.Drawing.Point(129, 120);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(559, 19);
+            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "Пожалуйста, авторизуйтесь в системе, используя ваш адрес электронной почты и паро" +
     "ль";
+            this.metroLabel3.UseStyleColors = true;
+            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // metroLabel4
             // 
@@ -88,17 +97,23 @@
             this.metroLabel4.Location = new System.Drawing.Point(197, 226);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(44, 19);
+            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel4.TabIndex = 5;
             this.metroLabel4.Text = "Email:";
+            this.metroLabel4.UseStyleColors = true;
+            this.metroLabel4.Click += new System.EventHandler(this.metroLabel4_Click);
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Location = new System.Drawing.Point(197, 256);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(64, 19);
+            this.metroLabel5.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel5.TabIndex = 5;
             this.metroLabel5.Text = "Password";
+            this.metroLabel5.UseStyleColors = true;
+            this.metroLabel5.Click += new System.EventHandler(this.metroLabel5_Click);
             // 
             // metroTextBox1
             // 
@@ -126,11 +141,14 @@
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
             this.metroTextBox1.Size = new System.Drawing.Size(213, 23);
+            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Black;
             this.metroTextBox1.TabIndex = 6;
             this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.UseStyleColors = true;
             this.metroTextBox1.WaterMark = "Type your email here";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox1.Click += new System.EventHandler(this.metroTextBox1_Click);
             // 
             // metroTextBox2
             // 
@@ -158,20 +176,25 @@
             this.metroTextBox2.SelectionStart = 0;
             this.metroTextBox2.ShortcutsEnabled = true;
             this.metroTextBox2.Size = new System.Drawing.Size(213, 23);
+            this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Black;
             this.metroTextBox2.TabIndex = 6;
             this.metroTextBox2.UseSelectable = true;
+            this.metroTextBox2.UseStyleColors = true;
             this.metroTextBox2.WaterMark = "Type your password here";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox2.Click += new System.EventHandler(this.metroTextBox2_Click);
             // 
             // metroButton1
             // 
             this.metroButton1.Location = new System.Drawing.Point(334, 303);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Black;
             this.metroButton1.TabIndex = 7;
             this.metroButton1.Text = "Login";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.UseStyleColors = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroButton2
@@ -179,9 +202,11 @@
             this.metroButton2.Location = new System.Drawing.Point(472, 303);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(75, 23);
+            this.metroButton2.Style = MetroFramework.MetroColorStyle.Black;
             this.metroButton2.TabIndex = 7;
             this.metroButton2.Text = "Cancel";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.UseStyleColors = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // pictureBox1
@@ -235,7 +260,9 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "Login";
+            this.Style = MetroFramework.MetroColorStyle.Black;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
