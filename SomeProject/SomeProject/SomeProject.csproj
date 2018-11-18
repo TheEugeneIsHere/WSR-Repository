@@ -380,6 +380,16 @@
   <ItemGroup>
     <Content Include="project_icon.ico" />
     <Content Include="Resources\aBrandNewIcon.ico" />
+    <None Include="Resources\bmiManBad.png" />
+    <None Include="Resources\bmiWomanSoSo.png" />
+    <None Include="Resources\bmiWomanLack.png" />
+    <None Include="Resources\bmiWomanGood.png" />
+    <None Include="Resources\bmiWomanDefault.png" />
+    <None Include="Resources\bmiWomanBad.png" />
+    <None Include="Resources\bmiManSoSo.png" />
+    <None Include="Resources\bmiManLack.png" />
+    <None Include="Resources\bmiManGood.png" />
+    <None Include="Resources\bmiManDefault.png" />
     <None Include="Resources\charityDefaultLogo.png" />
     <None Include="Resources\woman.png" />
     <None Include="Resources\man.png" />

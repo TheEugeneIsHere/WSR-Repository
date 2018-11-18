@@ -37,33 +37,107 @@ namespace SomeProject
         {
             if (char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back) { e.Handled = false; }
         }
+        private static string gender;
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void manBoxClicked(object sender, EventArgs e)
         {
-            if (pictureBox3.BorderStyle != System.Windows.Forms.BorderStyle.Fixed3D)
+            gender = "Man";
+            imtLabel.Visible = false;
+            manBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            womanBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            healthStatePic.Image = Properties.Resources.bmiManDefault;
+        }
+        
+        private void womanBoxClicked(object sender,EventArgs e)
+        {
+            gender = "Woman";
+            imtLabel.Visible = false;
+            womanBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            manBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            healthStatePic.Image = Properties.Resources.bmiWomanDefault;
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (hCombo.Text != "" && wCombo.Text != "")
             {
-                pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-                pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            }
-            else
-            {
-                pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                if (Convert.ToInt32(hCombo.Text) > 220 || Convert.ToInt32(hCombo.Text) < 50)
+                {
+                    MessageBox.Show("Рост не может быть <50 см или >220 см", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                if (Convert.ToInt32(wCombo.Text) < 20 || Convert.ToInt32(wCombo.Text) > 200)
+                {
+                    MessageBox.Show("Вес не может быть <20 кг или >200 кг", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    double H = Convert.ToDouble(hCombo.Text) / 100.0;
+                    double W = Convert.ToInt32(wCombo.Text);
+                    string result;
+                    double imtResult = W / (Math.Pow(H, 2));
+                    MeasureResults(imtResult);
+                    result = string.Format("{0:##.##}", imtResult);
+                    imtLabel.Text = result;
+                    imtLabel.Visible = true;
+                }
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void MeasureResults(double imt)
         {
-            if (pictureBox2.BorderStyle != System.Windows.Forms.BorderStyle.Fixed3D)
+            if (imt > 16 && imt <18.5)
             {
-                pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                imtLabel.ForeColor = Color.Red;
+                if (gender == "Man")
+                {
+                    healthStatePic.Image = Properties.Resources.bmiManLack;
+                }
+                else
+                {
+                    healthStatePic.Image = Properties.Resources.bmiWomanLack;
+                }
             }
-            else
+
+            if (imt >18.5 && imt < 24.99)
             {
-                pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                imtLabel.ForeColor = Color.Green;
+                if (gender == "Man")
+                {
+                    healthStatePic.Image = Properties.Resources.bmiManGood;
+                }
+                else
+                {
+                    healthStatePic.Image = Properties.Resources.bmiWomanGood;
+                }
             }
+
+            if (imt>25 && imt<30)
+            {
+                imtLabel.ForeColor = Color.Yellow;
+                if (gender == "Man")
+                {
+                    healthStatePic.Image = Properties.Resources.bmiManSoSo;
+                }
+                else
+                {
+                    healthStatePic.Image = Properties.Resources.bmiWomanSoSo;
+                }
+            }
+
+            if (imt>30)
+            {
+                imtLabel.ForeColor = Color.Red;
+                if (gender == "Man")
+                {
+                    healthStatePic.Image = Properties.Resources.bmiManBad;
+                }
+                else
+                {
+                    healthStatePic.Image = Properties.Resources.bmiWomanBad;
+                }
+            }
+
         }
     }
 }
