@@ -61,14 +61,19 @@ namespace SomeProject
         {
             if (hCombo.Text != "" && wCombo.Text != "")
             {
-                if (Convert.ToInt32(hCombo.Text) > 220 || Convert.ToInt32(hCombo.Text) < 50)
+                if (Convert.ToInt32(hCombo.Text) > 220 || Convert.ToInt32(hCombo.Text) < 101)
                 {
-                    MessageBox.Show("Рост не может быть <50 см или >220 см", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Рост не может быть <101 см или >220 см", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
-                if (Convert.ToInt32(wCombo.Text) < 20 || Convert.ToInt32(wCombo.Text) > 200)
+                if (Convert.ToInt32(wCombo.Text) < 25 || Convert.ToInt32(wCombo.Text) > 200)
                 {
-                    MessageBox.Show("Вес не может быть <20 кг или >200 кг", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Вес не может быть <25 кг или >200 кг", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                if (gender == null)
+                {
+                    MessageBox.Show("Выберите пол", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
