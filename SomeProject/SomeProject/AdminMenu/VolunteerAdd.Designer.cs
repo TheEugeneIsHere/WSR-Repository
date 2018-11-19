@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class admin_VolunteerAdd
+    partial class aVolunteerAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_VolunteerAdd));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aVolunteerAdd));
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -216,7 +216,7 @@
             this.metroLabel8.Text = "поле 4: описание поля";
             this.metroLabel8.UseCustomForeColor = true;
             // 
-            // admin_VolunteerAdd
+            // aVolunteerAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,7 +236,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "admin_VolunteerAdd";
+            this.Name = "aVolunteerAdd";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Resizable = false;
             this.Text = "Administation Menu";

@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_UsersEdit : MetroFramework.Forms.MetroForm
+    public partial class aUsersEdit : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
 
-        public admin_UsersEdit()
+        public aUsersEdit()
         {
             InitializeComponent();
             timer1.Tick += timer1_Tick;
@@ -34,7 +34,7 @@ namespace SomeProject
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            admin_Users UsersForm = new admin_Users();
+            aUsers UsersForm = new aUsers();
             UsersForm.Show();
             this.Hide();
             this.Dispose();
@@ -42,7 +42,7 @@ namespace SomeProject
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            admin_Users UsersForm = new admin_Users();
+            aUsers UsersForm = new aUsers();
             UsersForm.Show();
             this.Hide();
             this.Dispose();

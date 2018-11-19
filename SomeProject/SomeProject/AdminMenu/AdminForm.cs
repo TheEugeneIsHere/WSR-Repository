@@ -29,7 +29,7 @@ namespace SomeProject
             {
                 con.Open();
                 SqlCommand login = new SqlCommand("SELECT FirstName FROM Users WHERE RoleId = 'A' AND Email = '" + connection.mail + "'", con);
-                loginLabel1.Text += login.ExecuteScalar().ToString();
+                loginLabel.Text += login.ExecuteScalar().ToString();
             }
             catch (Exception ex)
             {
@@ -44,39 +44,39 @@ namespace SomeProject
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = connection.voteTime - DateTime.Now;
-            metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours +
+            timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void metroTile1_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
-            f1.Show();
+            Cursor = Cursors.AppStarting;
+            aUsers UsersForm = new aUsers();
+            UsersForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            aVolunteer VolunteerForm = new aVolunteer();
+            VolunteerForm.Show();
             this.Hide();
             this.Dispose();
         }
 
         private void metroTile3_Click(object sender, EventArgs e)
         {
-            admin_Charity charityForm = new admin_Charity();
-            charityForm.Show();
+            aCharity CharityForm = new aCharity();
+            CharityForm.Show();
             this.Hide();
             this.Dispose();
         }
 
-        private void metroTile4_Click(object sender, EventArgs e)
+        private void logoutPic_Click(object sender, EventArgs e)
         {
-            admin_Volunteer admin_Volounters = new admin_Volunteer();
-            admin_Volounters.Show();
-            this.Hide();
-            this.Dispose();
-        }
-
-        private void metroTile1_Click(object sender, EventArgs e)
-        {
-            Cursor = Cursors.AppStarting;
-            admin_Users UsersForm = new admin_Users();
-            UsersForm.Show();
+            Form1 MainForm = new Form1();
+            MainForm.Show();
             this.Hide();
             this.Dispose();
         }
@@ -96,14 +96,6 @@ namespace SomeProject
                     e.Cancel = true;
                 }
             }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Form1 mainForm = new Form1();
-            mainForm.Show();
-            this.Hide();
-            this.Dispose();
         }
     }
 }

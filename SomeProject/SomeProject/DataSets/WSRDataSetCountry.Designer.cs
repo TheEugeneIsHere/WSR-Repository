@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SomeProject {
+namespace SomeProject.DataSets {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace SomeProject {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("WSRDataSetCharity")]
+    [global::System.Xml.Serialization.XmlRootAttribute("WSRDataSetCountry")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class WSRDataSetCharity : global::System.Data.DataSet {
+    public partial class WSRDataSetCountry : global::System.Data.DataSet {
         
-        private CharityDataTable tableCharity;
+        private CountryDataTable tableCountry;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public WSRDataSetCharity() {
+        public WSRDataSetCountry() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace SomeProject {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected WSRDataSetCharity(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected WSRDataSetCountry(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace SomeProject {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Charity"] != null)) {
-                    base.Tables.Add(new CharityDataTable(ds.Tables["Charity"]));
+                if ((ds.Tables["Country"] != null)) {
+                    base.Tables.Add(new CountryDataTable(ds.Tables["Country"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace SomeProject {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public CharityDataTable Charity {
+        public CountryDataTable Country {
             get {
-                return this.tableCharity;
+                return this.tableCountry;
             }
         }
         
@@ -127,7 +127,7 @@ namespace SomeProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            WSRDataSetCharity cln = ((WSRDataSetCharity)(base.Clone()));
+            WSRDataSetCountry cln = ((WSRDataSetCountry)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace SomeProject {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Charity"] != null)) {
-                    base.Tables.Add(new CharityDataTable(ds.Tables["Charity"]));
+                if ((ds.Tables["Country"] != null)) {
+                    base.Tables.Add(new CountryDataTable(ds.Tables["Country"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace SomeProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableCharity = ((CharityDataTable)(base.Tables["Charity"]));
+            this.tableCountry = ((CountryDataTable)(base.Tables["Country"]));
             if ((initTable == true)) {
-                if ((this.tableCharity != null)) {
-                    this.tableCharity.InitVars();
+                if ((this.tableCountry != null)) {
+                    this.tableCountry.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace SomeProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "WSRDataSetCharity";
+            this.DataSetName = "WSRDataSetCountry";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/WSRDataSetCharity.xsd";
+            this.Namespace = "http://tempuri.org/WSRDataSetCountry.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableCharity = new CharityDataTable();
-            base.Tables.Add(this.tableCharity);
+            this.tableCountry = new CountryDataTable();
+            base.Tables.Add(this.tableCountry);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeCharity() {
+        private bool ShouldSerializeCountry() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace SomeProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            WSRDataSetCharity ds = new WSRDataSetCharity();
+            WSRDataSetCountry ds = new WSRDataSetCountry();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,25 +270,21 @@ namespace SomeProject {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void CharityRowChangeEventHandler(object sender, CharityRowChangeEvent e);
+        public delegate void CountryRowChangeEventHandler(object sender, CountryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class CharityDataTable : global::System.Data.TypedTableBase<CharityRow> {
+        public partial class CountryDataTable : global::System.Data.TypedTableBase<CountryRow> {
             
-            private global::System.Data.DataColumn columnCharityName;
-            
-            private global::System.Data.DataColumn columnCharityDescription;
-            
-            private global::System.Data.DataColumn columnCharityLogo;
+            private global::System.Data.DataColumn columnCountryName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CharityDataTable() {
-                this.TableName = "Charity";
+            public CountryDataTable() {
+                this.TableName = "Country";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +292,7 @@ namespace SomeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal CharityDataTable(global::System.Data.DataTable table) {
+            internal CountryDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,32 +309,16 @@ namespace SomeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected CharityDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CountryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CharityNameColumn {
+            public global::System.Data.DataColumn CountryNameColumn {
                 get {
-                    return this.columnCharityName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CharityDescriptionColumn {
-                get {
-                    return this.columnCharityDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CharityLogoColumn {
-                get {
-                    return this.columnCharityLogo;
+                    return this.columnCountryName;
                 }
             }
             
@@ -353,47 +333,45 @@ namespace SomeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CharityRow this[int index] {
+            public CountryRow this[int index] {
                 get {
-                    return ((CharityRow)(this.Rows[index]));
+                    return ((CountryRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event CharityRowChangeEventHandler CharityRowChanging;
+            public event CountryRowChangeEventHandler CountryRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event CharityRowChangeEventHandler CharityRowChanged;
+            public event CountryRowChangeEventHandler CountryRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event CharityRowChangeEventHandler CharityRowDeleting;
+            public event CountryRowChangeEventHandler CountryRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event CharityRowChangeEventHandler CharityRowDeleted;
+            public event CountryRowChangeEventHandler CountryRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddCharityRow(CharityRow row) {
+            public void AddCountryRow(CountryRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CharityRow AddCharityRow(string CharityName, string CharityDescription, byte[] CharityLogo) {
-                CharityRow rowCharityRow = ((CharityRow)(this.NewRow()));
+            public CountryRow AddCountryRow(string CountryName) {
+                CountryRow rowCountryRow = ((CountryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        CharityName,
-                        CharityDescription,
-                        CharityLogo};
-                rowCharityRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCharityRow);
-                return rowCharityRow;
+                        CountryName};
+                rowCountryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCountryRow);
+                return rowCountryRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                CharityDataTable cln = ((CharityDataTable)(base.Clone()));
+                CountryDataTable cln = ((CountryDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -401,55 +379,48 @@ namespace SomeProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new CharityDataTable();
+                return new CountryDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnCharityName = base.Columns["CharityName"];
-                this.columnCharityDescription = base.Columns["CharityDescription"];
-                this.columnCharityLogo = base.Columns["CharityLogo"];
+                this.columnCountryName = base.Columns["CountryName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnCharityName = new global::System.Data.DataColumn("CharityName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCharityName);
-                this.columnCharityDescription = new global::System.Data.DataColumn("CharityDescription", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCharityDescription);
-                this.columnCharityLogo = new global::System.Data.DataColumn("CharityLogo", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCharityLogo);
-                this.columnCharityName.AllowDBNull = false;
-                this.columnCharityName.MaxLength = 100;
-                this.columnCharityDescription.MaxLength = 2000;
+                this.columnCountryName = new global::System.Data.DataColumn("CountryName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCountryName);
+                this.columnCountryName.AllowDBNull = false;
+                this.columnCountryName.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CharityRow NewCharityRow() {
-                return ((CharityRow)(this.NewRow()));
+            public CountryRow NewCountryRow() {
+                return ((CountryRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new CharityRow(builder);
+                return new CountryRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(CharityRow);
+                return typeof(CountryRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.CharityRowChanged != null)) {
-                    this.CharityRowChanged(this, new CharityRowChangeEvent(((CharityRow)(e.Row)), e.Action));
+                if ((this.CountryRowChanged != null)) {
+                    this.CountryRowChanged(this, new CountryRowChangeEvent(((CountryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -457,8 +428,8 @@ namespace SomeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.CharityRowChanging != null)) {
-                    this.CharityRowChanging(this, new CharityRowChangeEvent(((CharityRow)(e.Row)), e.Action));
+                if ((this.CountryRowChanging != null)) {
+                    this.CountryRowChanging(this, new CountryRowChangeEvent(((CountryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -466,8 +437,8 @@ namespace SomeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.CharityRowDeleted != null)) {
-                    this.CharityRowDeleted(this, new CharityRowChangeEvent(((CharityRow)(e.Row)), e.Action));
+                if ((this.CountryRowDeleted != null)) {
+                    this.CountryRowDeleted(this, new CountryRowChangeEvent(((CountryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -475,14 +446,14 @@ namespace SomeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.CharityRowDeleting != null)) {
-                    this.CharityRowDeleting(this, new CharityRowChangeEvent(((CharityRow)(e.Row)), e.Action));
+                if ((this.CountryRowDeleting != null)) {
+                    this.CountryRowDeleting(this, new CountryRowChangeEvent(((CountryRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveCharityRow(CharityRow row) {
+            public void RemoveCountryRow(CountryRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -491,7 +462,7 @@ namespace SomeProject {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                WSRDataSetCharity ds = new WSRDataSetCharity();
+                WSRDataSetCountry ds = new WSRDataSetCountry();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -509,7 +480,7 @@ namespace SomeProject {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "CharityDataTable";
+                attribute2.FixedValue = "CountryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -553,82 +524,26 @@ namespace SomeProject {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class CharityRow : global::System.Data.DataRow {
+        public partial class CountryRow : global::System.Data.DataRow {
             
-            private CharityDataTable tableCharity;
+            private CountryDataTable tableCountry;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal CharityRow(global::System.Data.DataRowBuilder rb) : 
+            internal CountryRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCharity = ((CharityDataTable)(this.Table));
+                this.tableCountry = ((CountryDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string CharityName {
+            public string CountryName {
                 get {
-                    return ((string)(this[this.tableCharity.CharityNameColumn]));
+                    return ((string)(this[this.tableCountry.CountryNameColumn]));
                 }
                 set {
-                    this[this.tableCharity.CharityNameColumn] = value;
+                    this[this.tableCountry.CountryNameColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string CharityDescription {
-                get {
-                    try {
-                        return ((string)(this[this.tableCharity.CharityDescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CharityDescription\' in table \'Charity\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCharity.CharityDescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public byte[] CharityLogo {
-                get {
-                    try {
-                        return ((byte[])(this[this.tableCharity.CharityLogoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CharityLogo\' in table \'Charity\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCharity.CharityLogoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCharityDescriptionNull() {
-                return this.IsNull(this.tableCharity.CharityDescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCharityDescriptionNull() {
-                this[this.tableCharity.CharityDescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCharityLogoNull() {
-                return this.IsNull(this.tableCharity.CharityLogoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCharityLogoNull() {
-                this[this.tableCharity.CharityLogoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -636,22 +551,22 @@ namespace SomeProject {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class CharityRowChangeEvent : global::System.EventArgs {
+        public class CountryRowChangeEvent : global::System.EventArgs {
             
-            private CharityRow eventRow;
+            private CountryRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CharityRowChangeEvent(CharityRow row, global::System.Data.DataRowAction action) {
+            public CountryRowChangeEvent(CountryRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CharityRow Row {
+            public CountryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -667,7 +582,7 @@ namespace SomeProject {
         }
     }
 }
-namespace SomeProject.WSRDataSetCharityTableAdapters {
+namespace SomeProject.DataSets.WSRDataSetCountryTableAdapters {
     
     
     /// <summary>
@@ -679,7 +594,7 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class CharityTableAdapter : global::System.ComponentModel.Component {
+    public partial class CountryTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -693,7 +608,7 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public CharityTableAdapter() {
+        public CountryTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -790,19 +705,9 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Charity";
-            tableMapping.ColumnMappings.Add("CharityName", "CharityName");
-            tableMapping.ColumnMappings.Add("CharityDescription", "CharityDescription");
-            tableMapping.ColumnMappings.Add("CharityLogo", "CharityLogo");
+            tableMapping.DataSetTable = "Country";
+            tableMapping.ColumnMappings.Add("CountryName", "CountryName");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Charity] ([CharityName], [CharityDescription], [CharityLogo]) " +
-                "VALUES (@CharityName, @CharityDescription, @CharityLogo)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CharityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CharityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CharityDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CharityDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CharityLogo", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CharityLogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -818,7 +723,7 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CharityName, CharityDescription, CharityLogo FROM dbo.Charity";
+            this._commandCollection[0].CommandText = "SELECT CountryName FROM dbo.Country";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -826,7 +731,7 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(WSRDataSetCharity.CharityDataTable dataTable) {
+        public virtual int Fill(WSRDataSetCountry.CountryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -839,79 +744,11 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual WSRDataSetCharity.CharityDataTable GetData() {
+        public virtual WSRDataSetCountry.CountryDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            WSRDataSetCharity.CharityDataTable dataTable = new WSRDataSetCharity.CharityDataTable();
+            WSRDataSetCountry.CountryDataTable dataTable = new WSRDataSetCountry.CountryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(WSRDataSetCharity.CharityDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(WSRDataSetCharity dataSet) {
-            return this.Adapter.Update(dataSet, "Charity");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string CharityName, string CharityDescription, byte[] CharityLogo) {
-            if ((CharityName == null)) {
-                throw new global::System.ArgumentNullException("CharityName");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CharityName));
-            }
-            if ((CharityDescription == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(CharityDescription));
-            }
-            if ((CharityLogo == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((byte[])(CharityLogo));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
         }
     }
     
@@ -927,8 +764,6 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private CharityTableAdapter _charityTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -941,20 +776,6 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public CharityTableAdapter CharityTableAdapter {
-            get {
-                return this._charityTableAdapter;
-            }
-            set {
-                this._charityTableAdapter = value;
             }
         }
         
@@ -977,10 +798,6 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._charityTableAdapter != null) 
-                            && (this._charityTableAdapter.Connection != null))) {
-                    return this._charityTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -994,9 +811,6 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._charityTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1006,17 +820,8 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(WSRDataSetCharity dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(WSRDataSetCountry dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._charityTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Charity.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._charityTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1025,16 +830,8 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(WSRDataSetCharity dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(WSRDataSetCountry dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._charityTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Charity.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._charityTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1043,16 +840,8 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(WSRDataSetCharity dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(WSRDataSetCountry dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._charityTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Charity.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._charityTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1085,17 +874,12 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(WSRDataSetCharity dataSet) {
+        public virtual int UpdateAll(WSRDataSetCountry dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._charityTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._charityTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1129,15 +913,6 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._charityTableAdapter != null)) {
-                    revertConnections.Add(this._charityTableAdapter, this._charityTableAdapter.Connection);
-                    this._charityTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._charityTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._charityTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._charityTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._charityTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1195,10 +970,6 @@ namespace SomeProject.WSRDataSetCharityTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._charityTableAdapter != null)) {
-                    this._charityTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._charityTableAdapter]));
-                    this._charityTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

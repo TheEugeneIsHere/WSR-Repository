@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_Users : MetroFramework.Forms.MetroForm
+    public partial class aUsers : MetroFramework.Forms.MetroForm
     {
         private static string query = "SELECT FirstName, LastName, Email, RoleID FROM Users";
         SqlConnection con = connection.AzureConnection();
 
-        public admin_Users()
+        public aUsers()
         {
             InitializeComponent();
             UsersCount();
@@ -71,7 +71,7 @@ namespace SomeProject
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            admin_UsersAdd userAddForm = new admin_UsersAdd();
+            aUsersAdd userAddForm = new aUsersAdd();
             userAddForm.Show();
             this.Hide();
             this.Dispose();
@@ -157,7 +157,7 @@ namespace SomeProject
                 con.Open();
                 try
                 {
-                    admin_UsersEdit usersEdit = new admin_UsersEdit();
+                    aUsersEdit usersEdit = new aUsersEdit();
                     usersEdit.Show();
                     this.Hide();
                     this.Dispose();

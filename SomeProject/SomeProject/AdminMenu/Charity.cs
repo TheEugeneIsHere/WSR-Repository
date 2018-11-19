@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_Charity : MetroFramework.Forms.MetroForm
+    public partial class aCharity : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
 
-        public admin_Charity()
+        public aCharity()
         {
             InitializeComponent();
             CharityLoad();
@@ -25,8 +25,8 @@ namespace SomeProject
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            AdminForm adminMenu = new AdminForm();
-            adminMenu.Show();
+            AdminForm AdminMenu = new AdminForm();
+            AdminMenu.Show();
             this.Hide();
             this.Dispose();
         }
@@ -40,8 +40,8 @@ namespace SomeProject
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            admin_CharityAdd charityFormAdd = new admin_CharityAdd();
-            charityFormAdd.Show();
+            aCharityAdd CharityAddForm = new aCharityAdd();
+            CharityAddForm.Show();
             this.Hide();
             this.Dispose();
         }

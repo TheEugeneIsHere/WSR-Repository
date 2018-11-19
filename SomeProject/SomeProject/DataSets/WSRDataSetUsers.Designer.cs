@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SomeProject {
+namespace SomeProject.DataSets {
     
     
     /// <summary>
@@ -705,7 +705,7 @@ namespace SomeProject {
         }
     }
 }
-namespace SomeProject.WSRDataSetUsersTableAdapters {
+namespace SomeProject.DataSets.WSRDataSetUsersTableAdapters {
     
     
     /// <summary>

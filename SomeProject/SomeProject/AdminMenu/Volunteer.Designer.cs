@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class admin_Volunteer
+    partial class aVolunteer
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_Volunteer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aVolunteer));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -42,13 +42,13 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.volunteerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wSRDataSetVolunteer = new SomeProject.WSRDataSetVolunteer();
+            this.wSRDataSetVolunteer = new SomeProject.DataSets.WSRDataSetVolunteer();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.volunteerTableAdapter = new SomeProject.WSRDataSetVolunteerTableAdapters.VolunteerTableAdapter();
+            this.volunteerTableAdapter = new SomeProject.DataSets.WSRDataSetVolunteerTableAdapters.VolunteerTableAdapter();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -295,7 +295,7 @@
             this.metroLabel3.TabIndex = 38;
             this.metroLabel3.Text = "...";
             // 
-            // admin_Volunteer
+            // Volunteer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -313,7 +313,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "admin_Volunteer";
+            this.Name = "Volunteer";
             this.Resizable = false;
             this.Text = "Administation Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
@@ -342,9 +342,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countryCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-        private WSRDataSetVolunteer wSRDataSetVolunteer;
+        private DataSets.WSRDataSetVolunteer wSRDataSetVolunteer;
         private System.Windows.Forms.BindingSource volunteerBindingSource;
-        private WSRDataSetVolunteerTableAdapters.VolunteerTableAdapter volunteerTableAdapter;
+        private DataSets.WSRDataSetVolunteerTableAdapters.VolunteerTableAdapter volunteerTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

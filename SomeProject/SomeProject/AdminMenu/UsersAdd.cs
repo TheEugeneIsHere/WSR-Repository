@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_UsersAdd : MetroFramework.Forms.MetroForm
+    public partial class aUsersAdd : MetroFramework.Forms.MetroForm
     {
         private static string query, Role = string.Empty;
         SqlConnection con = connection.AzureConnection();
 
-        public admin_UsersAdd()
+        public aUsersAdd()
         {
             InitializeComponent();
             timer1.Tick += timer1_Tick;
@@ -33,7 +33,7 @@ namespace SomeProject
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            admin_Users UsersForm = new admin_Users();
+            aUsers UsersForm = new aUsers();
             UsersForm.Show();
             this.Hide();
             this.Dispose();
@@ -41,7 +41,7 @@ namespace SomeProject
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            admin_Users UsersForm = new admin_Users();
+            aUsers UsersForm = new aUsers();
             UsersForm.Show();
             this.Hide();
             this.Dispose();
@@ -244,7 +244,7 @@ namespace SomeProject
                 SqlCommand register = new SqlCommand(query, con);
                 register.ExecuteNonQuery();
                 MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                admin_Users usersForm = new admin_Users();
+                aUsers usersForm = new aUsers();
                 usersForm.Show();
                 this.Close();
                 this.Dispose();

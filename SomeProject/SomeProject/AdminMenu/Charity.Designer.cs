@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class admin_Charity
+    partial class aCharity
     {
         /// <summary>
         /// Required designer variable.
@@ -32,16 +32,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_Charity));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aCharity));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.charityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wSRDataSetCharity1 = new SomeProject.WSRDataSetCharity();
+            this.wSRDataSetCharity1 = new SomeProject.DataSets.WSRDataSetCharity();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.charityTableAdapter = new SomeProject.WSRDataSetCharityTableAdapters.CharityTableAdapter();
+            this.charityTableAdapter = new SomeProject.DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -201,7 +201,7 @@
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // admin_Charity
+            // Charity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,7 +213,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "admin_Charity";
+            this.Name = "Charity";
             this.Resizable = false;
             this.Text = "Administration Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
@@ -237,13 +237,13 @@
         private System.Windows.Forms.DataGridViewImageColumn charityLogoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn charityNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn charityDescriptionDataGridViewTextBoxColumn;
-        private WSRDataSetCharity wSRDataSetCharity;
+        private DataSets.WSRDataSetCharity wSRDataSetCharity;
         private System.Windows.Forms.DataGridViewImageColumn charityLogoDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private WSRDataSetCharity wSRDataSetCharity1;
+        private DataSets.WSRDataSetCharity wSRDataSetCharity1;
         private System.Windows.Forms.BindingSource charityBindingSource;
-        private WSRDataSetCharityTableAdapters.CharityTableAdapter charityTableAdapter;
+        private DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter charityTableAdapter;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;

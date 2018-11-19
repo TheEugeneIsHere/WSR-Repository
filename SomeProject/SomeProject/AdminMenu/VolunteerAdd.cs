@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_VolunteerAdd : MetroFramework.Forms.MetroForm
+    public partial class aVolunteerAdd : MetroFramework.Forms.MetroForm
     {
-        public admin_VolunteerAdd()
+        public aVolunteerAdd()
         {
             InitializeComponent();
             timer1.Tick += timer1_Tick;
@@ -28,7 +28,7 @@ namespace SomeProject
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            admin_Volunteer VolountersForm = new admin_Volunteer();
+            aVolunteer VolountersForm = new aVolunteer();
             VolountersForm.Show();
             this.Hide();
             this.Dispose();

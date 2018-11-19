@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.SuspendLayout();
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(12, 9);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(776, 23);
+            this.metroLabel1.TabIndex = 0;
+            this.metroLabel1.Text = "Это меню координатора :)";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CoordinatorForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.metroLabel1);
+            this.Name = "CoordinatorForm";
             this.Text = "CoordinatorForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }

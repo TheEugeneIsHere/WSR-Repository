@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>project_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\project_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -73,53 +88,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminForm.cs">
+    <Compile Include="AdminMenu\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForm.Designer.cs">
+    <Compile Include="AdminMenu\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_Charity.cs">
+    <Compile Include="AdminMenu\Charity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_Charity.Designer.cs">
-      <DependentUpon>admin_Charity.cs</DependentUpon>
+    <Compile Include="AdminMenu\Charity.Designer.cs">
+      <DependentUpon>Charity.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_CharityAdd.cs">
+    <Compile Include="AdminMenu\CharityAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_CharityAdd.Designer.cs">
-      <DependentUpon>admin_CharityAdd.cs</DependentUpon>
+    <Compile Include="AdminMenu\CharityAdd.Designer.cs">
+      <DependentUpon>CharityAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_Users.cs">
+    <Compile Include="AdminMenu\Users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_Users.Designer.cs">
-      <DependentUpon>admin_Users.cs</DependentUpon>
+    <Compile Include="AdminMenu\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_UsersAdd.cs">
+    <Compile Include="AdminMenu\UsersAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_UsersAdd.Designer.cs">
-      <DependentUpon>admin_UsersAdd.cs</DependentUpon>
+    <Compile Include="AdminMenu\UsersAdd.Designer.cs">
+      <DependentUpon>UsersAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_UsersEdit.cs">
+    <Compile Include="AdminMenu\UsersEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_UsersEdit.Designer.cs">
-      <DependentUpon>admin_UsersEdit.cs</DependentUpon>
+    <Compile Include="AdminMenu\UsersEdit.Designer.cs">
+      <DependentUpon>UsersEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_Volunteer.cs">
+    <Compile Include="AdminMenu\Volunteer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_Volunteer.Designer.cs">
-      <DependentUpon>admin_Volunteer.cs</DependentUpon>
+    <Compile Include="AdminMenu\Volunteer.Designer.cs">
+      <DependentUpon>Volunteer.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_VolunteerAdd.cs">
+    <Compile Include="AdminMenu\VolunteerAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_VolunteerAdd.Designer.cs">
-      <DependentUpon>admin_VolunteerAdd.cs</DependentUpon>
+    <Compile Include="AdminMenu\VolunteerAdd.Designer.cs">
+      <DependentUpon>VolunteerAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="ask.cs">
       <SubType>Form</SubType>
@@ -201,55 +216,58 @@
     <Compile Include="success.Designer.cs">
       <DependentUpon>success.cs</DependentUpon>
     </Compile>
-    <Compile Include="WSRDataSetCharity.Designer.cs">
+    <Compile Include="DataSets\WSRDataSetCharity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </Compile>
-    <Compile Include="WSRDataSetCountry.Designer.cs">
+    <Compile Include="DataSets\WSRDataSetCountry.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetCountry.xsd</DependentUpon>
     </Compile>
-    <Compile Include="WSRDataSetUsers.Designer.cs">
+    <Compile Include="DataSets\WSRDataSetUsers.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </Compile>
-    <Compile Include="WSRDataSetVolunteer.Designer.cs">
+    <Compile Include="DataSets\WSRDataSetVolunteer.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetVolunteer.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminForm.resx">
+    <EmbeddedResource Include="AdminMenu\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_Charity.resx">
-      <DependentUpon>admin_Charity.cs</DependentUpon>
+    <EmbeddedResource Include="AdminMenu\Charity.resx">
+      <DependentUpon>Charity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_CharityAdd.resx">
-      <DependentUpon>admin_CharityAdd.cs</DependentUpon>
+    <EmbeddedResource Include="AdminMenu\CharityAdd.resx">
+      <DependentUpon>CharityAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_Users.resx">
-      <DependentUpon>admin_Users.cs</DependentUpon>
+    <EmbeddedResource Include="AdminMenu\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_UsersAdd.resx">
-      <DependentUpon>admin_UsersAdd.cs</DependentUpon>
+    <EmbeddedResource Include="AdminMenu\UsersAdd.resx">
+      <DependentUpon>UsersAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_UsersEdit.resx">
-      <DependentUpon>admin_UsersEdit.cs</DependentUpon>
+    <EmbeddedResource Include="AdminMenu\UsersEdit.resx">
+      <DependentUpon>UsersEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_Volunteer.resx">
-      <DependentUpon>admin_Volunteer.cs</DependentUpon>
+    <EmbeddedResource Include="AdminMenu\Volunteer.resx">
+      <DependentUpon>Volunteer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_VolunteerAdd.resx">
-      <DependentUpon>admin_VolunteerAdd.cs</DependentUpon>
+    <EmbeddedResource Include="AdminMenu\VolunteerAdd.resx">
+      <DependentUpon>VolunteerAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ask.resx">
       <DependentUpon>ask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BMIcalc.resx">
       <DependentUpon>BMIcalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoordinatorForm.resx">
+      <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editrunnerprofile.resx">
       <DependentUpon>editrunnerprofile.cs</DependentUpon>
@@ -293,48 +311,48 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="WSRDataSetCharity.xsc">
+    <None Include="DataSets\WSRDataSetCharity.xsc">
       <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSetCharity.xsd">
+    <None Include="DataSets\WSRDataSetCharity.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>WSRDataSetCharity.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSRDataSetCharity.xss">
+    <None Include="DataSets\WSRDataSetCharity.xss">
       <DependentUpon>WSRDataSetCharity.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSetCountry.xsc">
+    <None Include="DataSets\WSRDataSetCountry.xsc">
       <DependentUpon>WSRDataSetCountry.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSetCountry.xsd">
+    <None Include="DataSets\WSRDataSetCountry.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>WSRDataSetCountry.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSRDataSetCountry.xss">
+    <None Include="DataSets\WSRDataSetCountry.xss">
       <DependentUpon>WSRDataSetCountry.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSetUsers.xsc">
+    <None Include="DataSets\WSRDataSetUsers.xsc">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSetUsers.xsd">
+    <None Include="DataSets\WSRDataSetUsers.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>WSRDataSetUsers.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSRDataSetUsers.xss">
+    <None Include="DataSets\WSRDataSetUsers.xss">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSetVolunteer.xsc">
+    <None Include="DataSets\WSRDataSetVolunteer.xsc">
       <DependentUpon>WSRDataSetVolunteer.xsd</DependentUpon>
     </None>
-    <None Include="WSRDataSetVolunteer.xsd">
+    <None Include="DataSets\WSRDataSetVolunteer.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>WSRDataSetVolunteer.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSRDataSetVolunteer.xss">
+    <None Include="DataSets\WSRDataSetVolunteer.xss">
       <DependentUpon>WSRDataSetVolunteer.xsd</DependentUpon>
     </None>
   </ItemGroup>
@@ -378,8 +396,7 @@
     <None Include="Resources\Wikivoyage-logo.svg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="project_icon.ico" />
-    <Content Include="Resources\aBrandNewIcon.ico" />
+    <Content Include="Resources\project_icon.ico" />
     <None Include="Resources\bmiManBad.png" />
     <None Include="Resources\bmiWomanSoSo.png" />
     <None Include="Resources\bmiWomanLack.png" />
@@ -395,6 +412,18 @@
     <None Include="Resources\man.png" />
     <None Include="Resources\bmiCalc.png" />
     <None Include="Resources\refresh_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

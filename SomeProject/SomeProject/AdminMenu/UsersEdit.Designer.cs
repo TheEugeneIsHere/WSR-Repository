@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class admin_UsersEdit
+    partial class aUsersEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_UsersEdit));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aUsersEdit));
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
@@ -605,7 +605,7 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // admin_UsersEdit
+            // aUsersEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -626,7 +626,7 @@
             this.Controls.Add(this.metroPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "admin_UsersEdit";
+            this.Name = "aUsersEdit";
             this.Resizable = false;
             this.Text = "Administration Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);

@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class admin_Volunteer : MetroFramework.Forms.MetroForm
+    public partial class aVolunteer : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
         private static string query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer ORDER BY FirstName";
 
-        public admin_Volunteer()
+        public aVolunteer()
         {
             InitializeComponent();
             VolunteerLoad(query);
@@ -42,7 +42,7 @@ namespace SomeProject
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            admin_VolunteerAdd VolunteerAddForm = new admin_VolunteerAdd();
+            aVolunteerAdd VolunteerAddForm = new aVolunteerAdd();
             VolunteerAddForm.Show();
             this.Hide();
             this.Dispose();

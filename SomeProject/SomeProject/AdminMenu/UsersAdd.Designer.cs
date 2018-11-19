@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class admin_UsersAdd
+    partial class aUsersAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_UsersAdd));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aUsersAdd));
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -55,7 +55,7 @@
             this.runnerCombo1 = new MetroFramework.Controls.MetroComboBox();
             this.runnerCombo2 = new MetroFramework.Controls.MetroComboBox();
             this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wSRDataSetCountry = new SomeProject.WSRDataSetCountry();
+            this.wSRDataSetCountry = new SomeProject.DataSets.WSRDataSetCountry();
             this.runnerLabel1 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel2 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -63,7 +63,7 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.countryTableAdapter = new SomeProject.WSRDataSetCountryTableAdapters.CountryTableAdapter();
+            this.countryTableAdapter = new SomeProject.DataSets.WSRDataSetCountryTableAdapters.CountryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
@@ -554,7 +554,7 @@
             // 
             this.countryTableAdapter.ClearBeforeFill = true;
             // 
-            // admin_UsersAdd
+            // aUsersAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -574,7 +574,7 @@
             this.Controls.Add(this.metroPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "admin_UsersAdd";
+            this.Name = "aUsersAdd";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.Text = "Administration Menu";
@@ -625,9 +625,9 @@
         private MetroFramework.Controls.MetroLabel runnerLabel;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private WSRDataSetCountry wSRDataSetCountry;
+        private DataSets.WSRDataSetCountry wSRDataSetCountry;
         private System.Windows.Forms.BindingSource countryBindingSource;
-        private WSRDataSetCountryTableAdapters.CountryTableAdapter countryTableAdapter;
+        private DataSets.WSRDataSetCountryTableAdapters.CountryTableAdapter countryTableAdapter;
         private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class admin_Users
+    partial class aUsers
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin_Users));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aUsers));
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -45,7 +45,7 @@
             this.roleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editUserButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wSRDataSetUsers = new SomeProject.WSRDataSetUsers();
+            this.wSRDataSetUsers = new SomeProject.DataSets.WSRDataSetUsers();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
@@ -55,7 +55,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.usersTableAdapter = new SomeProject.WSRDataSetUsersTableAdapters.UsersTableAdapter();
+            this.usersTableAdapter = new SomeProject.DataSets.WSRDataSetUsersTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetUsers)).BeginInit();
@@ -369,7 +369,7 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // admin_Users
+            // aUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -390,7 +390,7 @@
             this.Controls.Add(this.metroLabel4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "admin_Users";
+            this.Name = "aUsers";
             this.Resizable = false;
             this.Text = "Administration Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
@@ -422,9 +422,9 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private WSRDataSetUsers wSRDataSetUsers;
+        private DataSets.WSRDataSetUsers wSRDataSetUsers;
         private System.Windows.Forms.BindingSource usersBindingSource;
-        private WSRDataSetUsersTableAdapters.UsersTableAdapter usersTableAdapter;
+        private DataSets.WSRDataSetUsersTableAdapters.UsersTableAdapter usersTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
