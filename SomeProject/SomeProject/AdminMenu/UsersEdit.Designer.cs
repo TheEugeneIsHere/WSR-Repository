@@ -95,7 +95,7 @@
             this.metroButton2.TabIndex = 73;
             this.metroButton2.Text = "Отмена";
             this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.BackToUsers_Click);
             // 
             // metroButton1
             // 
@@ -365,7 +365,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.BackToUsers_Click);
             // 
             // metroLabel11
             // 

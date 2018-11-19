@@ -26,6 +26,13 @@ namespace SomeProject
             this.Cursor = Cursors.Default;
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
+            " часов и " + timeremaining.Minutes + " минут до Нового Года";
+        }
+
         private void UsersCount()
         {
             try
@@ -44,39 +51,6 @@ namespace SomeProject
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
-            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
-            " часов и " + timeremaining.Minutes + " минут до Нового Года";
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            AdminForm admForm = new AdminForm();
-            admForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
-        {
-            metroComboBox2.SelectedIndex = 0;
-            metroComboBox1.SelectedIndex= 0;
-            metroTextBox1.Text = string.Empty;
-            metroComboBox2.Enabled = true;
-            metroComboBox1.Enabled = true;
-            UsersLoad("SELECT FirstName, LastName, Email, RoleID FROM Users");
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            aUsersAdd userAddForm = new aUsersAdd();
-            userAddForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
-        
         private void UsersLoad(string query)
         {
             try
@@ -98,42 +72,23 @@ namespace SomeProject
             }
         }
 
-        private void metroComboboxes_ValueChange(object sender, EventArgs e)
-        {
-            UsersLoad(SortBy(query));
-        }
-
         private string SortBy(string query)
         {
             string Role, OrderBy = string.Empty;
 
             switch (metroComboBox2.Text)
             {
-                case "Администратор":
-                    Role = "A";
-                    break;
-                case "Бегун":
-                    Role = "R";
-                    break;
-                case "Координатор":
-                    Role = "C";
-                    break;
-                default:
-                    Role = string.Empty;
-                    break;
+                case "Администратор": Role = "A"; break;
+                case "Бегун": Role = "R"; break;
+                case "Координатор": Role = "C"; break;
+                default: Role = string.Empty; break;
             }
 
             switch (metroComboBox1.Text)
             {
-                case "Фамилии":
-                    OrderBy = "LastName";
-                    break;
-                case "Имени":
-                    OrderBy = "FirstName";
-                    break;
-                default:
-                    OrderBy = "RoleId";
-                    break;
+                case "Фамилии": OrderBy = "LastName"; break;
+                case "Имени": OrderBy = "FirstName"; break;
+                default: OrderBy = "RoleId"; break;
             }
 
             wSRDataSetUsers.Clear();
@@ -144,35 +99,9 @@ namespace SomeProject
             }
             else
                 query = "SELECT FirstName, LastName, Email, RoleID FROM Users ORDER BY '" + OrderBy + "'";
+
             return query;
          }
-  
-
-        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (metroGrid1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >=0)
-            {
-                
-                connection.editMail = metroGrid1.CurrentRow.Cells[2].Value.ToString();
-                con.Open();
-                try
-                {
-                    aUsersEdit usersEdit = new aUsersEdit();
-                    usersEdit.Show();
-                    this.Hide();
-                    this.Dispose();
-                    SqlCommand userEdit = new SqlCommand("SELECT * FROM Users WHERE Email ='" + connection.editMail + "'", con);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally
-                {
-                    con.Close();
-                }
-            }
-        }
 
         private void SearchOnEnter(object sender, KeyEventArgs e)
         {
@@ -193,6 +122,70 @@ namespace SomeProject
             }
         }
 
+        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (metroGrid1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                connection.editMail = metroGrid1.CurrentRow.Cells[2].Value.ToString();
+                con.Open();
+                try
+                {
+                    aUsersEdit UsersEditForm = new aUsersEdit();
+                    UsersEditForm.Show();
+                    this.Hide();
+                    this.Dispose();
+                    SqlCommand userEdit = new SqlCommand("SELECT * FROM Users WHERE Email ='" + connection.editMail + "'", con);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        private void metroComboboxes_ValueChange(object sender, EventArgs e)
+        {
+            UsersLoad(SortBy(query));
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            aUsersAdd UsersAddForm = new aUsersAdd();
+            UsersAddForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AdminForm AdminMenu = new AdminForm();
+            AdminMenu.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form1 MainForm = new Form1();
+            MainForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
+        {
+            metroComboBox2.SelectedIndex = 0;
+            metroComboBox1.SelectedIndex = 0;
+            metroTextBox1.Text = string.Empty;
+            metroComboBox2.Enabled = true;
+            metroComboBox1.Enabled = true;
+            UsersLoad("SELECT FirstName, LastName, Email, RoleID FROM Users");
+        }
+
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -210,12 +203,5 @@ namespace SomeProject
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Form1 mainForm = new Form1();
-            mainForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
     }
 }

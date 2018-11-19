@@ -14,6 +14,7 @@ namespace SomeProject
     public partial class aUsersEdit : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
+        ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
 
         public aUsersEdit()
         {
@@ -22,30 +23,12 @@ namespace SomeProject
             timer1.Start();
             metroLabel11.Text = connection.editMail;
         }
-       
-        ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = connection.voteTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            aUsers UsersForm = new aUsers();
-            UsersForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
-
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-            aUsers UsersForm = new aUsers();
-            UsersForm.Show();
-            this.Hide();
-            this.Dispose();
         }
 
         private void metroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -85,7 +68,6 @@ namespace SomeProject
                 error.SetError(metroTextBox3, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount + ". Отсутствует Имя пользователя\n";
-                // MessageBox.Show("Не введено Имя пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (metroTextBox2.Text == "")
@@ -93,7 +75,6 @@ namespace SomeProject
                 error.SetError(metroTextBox2, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount + ". Отсутствует Фамилия пользователя\n";
-                // MessageBox.Show("Не введена Фамилия пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (metroComboBox2.Text == "")
@@ -101,7 +82,6 @@ namespace SomeProject
                 error.SetError(metroComboBox2, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount + ". Отсутствует Роль пользователя\n";
-                //MessageBox.Show("Не выбрана роль пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (metroTextBox4.Text != metroTextBox5.Text)
@@ -110,7 +90,6 @@ namespace SomeProject
                 error.SetError(metroTextBox5, "Ошибка");
                 ++errorCount;
                 errorLog += errorCount + ". Введённые пароли отличаются\n";
-                //MessageBox.Show("Введённые пароли отличаются", "Введите пароль заново", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (errorCount != 0)
@@ -122,6 +101,22 @@ namespace SomeProject
         private void metroComboBox2_TextChanged(object sender, EventArgs e)
         {
             error.SetError(metroComboBox2, String.Empty);
+        }
+
+        private void BackToUsers_Click(object sender, EventArgs e)
+        {
+            aUsers UsersForm = new aUsers();
+            UsersForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form1 MainForm = new Form1();
+            MainForm.Show();
+            this.Hide();
+            this.Dispose();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
@@ -141,12 +136,5 @@ namespace SomeProject
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Form1 mainForm = new Form1();
-            mainForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
     }
 }

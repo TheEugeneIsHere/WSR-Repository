@@ -23,27 +23,11 @@ namespace SomeProject
             timer1.Start();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            AdminForm AdminMenu = new AdminForm();
-            AdminMenu.Show();
-            this.Hide();
-            this.Dispose();
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = connection.voteTime - DateTime.Now;
             metroLabel3.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            aCharityAdd CharityAddForm = new aCharityAdd();
-            CharityAddForm.Show();
-            this.Hide();
-            this.Dispose();
         }
 
         private void CharityLoad()
@@ -63,6 +47,22 @@ namespace SomeProject
             {
                 con.Close();
             }
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            aCharityAdd CharityAddForm = new aCharityAdd();
+            CharityAddForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AdminForm AdminMenu = new AdminForm();
+            AdminMenu.Show();
+            this.Hide();
+            this.Dispose();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)

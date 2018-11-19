@@ -26,36 +26,6 @@ namespace SomeProject
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            aVolunteer VolountersForm = new aVolunteer();
-            VolountersForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
-
-        private void metroButton3_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog volounterSelector = new OpenFileDialog
-            {
-                Filter = "Все файлы Excel”|*.xl,*.xlsx,*.xlsm..|CSV|*.csv",
-                Title = "Выберите файл с волонтёрами.."
-            };
-
-            if (volounterSelector.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                try
-                {
-                    metroTextBox1.Text = volounterSelector.SafeFileName;
-                }
-                catch
-                {
-                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
-                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void metroTextBox1_TextChanged(object sender, EventArgs e)
         {
             // И здеся что-то будет происходить, сложно.
@@ -63,6 +33,27 @@ namespace SomeProject
             // Если она прошла успешно MessageBox что успешно и кек вроде
             // Можно ещё ProgressBar замутить куда-нить для интима, ну хз
             MessageBox.Show("Этого произойти было не должно"); // Ну а вдруг я что-то не так понял
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            aVolunteer VolunteerForm = new aVolunteer();
+            VolunteerForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form1 MainForm = new Form1();
+            MainForm.Show();
+            this.Hide();
+            this.Dispose();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
@@ -82,12 +73,5 @@ namespace SomeProject
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Form1 mainForm = new Form1();
-            mainForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
     }
 }

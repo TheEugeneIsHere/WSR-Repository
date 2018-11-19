@@ -15,6 +15,7 @@ namespace SomeProject
     {
         private static string query, Role = string.Empty;
         SqlConnection con = connection.AzureConnection();
+        ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
 
         public aUsersAdd()
         {
@@ -22,42 +23,50 @@ namespace SomeProject
             timer1.Tick += timer1_Tick;
             timer1.Start();
         }
-        ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
+
+        private void UsersAdd(string query)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand register = new SqlCommand(query, con);
+                register.ExecuteNonQuery();
+                MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                aUsers usersForm = new aUsers();
+                usersForm.Show();
+                this.Close();
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void metroPanelToggle(object sender, EventArgs e)
+        {
+            error.SetError(metroComboBox2, String.Empty);
+            if (metroComboBox2.Text == "Бегун")
+            {
+                metroPanel1.Visible = true;
+                metroPanel1.Enabled = true;
+            }
+            else
+            {
+                metroPanel1.Visible = false;
+                metroPanel1.Enabled = false;
+            }
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = connection.voteTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            aUsers UsersForm = new aUsers();
-            UsersForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
-
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-            aUsers UsersForm = new aUsers();
-            UsersForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
-
-        private void metroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
-            {
-                if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
-                {
-                    error.SetError(metroTextBox3, "Используйте английский язык для ввода Имени");
-                }
-                e.Handled = true;
-            }
-            else { error.SetError(metroTextBox3, String.Empty); }
         }
 
         private void metroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -83,7 +92,20 @@ namespace SomeProject
             else { error.SetError(metroTextBox2, String.Empty); }
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void metroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
+            {
+                if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
+                {
+                    error.SetError(metroTextBox3, "Используйте английский язык для ввода Имени");
+                }
+                e.Handled = true;
+            }
+            else { error.SetError(metroTextBox3, String.Empty); }
+        }
+
+        private void AddQuery_Click(object sender, EventArgs e)
         {
             string errorLog = "Исправьте следующие ошибки: \n\n";
             int errorCount = 0;
@@ -213,7 +235,7 @@ namespace SomeProject
 
                     query += "INSERT INTO Runner VALUES " +
                         "(N'" + metroTextBox1.Text + "', N'" + gender + "', '" + runnerDateTime1.Value.ToString("yyyy-MM-dd") +
-                        "', N'" + countryCode +"');";
+                        "', N'" + countryCode + "');";
                 }
 
                 UsersAdd(query);
@@ -221,49 +243,10 @@ namespace SomeProject
 
         }
 
-        private void metroComboBox2_TextChanged(object sender, EventArgs e)
-        {
-            error.SetError(metroComboBox2, String.Empty);
-            if (metroComboBox2.Text == "Бегун")
-            {
-                metroPanel1.Visible = true;
-                metroPanel1.Enabled = true;
-            }
-            else
-            {
-                metroPanel1.Visible = false;
-                metroPanel1.Enabled = false;
-            }
-        }
-
-        private void UsersAdd(string query)
-        {
-            try
-            {
-                con.Open();
-                SqlCommand register = new SqlCommand(query, con);
-                register.ExecuteNonQuery();
-                MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                aUsers usersForm = new aUsers();
-                usersForm.Show();
-                this.Close();
-                this.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
         private void metroPanel1_EnabledChanged(object sender, EventArgs e)
         {
             if (metroPanel1.Enabled)
             {
-
                 try
                 {
                     con.Open();
@@ -283,10 +266,18 @@ namespace SomeProject
             }
         }
 
+        private void BackToUsers_Click(object sender, EventArgs e)
+        {
+            aUsers UsersForm = new aUsers();
+            UsersForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 mainForm = new Form1();
-            mainForm.Show();
+            Form1 MainForm = new Form1();
+            MainForm.Show();
             this.Hide();
             this.Dispose();
         }
@@ -307,5 +298,6 @@ namespace SomeProject
                 }
             }
         }
+
     }
 }

@@ -32,22 +32,6 @@ namespace SomeProject
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            AdminForm AdminForm = new AdminForm();
-            AdminForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            aVolunteerAdd VolunteerAddForm = new aVolunteerAdd();
-            VolunteerAddForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
-
         private void VolunteerCount()
         {
             try
@@ -85,26 +69,42 @@ namespace SomeProject
             }
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            aVolunteerAdd VolunteerAddForm = new aVolunteerAdd();
+            VolunteerAddForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AdminForm AdminForm = new AdminForm();
+            AdminForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = new Form1();
+            mainForm.Show();
+            this.Hide();
+            this.Dispose();
+        }
+
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sort = string.Empty;
             switch (metroComboBox1.Text)
             {
-                case "Фамилии":
-                    sort = "LastName";
-                    break;
-                case "Полу":
-                    sort = "Gender";
-                    break;
-                case "Стране":
-                    sort = "CountryCode";
-                    break;
-                default:
-                    sort = "FirstName";
-                    break;
+                case "Фамилии": sort = "LastName"; break;
+                case "Полу": sort = "Gender"; break;
+                case "Стране": sort = "CountryCode"; break;
+                default: sort = "FirstName"; break;
             }
-
             wSRDataSetVolunteer.Clear();
+
             VolunteerLoad("SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer ORDER BY " + sort);
         }
 
@@ -125,12 +125,5 @@ namespace SomeProject
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Form1 mainForm = new Form1();
-            mainForm.Show();
-            this.Hide();
-            this.Dispose();
-        }
     }
 }

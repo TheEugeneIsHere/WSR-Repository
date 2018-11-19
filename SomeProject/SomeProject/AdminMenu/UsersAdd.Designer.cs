@@ -113,7 +113,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.BackToUsers_Click);
             // 
             // metroLabel1
             // 
@@ -236,7 +236,7 @@
             this.metroComboBox2.Size = new System.Drawing.Size(134, 29);
             this.metroComboBox2.TabIndex = 46;
             this.metroComboBox2.UseSelectable = true;
-            this.metroComboBox2.TextChanged += new System.EventHandler(this.metroComboBox2_TextChanged);
+            this.metroComboBox2.TextChanged += new System.EventHandler(this.metroPanelToggle);
             // 
             // metroLabel6
             // 
@@ -359,7 +359,7 @@
             this.metroButton2.TabIndex = 54;
             this.metroButton2.Text = "Отмена";
             this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.BackToUsers_Click);
             // 
             // metroButton1
             // 
@@ -371,7 +371,7 @@
             this.metroButton1.TabIndex = 55;
             this.metroButton1.Text = "Сохранить";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.AddQuery_Click);
             // 
             // metroTextBox1
             // 
