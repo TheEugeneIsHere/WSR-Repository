@@ -375,6 +375,7 @@
             // 
             // metroTextBox1
             // 
+            this.metroTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             // 
             // 
             // 
