@@ -61,7 +61,6 @@
             this.runnerLabel3 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.countryTableAdapter = new SomeProject.DataSets.WSRDataSetCountryTableAdapters.CountryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -69,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).BeginInit();
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -426,6 +424,9 @@
             this.runnerCombo1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.runnerCombo1.FormattingEnabled = true;
             this.runnerCombo1.ItemHeight = 23;
+            this.runnerCombo1.Items.AddRange(new object[] {
+            "Мужской",
+            "Женский"});
             this.runnerCombo1.Location = new System.Drawing.Point(65, 85);
             this.runnerCombo1.Name = "runnerCombo1";
             this.runnerCombo1.PromptText = "Выбрать..";
@@ -437,6 +438,7 @@
             // 
             this.runnerCombo2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.runnerCombo2.DataSource = this.countryBindingSource;
+            this.runnerCombo2.DisplayMember = "CountryName";
             this.runnerCombo2.DropDownHeight = 300;
             this.runnerCombo2.DropDownWidth = 150;
             this.runnerCombo2.FormattingEnabled = true;
@@ -499,7 +501,6 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.pictureBox3);
             this.metroPanel1.Controls.Add(this.runnerLabel);
             this.metroPanel1.Controls.Add(this.runnerDateTime1);
             this.metroPanel1.Controls.Add(this.runnerCombo1);
@@ -520,14 +521,6 @@
             this.metroPanel1.VerticalScrollbarSize = 10;
             this.metroPanel1.Visible = false;
             this.metroPanel1.EnabledChanged += new System.EventHandler(this.metroPanel1_EnabledChanged);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(29, 120);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 29);
-            this.pictureBox3.TabIndex = 65;
-            this.pictureBox3.TabStop = false;
             // 
             // metroPanel2
             // 
@@ -586,7 +579,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -629,6 +621,5 @@
         private DataSets.WSRDataSetCountry wSRDataSetCountry;
         private System.Windows.Forms.BindingSource countryBindingSource;
         private DataSets.WSRDataSetCountryTableAdapters.CountryTableAdapter countryTableAdapter;
-        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

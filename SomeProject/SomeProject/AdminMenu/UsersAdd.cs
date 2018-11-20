@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -252,8 +253,6 @@ namespace SomeProject
                     con.Open();
                     SqlDataAdapter ad = new SqlDataAdapter("SELECT CountryName FROM Country", con);
                     ad.Fill(wSRDataSetCountry, "Country");
-                    runnerCombo2.DataSource = wSRDataSetCountry.Tables[0];
-                    runnerCombo2.DisplayMember = "CountryName";
                 }
                 catch (Exception ex)
                 {
