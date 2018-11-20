@@ -134,7 +134,6 @@ namespace SomeProject
                     UsersEditForm.Show();
                     this.Hide();
                     this.Dispose();
-                    SqlCommand userEdit = new SqlCommand("SELECT * FROM Users WHERE Email ='" + connection.editMail + "'", con);
                 }
                 catch (Exception ex)
                 {

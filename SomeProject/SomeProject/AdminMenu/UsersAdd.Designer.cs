@@ -54,21 +54,21 @@
             this.runnerDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.runnerCombo1 = new MetroFramework.Controls.MetroComboBox();
             this.runnerCombo2 = new MetroFramework.Controls.MetroComboBox();
-            this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wSRDataSetCountry = new SomeProject.DataSets.WSRDataSetCountry();
             this.runnerLabel1 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel2 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel3 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.countryTableAdapter = new SomeProject.DataSets.WSRDataSetCountryTableAdapters.CountryTableAdapter();
+            this.wSRDataSetCountry = new SomeProject.DataSets.WSRDataSetCountry();
+            this.getCountryNameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getCountryNameTableAdapter = new SomeProject.DataSets.WSRDataSetCountryTableAdapters.getCountryNameTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).BeginInit();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getCountryNameBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel4
@@ -437,7 +437,7 @@
             // runnerCombo2
             // 
             this.runnerCombo2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.runnerCombo2.DataSource = this.countryBindingSource;
+            this.runnerCombo2.DataSource = this.getCountryNameBindingSource;
             this.runnerCombo2.DisplayMember = "CountryName";
             this.runnerCombo2.DropDownHeight = 300;
             this.runnerCombo2.DropDownWidth = 150;
@@ -451,16 +451,6 @@
             this.runnerCombo2.Size = new System.Drawing.Size(134, 29);
             this.runnerCombo2.TabIndex = 58;
             this.runnerCombo2.UseSelectable = true;
-            // 
-            // countryBindingSource
-            // 
-            this.countryBindingSource.DataMember = "Country";
-            this.countryBindingSource.DataSource = this.wSRDataSetCountry;
-            // 
-            // wSRDataSetCountry
-            // 
-            this.wSRDataSetCountry.DataSetName = "WSRDataSetCountry";
-            this.wSRDataSetCountry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // runnerLabel1
             // 
@@ -544,9 +534,19 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // countryTableAdapter
+            // wSRDataSetCountry
             // 
-            this.countryTableAdapter.ClearBeforeFill = true;
+            this.wSRDataSetCountry.DataSetName = "WSRDataSetCountry";
+            this.wSRDataSetCountry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // getCountryNameBindingSource
+            // 
+            this.getCountryNameBindingSource.DataMember = "getCountryName";
+            this.getCountryNameBindingSource.DataSource = this.wSRDataSetCountry;
+            // 
+            // getCountryNameTableAdapter
+            // 
+            this.getCountryNameTableAdapter.ClearBeforeFill = true;
             // 
             // aUsersAdd
             // 
@@ -575,12 +575,12 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getCountryNameBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,7 +619,7 @@
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private DataSets.WSRDataSetCountry wSRDataSetCountry;
-        private System.Windows.Forms.BindingSource countryBindingSource;
-        private DataSets.WSRDataSetCountryTableAdapters.CountryTableAdapter countryTableAdapter;
+        private System.Windows.Forms.BindingSource getCountryNameBindingSource;
+        private DataSets.WSRDataSetCountryTableAdapters.getCountryNameTableAdapter getCountryNameTableAdapter;
     }
 }

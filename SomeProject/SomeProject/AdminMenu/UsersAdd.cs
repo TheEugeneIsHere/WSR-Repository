@@ -252,7 +252,7 @@ namespace SomeProject
                 {
                     con.Open();
                     SqlDataAdapter ad = new SqlDataAdapter("SELECT CountryName FROM Country", con);
-                    ad.Fill(wSRDataSetCountry, "Country");
+                    ad.Fill(wSRDataSetCountry, "getCountryName");
                 }
                 catch (Exception ex)
                 {

@@ -155,6 +155,9 @@
       <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="connection.cs" />
+    <Compile Include="DataSets\WSRDataSetUsers.cs">
+      <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
+    </Compile>
     <Compile Include="editrunnerprofile.cs">
       <SubType>Form</SubType>
     </Compile>
