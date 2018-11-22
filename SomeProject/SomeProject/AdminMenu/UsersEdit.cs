@@ -45,9 +45,13 @@ namespace SomeProject
                 runnerInfo.Fill(wSRDataSetCountry, "getCountryCode");
                 runnerInfo.Dispose();
                 con.Close();
-                runnerDateTime1.Value = Convert.ToDateTime(wsrDataSetUsers1.Tables[1].Rows[0][0]);
-                runnerCombo1.SelectedItem = wsrDataSetUsers1.Tables[1].Rows[0][1].ToString();
-                runnerCombo2.SelectedItem = wsrDataSetUsers1.Tables[1].Rows[0][2].ToString();
+                var DateOfBirth = Convert.ToDateTime(wsrDataSetUsers1.Tables[1].Rows[0][0]);
+                var Gender = wsrDataSetUsers1.Tables[1].Rows[0][1].ToString();
+                var Country = wsrDataSetUsers1.Tables[1].Rows[0][2].ToString();
+
+                if (DateOfBirth != null) runnerDateTime1.Value = DateOfBirth;
+                if (Gender != null) runnerCombo1.SelectedItem = Gender;
+                if (Country != null) runnerCombo2.SelectedItem = Country;
             }
             catch (Exception ex)
             {
@@ -78,6 +82,48 @@ namespace SomeProject
             finally
             {
                 con.Close();
+            }
+        }
+
+        private void UpdateUser()
+        {
+            string query = null;
+            query = "UPDATE Users " +
+                    "SET FirstName = '" + userInfo1.Text + "'," +
+                    " LastName = '" + userInfo2.Text + "'," +
+                    " RoleId = '" + userInfo3.Text + "' ";
+            if ((metroTextBox4.Text!="" && metroTextBox5.Text!="") && (metroTextBox4.Text == metroTextBox5.Text))
+            {
+                query += ",Password = '" + metroTextBox4.Text + "' ";
+            }
+            query += "WHERE Email ='" + metroLabel11.Text + "'; ";
+            if (metroPanel1.Enabled)
+            {
+                query += "UPDATE Runner " +
+                    "SET DateOfBirth = '" + runnerDateTime1.Value.ToString("yyyy-MM-dd") + "'," +
+                    " Gender = '" + runnerCombo1.Text + "'," +
+                    " CountryCode = '" + runnerCombo2.Text + "' " +
+                    "WHERE Email ='" + metroLabel11.Text + "'; ";
+            }
+
+            try
+            {
+                con.Open();
+                SqlCommand updateQuery = new SqlCommand(query, con);
+                updateQuery.ExecuteNonQuery();
+                MessageBox.Show("Информация пользователя "+userInfo1.Text+" успешно обновлена.","Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+                aUsers UsersForm = new aUsers();
+                UsersForm.Show();
+                this.Hide();
+                this.Dispose();
             }
         }
 
@@ -118,6 +164,8 @@ namespace SomeProject
             {
                 MessageBox.Show(errorLog, "Произошла ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            UpdateUser();
         }
 
         private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -125,8 +173,7 @@ namespace SomeProject
             if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
             {
                 if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
-                {
-                    MessageBox.Show("Используйте английский язык для ввода Фамилии", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                { 
                     error.SetError(userInfo2, "Ошибка");
                 }
                 e.Handled = true;
@@ -140,7 +187,6 @@ namespace SomeProject
             {
                 if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
                 {
-                    MessageBox.Show("Используйте английский язык для ввода Имени", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     error.SetError(userInfo1, "Ошибка");
                 }
                 e.Handled = true;
