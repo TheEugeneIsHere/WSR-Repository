@@ -33,7 +33,7 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.updateButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
@@ -67,7 +67,6 @@
             this.usersTableAdapter = new SomeProject.DataSets.WSRDataSetUsersTableAdapters.UsersTableAdapter();
             this.getCountryCodeTableAdapter = new SomeProject.DataSets.WSRDataSetCountryTableAdapters.getCountryCodeTableAdapter();
             this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -108,17 +107,17 @@
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.BackToUsers_Click);
             // 
-            // metroButton1
+            // updateButton1
             // 
-            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.metroButton1.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.metroButton1.Location = new System.Drawing.Point(117, 324);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(83, 23);
-            this.metroButton1.TabIndex = 74;
-            this.metroButton1.Text = "Сохранить";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.updateButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.updateButton1.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.updateButton1.Location = new System.Drawing.Point(117, 324);
+            this.updateButton1.Name = "updateButton1";
+            this.updateButton1.Size = new System.Drawing.Size(83, 23);
+            this.updateButton1.TabIndex = 74;
+            this.updateButton1.Text = "Сохранить";
+            this.updateButton1.UseSelectable = true;
+            this.updateButton1.Click += new System.EventHandler(this.updateUser_Click);
             // 
             // metroLabel9
             // 
@@ -306,7 +305,7 @@
             this.userInfo1.WaterMark = "Иван";
             this.userInfo1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.userInfo1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.userInfo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox3_KeyPress);
+            this.userInfo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userInfo1_KeyPress);
             // 
             // userInfo2
             // 
@@ -339,7 +338,7 @@
             this.userInfo2.WaterMark = "Иванов";
             this.userInfo2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.userInfo2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.userInfo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox2_KeyPress);
+            this.userInfo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userInfo2_KeyPress);
             // 
             // metroLabel1
             // 
@@ -364,7 +363,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 57;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.logoutPic_Click);
             // 
             // pictureBox1
             // 
@@ -380,7 +379,7 @@
             // 
             // metroLabel11
             // 
-            this.metroLabel11.Cursor = System.Windows.Forms.Cursors.No;
+            this.metroLabel11.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.metroLabel11.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.metroLabel11.Location = new System.Drawing.Point(76, 111);
             this.metroLabel11.Name = "metroLabel11";
@@ -440,7 +439,7 @@
             this.runnerDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.runnerDateTime1.Location = new System.Drawing.Point(65, 50);
             this.runnerDateTime1.MaxDate = new System.DateTime(2012, 12, 31, 0, 0, 0, 0);
-            this.runnerDateTime1.MinDate = new System.DateTime(1935, 3, 1, 0, 0, 0, 0);
+            this.runnerDateTime1.MinDate = new System.DateTime(1930, 3, 1, 0, 0, 0, 0);
             this.runnerDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.runnerDateTime1.Name = "runnerDateTime1";
             this.runnerDateTime1.Size = new System.Drawing.Size(134, 29);
@@ -449,7 +448,7 @@
             // 
             // runnerCombo1
             // 
-            this.runnerCombo1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.runnerCombo1.Cursor = System.Windows.Forms.Cursors.Default;
             this.runnerCombo1.FormattingEnabled = true;
             this.runnerCombo1.ItemHeight = 23;
             this.runnerCombo1.Items.AddRange(new object[] {
@@ -464,7 +463,7 @@
             // 
             // runnerCombo2
             // 
-            this.runnerCombo2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.runnerCombo2.Cursor = System.Windows.Forms.Cursors.Default;
             this.runnerCombo2.DataSource = this.getCountryCodeBindingSource1;
             this.runnerCombo2.DisplayMember = "CountryCode";
             this.runnerCombo2.FormattingEnabled = true;
@@ -548,27 +547,14 @@
             // 
             this.getCountryCodeTableAdapter.ClearBeforeFill = true;
             // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.ForeColor = System.Drawing.Color.Red;
-            this.metroLabel13.Location = new System.Drawing.Point(264, 32);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(582, 19);
-            this.metroLabel13.TabIndex = 79;
-            this.metroLabel13.Text = "Осталось команду на апдейт юзера отправить и кнопочку удаления юзера сюда куда-ни" +
-    "будь";
-            this.metroLabel13.UseCustomForeColor = true;
-            // 
             // aUsersEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
-            this.Controls.Add(this.metroLabel13);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.updateButton1);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.metroLabel10);
             this.Controls.Add(this.metroTextBox4);
@@ -606,7 +592,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton updateButton1;
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroTextBox metroTextBox4;
@@ -640,6 +626,5 @@
         private DataSets.WSRDataSetCountryTableAdapters.getCountryCodeTableAdapter getCountryCodeTableAdapter;
         private System.Windows.Forms.BindingSource getCountryCodeBindingSource1;
         private System.Windows.Forms.BindingSource usersBindingSource1;
-        private MetroFramework.Controls.MetroLabel metroLabel13;
     }
 }

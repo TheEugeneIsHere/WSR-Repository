@@ -21,9 +21,9 @@ namespace SomeProject
             InitializeComponent();
             metroLabel11.Text = connection.editMail;
             GetUser();
+            if (userInfo3.Text == "R") GetRunner();
             timer1.Tick += timer1_Tick;
             timer1.Start();
-            if (userInfo3.Text == "R") { GetRunner(); }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace SomeProject
         {
             try
             {
-                SqlDataAdapter runnerInfo = new SqlDataAdapter("SELECT DateOfBirth,Gender,CountryCode FROM Runner WHERE Email = '" + metroLabel11.Text + "'", con);
+                SqlDataAdapter runnerInfo = new SqlDataAdapter("SELECT DateOfBirth,Gender,CountryCode, RunnerId FROM Runner WHERE Email = '" + metroLabel11.Text + "'", con);
                 runnerInfo.Fill(wsrDataSetUsers1, "Runner");
                 runnerInfo.Dispose();
                 con.Close();
@@ -51,7 +51,7 @@ namespace SomeProject
 
                 if (DateOfBirth != null) runnerDateTime1.Value = DateOfBirth;
                 if (Gender != null) runnerCombo1.SelectedItem = Gender;
-                if (Country != null) runnerCombo2.SelectedItem = Country;
+                if (Country != null) runnerCombo2.Text = Country;
             }
             catch (Exception ex)
             {
@@ -127,7 +127,7 @@ namespace SomeProject
             }
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void updateUser_Click(object sender, EventArgs e)
         {
             string errorLog = "Исправьте следующие ошибки: \n\n";
             int errorCount = 0;
@@ -163,35 +163,39 @@ namespace SomeProject
             if (errorCount != 0)
             {
                 MessageBox.Show(errorLog, "Произошла ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorCount = 0;
             }
-
-            UpdateUser();
-        }
-
-        private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
+            else
             {
-                if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
-                { 
-                    error.SetError(userInfo2, "Ошибка");
-                }
-                e.Handled = true;
+                UpdateUser();
             }
-            else { error.SetError(userInfo2, String.Empty); }
+
         }
 
-        private void metroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        private void userInfo1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
             {
                 if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
                 {
-                    error.SetError(userInfo1, "Ошибка");
+                    error.SetError(userInfo1, "Используйте английский язык для ввода Имени");
                 }
                 e.Handled = true;
             }
             else { error.SetError(userInfo1, String.Empty); }
+        }
+
+        private void userInfo2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
+            {
+                if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
+                { 
+                    error.SetError(userInfo2, "Используйте английский язык для ввода Фамилии");
+                }
+                e.Handled = true;
+            }
+            else { error.SetError(userInfo2, String.Empty); }
         }
 
         private void userInfo3_TextChanged(object sender, EventArgs e)
@@ -217,7 +221,7 @@ namespace SomeProject
             this.Dispose();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void logoutPic_Click(object sender, EventArgs e)
         {
             Form1 MainForm = new Form1();
             MainForm.Show();

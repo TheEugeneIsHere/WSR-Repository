@@ -14,7 +14,8 @@ namespace SomeProject
 {
     public partial class aUsersAdd : MetroFramework.Forms.MetroForm
     {
-        private static string query, Role = string.Empty;
+        private static string query;
+        private static char Role;
         SqlConnection con = connection.AzureConnection();
         ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
 
@@ -163,9 +164,9 @@ namespace SomeProject
             {
                 switch (metroComboBox2.Text)
                 {
-                    case "Администратор": Role = "A"; break;
-                    case "Бегун": Role = "R"; break;
-                    case "Координатор": Role = "C"; break;
+                    case "Администратор": Role = 'A'; break;
+                    case "Бегун": Role = 'R'; break;
+                    case "Координатор": Role = 'C'; break;
                 }
             }
 

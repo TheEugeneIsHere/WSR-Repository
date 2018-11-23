@@ -625,6 +625,8 @@ namespace SomeProject.DataSets {
             
             private global::System.Data.DataColumn columnCountryCode;
             
+            private global::System.Data.DataColumn columnRunnerId;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public RunnerDataTable() {
@@ -684,6 +686,14 @@ namespace SomeProject.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn RunnerIdColumn {
+                get {
+                    return this.columnRunnerId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -724,10 +734,18 @@ namespace SomeProject.DataSets {
                 object[] columnValuesArray = new object[] {
                         DateOfBirth,
                         Gender,
-                        CountryCode};
+                        CountryCode,
+                        null};
                 rowRunnerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRunnerRow);
                 return rowRunnerRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RunnerRow FindByRunnerId(int RunnerId) {
+                return ((RunnerRow)(this.Rows.Find(new object[] {
+                            RunnerId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -750,6 +768,7 @@ namespace SomeProject.DataSets {
                 this.columnDateOfBirth = base.Columns["DateOfBirth"];
                 this.columnGender = base.Columns["Gender"];
                 this.columnCountryCode = base.Columns["CountryCode"];
+                this.columnRunnerId = base.Columns["RunnerId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -761,10 +780,20 @@ namespace SomeProject.DataSets {
                 base.Columns.Add(this.columnGender);
                 this.columnCountryCode = new global::System.Data.DataColumn("CountryCode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCountryCode);
+                this.columnRunnerId = new global::System.Data.DataColumn("RunnerId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRunnerId);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnRunnerId}, true));
                 this.columnGender.AllowDBNull = false;
                 this.columnGender.MaxLength = 10;
                 this.columnCountryCode.AllowDBNull = false;
                 this.columnCountryCode.MaxLength = 3;
+                this.columnRunnerId.AutoIncrement = true;
+                this.columnRunnerId.AutoIncrementSeed = -1;
+                this.columnRunnerId.AutoIncrementStep = -1;
+                this.columnRunnerId.AllowDBNull = false;
+                this.columnRunnerId.ReadOnly = true;
+                this.columnRunnerId.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1033,6 +1062,17 @@ namespace SomeProject.DataSets {
                 }
                 set {
                     this[this.tableRunner.CountryCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int RunnerId {
+                get {
+                    return ((int)(this[this.tableRunner.RunnerIdColumn]));
+                }
+                set {
+                    this[this.tableRunner.RunnerIdColumn] = value;
                 }
             }
             
@@ -1624,6 +1664,7 @@ SELECT Email, FirstName, LastName, RoleId FROM Users WHERE (Email = @Email)";
             tableMapping.ColumnMappings.Add("DateOfBirth", "DateOfBirth");
             tableMapping.ColumnMappings.Add("Gender", "Gender");
             tableMapping.ColumnMappings.Add("CountryCode", "CountryCode");
+            tableMapping.ColumnMappings.Add("RunnerId", "RunnerId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -1665,7 +1706,7 @@ SELECT Email, FirstName, LastName, RoleId FROM Users WHERE (Email = @Email)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DateOfBirth,Gender,CountryCode FROM Runner";
+            this._commandCollection[0].CommandText = "SELECT        DateOfBirth, Gender, CountryCode, RunnerId\r\nFROM            Runner";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
