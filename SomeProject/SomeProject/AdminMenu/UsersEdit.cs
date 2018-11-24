@@ -15,13 +15,19 @@ namespace SomeProject
     {
         SqlConnection con = connection.AzureConnection();
         ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
+        private static char Role;
 
         public aUsersEdit()
         {
             InitializeComponent();
             metroLabel11.Text = connection.editMail;
             GetUser();
-            if (userInfo3.Text == "R") GetRunner();
+            if (userInfo3.Text == "R")
+            {
+                Role = 'R';
+                GetRunner();
+            }
+
             timer1.Tick += timer1_Tick;
             timer1.Start();
         }
@@ -37,7 +43,8 @@ namespace SomeProject
         {
             try
             {
-                SqlDataAdapter runnerInfo = new SqlDataAdapter("SELECT DateOfBirth,Gender,CountryCode, RunnerId FROM Runner WHERE Email = '" + metroLabel11.Text + "'", con);
+                
+                SqlDataAdapter runnerInfo = new SqlDataAdapter("SELECT DateOfBirth,Gender, CountryCode, RunnerId FROM Runner WHERE Email = '" + metroLabel11.Text + "'", con);
                 runnerInfo.Fill(wsrDataSetUsers1, "Runner");
                 runnerInfo.Dispose();
                 con.Close();
@@ -49,6 +56,7 @@ namespace SomeProject
                 var Gender = wsrDataSetUsers1.Tables[1].Rows[0][1].ToString();
                 var Country = wsrDataSetUsers1.Tables[1].Rows[0][2].ToString();
 
+                if (wsrDataSetUsers1.Tables[1].Rows[0][3].ToString() == "R") Role = 'R';
                 if (DateOfBirth != null) runnerDateTime1.Value = DateOfBirth;
                 if (Gender != null) runnerCombo1.SelectedItem = Gender;
                 if (Country != null) runnerCombo2.Text = Country;
@@ -97,6 +105,7 @@ namespace SomeProject
                 query += ",Password = '" + metroTextBox4.Text + "' ";
             }
             query += "WHERE Email ='" + metroLabel11.Text + "'; ";
+
             if (metroPanel1.Enabled)
             {
                 query += "UPDATE Runner " +
@@ -104,6 +113,23 @@ namespace SomeProject
                     " Gender = '" + runnerCombo1.Text + "'," +
                     " CountryCode = '" + runnerCombo2.Text + "' " +
                     "WHERE Email ='" + metroLabel11.Text + "'; ";
+            }
+            else
+            {
+                
+                if (Role == 'R') // Sponsorship -> RegistrationEvent -> Registration -> Runner
+                { 
+                    query += "DELETE FROM Sponsorship WHERE RegistrationId =" + 
+                        " (SELECT RegistrationId FROM Registration WHERE RunnerId = " +
+                        "(SELECT RunnerId FROM Runner WHERE Email = '" + metroLabel11.Text + "')); ";
+                    // При обновлении Бегуна на другую роль этот код удаляет его из 4 таблиц (удаление дубликата с R-ролью)
+                    query += "DELETE FROM RegistrationEvent WHERE RegistrationId =" + 
+                        " (SELECT RegistrationId FROM Registration WHERE RunnerId = " +
+                        "(SELECT RunnerId FROM Runner WHERE Email = '" + metroLabel11.Text + "')); ";
+                    // Порядок удаления нельзя менять, конфликты FK
+                    query += "DELETE FROM Registration WHERE RunnerId = '" + wsrDataSetUsers1.Tables[1].Rows[0][3].ToString() + "';" +
+                        " DELETE FROM Runner WHERE Email = '" + metroLabel11.Text + "'; ";
+                }
             }
 
             try
@@ -124,6 +150,7 @@ namespace SomeProject
                 UsersForm.Show();
                 this.Hide();
                 this.Dispose();
+                Role = '\0';
             }
         }
 
