@@ -368,7 +368,7 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(479, 22);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(32, 25);
+            this.metroLabel3.Size = new System.Drawing.Size(28, 25);
             this.metroLabel3.TabIndex = 48;
             this.metroLabel3.Text = "....";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

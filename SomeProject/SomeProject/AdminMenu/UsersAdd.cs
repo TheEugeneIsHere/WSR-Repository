@@ -36,7 +36,7 @@ namespace SomeProject
                 MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 aUsers usersForm = new aUsers();
                 usersForm.Show();
-                this.Close();
+                this.Hide();
                 this.Dispose();
             }
             catch (Exception ex)

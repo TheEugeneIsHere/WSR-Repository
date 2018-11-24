@@ -128,19 +128,27 @@ namespace SomeProject
             {
                 connection.editMail = metroGrid1.CurrentRow.Cells[2].Value.ToString();
                 con.Open();
-                try
+                if (connection.mail != connection.editMail)
                 {
-                    aUsersEdit UsersEditForm = new aUsersEdit();
-                    UsersEditForm.Show();
-                    this.Hide();
-                    this.Dispose();
+                    try
+                    {
+                        aUsersEdit UsersEditForm = new aUsersEdit();
+                        UsersEditForm.Show();
+                        this.Hide();
+                        this.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally
-                {
+                    MessageBox.Show("Это Вы :)", "Нам кажется, что..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     con.Close();
                 }
             }
@@ -177,11 +185,12 @@ namespace SomeProject
 
         private void pictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
         {
+            metroComboBox2.Enabled = true;
+            metroComboBox1.Enabled = true;
             metroComboBox2.SelectedIndex = 0;
             metroComboBox1.SelectedIndex = 0;
             metroTextBox1.Text = string.Empty;
-            metroComboBox2.Enabled = true;
-            metroComboBox1.Enabled = true;
+
             UsersLoad("SELECT FirstName, LastName, Email, RoleID FROM Users");
         }
 
