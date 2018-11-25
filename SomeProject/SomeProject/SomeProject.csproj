@@ -399,6 +399,7 @@
     <None Include="Resources\Wikivoyage-logo.svg.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\errorIcon.png" />
     <Content Include="Resources\project_icon.ico" />
     <None Include="Resources\bmiManBad.png" />
     <None Include="Resources\bmiWomanSoSo.png" />

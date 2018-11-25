@@ -15,6 +15,7 @@ namespace SomeProject
     {
         SqlConnection con = connection.AzureConnection();
         ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
+        
         private static char Role;
 
         public aUsersEdit()
@@ -197,6 +198,38 @@ namespace SomeProject
                 UpdateUser();
             }
 
+        }
+
+        private void deleteUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("dbo.sp_DeleteUser", con);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlParameter userMail = new SqlParameter
+                {
+                    ParameterName = "@email",
+                    Value = connection.editMail
+                };
+                command.Parameters.Add(userMail);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Пользователь успешно удалён!", "WSR: Удаление",
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                aUsers UsersForm = new aUsers();
+                this.Hide();
+                this.Dispose();
+                UsersForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                con.Close();
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         private void userInfo1_KeyPress(object sender, KeyPressEventArgs e)

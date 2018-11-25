@@ -10,7 +10,7 @@ namespace SomeProject
     class connection
     {
         public static DateTime voteTime = new DateTime(2018, 12, 31, 23, 59, 59);
-        public static string editMail; // Возможно, временное решение
+        public static string editMail;
 
         public static SqlConnection AzureConnection()
         {
@@ -22,7 +22,7 @@ namespace SomeProject
         }
 
         /*уютный уголок максюши*/
-        public static string mail; // Уот сучка Максюша 
+        public static string mail;
         public static string password;
         public static bool theme;
         /*конец уголка*/
