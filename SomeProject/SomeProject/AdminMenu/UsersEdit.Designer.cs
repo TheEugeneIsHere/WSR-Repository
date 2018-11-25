@@ -68,6 +68,7 @@
             this.getCountryCodeTableAdapter = new SomeProject.DataSets.WSRDataSetCountryTableAdapters.getCountryCodeTableAdapter();
             this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.deleteButton1 = new MetroFramework.Controls.MetroButton();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -76,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wsrDataSetUsers1)).BeginInit();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel4
@@ -100,7 +102,7 @@
             // 
             this.metroButton2.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton2.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.metroButton2.Location = new System.Drawing.Point(222, 305);
+            this.metroButton2.Location = new System.Drawing.Point(234, 346);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(83, 23);
             this.metroButton2.TabIndex = 73;
@@ -112,7 +114,7 @@
             // 
             this.updateButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.updateButton1.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.updateButton1.Location = new System.Drawing.Point(117, 305);
+            this.updateButton1.Location = new System.Drawing.Point(129, 346);
             this.updateButton1.Name = "updateButton1";
             this.updateButton1.Size = new System.Drawing.Size(83, 23);
             this.updateButton1.TabIndex = 74;
@@ -123,7 +125,7 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(671, 144);
+            this.metroLabel9.Location = new System.Drawing.Point(671, 163);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(54, 19);
             this.metroLabel9.TabIndex = 71;
@@ -132,7 +134,7 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(671, 172);
+            this.metroLabel10.Location = new System.Drawing.Point(671, 191);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(103, 19);
             this.metroLabel10.TabIndex = 69;
@@ -153,7 +155,7 @@
             this.metroTextBox4.CustomButton.UseSelectable = true;
             this.metroTextBox4.CustomButton.Visible = false;
             this.metroTextBox4.Lines = new string[0];
-            this.metroTextBox4.Location = new System.Drawing.Point(553, 142);
+            this.metroTextBox4.Location = new System.Drawing.Point(553, 161);
             this.metroTextBox4.MaxLength = 32767;
             this.metroTextBox4.Name = "metroTextBox4";
             this.metroTextBox4.PasswordChar = '•';
@@ -185,7 +187,7 @@
             this.metroTextBox5.CustomButton.UseSelectable = true;
             this.metroTextBox5.CustomButton.Visible = false;
             this.metroTextBox5.Lines = new string[0];
-            this.metroTextBox5.Location = new System.Drawing.Point(553, 171);
+            this.metroTextBox5.Location = new System.Drawing.Point(553, 190);
             this.metroTextBox5.MaxLength = 32767;
             this.metroTextBox5.Name = "metroTextBox5";
             this.metroTextBox5.PasswordChar = '•';
@@ -206,7 +208,7 @@
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel8.Location = new System.Drawing.Point(572, 98);
+            this.metroLabel8.Location = new System.Drawing.Point(572, 117);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(109, 19);
             this.metroLabel8.TabIndex = 68;
@@ -216,7 +218,7 @@
             // 
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel7.Location = new System.Drawing.Point(34, 9);
+            this.metroLabel7.Location = new System.Drawing.Point(47, 2);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(174, 19);
             this.metroLabel7.TabIndex = 67;
@@ -225,7 +227,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(37, 155);
+            this.metroLabel6.Location = new System.Drawing.Point(45, 148);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(38, 19);
             this.metroLabel6.TabIndex = 66;
@@ -234,7 +236,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(40, 55);
+            this.metroLabel5.Location = new System.Drawing.Point(48, 48);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(35, 19);
             this.metroLabel5.TabIndex = 63;
@@ -243,7 +245,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(10, 83);
+            this.metroLabel3.Location = new System.Drawing.Point(18, 76);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(65, 19);
             this.metroLabel3.TabIndex = 61;
@@ -252,7 +254,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(34, 111);
+            this.metroLabel2.Location = new System.Drawing.Point(42, 104);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(41, 19);
             this.metroLabel2.TabIndex = 59;
@@ -267,7 +269,7 @@
             "A",
             "C",
             "R"});
-            this.userInfo3.Location = new System.Drawing.Point(80, 151);
+            this.userInfo3.Location = new System.Drawing.Point(88, 144);
             this.userInfo3.Name = "userInfo3";
             this.userInfo3.PromptText = "Выбрать..";
             this.userInfo3.Size = new System.Drawing.Size(94, 29);
@@ -290,7 +292,7 @@
             this.userInfo1.CustomButton.UseSelectable = true;
             this.userInfo1.CustomButton.Visible = false;
             this.userInfo1.Lines = new string[0];
-            this.userInfo1.Location = new System.Drawing.Point(80, 53);
+            this.userInfo1.Location = new System.Drawing.Point(88, 46);
             this.userInfo1.MaxLength = 32767;
             this.userInfo1.Name = "userInfo1";
             this.userInfo1.PasswordChar = '\0';
@@ -323,7 +325,7 @@
             this.userInfo2.CustomButton.UseSelectable = true;
             this.userInfo2.CustomButton.Visible = false;
             this.userInfo2.Lines = new string[0];
-            this.userInfo2.Location = new System.Drawing.Point(80, 82);
+            this.userInfo2.Location = new System.Drawing.Point(88, 75);
             this.userInfo2.MaxLength = 32767;
             this.userInfo2.Name = "userInfo2";
             this.userInfo2.PasswordChar = '\0';
@@ -383,7 +385,7 @@
             this.metroLabel11.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.metroLabel11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.metroLabel11.LabelMode = MetroFramework.Controls.MetroLabelMode.Selectable;
-            this.metroLabel11.Location = new System.Drawing.Point(76, 111);
+            this.metroLabel11.Location = new System.Drawing.Point(84, 104);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(156, 19);
             this.metroLabel11.TabIndex = 75;
@@ -394,8 +396,8 @@
             // 
             this.metroLabel12.AutoSize = true;
             this.metroLabel12.Cursor = System.Windows.Forms.Cursors.Default;
-            this.metroLabel12.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.metroLabel12.Location = new System.Drawing.Point(539, 202);
+            this.metroLabel12.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.metroLabel12.Location = new System.Drawing.Point(637, 211);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(186, 57);
             this.metroLabel12.TabIndex = 76;
@@ -415,7 +417,7 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(468, 253);
+            this.metroPanel1.Location = new System.Drawing.Point(468, 271);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(332, 164);
             this.metroPanel1.TabIndex = 77;
@@ -533,7 +535,7 @@
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(83, 91);
+            this.metroPanel2.Location = new System.Drawing.Point(83, 115);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(282, 188);
             this.metroPanel2.TabIndex = 78;
@@ -553,13 +555,18 @@
             // 
             this.deleteButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.deleteButton1.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.deleteButton1.Location = new System.Drawing.Point(126, 334);
+            this.deleteButton1.Location = new System.Drawing.Point(138, 375);
             this.deleteButton1.Name = "deleteButton1";
             this.deleteButton1.Size = new System.Drawing.Size(172, 45);
             this.deleteButton1.TabIndex = 79;
             this.deleteButton1.Text = "Удалить пользователя";
             this.deleteButton1.UseSelectable = true;
             this.deleteButton1.Click += new System.EventHandler(this.deleteUser_Click);
+            // 
+            // error
+            // 
+            this.error.ContainerControl = this;
+            this.error.Icon = ((System.Drawing.Icon)(resources.GetObject("error.Icon")));
             // 
             // aUsersEdit
             // 
@@ -579,8 +586,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.metroPanel2);
+            this.Controls.Add(this.metroLabel12);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "aUsersEdit";
@@ -597,6 +604,7 @@
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,5 +650,6 @@
         private System.Windows.Forms.BindingSource getCountryCodeBindingSource1;
         private System.Windows.Forms.BindingSource usersBindingSource1;
         private MetroFramework.Controls.MetroButton deleteButton1;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

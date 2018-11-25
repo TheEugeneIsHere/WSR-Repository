@@ -63,12 +63,14 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.getCountryNameTableAdapter = new SomeProject.DataSets.WSRDataSetCountryTableAdapters.getCountryNameTableAdapter();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCountryNameBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).BeginInit();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel4
@@ -548,6 +550,12 @@
             // 
             this.getCountryNameTableAdapter.ClearBeforeFill = true;
             // 
+            // error
+            // 
+            this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error.ContainerControl = this;
+            this.error.Icon = ((System.Drawing.Icon)(resources.GetObject("error.Icon")));
+            // 
             // aUsersAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -581,6 +589,7 @@
             this.metroPanel1.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -621,5 +630,6 @@
         private DataSets.WSRDataSetCountry wSRDataSetCountry;
         private System.Windows.Forms.BindingSource getCountryNameBindingSource;
         private DataSets.WSRDataSetCountryTableAdapters.getCountryNameTableAdapter getCountryNameTableAdapter;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

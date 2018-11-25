@@ -17,8 +17,7 @@ namespace SomeProject
         private static string query;
         private static char Role;
         SqlConnection con = connection.AzureConnection();
-        ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
-
+        
         public aUsersAdd()
         {
             InitializeComponent();

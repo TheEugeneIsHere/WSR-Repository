@@ -14,7 +14,6 @@ namespace SomeProject
     public partial class aUsersEdit : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
-        ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
         
         private static char Role;
 
