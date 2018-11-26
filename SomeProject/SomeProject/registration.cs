@@ -160,7 +160,7 @@ namespace SomeProject
                 id = generateid() + 1;
                 string query1 = "insert [Users]([Email],[FirstName],[LastName],[Password],[RoleId]) values " + "(N'" + mail + "',N'" + nm + "',N'" + fnm + "', N'" + pas + "', N'R')";
                 string query2 = "set IDENTITY_INSERT [runner] on insert [runner]([RunnerId],[Email],[Gender],[DateOfBirth],[CountryCode]) " + "values("+id+",N'"+mail + "',N'" + gender + "','" + born + "',N'" + country+ "'); SET IDENTITY_INSERT [runner] off";
-                useradd(query1);
+                useradd(query1); // Сначала вставка в Runner, затем в Users. Без IDENTITY (Переделайййй)
                 register(query2);
             }
         }
