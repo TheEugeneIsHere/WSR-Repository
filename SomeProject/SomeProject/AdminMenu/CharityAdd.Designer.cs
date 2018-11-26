@@ -42,7 +42,6 @@
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -245,19 +244,6 @@
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
-            // metroLabel8
-            // 
-            this.metroLabel8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel8.Location = new System.Drawing.Point(580, 17);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(242, 19);
-            this.metroLabel8.TabIndex = 31;
-            this.metroLabel8.Text = "Настроить корректную работу кнопок";
-            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel8.UseCustomForeColor = true;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -324,7 +310,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
-            this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.pictureBox3);
@@ -373,7 +358,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private System.Windows.Forms.PictureBox pictureBox3;
         private MetroFramework.Controls.MetroButton metroButton3;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
     }

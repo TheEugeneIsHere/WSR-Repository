@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SomeProject
@@ -28,11 +21,7 @@ namespace SomeProject
 
         private void metroTextBox1_TextChanged(object sender, EventArgs e)
         {
-            // И здеся что-то будет происходить, сложно.
-            // Ну если в кратце, там будет производиться загрузка чубриков в базу
-            // Если она прошла успешно MessageBox что успешно и кек вроде
-            // Можно ещё ProgressBar замутить куда-нить для интима, ну хз
-            MessageBox.Show("Этого произойти было не должно"); // Ну а вдруг я что-то не так понял
+            MessageBox.Show("Этого произойти было не должно"); 
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SomeProject
@@ -19,18 +12,16 @@ namespace SomeProject
             this.Text = "MARATHON IS";
 
             timer1.Tick += timer1_Tick;
-            timer1.Interval = 1000;
-            timer1.Enabled = true;
             timer1.Start();
             
 
         }
-        DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = voteTime - DateTime.Now;
-            metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
+            " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -147,9 +138,9 @@ namespace SomeProject
             if (connection.theme)
             {
                 Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                timerLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
                 metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroLabel1.Style = MetroFramework.MetroColorStyle.White;
+                timerLabel.Style = MetroFramework.MetroColorStyle.White;
                 metroLabel2.Style = MetroFramework.MetroColorStyle.White;
                 metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
                 metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
