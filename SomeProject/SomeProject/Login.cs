@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SomeProject
@@ -19,18 +12,16 @@ namespace SomeProject
             this.Text = "MARATHON IS";
 
             timer1.Tick += timer1_Tick;
-            timer1.Interval = 1000;
-            timer1.Enabled = true;
             timer1.Start();
             
 
         }
-        DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = voteTime - DateTime.Now;
-            metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
+            " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -71,7 +62,7 @@ namespace SomeProject
                             role = Role.R;
                            
                         }
-                        if ((string)dataReader["Roleid"] == "A")
+                        if ((string)dataReader["Roleid"] == "A" || (string)dataReader["Roleid"] == "O")
                         {
                             role = Role.A;
                         }
@@ -79,8 +70,6 @@ namespace SomeProject
                         {
                             role = Role.C;
                         }
-
-
                     }
                 }
                 return role;
@@ -95,6 +84,7 @@ namespace SomeProject
             }
             else
             {
+                connection.mail = metroTextBox1.Text;
                 if (role == Role.A)
                 {
                     var form = new AdminForm();
@@ -112,8 +102,15 @@ namespace SomeProject
                 }
                 else if (role == Role.R)
                 {
-                    connection.mail = metroTextBox1.Text;
-                    connection.password = metroTextBox2.Text;
+                    // connection.mail = metroTextBox1.Text;
+                     connection.password = metroTextBox2.Text;
+                    // Из-за этих строк (Их расположения в IF роль = бегун у меня не работает приветствие
+                    // Я особо не вникал, но как по мне без разницы бегун или нет, всё равно надо пихать в connection.mail
+                    // Поэтому я Password здесь оставлю, ашто он не нужен если адмэн как по мне
+                    // А connection.mail присвою в любом случае
+                    // Если что-то из этого критично - пиши, намутим по-другому
+                    // P.S. Я минут 40 всматривался в твой и свой код, не понимая что не так, пока не заметил что connection.mail
+                    // ..находится в блоке If Runner ......
                     var form = new RunnerForm();
                     this.Hide();                    
                     form.ShowDialog();
@@ -125,14 +122,77 @@ namespace SomeProject
         /*временный мусор*/
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            metroTextBox1.Text = "glypayamasha@yandex.ru";
-            metroTextBox2.Text = "glypaya";
+            metroTextBox1.Text = "a.adkin@dayrep.net";
+            metroTextBox2.Text = "jwZh2x@p";
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
             metroTextBox1.Text = "leila.azedeva@mskills.com";
             metroTextBox2.Text = "MvTQ3itX";
+            login(); // Не за что ага
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            if (connection.theme)
+            {
+                Theme = MetroFramework.MetroThemeStyle.Dark;
+                timerLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
+                timerLabel.Style = MetroFramework.MetroColorStyle.White;
+                metroLabel2.Style = MetroFramework.MetroColorStyle.White;
+                metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel3.Style = MetroFramework.MetroColorStyle.White;
+                metroLabel4.Style = MetroFramework.MetroColorStyle.White;
+                metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroTextBox2.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark;
+                metroLabel5.Style = MetroFramework.MetroColorStyle.White;
+
+            }
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void forgetLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PasswordRecover password = new PasswordRecover();
+            password.ShowDialog();
         }
         /*конец временного мусора*/
     }

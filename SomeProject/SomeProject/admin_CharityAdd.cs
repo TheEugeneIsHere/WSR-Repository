@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,9 @@ namespace SomeProject
     public partial class admin_CharityAdd : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
+        Bitmap logo;
+        byte[] photo;
+        string filePath;
 
         public admin_CharityAdd()
         {
@@ -26,33 +30,36 @@ namespace SomeProject
         {
             TimeSpan timeremaining = connection.voteTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
-            " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            admin_Charity clarityForm = new admin_Charity();
-            clarityForm.Show();
-            this.Close();
+            admin_Charity charityForm = new admin_Charity();
+            charityForm.Show();
+            this.Hide();
+            this.Dispose();
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
             OpenFileDialog imageSelector = new OpenFileDialog
             {
-                Filter = "JPEG|*.jpg,*.jpeg,*.jpe,*.jfif|PNG|*.png|All files (*.*)|*.*",
+                Filter = "PNG|*.png|JPEG|*.jpg,*.jpeg,*.jpe,*.jfif|All files (*.*)|*.*",
                 Title = "Выберите логотип.."
             };
-            Bitmap logo;
 
             if (imageSelector.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 try
                 {
-                    logo = new Bitmap(imageSelector.FileName);
+                    filePath = imageSelector.FileName;
+                    photo = GetPhoto(filePath);
+                    logo = new Bitmap(filePath);
                     pictureBox3.Image = logo;
                     pictureBox3.Invalidate();
-                    metroTextBox3.Text = imageSelector.SafeFileName;
+                    metroTextBox3.Text = filePath;
+                    imageSelector.Dispose();
                 }
                 catch
                 { 
@@ -62,15 +69,62 @@ namespace SomeProject
             }
         }
 
+        private void InsertCharityOrg(byte[] photo)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand com = new SqlCommand(
+                   "INSERT INTO Charity (CharityName, CharityDescription, CharityLogo) VALUES (@CharityName, @CharityDescription, @CharityLogo)", con);
+
+                com.Parameters.Add("@CharityName",
+                    SqlDbType.NVarChar, 100).Value = metroTextBox1.Text;
+                com.Parameters.Add("@CharityDescription",
+                    SqlDbType.NVarChar, 2000).Value = metroTextBox2.Text;
+                com.Parameters.Add("@CharityLogo",
+                    SqlDbType.Image, photo.Length).Value = photo;
+                MessageBox.Show("Успешная вставка");
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public static byte[] GetPhoto(string filePath)
+        {
+            FileStream stream = new FileStream(
+                filePath, FileMode.Open, FileAccess.Read);
+            BinaryReader reader = new BinaryReader(stream);
+
+            byte[] photo = reader.ReadBytes((int)stream.Length);
+
+            reader.Close();
+            stream.Close();
+
+            return photo;
+        }
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (metroTextBox1.Text != "")
+            if (metroTextBox1.Text != "" && metroTextBox2.Text != "")
             {
                 //Здесь что-то сложное будет, наверное
+                InsertCharityOrg(photo);
+                metroTextBox1.Text = string.Empty;
+                metroTextBox2.Text = string.Empty;
+                metroTextBox3.Text = string.Empty;
+
             }
             else
             {
-                MessageBox.Show("Введите название организации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Введите название/описание организации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -78,7 +132,33 @@ namespace SomeProject
         {
             admin_Charity adminMenu_Clarity = new admin_Charity();
             adminMenu_Clarity.Show();
-            this.Close();
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void GoodbyeUser(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
+                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Yes)
+                {
+                    Application.OpenForms[0].Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = new Form1();
+            mainForm.Show();
+            this.Hide();
+            this.Dispose();
         }
     }
 }

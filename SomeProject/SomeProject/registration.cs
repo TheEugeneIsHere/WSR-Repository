@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SomeProject
@@ -18,18 +12,16 @@ namespace SomeProject
             InitializeComponent();
             this.Text = "MARATHON IS";
             timer1.Tick += timer1_Tick;
-            timer1.Interval = 1000;
-            timer1.Enabled = true;
             timer1.Start();
            
         }
         SqlConnection con = connection.AzureConnection();
-        DateTime voteTime = new DateTime(2018, 11, 20, 8, 20, 0);
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = voteTime - DateTime.Now;
-            metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours + " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
-
+            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
+            " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -160,7 +152,7 @@ namespace SomeProject
                 id = generateid() + 1;
                 string query1 = "insert [Users]([Email],[FirstName],[LastName],[Password],[RoleId]) values " + "(N'" + mail + "',N'" + nm + "',N'" + fnm + "', N'" + pas + "', N'R')";
                 string query2 = "set IDENTITY_INSERT [runner] on insert [runner]([RunnerId],[Email],[Gender],[DateOfBirth],[CountryCode]) " + "values("+id+",N'"+mail + "',N'" + gender + "','" + born + "',N'" + country+ "'); SET IDENTITY_INSERT [runner] off";
-                useradd(query1);
+                useradd(query1); // Сначала вставка в Runner, затем в Users. Без IDENTITY (Переделайййй)
                 register(query2);
             }
         }

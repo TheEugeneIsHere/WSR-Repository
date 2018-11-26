@@ -75,7 +75,8 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "success";
-            this.Text = "success";
+            this.Resizable = false;
+            this.Text = "Успешно!";
             this.ResumeLayout(false);
             this.PerformLayout();
 
