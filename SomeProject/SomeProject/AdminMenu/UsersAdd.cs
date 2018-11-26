@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -46,6 +47,13 @@ namespace SomeProject
             {
                 con.Close();
             }
+        }
+
+        bool IsValidEmail(string email)
+        {
+            string pattern = "[.\\-_a-z0-9]+@([a-z0-9][\\-a-z0-9]+\\.)+[a-z]{2,6}";
+            Match isMatch = Regex.Match(email, pattern, RegexOptions.IgnoreCase);
+            return isMatch.Success;
         }
 
         private void metroPanelToggle(object sender, EventArgs e)
@@ -146,7 +154,7 @@ namespace SomeProject
                 errorLog += errorCount + ". Отсутствует Фамилия пользователя\n";
             }
 
-            if (!metroTextBox1.Text.Contains('@'))
+            if (!IsValidEmail(metroTextBox1.Text))
             {
                 error.SetError(metroTextBox1, "Ошибка");
                 ++errorCount;

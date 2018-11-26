@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
+            this.forgetLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +109,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Location = new System.Drawing.Point(197, 256);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(64, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(63, 19);
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel5.TabIndex = 5;
             this.metroLabel5.Text = "Password";
@@ -223,9 +224,9 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(275, 370);
+            this.metroButton3.Location = new System.Drawing.Point(729, 363);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(75, 23);
+            this.metroButton3.Size = new System.Drawing.Size(120, 33);
             this.metroButton3.TabIndex = 9;
             this.metroButton3.Text = "бегун";
             this.metroButton3.UseSelectable = true;
@@ -233,13 +234,27 @@
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(395, 370);
+            this.metroButton4.Location = new System.Drawing.Point(729, 402);
             this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(75, 23);
+            this.metroButton4.Size = new System.Drawing.Size(120, 33);
             this.metroButton4.TabIndex = 9;
             this.metroButton4.Text = "одмен";
             this.metroButton4.UseSelectable = true;
             this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
+            // 
+            // forgetLabel1
+            // 
+            this.forgetLabel1.AutoSize = true;
+            this.forgetLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.forgetLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.forgetLabel1.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.forgetLabel1.Location = new System.Drawing.Point(389, 340);
+            this.forgetLabel1.Name = "forgetLabel1";
+            this.forgetLabel1.Size = new System.Drawing.Size(94, 13);
+            this.forgetLabel1.TabIndex = 10;
+            this.forgetLabel1.TabStop = true;
+            this.forgetLabel1.Text = "Забыли пароль?";
+            this.forgetLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgetLabel1_LinkClicked);
             // 
             // Login
             // 
@@ -247,6 +262,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
             this.ControlBox = false;
+            this.Controls.Add(this.forgetLabel1);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.pictureBox1);
@@ -284,5 +300,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;
+        private System.Windows.Forms.LinkLabel forgetLabel1;
     }
 }

@@ -199,6 +199,14 @@ namespace SomeProject
         {
 
         }
+
+        private void forgetLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PasswordRecover password = new PasswordRecover();
+            password.Show();
+            this.Hide();
+            this.Dispose();
+        }
         /*конец временного мусора*/
     }
 }
