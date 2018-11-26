@@ -14,7 +14,7 @@ namespace SomeProject
     public partial class aUsersEdit : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
-        
+
         private static char Role;
 
         public aUsersEdit()
@@ -43,8 +43,8 @@ namespace SomeProject
         {
             try
             {
-                
-                SqlDataAdapter runnerInfo = new SqlDataAdapter("SELECT DateOfBirth,Gender, CountryCode, RunnerId FROM Runner WHERE Email = '" + metroLabel11.Text + "'", con);
+
+                SqlDataAdapter runnerInfo = new SqlDataAdapter("SELECT DateOfBirth, Gender, CountryCode, RunnerId FROM Runner WHERE Email = '" + metroLabel11.Text + "'", con);
                 runnerInfo.Fill(wsrDataSetUsers1, "Runner");
                 runnerInfo.Dispose();
                 con.Close();
@@ -52,14 +52,14 @@ namespace SomeProject
                 runnerInfo.Fill(wSRDataSetCountry, "getCountryCode");
                 runnerInfo.Dispose();
                 con.Close();
-                var DateOfBirth = Convert.ToDateTime(wsrDataSetUsers1.Tables[1].Rows[0][0]);
-                var Gender = wsrDataSetUsers1.Tables[1].Rows[0][1].ToString();
-                var Country = wsrDataSetUsers1.Tables[1].Rows[0][2].ToString();
+                if (wsrDataSetUsers1.Tables[1].Rows.Count >= 1)
+                {
+                    runnerDateTime1.Value = Convert.ToDateTime(wsrDataSetUsers1.Tables[1].Rows[0][0]);
+                    runnerCombo1.SelectedItem = wsrDataSetUsers1.Tables[1].Rows[0][1].ToString();
+                    runnerCombo2.Text = wsrDataSetUsers1.Tables[1].Rows[0][2].ToString();
+                    if (wsrDataSetUsers1.Tables[1].Rows[0][3].ToString() == "R") Role = 'R';
+                }
 
-                if (wsrDataSetUsers1.Tables[1].Rows[0][3].ToString() == "R") Role = 'R';
-                if (DateOfBirth != null) runnerDateTime1.Value = DateOfBirth;
-                if (Gender != null) runnerCombo1.SelectedItem = Gender;
-                if (Country != null) runnerCombo2.Text = Country;
             }
             catch (Exception ex)
             {
@@ -69,6 +69,7 @@ namespace SomeProject
             {
                 con.Close();
             }
+
         }
 
         private void GetUser()
@@ -137,7 +138,7 @@ namespace SomeProject
                 con.Open();
                 SqlCommand updateQuery = new SqlCommand(query, con);
                 updateQuery.ExecuteNonQuery();
-                MessageBox.Show("Информация пользователя "+userInfo1.Text+" успешно обновлена.","Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Информация пользователя "+userInfo1.Text+" успешно обновлена.","WSR: Обновление", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -189,7 +190,7 @@ namespace SomeProject
 
             if (errorCount != 0)
             {
-                MessageBox.Show(errorLog, "Произошла ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorLog, "WSR: Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 errorCount = 0;
             }
             else

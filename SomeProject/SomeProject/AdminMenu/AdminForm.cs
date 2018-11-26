@@ -28,7 +28,7 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlCommand login = new SqlCommand("SELECT FirstName FROM Users WHERE RoleId = 'A' AND Email = '" + connection.mail + "'", con);
+                SqlCommand login = new SqlCommand("SELECT FirstName FROM Users WHERE Email = '" + connection.mail + "'", con);
                 loginLabel.Text += login.ExecuteScalar().ToString();
             }
             catch (Exception ex)

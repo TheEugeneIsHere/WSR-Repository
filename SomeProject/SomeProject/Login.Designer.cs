@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -143,7 +144,7 @@
             this.metroTextBox1.ShortcutsEnabled = true;
             this.metroTextBox1.Size = new System.Drawing.Size(213, 23);
             this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroTextBox1.TabIndex = 6;
+            this.metroTextBox1.TabIndex = 1;
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.UseStyleColors = true;
             this.metroTextBox1.WaterMark = "Type your email here";
@@ -178,7 +179,7 @@
             this.metroTextBox2.ShortcutsEnabled = true;
             this.metroTextBox2.Size = new System.Drawing.Size(213, 23);
             this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroTextBox2.TabIndex = 6;
+            this.metroTextBox2.TabIndex = 2;
             this.metroTextBox2.UseSelectable = true;
             this.metroTextBox2.UseStyleColors = true;
             this.metroTextBox2.WaterMark = "Type your password here";
@@ -192,7 +193,7 @@
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(75, 23);
             this.metroButton1.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroButton1.TabIndex = 7;
+            this.metroButton1.TabIndex = 4;
             this.metroButton1.Text = "Login";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.UseStyleColors = true;
@@ -204,7 +205,7 @@
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(75, 23);
             this.metroButton2.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroButton2.TabIndex = 7;
+            this.metroButton2.TabIndex = 3;
             this.metroButton2.Text = "Cancel";
             this.metroButton2.UseSelectable = true;
             this.metroButton2.UseStyleColors = true;
@@ -251,7 +252,7 @@
             this.forgetLabel1.Location = new System.Drawing.Point(389, 340);
             this.forgetLabel1.Name = "forgetLabel1";
             this.forgetLabel1.Size = new System.Drawing.Size(94, 13);
-            this.forgetLabel1.TabIndex = 10;
+            this.forgetLabel1.TabIndex = 5;
             this.forgetLabel1.TabStop = true;
             this.forgetLabel1.Text = "Забыли пароль?";
             this.forgetLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgetLabel1_LinkClicked);
@@ -275,6 +276,7 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Style = MetroFramework.MetroColorStyle.Black;
             this.Text = " ";

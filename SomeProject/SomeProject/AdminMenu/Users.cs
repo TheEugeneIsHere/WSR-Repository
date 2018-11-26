@@ -132,11 +132,38 @@ namespace SomeProject
                 {
                     try
                     {
-                        aUsersEdit UsersEditForm = new aUsersEdit();
-                        UsersEditForm.Show();
-                        this.Hide();
-                        this.Dispose();
+                        if (connection.mail != "anotherinvocation@gmail.com")
+                        {
+                            if (metroGrid1.CurrentRow.Cells[3].Value.ToString() == "O")
+                            {
+                                MessageBox.Show("Недостаточно привелегий для редактирования информации Главного Администратора",
+                                    "WSR: Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                if (metroGrid1.CurrentRow.Cells[3].Value.ToString() == "A")
+                                {
+                                    MessageBox.Show("Недостаточно привелегий для редактирования информации Администратора "
+                                        + metroGrid1.CurrentRow.Cells[0].Value.ToString(), "WSR: Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                else
+                                {
+                                    aUsersEdit UsersEditForm = new aUsersEdit();
+                                    UsersEditForm.Show();
+                                    Hide();
+                                    Dispose();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            aUsersEdit UsersEditForm = new aUsersEdit();
+                            UsersEditForm.Show();
+                            Hide();
+                            Dispose();
+                        }
                     }
+
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.ToString());
@@ -148,9 +175,10 @@ namespace SomeProject
                 }
                 else
                 {
-                    MessageBox.Show("Это Вы :)", "Нам кажется, что..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    con.Close();
+                    MessageBox.Show("Это Вы :)", "Нам кажется, что..",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                    con.Close();
             }
         }
 

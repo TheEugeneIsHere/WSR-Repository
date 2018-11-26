@@ -33,7 +33,7 @@ namespace SomeProject
                 con.Open();
                 SqlCommand register = new SqlCommand(query, con);
                 register.ExecuteNonQuery();
-                MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "WSR: Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 aUsers usersForm = new aUsers();
                 usersForm.Show();
                 this.Hide();
@@ -214,7 +214,7 @@ namespace SomeProject
 
             if (errorCount != 0)
             {
-                MessageBox.Show(errorLog, "Произошла ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorLog, "WSR: Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

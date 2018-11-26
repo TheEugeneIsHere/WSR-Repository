@@ -71,7 +71,7 @@ namespace SomeProject
         private void metroTile4_Click(object sender, EventArgs e)
         {
             Login log = new Login();
-            log.ShowDialog();
+            log.Show();
             this.Hide();
         }
 

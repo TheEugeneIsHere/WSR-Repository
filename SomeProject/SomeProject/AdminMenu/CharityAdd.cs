@@ -71,7 +71,8 @@ namespace SomeProject
             finally
             {
                 con.Close();
-                MessageBox.Show("Успешная вставка");
+                MessageBox.Show("Благотворительная организация успешно добавлена в систему WSR", "WSR: Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -86,7 +87,7 @@ namespace SomeProject
             }
             else
             {
-                MessageBox.Show("Введите название/описание организации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Введите название/описание организации", "WSR: Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -121,7 +122,7 @@ namespace SomeProject
                 catch
                 {
                     DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
-                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "WSR: Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

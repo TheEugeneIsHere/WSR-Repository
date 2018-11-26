@@ -267,8 +267,8 @@
             this.userInfo3.ItemHeight = 23;
             this.userInfo3.Items.AddRange(new object[] {
             "A",
-            "C",
-            "R"});
+            "R",
+            "C"});
             this.userInfo3.Location = new System.Drawing.Point(88, 144);
             this.userInfo3.Name = "userInfo3";
             this.userInfo3.PromptText = "Выбрать..";
@@ -394,12 +394,11 @@
             // 
             // metroLabel12
             // 
-            this.metroLabel12.AutoSize = true;
             this.metroLabel12.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroLabel12.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.metroLabel12.Location = new System.Drawing.Point(637, 211);
+            this.metroLabel12.Location = new System.Drawing.Point(637, 218);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(186, 57);
+            this.metroLabel12.Size = new System.Drawing.Size(186, 46);
             this.metroLabel12.TabIndex = 76;
             this.metroLabel12.Text = "Оставьте поля пустыми, если\r\nне хотите изменять пароль.\r\n";
             this.metroLabel12.UseCustomForeColor = true;

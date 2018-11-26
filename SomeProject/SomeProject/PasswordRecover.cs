@@ -38,10 +38,8 @@ namespace SomeProject
                 MessageBox.Show("Данные для входа отправлены на Ваш электронный адрес", "WSR: Информация",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Form1 MainForm = new Form1();
-                MainForm.Show();
-                this.Hide();
-                this.Dispose();
+                Hide();
+                Dispose();
 
             }
             else
@@ -62,12 +60,13 @@ namespace SomeProject
                 SqlCommand request = new SqlCommand(query, con);
                 if (Convert.ToInt32(request.ExecuteScalar()) != 0)
                 {
-                    SmtpClient client = new SmtpClient("smtp.gmail.com", 25);
+                    SmtpClient client = new SmtpClient("smtp.gmail.com", 25)
+                    {
+                        EnableSsl = true,
+                        Credentials = new NetworkCredential("wsrsystems@gmail.com", "WSRpolitex")
+                    };
 
-                    client.EnableSsl = true;
-                    client.Credentials = new NetworkCredential("wsrsystems@gmail.com", "WSRpolitex");
-
-                    query = "SELECT Password FROM Users WHERE Email = '" + email + "';";
+                    request.CommandText = "SELECT Password FROM Users WHERE Email = '" + email + "';";
                     password = request.ExecuteScalar().ToString();
                     client.Send("wsrsystems@gmail.com", email, "WSR: Восстановление пароля",
                         "Данные для входа в систему WSR\n\nЛогин: " + email + "\nПароль: " + password);
@@ -82,10 +81,8 @@ namespace SomeProject
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1();
-            MainForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
         }
     }
 }

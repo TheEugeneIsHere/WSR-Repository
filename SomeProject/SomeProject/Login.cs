@@ -71,7 +71,7 @@ namespace SomeProject
                             role = Role.R;
                            
                         }
-                        if ((string)dataReader["Roleid"] == "A")
+                        if ((string)dataReader["Roleid"] == "A" || (string)dataReader["Roleid"] == "O")
                         {
                             role = Role.A;
                         }
@@ -79,8 +79,6 @@ namespace SomeProject
                         {
                             role = Role.C;
                         }
-
-
                     }
                 }
                 return role;
@@ -203,9 +201,7 @@ namespace SomeProject
         private void forgetLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             PasswordRecover password = new PasswordRecover();
-            password.Show();
-            this.Hide();
-            this.Dispose();
+            password.ShowDialog();
         }
         /*конец временного мусора*/
     }
