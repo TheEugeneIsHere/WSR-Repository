@@ -72,7 +72,7 @@
             this.metroTile5.Name = "metroTile5";
             this.metroTile5.Size = new System.Drawing.Size(85, 41);
             this.metroTile5.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile5.TabIndex = 12;
+            this.metroTile5.TabIndex = 14;
             this.metroTile5.Text = "LOGIN";
             this.metroTile5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile5.UseSelectable = true;
@@ -85,7 +85,7 @@
             this.metroTile4.Name = "metroTile4";
             this.metroTile4.Size = new System.Drawing.Size(450, 67);
             this.metroTile4.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile4.TabIndex = 14;
+            this.metroTile4.TabIndex = 12;
             this.metroTile4.Text = "BMI-калькулятор";
             this.metroTile4.TileCount = 4;
             this.metroTile4.TileImage = global::SomeProject.Properties.Resources.bmiCalc;
@@ -133,6 +133,7 @@
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
+            this.metroTile2.Enabled = false;
             this.metroTile2.Location = new System.Drawing.Point(210, 171);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(450, 67);

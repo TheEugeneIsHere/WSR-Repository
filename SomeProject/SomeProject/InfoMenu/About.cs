@@ -57,6 +57,20 @@ namespace SomeProject
             }
         }
 
- 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            InteractiveMap IM = new InteractiveMap();
+            IM.Show();
+            Hide();
+            Dispose();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            //допиливаем
+            ShowImageForm ImgForm = new ShowImageForm();
+            ImgForm.ShowDialog();
+        }
+
     }
 }

@@ -26,15 +26,17 @@ namespace SomeProject
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            metroTextBox1.Clear();
-            metroTextBox2.Clear();
+            Form1 f1 = new Form1();
+            f1.Show();
+            Hide();
+            connection.mail = "";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form1 f1 = new Form1();
             f1.Show();
+            Hide();
         }
         enum Role { Failed, R, C, A }
         private void metroButton1_Click(object sender, EventArgs e)

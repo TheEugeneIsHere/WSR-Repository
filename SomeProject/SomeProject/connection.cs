@@ -7,6 +7,7 @@ namespace SomeProject
     {
         public static DateTime voteTime = new DateTime(2018, 12, 31, 23, 59, 59);
         public static string editMail;
+        public static string imageView;
 
         public static SqlConnection AzureConnection()
         {

@@ -42,7 +42,7 @@ namespace SomeProject
             metroLabel3.Enabled = !internet;
             metroLabel3.Visible = !internet;
             metroTile1.Enabled = internet;
-            metroTile2.Enabled = internet;
+            //metroTile2.Enabled = internet;
             metroTile3.Enabled = internet;
             metroTile4.Enabled = internet;
             metroTile5.Enabled = internet;
