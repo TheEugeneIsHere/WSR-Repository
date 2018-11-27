@@ -27,9 +27,9 @@ namespace SomeProject
         {
             try
             {
+                metroGrid1.Columns[0].DefaultCellStyle.NullValue = (System.Drawing.Image)Properties.Resources.tile_Blago;
                 con.Open();
                 SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityName, CharityDescription, CharityLogo FROM Charity", con);
-                metroGrid1.Columns[0].DefaultCellStyle.NullValue = (System.Drawing.Image)Properties.Resources.tile_Blago;
                 ad.Fill(wSRDataSetCharity1, "Charity");
             }
             catch (Exception ex)

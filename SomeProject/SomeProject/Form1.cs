@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace SomeProject
@@ -60,12 +59,7 @@ namespace SomeProject
         {
             ask ask = new ask();
             ask.ShowDialog();
-            this.Hide();
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
+            Hide();
         }
 
         private void metroTile4_Click(object sender, EventArgs e)
@@ -79,19 +73,14 @@ namespace SomeProject
         {
             RunnerForm run = new RunnerForm();
             run.Show();
-            this.Hide();
+            Hide();
         }
 
         private void metroTile7_Click(object sender, EventArgs e)
         {
             BMIcalc calculatorForm = new BMIcalc();
             calculatorForm.Show();
-            this.Hide();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
+            Hide();
         }
 
         private void metroComboBox1_TextChanged(object sender, EventArgs e)
@@ -134,5 +123,13 @@ namespace SomeProject
                 this.Refresh();
             }
         }
+
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            InfoForm InfoMenu = new InfoForm();
+            InfoMenu.Show();
+            Hide();
+        }
+
     }
 }

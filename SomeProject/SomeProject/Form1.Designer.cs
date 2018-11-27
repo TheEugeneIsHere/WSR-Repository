@@ -128,6 +128,7 @@
             this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile3.UseSelectable = true;
             this.metroTile3.UseTileImage = true;
+            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
             // metroTile2
             // 
@@ -210,7 +211,6 @@
             this.Resizable = false;
             this.Text = "MARATHON INFORMATION SYSTEM";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

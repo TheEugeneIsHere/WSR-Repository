@@ -10,7 +10,6 @@ namespace SomeProject
     public partial class aCharityAdd : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
-        Bitmap logo;
         byte[] photo;
         string filePath;
 
@@ -33,7 +32,6 @@ namespace SomeProject
             FileStream stream = new FileStream(
                 filePath, FileMode.Open, FileAccess.Read);
             BinaryReader reader = new BinaryReader(stream);
-
             byte[] photo = reader.ReadBytes((int)stream.Length);
 
             reader.Close();
@@ -48,7 +46,7 @@ namespace SomeProject
             {
                 con.Open();
                 SqlCommand com = new SqlCommand(
-                   "INSERT INTO Charity (CharityName, CharityDescription, CharityLogo) VALUES (@CharityName, @CharityDescription, @CharityLogo)", con);
+                 "INSERT INTO Charity (CharityName, CharityDescription, CharityLogo) VALUES (@CharityName, @CharityDescription, @CharityLogo)", con);
 
                 com.Parameters.Add("@CharityName",
                     SqlDbType.NVarChar, 100).Value = metroTextBox1.Text;
@@ -68,6 +66,10 @@ namespace SomeProject
                 con.Close();
                 MessageBox.Show("Благотворительная организация успешно добавлена в систему WSR", "WSR: Информация",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                aCharity CharityForm = new aCharity();
+                CharityForm.Show();
+                Hide();
+                Dispose();
             }
         }
 
@@ -98,25 +100,25 @@ namespace SomeProject
         {
             OpenFileDialog imageSelector = new OpenFileDialog
             {
-                Filter = "PNG|*.png|JPEG|*.jpg,*.jpeg,*.jpe,*.jfif|All files (*.*)|*.*",
-                Title = "Выберите логотип.."
+                Filter = "All files (*.*)|*.*|JPEG|*.jpg,*.jpeg,*.jpe,*.jfif|PNG|*.png",
+                Title = "Выберите логотип..",
             };
 
             if (imageSelector.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 try
                 {
+                    
                     filePath = imageSelector.FileName;
                     photo = GetPhoto(filePath);
-                    logo = new Bitmap(filePath);
-                    pictureBox3.Image = logo;
+                    pictureBox3.Image = new Bitmap(filePath);
                     pictureBox3.Invalidate();
                     metroTextBox3.Text = filePath;
                     imageSelector.Dispose();
                 }
                 catch
                 {
-                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
+                    DialogResult result = MessageBox.Show("Невозможно открыть выбранный файл",
                     "WSR: Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

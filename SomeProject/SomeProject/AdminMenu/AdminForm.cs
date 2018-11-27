@@ -14,6 +14,7 @@ namespace SomeProject
             getLogin();
             timer1.Tick += timer1_Tick;
             timer1.Start();
+
         }
 
         private void getLogin()
