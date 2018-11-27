@@ -426,7 +426,9 @@
     <None Include="Resources\Wikivoyage-logo.svg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\map_PictureBoxLabel.png" />
+    <None Include="Resources\teatro-municipal.jpg" />
+    <None Include="Resources\map_PictureBoxLabel.png" />
+    <None Include="Resources\marathon-image.jpg" />
     <Content Include="Resources\project_icon.ico" />
     <None Include="Resources\bmiManBad.png" />
     <None Include="Resources\bmiWomanSoSo.png" />
