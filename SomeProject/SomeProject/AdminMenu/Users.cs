@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -52,7 +53,7 @@ namespace SomeProject
                 wSRDataSetUsers.Clear();
                 SqlDataAdapter ad = new SqlDataAdapter(query, con);
                 ad.Fill(wSRDataSetUsers, "Users");
-                metroGrid1.DataSource = wSRDataSetUsers.Tables[0];
+                //metroGrid1.DataSource = wSRDataSetUsers.Tables[0];
                 con.Close();
             }
             catch (Exception ex)
@@ -184,16 +185,16 @@ namespace SomeProject
         {
             aUsersAdd UsersAddForm = new aUsersAdd();
             UsersAddForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             AdminForm AdminMenu = new AdminForm();
             AdminMenu.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

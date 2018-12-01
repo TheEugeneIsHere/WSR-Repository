@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -7,11 +8,14 @@ namespace SomeProject
     public partial class aCharity : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
+        BackgroundWorker bw;
 
         public aCharity()
         {
             InitializeComponent();
-            CharityLoad();
+            bw = new BackgroundWorker();
+            bw.DoWork += (obj, ea) => CharityLoad();
+            bw.RunWorkerAsync();
             timer1.Tick += timer1_Tick;
             timer1.Start();
         }
@@ -27,10 +31,10 @@ namespace SomeProject
         {
             try
             {
-                metroGrid1.Columns[0].DefaultCellStyle.NullValue = (System.Drawing.Image)Properties.Resources.tile_Blago;
                 con.Open();
                 SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityName, CharityDescription, CharityLogo FROM Charity", con);
                 ad.Fill(wSRDataSetCharity1, "Charity");
+
             }
             catch (Exception ex)
             {
@@ -74,5 +78,6 @@ namespace SomeProject
                 }
             }
         }
+
     }
 }

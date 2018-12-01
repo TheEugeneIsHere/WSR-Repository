@@ -114,6 +114,7 @@
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.Size = new System.Drawing.Size(823, 346);
             this.metroGrid1.TabIndex = 16;
+            this.metroGrid1.Columns[0].DefaultCellStyle.NullValue = Properties.Resources.tile_Blago;
             // 
             // dataGridViewImageColumn1
             // 
