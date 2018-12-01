@@ -8,14 +8,12 @@ namespace SomeProject
     public partial class aCharity : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = connection.AzureConnection();
-        BackgroundWorker bw;
 
         public aCharity()
         {
             InitializeComponent();
-            bw = new BackgroundWorker();
-            bw.DoWork += (obj, ea) => CharityLoad();
-            bw.RunWorkerAsync();
+            backLoad.DoWork += (obj, ea) => CharityLoad();
+            backLoad.RunWorkerAsync();
             timer1.Tick += timer1_Tick;
             timer1.Start();
         }
@@ -48,6 +46,7 @@ namespace SomeProject
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            if (backLoad.IsBusy) { backLoad.CancelAsync(); }
             aCharityAdd CharityAddForm = new aCharityAdd();
             CharityAddForm.Show();
             this.Hide();
@@ -56,10 +55,11 @@ namespace SomeProject
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            if (backLoad.IsBusy) { backLoad.CancelAsync(); }
             AdminForm AdminMenu = new AdminForm();
             AdminMenu.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
