@@ -57,7 +57,7 @@
             this.metroButton1.TabIndex = 5;
             this.metroButton1.Text = "Восстановить пароль";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // metroTextBox1
             // 
@@ -125,7 +125,7 @@
             this.metroButton2.TabIndex = 6;
             this.metroButton2.Text = "Отменить";
             this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.MetroButton2_Click);
             // 
             // PasswordRecover
             // 

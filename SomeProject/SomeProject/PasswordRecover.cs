@@ -23,7 +23,7 @@ namespace SomeProject
             return isMatch.Success;
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
             if (IsValidEmail(metroTextBox1.Text))
             {
@@ -32,8 +32,6 @@ namespace SomeProject
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Hide();
-                Dispose();
-
             }
             else
             {
@@ -65,17 +63,16 @@ namespace SomeProject
                         "Данные для входа в систему WSR\n\nЛогин: " + email + "\nПароль: " + password);
                 }
             }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); con.Close(); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
             finally
             {
                 con.Close();
             }
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void MetroButton2_Click(object sender, EventArgs e)
         {
             Hide();
-            Dispose();
         }
     }
 }
