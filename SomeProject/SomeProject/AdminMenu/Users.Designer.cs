@@ -80,7 +80,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // metroLabel1
             // 
@@ -161,7 +161,7 @@
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.Size = new System.Drawing.Size(823, 292);
             this.metroGrid1.TabIndex = 39;
-            this.metroGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
+            this.metroGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MetroGrid1_CellContentClick);
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -270,7 +270,7 @@
             this.metroComboBox1.Size = new System.Drawing.Size(134, 29);
             this.metroComboBox1.TabIndex = 43;
             this.metroComboBox1.UseSelectable = true;
-            this.metroComboBox1.TextChanged += new System.EventHandler(this.metroComboboxes_ValueChange);
+            this.metroComboBox1.TextChanged += new System.EventHandler(this.MetroComboboxes_ValueChange);
             // 
             // metroLabel6
             // 
@@ -308,7 +308,7 @@
             this.metroComboBox2.Size = new System.Drawing.Size(134, 29);
             this.metroComboBox2.TabIndex = 45;
             this.metroComboBox2.UseSelectable = true;
-            this.metroComboBox2.TextChanged += new System.EventHandler(this.metroComboboxes_ValueChange);
+            this.metroComboBox2.TextChanged += new System.EventHandler(this.MetroComboboxes_ValueChange);
             // 
             // pictureBox3
             // 
@@ -320,7 +320,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 46;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
             // 
             // pictureBox2
             // 
@@ -332,7 +332,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -344,7 +344,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // metroButton1
             // 
@@ -356,7 +356,7 @@
             this.metroButton1.TabIndex = 47;
             this.metroButton1.Text = "Добавить\r\n пользователя";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // usersTableAdapter
             // 

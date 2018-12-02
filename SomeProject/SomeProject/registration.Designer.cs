@@ -655,7 +655,6 @@
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
     }

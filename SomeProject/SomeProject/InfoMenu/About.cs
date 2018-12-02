@@ -9,7 +9,6 @@ namespace SomeProject
         public About()
         {
             InitializeComponent();
-            timer1.Tick += timer1_Tick;
             timer1.Start();
             LabelOnBox();
         }
@@ -24,20 +23,19 @@ namespace SomeProject
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
     
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             InfoForm InfoMenu = new InfoForm();
             InfoMenu.Show();
             Hide();
-            Dispose();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
@@ -57,19 +55,19 @@ namespace SomeProject
             }
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void PictureBox5_Click(object sender, EventArgs e)
         {
             InteractiveMap IM = new InteractiveMap();
             IM.Show();
             Hide();
-            Dispose();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void PictureBox3_Click(object sender, EventArgs e)
         {
             //допиливаем
             ShowImageForm ImgForm = new ShowImageForm();
             ImgForm.ShowDialog();
+            // Изменяем на новую хуйню
         }
 
     }

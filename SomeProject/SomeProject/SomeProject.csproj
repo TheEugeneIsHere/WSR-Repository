@@ -160,7 +160,7 @@
     <Compile Include="CoordinatorForm.Designer.cs">
       <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="connection.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="DataSets\WSRDataSetUsers.cs">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </Compile>

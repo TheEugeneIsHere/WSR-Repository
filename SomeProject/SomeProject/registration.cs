@@ -15,11 +15,11 @@ namespace SomeProject
             timer1.Start();
            
         }
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }

@@ -9,7 +9,7 @@ namespace SomeProject
 {
     public partial class PasswordRecover : MetroFramework.Forms.MetroForm
     {
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
 
         public PasswordRecover() // Подгончик для Максюши. +200 к увОжению от Савиной
         {

@@ -78,7 +78,7 @@
             this.metroTile1.UseSelectable = true;
             this.metroTile1.UseStyleColors = true;
             this.metroTile1.UseTileImage = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            this.metroTile1.Click += new System.EventHandler(this.MetroTile1_Click);
             // 
             // metroPanel1
             // 
@@ -178,7 +178,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // InfoForm
             // 

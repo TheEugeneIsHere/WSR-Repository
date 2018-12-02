@@ -9,20 +9,19 @@ namespace SomeProject
 {
     public partial class aCharityAdd : MetroFramework.Forms.MetroForm
     {
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
         byte[] photo;
         string filePath;
 
         public aCharityAdd()
         {
             InitializeComponent();
-            timer1.Tick += timer1_Tick;
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
@@ -45,15 +44,12 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlCommand com = new SqlCommand(
-                 "INSERT INTO Charity (CharityName, CharityDescription, CharityLogo) VALUES (@CharityName, @CharityDescription, @CharityLogo)", con);
+                SqlCommand com = new SqlCommand("INSERT INTO Charity (CharityName, CharityDescription, CharityLogo)" +
+                    " VALUES (@CharityName, @CharityDescription, @CharityLogo)", con);
 
-                com.Parameters.Add("@CharityName",
-                    SqlDbType.NVarChar, 100).Value = metroTextBox1.Text;
-                com.Parameters.Add("@CharityDescription",
-                    SqlDbType.NVarChar, 2000).Value = metroTextBox2.Text;
-                com.Parameters.Add("@CharityLogo",
-                    SqlDbType.Image, photo.Length).Value = photo;
+                com.Parameters.Add("@CharityName", SqlDbType.NVarChar, 100).Value = metroTextBox1.Text;
+                com.Parameters.Add("@CharityDescription", SqlDbType.NVarChar, 2000).Value = metroTextBox2.Text;
+                com.Parameters.Add("@CharityLogo", SqlDbType.Image, photo.Length).Value = photo;
 
                 com.ExecuteNonQuery();
             }
@@ -69,11 +65,10 @@ namespace SomeProject
                 aCharity CharityForm = new aCharity();
                 CharityForm.Show();
                 Hide();
-                Dispose();
             }
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
             if (metroTextBox1.Text != "" && metroTextBox2.Text != "")
             {
@@ -88,15 +83,14 @@ namespace SomeProject
             }
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void MetroButton2_Click(object sender, EventArgs e)
         {
             aCharity CharityForm = new aCharity();
             CharityForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void metroButton3_Click(object sender, EventArgs e)
+        private void MetroButton3_Click(object sender, EventArgs e)
         {
             OpenFileDialog imageSelector = new OpenFileDialog
             {
@@ -114,7 +108,6 @@ namespace SomeProject
                     pictureBox3.Image = new Bitmap(filePath);
                     pictureBox3.Invalidate();
                     metroTextBox3.Text = filePath;
-                    imageSelector.Dispose();
                 }
                 catch
                 {
@@ -124,20 +117,18 @@ namespace SomeProject
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             aCharity CharityForm = new aCharity();
             CharityForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
             Form1 MainForm = new Form1();
             MainForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)

@@ -96,7 +96,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // metroButton2
             // 
@@ -120,7 +120,7 @@
             this.updateButton1.TabIndex = 74;
             this.updateButton1.Text = "Сохранить";
             this.updateButton1.UseSelectable = true;
-            this.updateButton1.Click += new System.EventHandler(this.updateUser_Click);
+            this.updateButton1.Click += new System.EventHandler(this.UpdateUser_Click);
             // 
             // metroLabel9
             // 
@@ -275,7 +275,7 @@
             this.userInfo3.Size = new System.Drawing.Size(94, 29);
             this.userInfo3.TabIndex = 65;
             this.userInfo3.UseSelectable = true;
-            this.userInfo3.TextChanged += new System.EventHandler(this.userInfo3_TextChanged);
+            this.userInfo3.TextChanged += new System.EventHandler(this.UserInfo3_TextChanged);
             // 
             // userInfo1
             // 
@@ -308,7 +308,7 @@
             this.userInfo1.WaterMark = "Иван";
             this.userInfo1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.userInfo1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.userInfo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userInfo1_KeyPress);
+            this.userInfo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserInfo1_KeyPress);
             // 
             // userInfo2
             // 
@@ -341,7 +341,7 @@
             this.userInfo2.WaterMark = "Иванов";
             this.userInfo2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.userInfo2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.userInfo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userInfo2_KeyPress);
+            this.userInfo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserInfo2_KeyPress);
             // 
             // metroLabel1
             // 
@@ -366,7 +366,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 57;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.logoutPic_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.LogoutPic_Click);
             // 
             // pictureBox1
             // 
@@ -560,7 +560,7 @@
             this.deleteButton1.TabIndex = 79;
             this.deleteButton1.Text = "Удалить пользователя";
             this.deleteButton1.UseSelectable = true;
-            this.deleteButton1.Click += new System.EventHandler(this.deleteUser_Click);
+            this.deleteButton1.Click += new System.EventHandler(this.DeleteUser_Click);
             // 
             // error
             // 

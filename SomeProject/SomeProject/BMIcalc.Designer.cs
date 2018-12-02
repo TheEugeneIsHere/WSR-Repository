@@ -94,7 +94,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // metroLabel3
             // 
@@ -170,7 +170,7 @@
             this.hCombo.WaterMark = "175";
             this.hCombo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.hCombo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.hCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox1_KeyPress);
+            this.hCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MetroTextBox1_KeyPress);
             // 
             // wCombo
             // 
@@ -206,7 +206,7 @@
             this.wCombo.WaterMark = "75";
             this.wCombo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.wCombo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.wCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox1_KeyPress);
+            this.wCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MetroTextBox1_KeyPress);
             // 
             // metroLabel8
             // 
@@ -235,7 +235,7 @@
             this.metroButton1.TabIndex = 72;
             this.metroButton1.Text = "Рассчитать";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // imtLabel
             // 
@@ -274,7 +274,7 @@
             this.womanBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.womanBox.TabIndex = 62;
             this.womanBox.TabStop = false;
-            this.womanBox.Click += new System.EventHandler(this.womanBoxClicked);
+            this.womanBox.Click += new System.EventHandler(this.WomanBoxClicked);
             // 
             // manBox
             // 
@@ -286,7 +286,7 @@
             this.manBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.manBox.TabIndex = 61;
             this.manBox.TabStop = false;
-            this.manBox.Click += new System.EventHandler(this.manBoxClicked);
+            this.manBox.Click += new System.EventHandler(this.ManBoxClicked);
             // 
             // pictureBox1
             // 
@@ -298,7 +298,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // imtTextLabel
             // 

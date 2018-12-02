@@ -6,7 +6,6 @@ namespace SomeProject
         public ShowImageForm()
         {
             InitializeComponent();
-            pictureBox1.ImageLocation = connection.imageView;
         }
     }
 }

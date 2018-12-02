@@ -15,20 +15,22 @@ namespace SomeProject
 
         int distance = 0, stoim=0,vznos = 0, variant = 0,itog=0;
         ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RunnerForm run = new RunnerForm();
-            run.Visible = true;
+            Hide();
+            RunnerForm run = new RunnerForm
+            {
+                Visible = true
+            };
         }
 
         private void bunifuCheckbox1_OnChange(object sender, EventArgs e)

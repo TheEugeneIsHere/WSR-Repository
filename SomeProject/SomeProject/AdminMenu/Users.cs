@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -8,21 +7,20 @@ namespace SomeProject
     public partial class aUsers : MetroFramework.Forms.MetroForm
     {
         private static string query = "SELECT FirstName, LastName, Email, RoleID FROM Users";
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
 
         public aUsers()
         {
             InitializeComponent();
             UsersCount();
             UsersLoad(query);
-            timer1.Tick += timer1_Tick;
             timer1.Start();
-            this.Cursor = Cursors.Default;
+            Cursor = Cursors.Default;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
@@ -50,11 +48,8 @@ namespace SomeProject
             try
             {
                 con.Open();
-                wSRDataSetUsers.Clear();
                 SqlDataAdapter ad = new SqlDataAdapter(query, con);
                 ad.Fill(wSRDataSetUsers, "Users");
-                //metroGrid1.DataSource = wSRDataSetUsers.Tables[0];
-                con.Close();
             }
             catch (Exception ex)
             {
@@ -116,17 +111,17 @@ namespace SomeProject
             }
         }
 
-        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void MetroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (metroGrid1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                connection.editMail = metroGrid1.CurrentRow.Cells[2].Value.ToString();
+                Сonnection.EditMail = metroGrid1.CurrentRow.Cells[2].Value.ToString();
                 con.Open();
-                if (connection.mail != connection.editMail)
+                if (Сonnection.Mail != Сonnection.EditMail)
                 {
                     try
                     {
-                        if (connection.mail != "anotherinvocation@gmail.com")
+                        if (Сonnection.Mail != "anotherinvocation@gmail.com")
                         {
                             if (metroGrid1.CurrentRow.Cells[3].Value.ToString() == "O")
                             {
@@ -145,7 +140,6 @@ namespace SomeProject
                                     aUsersEdit UsersEditForm = new aUsersEdit();
                                     UsersEditForm.Show();
                                     Hide();
-                                    Dispose();
                                 }
                             }
                         }
@@ -154,7 +148,6 @@ namespace SomeProject
                             aUsersEdit UsersEditForm = new aUsersEdit();
                             UsersEditForm.Show();
                             Hide();
-                            Dispose();
                         }
                     }
 
@@ -176,36 +169,33 @@ namespace SomeProject
             }
         }
 
-        private void metroComboboxes_ValueChange(object sender, EventArgs e)
+        private void MetroComboboxes_ValueChange(object sender, EventArgs e)
         {
             UsersLoad(SortBy(query));
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
             aUsersAdd UsersAddForm = new aUsersAdd();
             UsersAddForm.Show();
             Hide();
-            Dispose();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             AdminForm AdminMenu = new AdminForm();
             AdminMenu.Show();
             Hide();
-            Dispose();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
             Form1 MainForm = new Form1();
             MainForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
+        private void PictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
         {
             metroComboBox2.Enabled = true;
             metroComboBox1.Enabled = true;

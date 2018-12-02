@@ -19,7 +19,7 @@ namespace SomeProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
@@ -29,7 +29,7 @@ namespace SomeProject
             Form1 f1 = new Form1();
             f1.Show();
             Hide();
-            connection.mail = "";
+            Сonnection.Mail = "";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace SomeProject
             }
             else
             {
-                connection.mail = metroTextBox1.Text;
+                Сonnection.Mail = metroTextBox1.Text;
                 if (role == Role.A)
                 {
                     var form = new AdminForm();
@@ -105,7 +105,7 @@ namespace SomeProject
                 else if (role == Role.R)
                 {
                     // connection.mail = metroTextBox1.Text;
-                     connection.password = metroTextBox2.Text;
+                     Сonnection.Password = metroTextBox2.Text;
                     // Из-за этих строк (Их расположения в IF роль = бегун у меня не работает приветствие
                     // Я особо не вникал, но как по мне без разницы бегун или нет, всё равно надо пихать в connection.mail
                     // Поэтому я Password здесь оставлю, ашто он не нужен если адмэн как по мне
@@ -137,7 +137,7 @@ namespace SomeProject
 
         private void Login_Load(object sender, EventArgs e)
         {
-            if (connection.theme)
+            if (Сonnection.Theme)
             {
                 Theme = MetroFramework.MetroThemeStyle.Dark;
                 timerLabel.Theme = MetroFramework.MetroThemeStyle.Dark;

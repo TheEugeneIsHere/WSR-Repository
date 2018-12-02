@@ -4,9 +4,11 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
+#pragma warning disable IDE1006
     public partial class aVolunteer : MetroFramework.Forms.MetroForm
+#pragma warning restore IDE1006
     {
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
         private static string query = "SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer ORDER BY FirstName";
 
         public aVolunteer()
@@ -14,13 +16,12 @@ namespace SomeProject
             InitializeComponent();
             VolunteerLoad(query);
             VolunteerCount();
-            timer1.Tick += timer1_Tick;
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
@@ -50,7 +51,6 @@ namespace SomeProject
                 con.Open();
                 SqlDataAdapter ad = new SqlDataAdapter(query, con);
                 ad.Fill(wSRDataSetVolunteer, "Volunteer");
-                metroGrid1.DataSource = wSRDataSetVolunteer.Tables[0];
             }
             catch (Exception ex)
             {
@@ -62,31 +62,28 @@ namespace SomeProject
             }
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
             aVolunteerAdd VolunteerAddForm = new aVolunteerAdd();
             VolunteerAddForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             AdminForm AdminForm = new AdminForm();
             AdminForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
             Form1 mainForm = new Form1();
             mainForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void MetroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sort = string.Empty;
             switch (metroComboBox1.Text)
@@ -96,7 +93,6 @@ namespace SomeProject
                 case "Стране": sort = "CountryCode"; break;
                 default: sort = "FirstName"; break;
             }
-            wSRDataSetVolunteer.Clear();
 
             VolunteerLoad("SELECT FirstName, LastName, CountryCode, Gender FROM Volunteer ORDER BY " + sort);
         }

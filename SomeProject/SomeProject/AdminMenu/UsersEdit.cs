@@ -6,28 +6,25 @@ namespace SomeProject
 {
     public partial class aUsersEdit : MetroFramework.Forms.MetroForm
     {
-        SqlConnection con = connection.AzureConnection();
-
+        SqlConnection con = Сonnection.AzureConnection();
         private static char Role;
 
         public aUsersEdit()
         {
             InitializeComponent();
-            metroLabel11.Text = connection.editMail;
+            metroLabel11.Text = Сonnection.EditMail;
             GetUser();
             if (userInfo3.Text == "R")
             {
                 Role = 'R';
                 GetRunner();
             }
-
-            timer1.Tick += timer1_Tick;
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
@@ -39,12 +36,9 @@ namespace SomeProject
 
                 SqlDataAdapter runnerInfo = new SqlDataAdapter("SELECT DateOfBirth, Gender, CountryCode, RunnerId FROM Runner WHERE Email = '" + metroLabel11.Text + "'", con);
                 runnerInfo.Fill(wsrDataSetUsers1, "Runner");
-                runnerInfo.Dispose();
-                con.Close();
                 runnerInfo = new SqlDataAdapter("SELECT CountryCode FROM Country", con);
                 runnerInfo.Fill(wSRDataSetCountry, "getCountryCode");
-                runnerInfo.Dispose();
-                con.Close();
+
                 if (wsrDataSetUsers1.Tables[1].Rows.Count >= 1)
                 {
                     runnerDateTime1.Value = Convert.ToDateTime(wsrDataSetUsers1.Tables[1].Rows[0][0]);
@@ -71,8 +65,6 @@ namespace SomeProject
             {
                 SqlDataAdapter userInfo = new SqlDataAdapter("SELECT * FROM Users WHERE Email = '" + metroLabel11.Text + "'", con);
                 userInfo.Fill(wsrDataSetUsers1, "Users");
-                con.Close();
-                userInfo.Dispose();
                 userInfo1.Text = wsrDataSetUsers1.Tables[0].Rows[0][1].ToString();
                 userInfo2.Text = wsrDataSetUsers1.Tables[0].Rows[0][2].ToString();
                 userInfo3.SelectedItem = wsrDataSetUsers1.Tables[0].Rows[0][3].ToString();
@@ -142,13 +134,12 @@ namespace SomeProject
                 con.Close();
                 aUsers UsersForm = new aUsers();
                 UsersForm.Show();
-                this.Hide();
-                this.Dispose();
+                Hide();
                 Role = '\0';
             }
         }
 
-        private void updateUser_Click(object sender, EventArgs e)
+        private void UpdateUser_Click(object sender, EventArgs e)
         {
             string errorLog = "Исправьте следующие ошибки: \n\n";
             int errorCount = 0;
@@ -193,31 +184,31 @@ namespace SomeProject
 
         }
 
-        private void deleteUser_Click(object sender, EventArgs e)
+        private void DeleteUser_Click(object sender, EventArgs e)
         {
             try
             {
                 con.Open();
-                SqlCommand command = new SqlCommand("dbo.sp_DeleteUser", con);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlCommand command = new SqlCommand("dbo.sp_DeleteUser", con)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
                 SqlParameter userMail = new SqlParameter
                 {
                     ParameterName = "@email",
-                    Value = connection.editMail
+                    Value = Сonnection.EditMail
                 };
                 command.Parameters.Add(userMail);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Пользователь успешно удалён!", "WSR: Удаление",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 aUsers UsersForm = new aUsers();
-                this.Hide();
-                this.Dispose();
+                Hide();
                 UsersForm.Show();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                con.Close();
             }
             finally
             {
@@ -225,7 +216,7 @@ namespace SomeProject
             }
         }
 
-        private void userInfo1_KeyPress(object sender, KeyPressEventArgs e)
+        private void UserInfo1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
             {
@@ -235,10 +226,10 @@ namespace SomeProject
                 }
                 e.Handled = true;
             }
-            else { error.SetError(userInfo1, String.Empty); }
+            else { error.SetError(userInfo1, string.Empty); }
         }
 
-        private void userInfo2_KeyPress(object sender, KeyPressEventArgs e)
+        private void UserInfo2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
             {
@@ -248,10 +239,10 @@ namespace SomeProject
                 }
                 e.Handled = true;
             }
-            else { error.SetError(userInfo2, String.Empty); }
+            else { error.SetError(userInfo2, string.Empty); }
         }
 
-        private void userInfo3_TextChanged(object sender, EventArgs e)
+        private void UserInfo3_TextChanged(object sender, EventArgs e)
         {
             if (userInfo3.Text == "R")
             {
@@ -270,16 +261,14 @@ namespace SomeProject
         {
             aUsers UsersForm = new aUsers();
             UsersForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void logoutPic_Click(object sender, EventArgs e)
+        private void LogoutPic_Click(object sender, EventArgs e)
         {
             Form1 MainForm = new Form1();
             MainForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)

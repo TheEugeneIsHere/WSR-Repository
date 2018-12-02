@@ -8,31 +8,28 @@ namespace SomeProject
         public InfoForm()
         {
             InitializeComponent();
-            timer1.Tick += timer1_Tick;
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             Form1 MainMenu = new Form1();
             MainMenu.Show();
             Hide();
-            Dispose();
         }
 
-        private void metroTile1_Click(object sender, EventArgs e)
+        private void MetroTile1_Click(object sender, EventArgs e)
         {
             About about = new About();
             about.Show();
             Hide();
-            Dispose();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)

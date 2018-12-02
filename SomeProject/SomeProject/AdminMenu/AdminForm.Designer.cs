@@ -57,7 +57,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // logoutPic
             // 
@@ -69,7 +69,7 @@
             this.logoutPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoutPic.TabIndex = 15;
             this.logoutPic.TabStop = false;
-            this.logoutPic.Click += new System.EventHandler(this.logoutPic_Click);
+            this.logoutPic.Click += new System.EventHandler(this.LogoutPic_Click);
             // 
             // metroTile2
             // 
@@ -88,7 +88,7 @@
             this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile2.UseSelectable = true;
             this.metroTile2.UseTileImage = true;
-            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
+            this.metroTile2.Click += new System.EventHandler(this.MetroTile2_Click);
             // 
             // metroTile3
             // 
@@ -107,7 +107,7 @@
             this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile3.UseSelectable = true;
             this.metroTile3.UseTileImage = true;
-            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
+            this.metroTile3.Click += new System.EventHandler(this.MetroTile3_Click);
             // 
             // metroTile4
             // 
@@ -146,7 +146,7 @@
             this.metroTile1.UseSelectable = true;
             this.metroTile1.UseStyleColors = true;
             this.metroTile1.UseTileImage = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            this.metroTile1.Click += new System.EventHandler(this.MetroTile1_Click);
             // 
             // loginLabel
             // 

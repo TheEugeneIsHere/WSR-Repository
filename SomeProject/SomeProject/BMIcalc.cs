@@ -6,35 +6,34 @@ namespace SomeProject
 {
     public partial class BMIcalc : MetroFramework.Forms.MetroForm
     {
+        private static string gender;
+
         public BMIcalc()
         {
             InitializeComponent();
-            timer1.Tick += timer1_Tick;
             timer1.Start();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             Form1 MainForm = new Form1();
             MainForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
-        private void metroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void MetroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back) { e.Handled = false; }
         }
-        private static string gender;
 
-        private void manBoxClicked(object sender, EventArgs e)
+        private void ManBoxClicked(object sender, EventArgs e)
         {
             gender = "Man";
             Control();
@@ -54,7 +53,7 @@ namespace SomeProject
             wCombo.Text = null;
         }
 
-        private void womanBoxClicked(object sender,EventArgs e)
+        private void WomanBoxClicked(object sender,EventArgs e)
         {
             gender = "Woman";
             Control();
@@ -63,7 +62,7 @@ namespace SomeProject
             healthStatePic.Image = Properties.Resources.bmiWomanDefault;
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
             if (hCombo.Text != "" && wCombo.Text != "")
             {

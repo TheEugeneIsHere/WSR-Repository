@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -7,20 +6,19 @@ namespace SomeProject
 {
     public partial class aCharity : MetroFramework.Forms.MetroForm
     {
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
 
         public aCharity()
         {
             InitializeComponent();
             backLoad.DoWork += (obj, ea) => CharityLoad();
             backLoad.RunWorkerAsync();
-            timer1.Tick += timer1_Tick;
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             metroLabel3.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
@@ -32,7 +30,6 @@ namespace SomeProject
                 con.Open();
                 SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityName, CharityDescription, CharityLogo FROM Charity", con);
                 ad.Fill(wSRDataSetCharity1, "Charity");
-
             }
             catch (Exception ex)
             {
@@ -44,16 +41,15 @@ namespace SomeProject
             }
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
             if (backLoad.IsBusy) { backLoad.CancelAsync(); }
             aCharityAdd CharityAddForm = new aCharityAdd();
             CharityAddForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             if (backLoad.IsBusy) { backLoad.CancelAsync(); }
             AdminForm AdminMenu = new AdminForm();

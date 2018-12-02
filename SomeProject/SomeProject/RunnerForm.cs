@@ -19,7 +19,7 @@ namespace SomeProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
@@ -69,7 +69,7 @@ namespace SomeProject
         private string lname;
         private void greting()
         {
-            SqlConnection con = connection.AzureConnection();
+            SqlConnection con = Сonnection.AzureConnection();
             con.Open();
 
             string  strSQL;
@@ -84,8 +84,8 @@ namespace SomeProject
             FirstName.Direction = ParameterDirection.Output;
             LastName = command.Parameters.Add("@LastName", SqlDbType.VarChar, 20);
             LastName.Direction = ParameterDirection.Output;
-            command.Parameters.AddWithValue("@email",connection.mail);
-            command.Parameters.AddWithValue("@password", connection.password);
+            command.Parameters.AddWithValue("@email",Сonnection.Mail);
+            command.Parameters.AddWithValue("@password", Сonnection.Password);
             command.ExecuteNonQuery();
             fname = Convert.ToString(FirstName.Value);
             lname = Convert.ToString(LastName.Value);

@@ -5,7 +5,7 @@ namespace SomeProject
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
 
         public Form1()
         {
@@ -50,7 +50,7 @@ namespace SomeProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
         }
@@ -100,7 +100,7 @@ namespace SomeProject
                 metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
                 metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
                 this.Style = MetroFramework.MetroColorStyle.Yellow;
-                connection.theme = true;
+                Сonnection.Theme = true;
                 this.Refresh();
             }
             else
@@ -119,7 +119,7 @@ namespace SomeProject
                 metroLabel2.Style = MetroFramework.MetroColorStyle.Black;
                 metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Light;
                 this.Style = MetroFramework.MetroColorStyle.Blue;
-                connection.theme = false;
+                Сonnection.Theme = false;
                 this.Refresh();
             }
         }

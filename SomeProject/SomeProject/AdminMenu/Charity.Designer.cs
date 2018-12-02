@@ -115,6 +115,7 @@
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.Size = new System.Drawing.Size(823, 346);
             this.metroGrid1.TabIndex = 16;
+            this.metroGrid1.Columns[0].DefaultCellStyle.NullValue = (System.Drawing.Image)Properties.Resources.tile_Blago;
             // 
             // dataGridViewImageColumn1
             // 
@@ -173,7 +174,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // metroButton1
             // 
@@ -183,7 +184,7 @@
             this.metroButton1.TabIndex = 19;
             this.metroButton1.Text = "Добавить";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // pictureBox1
             // 
@@ -195,7 +196,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // charityTableAdapter
             // 
@@ -203,6 +204,7 @@
             // 
             // backLoad
             // 
+            this.backLoad.WorkerReportsProgress = false;
             this.backLoad.WorkerSupportsCancellation = true;
             // 
             // aCharity
@@ -237,13 +239,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private System.Windows.Forms.DataGridViewImageColumn charityLogoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn charityNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn charityDescriptionDataGridViewTextBoxColumn;
-        private DataSets.WSRDataSetCharity wSRDataSetCharity;
-        private System.Windows.Forms.DataGridViewImageColumn charityLogoDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataSets.WSRDataSetCharity wSRDataSetCharity1;
         private System.Windows.Forms.BindingSource charityBindingSource;
         private DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter charityTableAdapter;
