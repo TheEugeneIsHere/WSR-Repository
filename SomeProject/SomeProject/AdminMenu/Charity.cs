@@ -11,9 +11,9 @@ namespace SomeProject
         public aCharity()
         {
             InitializeComponent();
+            timer1.Start();
             backLoad.DoWork += (obj, ea) => CharityLoad();
             backLoad.RunWorkerAsync();
-            timer1.Start();
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -28,6 +28,7 @@ namespace SomeProject
             try
             {
                 con.Open();
+                metroGrid1.Columns[0].DefaultCellStyle.NullValue = Properties.Resources.tile_Blago;
                 SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityName, CharityDescription, CharityLogo FROM Charity", con);
                 ad.Fill(wSRDataSetCharity1, "Charity");
             }
@@ -43,19 +44,18 @@ namespace SomeProject
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            if (backLoad.IsBusy) { backLoad.CancelAsync(); }
             aCharityAdd CharityAddForm = new aCharityAdd();
             CharityAddForm.Show();
             Hide();
+            if (backLoad.IsBusy) { backLoad.CancelAsync(); }
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            if (backLoad.IsBusy) { backLoad.CancelAsync(); }
             AdminForm AdminMenu = new AdminForm();
             AdminMenu.Show();
             Hide();
-            Dispose();
+            if (backLoad.IsBusy) { backLoad.CancelAsync(); }
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
@@ -75,5 +75,11 @@ namespace SomeProject
             }
         }
 
+        private void BackLoad_Completed(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            pictureBox2.Visible = false;
+            pictureBox2.Enabled = false;
+            metroGrid1.DataSource = wSRDataSetCharity1.Tables[0];
+        }
     }
 }
