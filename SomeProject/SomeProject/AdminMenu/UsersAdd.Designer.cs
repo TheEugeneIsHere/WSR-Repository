@@ -94,7 +94,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::SomeProject.Properties.Resources.exit_Admin;
+            this.pictureBox2.Image = global::SomeProject.Properties.Resources.aExit;
             this.pictureBox2.Location = new System.Drawing.Point(811, 57);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
@@ -106,7 +106,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
+            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons_back;
             this.pictureBox1.Location = new System.Drawing.Point(38, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);

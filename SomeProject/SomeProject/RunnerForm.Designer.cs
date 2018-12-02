@@ -79,7 +79,7 @@
             this.metroTile1.Text = "Мои результаты";
             this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.TileCount = 3;
-            this.metroTile1.TileImage = global::SomeProject.Properties.Resources.icons8_результаты_теста_30;
+            this.metroTile1.TileImage = global::SomeProject.Properties.Resources.icons_Results;
             this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile1.UseSelectable = true;
@@ -96,7 +96,7 @@
             this.metroTile3.Text = "Редактирование\r\nпрофиля";
             this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile3.TileCount = 4;
-            this.metroTile3.TileImage = global::SomeProject.Properties.Resources.icons8_карандаш_26;
+            this.metroTile3.TileImage = global::SomeProject.Properties.Resources.icons_Pen;
             this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile3.UseSelectable = true;
@@ -113,7 +113,7 @@
             this.metroTile5.Text = "Мой спонсор";
             this.metroTile5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile5.TileCount = 2;
-            this.metroTile5.TileImage = global::SomeProject.Properties.Resources.icons8_краудфандинг_32;
+            this.metroTile5.TileImage = global::SomeProject.Properties.Resources.icons_Crowdfouning;
             this.metroTile5.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile5.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile5.UseSelectable = true;
@@ -123,7 +123,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::SomeProject.Properties.Resources.exit_Admin;
+            this.pictureBox2.Image = global::SomeProject.Properties.Resources.aExit;
             this.pictureBox2.Location = new System.Drawing.Point(814, 63);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
@@ -142,7 +142,7 @@
             this.metroTile2.Text = "Регистрация на \r\nмарафон";
             this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile2.TileCount = 1;
-            this.metroTile2.TileImage = global::SomeProject.Properties.Resources.icons8_бег_32;
+            this.metroTile2.TileImage = global::SomeProject.Properties.Resources.icons_Run;
             this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile2.UseSelectable = true;

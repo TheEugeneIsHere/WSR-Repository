@@ -62,7 +62,7 @@
             // logoutPic
             // 
             this.logoutPic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoutPic.Image = global::SomeProject.Properties.Resources.exit_Admin;
+            this.logoutPic.Image = global::SomeProject.Properties.Resources.aExit;
             this.logoutPic.Location = new System.Drawing.Point(811, 57);
             this.logoutPic.Name = "logoutPic";
             this.logoutPic.Size = new System.Drawing.Size(35, 35);

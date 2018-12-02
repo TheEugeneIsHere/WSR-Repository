@@ -11,7 +11,6 @@ namespace SomeProject
         {
             InitializeComponent();
             Elements(IsConnectedToInternet()); // Проверка подключения к БД
-            timer1.Tick += timer1_Tick;
             timer1.Start();
         }
 
@@ -48,83 +47,42 @@ namespace SomeProject
             metroTile5.Enabled = internet;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
-            metroLabel1.Text = timeremaining.Days + " дней " + timeremaining.Hours +
+            timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
         }
 
-        private void metroTile1_Click(object sender, EventArgs e)
+        private void MetroTile1_Click(object sender, EventArgs e)
         {
             ask ask = new ask();
             ask.ShowDialog();
             Hide();
         }
 
-        private void metroTile4_Click(object sender, EventArgs e)
+        private void MetroTile4_Click(object sender, EventArgs e)
         {
             Login log = new Login();
             log.Show();
             this.Hide();
         }
 
-        private void metroTile6_Click(object sender, EventArgs e)
+        private void MetroTile6_Click(object sender, EventArgs e)
         {
             RunnerForm run = new RunnerForm();
             run.Show();
             Hide();
         }
 
-        private void metroTile7_Click(object sender, EventArgs e)
+        private void MetroTile7_Click(object sender, EventArgs e)
         {
-            BMIcalc calculatorForm = new BMIcalc();
-            calculatorForm.Show();
+            BMIcalc bmiForm = new BMIcalc();
+            bmiForm.Show();
             Hide();
         }
 
-        private void metroComboBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (metroComboBox1.Text == "Темная")
-            {
-                Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroComboBox1.Style= MetroFramework.MetroColorStyle.Yellow;
-                metroTile1.Style = MetroFramework.MetroColorStyle.Yellow;
-                metroTile2.Style = MetroFramework.MetroColorStyle.Yellow;
-                metroTile3.Style = MetroFramework.MetroColorStyle.Yellow;
-                metroTile5.Style = MetroFramework.MetroColorStyle.Yellow;
-                metroTile4.Style = MetroFramework.MetroColorStyle.Yellow;
-                metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroLabel1.Style = MetroFramework.MetroColorStyle.White;
-                metroLabel2.Style = MetroFramework.MetroColorStyle.White;
-                metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                this.Style = MetroFramework.MetroColorStyle.Yellow;
-                Сonnection.Theme = true;
-                this.Refresh();
-            }
-            else
-                if(metroComboBox1.Text == "Светлая")
-            {
-                Theme = MetroFramework.MetroThemeStyle.Light;
-                metroComboBox1.Style = MetroFramework.MetroColorStyle.Blue;
-                metroTile1.Style = MetroFramework.MetroColorStyle.Blue;
-                metroTile2.Style = MetroFramework.MetroColorStyle.Blue;
-                metroTile3.Style = MetroFramework.MetroColorStyle.Blue;
-                metroTile5.Style = MetroFramework.MetroColorStyle.Blue;
-                metroTile4.Style = MetroFramework.MetroColorStyle.Blue;
-                metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
-                metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
-                metroLabel1.Style = MetroFramework.MetroColorStyle.Black;
-                metroLabel2.Style = MetroFramework.MetroColorStyle.Black;
-                metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Light;
-                this.Style = MetroFramework.MetroColorStyle.Blue;
-                Сonnection.Theme = false;
-                this.Refresh();
-            }
-        }
-
-        private void metroTile3_Click(object sender, EventArgs e)
+        private void MetroTile3_Click(object sender, EventArgs e)
         {
             InfoForm InfoMenu = new InfoForm();
             InfoMenu.Show();

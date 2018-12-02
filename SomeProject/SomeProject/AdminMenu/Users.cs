@@ -15,7 +15,6 @@ namespace SomeProject
             UsersCount();
             UsersLoad(query);
             timer1.Start();
-            Cursor = Cursors.Default;
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -50,6 +49,7 @@ namespace SomeProject
                 con.Open();
                 SqlDataAdapter ad = new SqlDataAdapter(query, con);
                 ad.Fill(wSRDataSetUsers, "Users");
+                metroGrid1.DataSource = wSRDataSetUsers.Tables[0];
             }
             catch (Exception ex)
             {
@@ -202,7 +202,6 @@ namespace SomeProject
             metroComboBox2.SelectedIndex = 0;
             metroComboBox1.SelectedIndex = 0;
             metroTextBox1.Text = string.Empty;
-
             UsersLoad("SELECT FirstName, LastName, Email, RoleID FROM Users");
         }
 

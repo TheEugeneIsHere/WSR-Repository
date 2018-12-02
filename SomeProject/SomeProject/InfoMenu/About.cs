@@ -64,9 +64,6 @@ namespace SomeProject
 
         private void PictureBox3_Click(object sender, EventArgs e)
         {
-            //допиливаем
-            ShowImageForm ImgForm = new ShowImageForm();
-            ImgForm.ShowDialog();
             // Изменяем на новую хуйню
         }
 

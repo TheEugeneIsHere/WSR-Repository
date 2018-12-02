@@ -62,22 +62,22 @@
             this.runnerLabel1 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel2 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.wsrDataSetUsers1 = new SomeProject.DataSets.WSRDataSetUsers();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.usersTableAdapter = new SomeProject.DataSets.WSRDataSetUsersTableAdapters.UsersTableAdapter();
             this.getCountryCodeTableAdapter = new SomeProject.DataSets.WSRDataSetCountryTableAdapters.getCountryCodeTableAdapter();
             this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.deleteButton1 = new MetroFramework.Controls.MetroButton();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.wsrDataSetUsers1 = new SomeProject.DataSets.WSRDataSetUsers();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getCountryCodeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wsrDataSetUsers1)).BeginInit();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wsrDataSetUsers1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel4
@@ -359,7 +359,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::SomeProject.Properties.Resources.exit_Admin;
+            this.pictureBox2.Image = global::SomeProject.Properties.Resources.aExit;
             this.pictureBox2.Location = new System.Drawing.Point(811, 57);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
@@ -371,7 +371,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
+            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons_back;
             this.pictureBox1.Location = new System.Drawing.Point(38, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
@@ -515,11 +515,6 @@
             this.runnerLabel3.TabIndex = 61;
             this.runnerLabel3.Text = "Страна";
             // 
-            // wsrDataSetUsers1
-            // 
-            this.wsrDataSetUsers1.DataSetName = "WSRDataSetUsers";
-            this.wsrDataSetUsers1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // metroPanel2
             // 
             this.metroPanel2.Controls.Add(this.metroLabel11);
@@ -567,6 +562,11 @@
             this.error.ContainerControl = this;
             this.error.Icon = ((System.Drawing.Icon)(resources.GetObject("error.Icon")));
             // 
+            // wsrDataSetUsers1
+            // 
+            this.wsrDataSetUsers1.DataSetName = "WSRDataSetUsers";
+            this.wsrDataSetUsers1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // aUsersEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,11 +599,11 @@
             this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getCountryCodeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wsrDataSetUsers1)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wsrDataSetUsers1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,7 +642,6 @@
         private MetroFramework.Controls.MetroLabel runnerLabel2;
         private MetroFramework.Controls.MetroLabel runnerLabel3;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private DataSets.WSRDataSetUsers wsrDataSetUsers1;
         private DataSets.WSRDataSetUsersTableAdapters.UsersTableAdapter usersTableAdapter;
         private DataSets.WSRDataSetCountry wSRDataSetCountry;
         private DataSets.WSRDataSetCountryTableAdapters.getCountryCodeTableAdapter getCountryCodeTableAdapter;
@@ -650,5 +649,6 @@
         private System.Windows.Forms.BindingSource usersBindingSource1;
         private MetroFramework.Controls.MetroButton deleteButton1;
         private System.Windows.Forms.ErrorProvider error;
+        private DataSets.WSRDataSetUsers wsrDataSetUsers1;
     }
 }

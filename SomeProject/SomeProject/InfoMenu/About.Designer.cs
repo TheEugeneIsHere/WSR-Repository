@@ -32,17 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.infoLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timerLabel = new MetroFramework.Controls.MetroLabel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.infoLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.infoLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.infoLabel2 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerLabel = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -82,33 +82,6 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // infoLabel2
-            // 
-            this.infoLabel2.Location = new System.Drawing.Point(3, 24);
-            this.infoLabel2.Name = "infoLabel2";
-            this.infoLabel2.Size = new System.Drawing.Size(457, 180);
-            this.infoLabel2.TabIndex = 6;
-            this.infoLabel2.Text = resources.GetString("infoLabel2.Text");
-            this.infoLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.infoLabel2.WrapToLine = true;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            // 
-            // timerLabel
-            // 
-            this.timerLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.timerLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.timerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.timerLabel.Location = new System.Drawing.Point(20, 458);
-            this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(829, 30);
-            this.timerLabel.TabIndex = 27;
-            this.timerLabel.Text = "Loading...";
-            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // metroPanel2
             // 
             this.metroPanel2.Controls.Add(this.metroLabel3);
@@ -118,13 +91,35 @@
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(327, 3);
+            this.metroPanel2.Location = new System.Drawing.Point(325, 3);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(463, 351);
             this.metroPanel2.TabIndex = 7;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel3.Location = new System.Drawing.Point(196, 204);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(70, 19);
+            this.metroLabel3.TabIndex = 30;
+            this.metroLabel3.Text = "События";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel3.WrapToLine = true;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.Location = new System.Drawing.Point(3, 201);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(457, 147);
+            this.metroLabel2.TabIndex = 29;
+            this.metroLabel2.Text = resources.GetString("metroLabel2.Text");
+            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroLabel2.WrapToLine = true;
             // 
             // infoLabel1
             // 
@@ -138,27 +133,15 @@
             this.infoLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.infoLabel1.WrapToLine = true;
             // 
-            // metroLabel2
+            // infoLabel2
             // 
-            this.metroLabel2.Location = new System.Drawing.Point(3, 201);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(457, 147);
-            this.metroLabel2.TabIndex = 29;
-            this.metroLabel2.Text = resources.GetString("metroLabel2.Text");
-            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.metroLabel2.WrapToLine = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel3.Location = new System.Drawing.Point(196, 204);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(70, 19);
-            this.metroLabel3.TabIndex = 30;
-            this.metroLabel3.Text = "События";
-            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel3.WrapToLine = true;
+            this.infoLabel2.Location = new System.Drawing.Point(3, 24);
+            this.infoLabel2.Name = "infoLabel2";
+            this.infoLabel2.Size = new System.Drawing.Size(457, 180);
+            this.infoLabel2.TabIndex = 6;
+            this.infoLabel2.Text = resources.GetString("infoLabel2.Text");
+            this.infoLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.infoLabel2.WrapToLine = true;
             // 
             // pictureBox5
             // 
@@ -176,7 +159,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::SomeProject.Properties.Resources.marathon_image;
+            this.pictureBox4.Image = global::SomeProject.Properties.Resources.MarathonImage;
             this.pictureBox4.Location = new System.Drawing.Point(171, 196);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(138, 138);
@@ -187,7 +170,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = global::SomeProject.Properties.Resources.teatro_municipal;
+            this.pictureBox3.Image = global::SomeProject.Properties.Resources.TeatroMunicipal;
             this.pictureBox3.Location = new System.Drawing.Point(21, 196);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(138, 138);
@@ -206,10 +189,27 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            // 
+            // timerLabel
+            // 
+            this.timerLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.timerLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.timerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.timerLabel.Location = new System.Drawing.Point(20, 458);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(829, 30);
+            this.timerLabel.TabIndex = 27;
+            this.timerLabel.Text = "Loading...";
+            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
+            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons_back;
             this.pictureBox1.Location = new System.Drawing.Point(38, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);

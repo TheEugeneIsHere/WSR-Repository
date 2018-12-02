@@ -12,8 +12,7 @@ namespace SomeProject
         {
             InitializeComponent();
             timer1.Start();
-            backLoad.DoWork += (obj, ea) => CharityLoad();
-            backLoad.RunWorkerAsync();
+            CharityLoad();
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -47,7 +46,6 @@ namespace SomeProject
             aCharityAdd CharityAddForm = new aCharityAdd();
             CharityAddForm.Show();
             Hide();
-            if (backLoad.IsBusy) { backLoad.CancelAsync(); }
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -55,7 +53,6 @@ namespace SomeProject
             AdminForm AdminMenu = new AdminForm();
             AdminMenu.Show();
             Hide();
-            if (backLoad.IsBusy) { backLoad.CancelAsync(); }
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
@@ -75,11 +72,5 @@ namespace SomeProject
             }
         }
 
-        private void BackLoad_Completed(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
-        {
-            pictureBox2.Visible = false;
-            pictureBox2.Enabled = false;
-            metroGrid1.DataSource = wSRDataSetCharity1.Tables[0];
-        }
     }
 }

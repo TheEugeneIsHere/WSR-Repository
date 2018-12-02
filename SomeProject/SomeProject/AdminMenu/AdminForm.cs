@@ -42,35 +42,30 @@ namespace SomeProject
 
         private void MetroTile1_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.AppStarting;
             aUsers UsersForm = new aUsers();
             UsersForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
         private void MetroTile2_Click(object sender, EventArgs e)
         {
             aVolunteer VolunteerForm = new aVolunteer();
             VolunteerForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
         private void MetroTile3_Click(object sender, EventArgs e)
         {
             aCharity CharityForm = new aCharity();
             CharityForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
         private void LogoutPic_Click(object sender, EventArgs e)
         {
             Form1 MainForm = new Form1();
             MainForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)

@@ -12,7 +12,7 @@ namespace SomeProject
             timer1.Tick += timer1_Tick;
             timer1.Start();
         }
-
+        // Distance не используется. А вдруг ты снова не знал? Азаза
         int distance = 0, stoim=0,vznos = 0, variant = 0,itog=0;
         ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
         SqlConnection con = Сonnection.AzureConnection();
@@ -138,7 +138,7 @@ namespace SomeProject
                 int charityid = r.Next(1, 10);
                 id = generateid() + 1;
 
-                string query = "";
+                string query = ""; // Переменная не используется. Ну а вдруг ты не знал?
                 MessageBox.Show("В теории вы зареганы, по факту система не работает...", "Продам гараж");
 
             }

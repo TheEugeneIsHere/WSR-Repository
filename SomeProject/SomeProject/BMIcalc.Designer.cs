@@ -267,7 +267,7 @@
             // womanBox
             // 
             this.womanBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.womanBox.Image = global::SomeProject.Properties.Resources.woman;
+            this.womanBox.Image = global::SomeProject.Properties.Resources.BMIwoman;
             this.womanBox.Location = new System.Drawing.Point(259, 205);
             this.womanBox.Name = "womanBox";
             this.womanBox.Size = new System.Drawing.Size(105, 104);
@@ -279,7 +279,7 @@
             // manBox
             // 
             this.manBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.manBox.Image = global::SomeProject.Properties.Resources.man;
+            this.manBox.Image = global::SomeProject.Properties.Resources.BMIman;
             this.manBox.Location = new System.Drawing.Point(86, 205);
             this.manBox.Name = "manBox";
             this.manBox.Size = new System.Drawing.Size(105, 104);
@@ -291,7 +291,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
+            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons_back;
             this.pictureBox1.Location = new System.Drawing.Point(38, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
