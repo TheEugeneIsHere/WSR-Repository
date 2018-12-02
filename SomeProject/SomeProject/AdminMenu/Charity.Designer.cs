@@ -42,15 +42,18 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.charityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wSRDataSetCharity1 = new SomeProject.DataSets.WSRDataSetCharity();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.timerLabel = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.charityTableAdapter = new SomeProject.DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.backLoad = new System.ComponentModel.BackgroundWorker();
+            this.LoaderPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoaderPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -164,17 +167,17 @@
             this.wSRDataSetCharity1.DataSetName = "WSRDataSetCharity";
             this.wSRDataSetCharity1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // metroLabel3
+            // timerLabel
             // 
-            this.metroLabel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(20, 458);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(829, 30);
-            this.metroLabel3.TabIndex = 18;
-            this.metroLabel3.Text = "Loading...";
-            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timerLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.timerLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.timerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.timerLabel.Location = new System.Drawing.Point(20, 458);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(829, 30);
+            this.timerLabel.TabIndex = 18;
+            this.timerLabel.Text = "Loading...";
+            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -208,13 +211,30 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
+            // backLoad
+            // 
+            this.backLoad.WorkerSupportsCancellation = true;
+            this.backLoad.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackLoad_DoWork);
+            this.backLoad.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackLoad_RunWorkerCompleted);
+            // 
+            // LoaderPictureBox
+            // 
+            this.LoaderPictureBox.Image = global::SomeProject.Properties.Resources.FormLoading;
+            this.LoaderPictureBox.Location = new System.Drawing.Point(20, 124);
+            this.LoaderPictureBox.Name = "LoaderPictureBox";
+            this.LoaderPictureBox.Size = new System.Drawing.Size(829, 331);
+            this.LoaderPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LoaderPictureBox.TabIndex = 20;
+            this.LoaderPictureBox.TabStop = false;
+            // 
             // aCharity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.Controls.Add(this.LoaderPictureBox);
             this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
@@ -228,6 +248,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoaderPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,14 +258,16 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroGrid metroGrid1;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel timerLabel;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroButton metroButton1;
         private DataSets.WSRDataSetCharity wSRDataSetCharity1;
         private System.Windows.Forms.BindingSource charityBindingSource;
         private DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter charityTableAdapter;
+        private System.ComponentModel.BackgroundWorker backLoad;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.PictureBox LoaderPictureBox;
     }
 }

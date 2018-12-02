@@ -6,22 +6,19 @@ namespace SomeProject
 {
     public partial class Login : MetroFramework.Forms.MetroForm
     {
+
         public Login()
         {
             InitializeComponent();
             this.Text = "MARATHON IS";
-
-            timer1.Tick += timer1_Tick;
+            timer1.Tick += TimerTick;
             timer1.Start();
-            
-
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
-            timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
-            " часов и " + timeremaining.Minutes + " минут до Нового Года";
+            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -38,45 +35,46 @@ namespace SomeProject
             f1.Show();
             Hide();
         }
+
         enum Role { Failed, R, C, A }
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
             login();
         }
+
         static Role GetRole(string login, string password)
         {
             Role role = Role.Failed;
-            using (var connection = new SqlConnection(@"Server=tcp:wsrcurse.database.windows.net,1433;Initial Catalog=WSR;" +
-                "Persist Security Info=False;User ID=TheEugene;Password=TimCookIsGay7.;" +
-                "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-            {
-                connection.Open();
-                var command = new SqlCommand("SELECT RoleId FROM Users WHERE email=@email and password=@password", connection);
-                command.Parameters.AddWithValue("@email", login);
-                command.Parameters.AddWithValue("@password", password);
+            SqlConnection con = Сonnection.AzureConnection();
+            con.Open();
+            var command = new SqlCommand("SELECT RoleId FROM Users WHERE email=@email and password=@password", con);
+            command.Parameters.AddWithValue("@email", login);
+            command.Parameters.AddWithValue("@password", password);
 
-                using (var dataReader = command.ExecuteReader())
+            using (var dataReader = command.ExecuteReader())
+            {
+                if (dataReader.Read())
                 {
-                    if (dataReader.Read())
+                    if ((string)dataReader["Roleid"] == "R")
                     {
-                        if ((string)dataReader["Roleid"] == "R")
-                        {
-                            role = Role.R;
-                           
-                        }
-                        if ((string)dataReader["Roleid"] == "A" || (string)dataReader["Roleid"] == "O")
-                        {
-                            role = Role.A;
-                        }
-                        if ((string)dataReader["Roleid"] == "C")
-                        {
-                            role = Role.C;
-                        }
+                        role = Role.R;
+
+                    }
+                    if ((string)dataReader["Roleid"] == "A" || (string)dataReader["Roleid"] == "O")
+                    {
+                        role = Role.A;
+                    }
+                    if ((string)dataReader["Roleid"] == "C")
+                    {
+                        role = Role.C;
                     }
                 }
-                return role;
             }
+            con.Close();
+            return role;
         }
+
         private void login()
         {
             Role role = GetRole(metroTextBox1.Text, metroTextBox2.Text);
@@ -90,33 +88,29 @@ namespace SomeProject
                 if (role == Role.A)
                 {
                     var form = new AdminForm();
-                    this.Hide();
-                    form.ShowDialog();
-                    
+                    form.Show();
+                    Hide();
                 }
                 else if (role == Role.C)
                 {
                     var form = new CoordinatorForm();
-                    this.Hide();
-                    form.ShowDialog();
-
-                   
+                    form.Show();
+                    Hide();
                 }
                 else if (role == Role.R)
                 {
                     // connection.mail = metroTextBox1.Text;
-                     Сonnection.Password = metroTextBox2.Text;
-                    // Из-за этих строк (Их расположения в IF роль = бегун у меня не работает приветствие
-                    // Я особо не вникал, но как по мне без разницы бегун или нет, всё равно надо пихать в connection.mail
-                    // Поэтому я Password здесь оставлю, ашто он не нужен если адмэн как по мне
-                    // А connection.mail присвою в любом случае
-                    // Если что-то из этого критично - пиши, намутим по-другому
-                    // P.S. Я минут 40 всматривался в твой и свой код, не понимая что не так, пока не заметил что connection.mail
-                    // ..находится в блоке If Runner ......
+                    Сonnection.Password = metroTextBox2.Text;
+                    /* Из-за этих строк (Их расположения в IF роль = бегун у меня не работает приветствие
+                       Я особо не вникал, но как по мне без разницы бегун или нет, всё равно надо пихать в connection.mail
+                       Поэтому я Password здесь оставлю, ашто он не нужен если адмэн как по мне
+                       А connection.mail присвою в любом случае
+                       Если что-то из этого критично - пиши, намутим по-другому
+                       P.S. Я минут 40 всматривался в твой и свой код, не понимая что не так, пока не заметил что connection.mail
+                       ..находится в блоке If Runner ...... */
                     var form = new RunnerForm();
-                    this.Hide();                    
-                    form.ShowDialog();
-                    
+                    form.Show();
+                    Hide();
                 }
             }
         }
@@ -125,7 +119,7 @@ namespace SomeProject
         private void metroButton3_Click(object sender, EventArgs e)
         {
             metroTextBox1.Text = "a.adkin@dayrep.net";
-            metroTextBox2.Text = "jwZh2x@p";
+            metroTextBox2.Text = "1234";
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
@@ -133,27 +127,6 @@ namespace SomeProject
             metroTextBox1.Text = "leila.azedeva@mskills.com";
             metroTextBox2.Text = "MvTQ3itX";
             login(); // Не за что ага
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            if (Сonnection.Theme)
-            {
-                Theme = MetroFramework.MetroThemeStyle.Dark;
-                timerLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
-                timerLabel.Style = MetroFramework.MetroColorStyle.White;
-                metroLabel2.Style = MetroFramework.MetroColorStyle.White;
-                metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroLabel3.Style = MetroFramework.MetroColorStyle.White;
-                metroLabel4.Style = MetroFramework.MetroColorStyle.White;
-                metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroTextBox2.Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark;
-                metroLabel5.Style = MetroFramework.MetroColorStyle.White;
-
-            }
         }
 
         private void metroLabel1_Click(object sender, EventArgs e)

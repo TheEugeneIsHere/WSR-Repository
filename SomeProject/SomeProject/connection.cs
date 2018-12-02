@@ -11,7 +11,13 @@ namespace SomeProject
         public static bool Theme { get; set; }
 
         /* Уютный Готэм Дениса */
-        public static DateTime GetTime { get; } = new DateTime(2018, 12, 31, 23, 59, 59);
+        private TimeSpan TimeRemaining = new DateTime(2018, 12, 31, 23, 59, 59) - DateTime.Now;
+        public string GetTime()
+        {
+            string Time = TimeRemaining.Days + " дней " + TimeRemaining.Hours +
+            " часов и " + TimeRemaining.Minutes + " минут до Нового Года";
+            return Time;
+        }
         public static string EditMail { get; set; }
 
         /* Бэтмобиль */

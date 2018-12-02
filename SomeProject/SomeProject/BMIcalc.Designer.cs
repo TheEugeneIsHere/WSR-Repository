@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BMIcalc));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.timerLabel = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -78,17 +78,17 @@
             this.metroLabel2.Text = resources.GetString("metroLabel2.Text");
             this.metroLabel2.UseCustomForeColor = true;
             // 
-            // metroLabel4
+            // timerLabel
             // 
-            this.metroLabel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(20, 458);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(829, 30);
-            this.metroLabel4.TabIndex = 60;
-            this.metroLabel4.Text = "Loading...";
-            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timerLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.timerLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.timerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.timerLabel.Location = new System.Drawing.Point(20, 458);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(829, 30);
+            this.timerLabel.TabIndex = 60;
+            this.timerLabel.Text = "Loading...";
+            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -334,7 +334,7 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.womanBox);
             this.Controls.Add(this.manBox);
-            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pictureBox1);
@@ -358,7 +358,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel timerLabel;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox manBox;
         private System.Windows.Forms.PictureBox womanBox;

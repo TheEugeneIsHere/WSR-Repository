@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aUsersEdit));
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.timerLabel = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.updateButton1 = new MetroFramework.Controls.MetroButton();
@@ -80,17 +80,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.wsrDataSetUsers1)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroLabel4
+            // timerLabel
             // 
-            this.metroLabel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(20, 458);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(829, 30);
-            this.metroLabel4.TabIndex = 31;
-            this.metroLabel4.Text = "Loading...";
-            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timerLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.timerLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.timerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.timerLabel.Location = new System.Drawing.Point(20, 458);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(829, 30);
+            this.timerLabel.TabIndex = 31;
+            this.timerLabel.Text = "Loading...";
+            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -584,7 +584,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroLabel12);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -611,7 +611,7 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel timerLabel;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton updateButton1;

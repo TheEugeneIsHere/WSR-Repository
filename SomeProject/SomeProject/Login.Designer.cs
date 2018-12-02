@@ -51,7 +51,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // timerLabel
             // 
@@ -280,9 +280,8 @@
             this.Controls.Add(this.timerLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
-            this.Style = MetroFramework.MetroColorStyle.Black;
+            this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = " ";
-            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

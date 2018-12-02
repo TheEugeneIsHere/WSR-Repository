@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -12,14 +13,13 @@ namespace SomeProject
         {
             InitializeComponent();
             timer1.Start();
-            CharityLoad();
+            if (!backLoad.IsBusy) backLoad.RunWorkerAsync();
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
-            metroLabel3.Text = timeremaining.Days + " дней " + timeremaining.Hours +
-            " часов и " + timeremaining.Minutes + " минут до Нового Года";
+            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private void CharityLoad()
@@ -27,9 +27,11 @@ namespace SomeProject
             try
             {
                 con.Open();
+                metroGrid1.DataSource = null;
                 metroGrid1.Columns[0].DefaultCellStyle.NullValue = Properties.Resources.tile_Blago;
                 SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityName, CharityDescription, CharityLogo FROM Charity", con);
                 ad.Fill(wSRDataSetCharity1, "Charity");
+                backLoad.CancelAsync();
             }
             catch (Exception ex)
             {
@@ -72,5 +74,16 @@ namespace SomeProject
             }
         }
 
+        private void BackLoad_DoWork(object sender, DoWorkEventArgs e)
+        {
+            CharityLoad();
+        }
+
+        private void BackLoad_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            metroGrid1.DataSource = charityBindingSource;
+            LoaderPictureBox.Visible = false;
+            LoaderPictureBox.Enabled = false;
+        }
     }
 }

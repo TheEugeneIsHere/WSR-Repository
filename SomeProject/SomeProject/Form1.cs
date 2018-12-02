@@ -49,9 +49,8 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
-            timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
-            " часов и " + timeremaining.Minutes + " минут до сдачи курсового";
+            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private void MetroTile1_Click(object sender, EventArgs e)

@@ -35,7 +35,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aVolunteer));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.timerLabel = new MetroFramework.Controls.MetroLabel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,17 +78,17 @@
             this.metroLabel2.Text = "Управление волонтёрами";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // metroLabel4
+            // timerLabel
             // 
-            this.metroLabel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(20, 458);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(829, 30);
-            this.metroLabel4.TabIndex = 29;
-            this.metroLabel4.Text = "Loading...";
-            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timerLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.timerLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.timerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.timerLabel.Location = new System.Drawing.Point(20, 458);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(829, 30);
+            this.timerLabel.TabIndex = 29;
+            this.timerLabel.Text = "Loading...";
+            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroGrid1
             // 
@@ -311,7 +311,7 @@
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroGrid1);
-            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -337,7 +337,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel timerLabel;
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;

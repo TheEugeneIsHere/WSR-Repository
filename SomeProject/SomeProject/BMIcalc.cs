@@ -23,9 +23,8 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
-            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
-            " часов и " + timeremaining.Minutes + " минут до Нового Года";
+            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private void MetroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
