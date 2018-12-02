@@ -122,8 +122,8 @@ namespace SomeProject
         /*временный мусор*/
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            metroTextBox1.Text = "a.adkin@dayrep.net";
-            metroTextBox2.Text = "jwZh2x@p";
+            metroTextBox1.Text = "a.ashton@saucedout.com";
+            metroTextBox2.Text = "123456789";
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
