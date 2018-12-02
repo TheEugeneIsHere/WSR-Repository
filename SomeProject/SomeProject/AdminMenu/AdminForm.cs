@@ -6,22 +6,21 @@ namespace SomeProject
 {
     public partial class AdminForm : MetroFramework.Forms.MetroForm
     {
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
 
         public AdminForm()
         {
             InitializeComponent();
-            getLogin();
-            timer1.Tick += timer1_Tick;
+            GetLogin();
             timer1.Start();
         }
 
-        private void getLogin()
+        private void GetLogin()
         {
             try
             {
                 con.Open();
-                SqlCommand login = new SqlCommand("SELECT FirstName FROM Users WHERE Email = '" + connection.mail + "'", con);
+                SqlCommand login = new SqlCommand("SELECT FirstName FROM Users WHERE Email = '" + Сonnection.Mail + "'", con);
                 loginLabel.Text += login.ExecuteScalar().ToString();
             }
             catch (Exception ex)
@@ -34,44 +33,39 @@ namespace SomeProject
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
-        private void metroTile1_Click(object sender, EventArgs e)
+        private void MetroTile1_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.AppStarting;
             aUsers UsersForm = new aUsers();
             UsersForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void metroTile2_Click(object sender, EventArgs e)
+        private void MetroTile2_Click(object sender, EventArgs e)
         {
             aVolunteer VolunteerForm = new aVolunteer();
             VolunteerForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void metroTile3_Click(object sender, EventArgs e)
+        private void MetroTile3_Click(object sender, EventArgs e)
         {
             aCharity CharityForm = new aCharity();
             CharityForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void logoutPic_Click(object sender, EventArgs e)
+        private void LogoutPic_Click(object sender, EventArgs e)
         {
             Form1 MainForm = new Form1();
             MainForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
@@ -90,5 +84,6 @@ namespace SomeProject
                 }
             }
         }
+
     }
 }

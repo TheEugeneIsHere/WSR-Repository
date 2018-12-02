@@ -94,7 +94,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // metroLabel3
             // 
@@ -170,7 +170,7 @@
             this.hCombo.WaterMark = "175";
             this.hCombo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.hCombo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.hCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox1_KeyPress);
+            this.hCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MetroTextBox1_KeyPress);
             // 
             // wCombo
             // 
@@ -206,7 +206,7 @@
             this.wCombo.WaterMark = "75";
             this.wCombo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.wCombo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.wCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox1_KeyPress);
+            this.wCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MetroTextBox1_KeyPress);
             // 
             // metroLabel8
             // 
@@ -235,7 +235,7 @@
             this.metroButton1.TabIndex = 72;
             this.metroButton1.Text = "Рассчитать";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // imtLabel
             // 
@@ -267,38 +267,38 @@
             // womanBox
             // 
             this.womanBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.womanBox.Image = global::SomeProject.Properties.Resources.woman;
+            this.womanBox.Image = global::SomeProject.Properties.Resources.BMIwoman;
             this.womanBox.Location = new System.Drawing.Point(259, 205);
             this.womanBox.Name = "womanBox";
             this.womanBox.Size = new System.Drawing.Size(105, 104);
             this.womanBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.womanBox.TabIndex = 62;
             this.womanBox.TabStop = false;
-            this.womanBox.Click += new System.EventHandler(this.womanBoxClicked);
+            this.womanBox.Click += new System.EventHandler(this.WomanBoxClicked);
             // 
             // manBox
             // 
             this.manBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.manBox.Image = global::SomeProject.Properties.Resources.man;
+            this.manBox.Image = global::SomeProject.Properties.Resources.BMIman;
             this.manBox.Location = new System.Drawing.Point(86, 205);
             this.manBox.Name = "manBox";
             this.manBox.Size = new System.Drawing.Size(105, 104);
             this.manBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.manBox.TabIndex = 61;
             this.manBox.TabStop = false;
-            this.manBox.Click += new System.EventHandler(this.manBoxClicked);
+            this.manBox.Click += new System.EventHandler(this.ManBoxClicked);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
+            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons_back;
             this.pictureBox1.Location = new System.Drawing.Point(38, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // imtTextLabel
             // 

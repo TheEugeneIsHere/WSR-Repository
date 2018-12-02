@@ -62,22 +62,22 @@
             this.runnerLabel1 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel2 = new MetroFramework.Controls.MetroLabel();
             this.runnerLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.wsrDataSetUsers1 = new SomeProject.DataSets.WSRDataSetUsers();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.usersTableAdapter = new SomeProject.DataSets.WSRDataSetUsersTableAdapters.UsersTableAdapter();
             this.getCountryCodeTableAdapter = new SomeProject.DataSets.WSRDataSetCountryTableAdapters.getCountryCodeTableAdapter();
             this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.deleteButton1 = new MetroFramework.Controls.MetroButton();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.wsrDataSetUsers1 = new SomeProject.DataSets.WSRDataSetUsers();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getCountryCodeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wsrDataSetUsers1)).BeginInit();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wsrDataSetUsers1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel4
@@ -96,7 +96,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // metroButton2
             // 
@@ -120,7 +120,7 @@
             this.updateButton1.TabIndex = 74;
             this.updateButton1.Text = "Сохранить";
             this.updateButton1.UseSelectable = true;
-            this.updateButton1.Click += new System.EventHandler(this.updateUser_Click);
+            this.updateButton1.Click += new System.EventHandler(this.UpdateUser_Click);
             // 
             // metroLabel9
             // 
@@ -275,7 +275,7 @@
             this.userInfo3.Size = new System.Drawing.Size(94, 29);
             this.userInfo3.TabIndex = 65;
             this.userInfo3.UseSelectable = true;
-            this.userInfo3.TextChanged += new System.EventHandler(this.userInfo3_TextChanged);
+            this.userInfo3.TextChanged += new System.EventHandler(this.UserInfo3_TextChanged);
             // 
             // userInfo1
             // 
@@ -308,7 +308,7 @@
             this.userInfo1.WaterMark = "Иван";
             this.userInfo1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.userInfo1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.userInfo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userInfo1_KeyPress);
+            this.userInfo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserInfo1_KeyPress);
             // 
             // userInfo2
             // 
@@ -341,7 +341,7 @@
             this.userInfo2.WaterMark = "Иванов";
             this.userInfo2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.userInfo2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.userInfo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userInfo2_KeyPress);
+            this.userInfo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserInfo2_KeyPress);
             // 
             // metroLabel1
             // 
@@ -359,19 +359,19 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::SomeProject.Properties.Resources.exit_Admin;
+            this.pictureBox2.Image = global::SomeProject.Properties.Resources.aExit;
             this.pictureBox2.Location = new System.Drawing.Point(811, 57);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 57;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.logoutPic_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.LogoutPic_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
+            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons_back;
             this.pictureBox1.Location = new System.Drawing.Point(38, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
@@ -515,11 +515,6 @@
             this.runnerLabel3.TabIndex = 61;
             this.runnerLabel3.Text = "Страна";
             // 
-            // wsrDataSetUsers1
-            // 
-            this.wsrDataSetUsers1.DataSetName = "WSRDataSetUsers";
-            this.wsrDataSetUsers1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // metroPanel2
             // 
             this.metroPanel2.Controls.Add(this.metroLabel11);
@@ -560,12 +555,17 @@
             this.deleteButton1.TabIndex = 79;
             this.deleteButton1.Text = "Удалить пользователя";
             this.deleteButton1.UseSelectable = true;
-            this.deleteButton1.Click += new System.EventHandler(this.deleteUser_Click);
+            this.deleteButton1.Click += new System.EventHandler(this.DeleteUser_Click);
             // 
             // error
             // 
             this.error.ContainerControl = this;
             this.error.Icon = ((System.Drawing.Icon)(resources.GetObject("error.Icon")));
+            // 
+            // wsrDataSetUsers1
+            // 
+            this.wsrDataSetUsers1.DataSetName = "WSRDataSetUsers";
+            this.wsrDataSetUsers1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // aUsersEdit
             // 
@@ -599,11 +599,11 @@
             this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getCountryCodeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCountry)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wsrDataSetUsers1)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wsrDataSetUsers1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,7 +642,6 @@
         private MetroFramework.Controls.MetroLabel runnerLabel2;
         private MetroFramework.Controls.MetroLabel runnerLabel3;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private DataSets.WSRDataSetUsers wsrDataSetUsers1;
         private DataSets.WSRDataSetUsersTableAdapters.UsersTableAdapter usersTableAdapter;
         private DataSets.WSRDataSetCountry wSRDataSetCountry;
         private DataSets.WSRDataSetCountryTableAdapters.getCountryCodeTableAdapter getCountryCodeTableAdapter;
@@ -650,5 +649,6 @@
         private System.Windows.Forms.BindingSource usersBindingSource1;
         private MetroFramework.Controls.MetroButton deleteButton1;
         private System.Windows.Forms.ErrorProvider error;
+        private DataSets.WSRDataSetUsers wsrDataSetUsers1;
     }
 }

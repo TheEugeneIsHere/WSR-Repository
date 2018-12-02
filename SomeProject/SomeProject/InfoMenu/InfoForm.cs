@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class aVolunteerAdd : MetroFramework.Forms.MetroForm
+    public partial class InfoForm : MetroFramework.Forms.MetroForm
     {
-        public aVolunteerAdd()
+        public InfoForm()
         {
             InitializeComponent();
             timer1.Start();
@@ -14,31 +14,21 @@ namespace SomeProject
         private void TimerTick(object sender, EventArgs e)
         {
             TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
-            metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
+            timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
-        }
-
-        private void MetroTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("Этого произойти было не должно"); 
-        }
-
-        private void MetroButton1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            aVolunteer VolunteerForm = new aVolunteer();
-            VolunteerForm.Show();
+            Form1 MainMenu = new Form1();
+            MainMenu.Show();
             Hide();
         }
 
-        private void PictureBox2_Click(object sender, EventArgs e)
+        private void MetroTile1_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1();
-            MainForm.Show();
+            About about = new About();
+            about.Show();
             Hide();
         }
 

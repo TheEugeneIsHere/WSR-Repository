@@ -6,19 +6,18 @@ namespace SomeProject
 {
     public partial class aCharity : MetroFramework.Forms.MetroForm
     {
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
 
         public aCharity()
         {
             InitializeComponent();
-            CharityLoad();
-            timer1.Tick += timer1_Tick;
             timer1.Start();
+            CharityLoad();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             metroLabel3.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
@@ -28,8 +27,8 @@ namespace SomeProject
             try
             {
                 con.Open();
+                metroGrid1.Columns[0].DefaultCellStyle.NullValue = Properties.Resources.tile_Blago;
                 SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityName, CharityDescription, CharityLogo FROM Charity", con);
-                metroGrid1.Columns[0].DefaultCellStyle.NullValue = (System.Drawing.Image)Properties.Resources.tile_Blago;
                 ad.Fill(wSRDataSetCharity1, "Charity");
             }
             catch (Exception ex)
@@ -42,20 +41,18 @@ namespace SomeProject
             }
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
             aCharityAdd CharityAddForm = new aCharityAdd();
             CharityAddForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             AdminForm AdminMenu = new AdminForm();
             AdminMenu.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
@@ -74,5 +71,6 @@ namespace SomeProject
                 }
             }
         }
+
     }
 }

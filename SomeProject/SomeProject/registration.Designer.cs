@@ -441,7 +441,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::SomeProject.Properties.Resources.icons8_администратор_240;
+            this.pictureBox2.Image = global::SomeProject.Properties.Resources.icons_Admin;
             this.pictureBox2.Location = new System.Drawing.Point(207, 9);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(136, 107);
@@ -452,7 +452,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons8_стрелка_влево_64;
+            this.pictureBox1.Image = global::SomeProject.Properties.Resources.icons_back;
             this.pictureBox1.Location = new System.Drawing.Point(23, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
@@ -655,7 +655,6 @@
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
     }

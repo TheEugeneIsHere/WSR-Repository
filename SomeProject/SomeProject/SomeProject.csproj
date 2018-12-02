@@ -88,6 +88,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InfoMenu\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoMenu\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminMenu\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,7 +160,7 @@
     <Compile Include="CoordinatorForm.Designer.cs">
       <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="connection.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="DataSets\WSRDataSetUsers.cs">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </Compile>
@@ -169,6 +175,18 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoMenu\InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoMenu\InfoForm.Designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoMenu\InteractiveMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoMenu\InteractiveMap.Designer.cs">
+      <DependentUpon>InteractiveMap.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -284,6 +302,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InfoMenu\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoMenu\InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoMenu\InteractiveMap.resx">
+      <DependentUpon>InteractiveMap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,19 +399,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-упражнение-26.png" />
+    <None Include="Resources\icons_Run.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-краудфандинг-24.png" />
+    <None Include="Resources\icons_Crowdfouning.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-о-нас-26.png" />
+    <None Include="Resources\icons_About.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-стрелка-влево-641.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-администратор-240.png" />
+    <None Include="Resources\icons_Admin.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\users_admin.png" />
@@ -402,12 +426,18 @@
     <None Include="Resources\tile_Inventory.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\exit_Admin.png" />
+    <None Include="Resources\aExit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wikivoyage-logo.svg.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\TeatroMunicipal.jpg" />
+    <None Include="Resources\map_PictureBoxLabel.png" />
+    <None Include="Resources\MarathonImage.jpg" />
+    <None Include="Resources\InteractiveMap.jpg" />
+    <None Include="Resources\FormLoading.gif" />
+    <Content Include="Resources\icons_back.png" />
+    <None Include="Resources\icons_Results.png" />
+    <None Include="Resources\icons_Pen.png" />
+    <Content Include="Resources\point.png" />
     <Content Include="Resources\project_icon.ico" />
     <None Include="Resources\bmiManBad.png" />
     <None Include="Resources\bmiWomanSoSo.png" />
@@ -420,8 +450,8 @@
     <None Include="Resources\bmiManGood.png" />
     <None Include="Resources\bmiManDefault.png" />
     <None Include="Resources\charityDefaultLogo.png" />
-    <None Include="Resources\woman.png" />
-    <None Include="Resources\man.png" />
+    <None Include="Resources\BMIwoman.png" />
+    <None Include="Resources\BMIman.png" />
     <None Include="Resources\bmiCalc.png" />
     <None Include="Resources\refresh_icon.png" />
   </ItemGroup>

@@ -5,16 +5,17 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
+#pragma warning disable IDE1006
     public partial class aUsersAdd : MetroFramework.Forms.MetroForm
+#pragma warning restore IDE1006
     {
+        SqlConnection con = Сonnection.AzureConnection();
         private static string query;
         private static char Role;
-        SqlConnection con = connection.AzureConnection();
         
         public aUsersAdd()
         {
             InitializeComponent();
-            timer1.Tick += timer1_Tick;
             timer1.Start();
         }
 
@@ -28,8 +29,7 @@ namespace SomeProject
                 MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "WSR: Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 aUsers usersForm = new aUsers();
                 usersForm.Show();
-                this.Hide();
-                this.Dispose();
+                Hide();
             }
             catch (Exception ex)
             {
@@ -48,9 +48,9 @@ namespace SomeProject
             return isMatch.Success;
         }
 
-        private void metroPanelToggle(object sender, EventArgs e)
+        private void MetroPanelToggle(object sender, EventArgs e)
         {
-            error.SetError(metroComboBox2, String.Empty);
+            error.SetError(metroComboBox2, string.Empty);
             if (metroComboBox2.Text == "Бегун")
             {
                 metroPanel1.Visible = true;
@@ -63,24 +63,24 @@ namespace SomeProject
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             metroLabel4.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
-        private void metroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void MetroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
             {
                 e.Handled = true;
                 error.SetError(metroTextBox1, "Адрес электронной почты не может содержать русские буквы");
             }
-            else { error.SetError(metroTextBox1, String.Empty); }
+            else { error.SetError(metroTextBox1, string.Empty); }
         }
 
-        private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void MetroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
             {
@@ -90,10 +90,10 @@ namespace SomeProject
                 }
                 e.Handled = true;
             }
-            else { error.SetError(metroTextBox2, String.Empty); }
+            else { error.SetError(metroTextBox2, string.Empty); }
         }
 
-        private void metroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        private void MetroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
             {
@@ -103,7 +103,7 @@ namespace SomeProject
                 }
                 e.Handled = true;
             }
-            else { error.SetError(metroTextBox3, String.Empty); }
+            else { error.SetError(metroTextBox3, string.Empty); }
         }
 
         private void AddQuery_Click(object sender, EventArgs e)
@@ -128,7 +128,6 @@ namespace SomeProject
             }
             finally
             {
-                isRegistered.Dispose();
                 con.Close();
             }
 
@@ -244,7 +243,7 @@ namespace SomeProject
 
         }
 
-        private void metroPanel1_EnabledChanged(object sender, EventArgs e)
+        private void MetroPanel1_EnabledChanged(object sender, EventArgs e)
         {
             if (metroPanel1.Enabled)
             {
@@ -269,16 +268,14 @@ namespace SomeProject
         {
             aUsers UsersForm = new aUsers();
             UsersForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
             Form1 MainForm = new Form1();
             MainForm.Show();
-            this.Hide();
-            this.Dispose();
+            Hide();
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)

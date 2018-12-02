@@ -12,23 +12,25 @@ namespace SomeProject
             timer1.Tick += timer1_Tick;
             timer1.Start();
         }
-
+        // Distance не используется. А вдруг ты снова не знал? Азаза
         int distance = 0, stoim=0,vznos = 0, variant = 0,itog=0;
         ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
-        SqlConnection con = connection.AzureConnection();
+        SqlConnection con = Сonnection.AzureConnection();
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan timeremaining = connection.voteTime - DateTime.Now;
+            TimeSpan timeremaining = Сonnection.GetTime - DateTime.Now;
             timerLabel.Text = timeremaining.Days + " дней " + timeremaining.Hours +
             " часов и " + timeremaining.Minutes + " минут до Нового Года";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RunnerForm run = new RunnerForm();
-            run.Visible = true;
+            Hide();
+            RunnerForm run = new RunnerForm
+            {
+                Visible = true
+            };
         }
 
         private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
@@ -136,7 +138,7 @@ namespace SomeProject
                 int charityid = r.Next(1, 10);
                 id = generateid() + 1;
 
-                string query = "";
+                string query = ""; // Переменная не используется. Ну а вдруг ты не знал?
                 MessageBox.Show("В теории вы зареганы, по факту система не работает...", "Продам гараж");
 
             }
