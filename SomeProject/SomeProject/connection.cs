@@ -8,17 +8,17 @@ namespace SomeProject
         /*уютный уголок максюши*/
         public static string Mail { get; set; }
         public static string Password { get; set; } 
-        public static bool Theme { get; set; }
 
         /* Уютный Готэм Дениса */
         private TimeSpan TimeRemaining = new DateTime(2018, 12, 31, 23, 59, 59) - DateTime.Now;
+        public static string EditMail { get; set; }
+
         public string GetTime()
         {
             string Time = TimeRemaining.Days + " дней " + TimeRemaining.Hours +
             " часов и " + TimeRemaining.Minutes + " минут до Нового Года";
             return Time;
         }
-        public static string EditMail { get; set; }
 
         /* Бэтмобиль */
         public static SqlConnection AzureConnection()

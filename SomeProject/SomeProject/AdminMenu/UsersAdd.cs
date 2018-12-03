@@ -5,9 +5,7 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-#pragma warning disable IDE1006
     public partial class aUsersAdd : MetroFramework.Forms.MetroForm
-#pragma warning restore IDE1006
     {
         SqlConnection con = Сonnection.AzureConnection();
         private static string query;

@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-
+#pragma warning disable 612, 618
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -342,7 +342,7 @@
         }
 
         #endregion
-
+#pragma warning restore 612, 618
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MetroFramework.Controls.MetroLabel metroLabel1;

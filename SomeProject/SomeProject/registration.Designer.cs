@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-
+#pragma warning disable 612, 618
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -625,7 +625,7 @@
             this.PerformLayout();
 
         }
-
+#pragma warning restore 612, 618
         #endregion
 
         private System.Windows.Forms.Timer timer1;
