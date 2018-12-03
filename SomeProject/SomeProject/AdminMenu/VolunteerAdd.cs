@@ -29,14 +29,20 @@ namespace SomeProject
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            aVolunteer VolunteerForm = new aVolunteer();
+            aVolunteer VolunteerForm = new aVolunteer
+            {
+                Location = Location
+            };
             VolunteerForm.Show();
             Hide();
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1();
+            Form1 MainForm = new Form1
+            {
+                Location = Location
+            };
             MainForm.Show();
             Hide();
         }

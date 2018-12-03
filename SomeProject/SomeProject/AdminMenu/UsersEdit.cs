@@ -131,7 +131,10 @@ namespace SomeProject
             finally
             {
                 con.Close();
-                aUsers UsersForm = new aUsers();
+                aUsers UsersForm = new aUsers
+                {
+                    Location = Location
+                };
                 UsersForm.Show();
                 Hide();
                 Role = '\0';
@@ -201,9 +204,11 @@ namespace SomeProject
                 command.ExecuteNonQuery();
                 MessageBox.Show("Пользователь успешно удалён!", "WSR: Удаление",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
                 aUsers UsersForm = new aUsers();
-                Hide();
+                Location = Location;
                 UsersForm.Show();
+                Hide();
             }
             catch (Exception ex)
             {
@@ -258,14 +263,20 @@ namespace SomeProject
 
         private void BackToUsers_Click(object sender, EventArgs e)
         {
-            aUsers UsersForm = new aUsers();
+            aUsers UsersForm = new aUsers
+            {
+                Location = Location
+            };
             UsersForm.Show();
             Hide();
         }
 
         private void LogoutPic_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1();
+            Form1 MainForm = new Form1
+            {
+                Location = Location
+            };
             MainForm.Show();
             Hide();
         }

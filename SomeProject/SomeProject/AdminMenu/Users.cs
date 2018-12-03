@@ -13,7 +13,7 @@ namespace SomeProject
         {
             InitializeComponent();
             UsersCount();
-            UsersLoad(query);
+            if (!backLoad.IsBusy) backLoad.RunWorkerAsync();
             timer1.Start();
         }
 
@@ -46,9 +46,10 @@ namespace SomeProject
             try
             {
                 con.Open();
+                if (backLoad.IsBusy) metroGrid1.DataSource = null;
                 SqlDataAdapter ad = new SqlDataAdapter(query, con);
                 ad.Fill(wSRDataSetUsers, "Users");
-                metroGrid1.DataSource = wSRDataSetUsers.Tables[0];
+                if (backLoad.IsBusy) backLoad.CancelAsync();
             }
             catch (Exception ex)
             {
@@ -136,7 +137,10 @@ namespace SomeProject
                                 }
                                 else
                                 {
-                                    aUsersEdit UsersEditForm = new aUsersEdit();
+                                    aUsersEdit UsersEditForm = new aUsersEdit
+                                    {
+                                        Location = Location
+                                    };
                                     UsersEditForm.Show();
                                     Hide();
                                 }
@@ -144,7 +148,10 @@ namespace SomeProject
                         }
                         else
                         {
-                            aUsersEdit UsersEditForm = new aUsersEdit();
+                            aUsersEdit UsersEditForm = new aUsersEdit
+                            {
+                                Location = Location
+                            };
                             UsersEditForm.Show();
                             Hide();
                         }
@@ -175,21 +182,30 @@ namespace SomeProject
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            aUsersAdd UsersAddForm = new aUsersAdd();
+            aUsersAdd UsersAddForm = new aUsersAdd
+            {
+                Location = Location
+            };
             UsersAddForm.Show();
             Hide();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            AdminForm AdminMenu = new AdminForm();
+            AdminForm AdminMenu = new AdminForm
+            {
+                Location = Location
+            };
             AdminMenu.Show();
             Hide();
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1();
+            Form1 MainForm = new Form1
+            {
+                Location = Location
+            };
             MainForm.Show();
             Hide();
         }
@@ -219,6 +235,18 @@ namespace SomeProject
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void BackLoad_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            UsersLoad(query);
+        }
+
+        private void BackLoad_Completed(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            metroGrid1.DataSource = usersBindingSource;
+            LoaderPictureBox.Visible = false;
+            LoaderPictureBox.Enabled = false;
         }
     }
 

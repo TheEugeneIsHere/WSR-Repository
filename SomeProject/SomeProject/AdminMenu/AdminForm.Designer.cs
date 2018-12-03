@@ -150,6 +150,7 @@
             // 
             // loginLabel
             // 
+            this.loginLabel.Enabled = false;
             this.loginLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.loginLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.loginLabel.Location = new System.Drawing.Point(181, 73);
@@ -175,6 +176,7 @@
             this.MaximizeBox = false;
             this.Name = "AdminForm";
             this.Resizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Administration Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.logoutPic)).EndInit();

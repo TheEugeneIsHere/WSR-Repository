@@ -5,7 +5,9 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
+#pragma warning disable IDE1006
     public partial class aUsersAdd : MetroFramework.Forms.MetroForm
+#pragma warning restore IDE1006
     {
         SqlConnection con = Сonnection.AzureConnection();
         private static string query;
@@ -25,7 +27,10 @@ namespace SomeProject
                 SqlCommand register = new SqlCommand(query, con);
                 register.ExecuteNonQuery();
                 MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "WSR: Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                aUsers usersForm = new aUsers();
+                aUsers usersForm = new aUsers
+                {
+                    Location = Location
+                };
                 usersForm.Show();
                 Hide();
             }
@@ -263,14 +268,20 @@ namespace SomeProject
 
         private void BackToUsers_Click(object sender, EventArgs e)
         {
-            aUsers UsersForm = new aUsers();
+            aUsers UsersForm = new aUsers
+            {
+                Location = Location
+            };
             UsersForm.Show();
             Hide();
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1();
+            Form1 MainForm = new Form1
+            {
+                Location = Location
+            };
             MainForm.Show();
             Hide();
         }

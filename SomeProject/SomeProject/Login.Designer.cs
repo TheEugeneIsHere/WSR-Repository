@@ -43,7 +43,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.forgetLabel1 = new System.Windows.Forms.LinkLabel();
+            this.forgetLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -245,19 +245,19 @@
             this.metroButton4.UseSelectable = true;
             this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
-            // forgetLabel1
+            // forgetLabel
             // 
-            this.forgetLabel1.AutoSize = true;
-            this.forgetLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.forgetLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.forgetLabel1.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.forgetLabel1.Location = new System.Drawing.Point(389, 340);
-            this.forgetLabel1.Name = "forgetLabel1";
-            this.forgetLabel1.Size = new System.Drawing.Size(94, 13);
-            this.forgetLabel1.TabIndex = 5;
-            this.forgetLabel1.TabStop = true;
-            this.forgetLabel1.Text = "Забыли пароль?";
-            this.forgetLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgetLabel1_LinkClicked);
+            this.forgetLabel.AutoSize = true;
+            this.forgetLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.forgetLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.forgetLabel.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.forgetLabel.Location = new System.Drawing.Point(389, 340);
+            this.forgetLabel.Name = "forgetLabel";
+            this.forgetLabel.Size = new System.Drawing.Size(94, 13);
+            this.forgetLabel.TabIndex = 5;
+            this.forgetLabel.TabStop = true;
+            this.forgetLabel.Text = "Забыли пароль?";
+            this.forgetLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ForgetLabel_Clicked);
             // 
             // Login
             // 
@@ -265,7 +265,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
             this.ControlBox = false;
-            this.Controls.Add(this.forgetLabel1);
+            this.Controls.Add(this.forgetLabel);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.pictureBox1);
@@ -303,6 +303,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;
-        private System.Windows.Forms.LinkLabel forgetLabel1;
+        private System.Windows.Forms.LinkLabel forgetLabel;
     }
 }

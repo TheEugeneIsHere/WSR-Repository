@@ -87,8 +87,11 @@ namespace SomeProject
                 Сonnection.Mail = metroTextBox1.Text;
                 if (role == Role.A)
                 {
-                    var form = new AdminForm();
-                    form.Show();
+                    var AdminMenu = new AdminForm // Запилил открытие this формы, где base форма, интим вроде
+                    {
+                        Location = Location
+                    };
+                    AdminMenu.Show();
                     Hide();
                 }
                 else if (role == Role.C)
@@ -164,7 +167,7 @@ namespace SomeProject
 
         }
 
-        private void forgetLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void ForgetLabel_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             PasswordRecover password = new PasswordRecover();
             password.ShowDialog();

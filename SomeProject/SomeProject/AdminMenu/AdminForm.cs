@@ -41,28 +41,40 @@ namespace SomeProject
 
         private void MetroTile1_Click(object sender, EventArgs e)
         {
-            aUsers UsersForm = new aUsers();
+            aUsers UsersForm = new aUsers
+            {
+                Location = Location
+            };
             UsersForm.Show();
             Hide();
         }
 
         private void MetroTile2_Click(object sender, EventArgs e)
         {
-            aVolunteer VolunteerForm = new aVolunteer();
+            aVolunteer VolunteerForm = new aVolunteer
+            {
+                Location = Location
+            };
             VolunteerForm.Show();
             Hide();
         }
 
         private void MetroTile3_Click(object sender, EventArgs e)
         {
-            aCharity CharityForm = new aCharity();
+            aCharity CharityForm = new aCharity
+            {
+                Location = Location
+            };
             CharityForm.Show();
             Hide();
         }
 
         private void LogoutPic_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1();
+            Form1 MainForm = new Form1
+            {
+                Location = Location
+            };
             MainForm.Show();
             Hide();
         }

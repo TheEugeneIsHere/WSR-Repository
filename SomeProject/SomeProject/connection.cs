@@ -6,7 +6,7 @@ namespace SomeProject
     class Сonnection
     {
         /*уютный уголок максюши*/
-        public static string Mail { get; set; }
+        public static string Mail { get; set; } 
         public static string Password { get; set; } 
 
         /* Уютный Готэм Дениса */

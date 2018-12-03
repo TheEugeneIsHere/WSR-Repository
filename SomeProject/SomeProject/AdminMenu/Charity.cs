@@ -45,14 +45,20 @@ namespace SomeProject
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            aCharityAdd CharityAddForm = new aCharityAdd();
+            aCharityAdd CharityAddForm = new aCharityAdd
+            {
+                Location = Location
+            };
             CharityAddForm.Show();
             Hide();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            AdminForm AdminMenu = new AdminForm();
+            AdminForm AdminMenu = new AdminForm
+            {
+                Location = Location
+            };
             AdminMenu.Show();
             Hide();
         }
@@ -79,7 +85,7 @@ namespace SomeProject
             CharityLoad();
         }
 
-        private void BackLoad_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackLoad_Completed(object sender, RunWorkerCompletedEventArgs e)
         {
             metroGrid1.DataSource = charityBindingSource;
             LoaderPictureBox.Visible = false;

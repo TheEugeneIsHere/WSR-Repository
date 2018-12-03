@@ -58,6 +58,7 @@
             // 
             // metroLabel1
             // 
+            this.metroLabel1.Enabled = false;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.Location = new System.Drawing.Point(180, 51);
@@ -215,10 +216,11 @@
             // 
             this.backLoad.WorkerSupportsCancellation = true;
             this.backLoad.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackLoad_DoWork);
-            this.backLoad.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackLoad_RunWorkerCompleted);
+            this.backLoad.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackLoad_Completed);
             // 
             // LoaderPictureBox
             // 
+            this.LoaderPictureBox.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.LoaderPictureBox.Image = global::SomeProject.Properties.Resources.FormLoading;
             this.LoaderPictureBox.Location = new System.Drawing.Point(20, 124);
             this.LoaderPictureBox.Name = "LoaderPictureBox";
@@ -242,6 +244,7 @@
             this.MaximizeBox = false;
             this.Name = "aCharity";
             this.Resizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Administration Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();

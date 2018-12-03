@@ -63,22 +63,31 @@ namespace SomeProject
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            aVolunteerAdd VolunteerAddForm = new aVolunteerAdd();
+            aVolunteerAdd VolunteerAddForm = new aVolunteerAdd
+            {
+                Location = Location
+            };
             VolunteerAddForm.Show();
             Hide();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            AdminForm AdminForm = new AdminForm();
+            AdminForm AdminForm = new AdminForm
+            {
+                Location = Location
+            };
             AdminForm.Show();
             Hide();
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 mainForm = new Form1();
-            mainForm.Show();
+            Form1 MainForm = new Form1
+            {
+                Location = Location
+            };
+            MainForm.Show();
             Hide();
         }
 
