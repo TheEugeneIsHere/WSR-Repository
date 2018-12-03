@@ -6,13 +6,13 @@ namespace SomeProject
 {
     public partial class aUsers : MetroFramework.Forms.MetroForm
     {
-        private static string query = "SELECT FirstName, LastName, Email, RoleID FROM Users";
+        //private static string query = "SELECT FirstName, LastName, Email, RoleID FROM Users";
         SqlConnection con = Сonnection.AzureConnection();
 
         public aUsers()
         {
             InitializeComponent();
-            UsersCount();
+            metroGrid1.DataSource = null;
             if (!backLoad.IsBusy) backLoad.RunWorkerAsync();
             timer1.Start();
         }
@@ -45,8 +45,8 @@ namespace SomeProject
         {
             try
             {
+                //if (backLoad.IsBusy) metroGrid1.DataSource = null;
                 con.Open();
-                if (backLoad.IsBusy) metroGrid1.DataSource = null;
                 SqlDataAdapter ad = new SqlDataAdapter(query, con);
                 ad.Fill(wSRDataSetUsers, "Users");
                 if (backLoad.IsBusy) backLoad.CancelAsync();
@@ -61,16 +61,17 @@ namespace SomeProject
             }
         }
 
-        private string SortBy(string query)
+        private string SortBy()
         {
-            string Role, OrderBy = string.Empty;
+            string Role, OrderBy, SortQuery = string.Empty;
 
+            wSRDataSetUsers.Tables[0].Clear();
             switch (metroComboBox2.Text)
             {
                 case "Администратор": Role = "A"; break;
                 case "Бегун": Role = "R"; break;
                 case "Координатор": Role = "C"; break;
-                default: Role = string.Empty; break;
+                default: Role = ""; break;
             }
 
             switch (metroComboBox1.Text)
@@ -80,33 +81,39 @@ namespace SomeProject
                 default: OrderBy = "RoleId"; break;
             }
 
-            wSRDataSetUsers.Clear();
-
-            if (Role != string.Empty)
+            switch (Role)
             {
-                query = "SELECT FirstName, LastName, Email, RoleID FROM Users WHERE RoleId ='" + Role + "' ORDER BY '" + OrderBy + "'";
-            }
-            else
-                query = "SELECT FirstName, LastName, Email, RoleID FROM Users ORDER BY '" + OrderBy + "'";
+                case "":
+                    SortQuery = "SELECT FirstName, LastName, Email, RoleID FROM Users ";
+                    if (metroTextBox1.Text != string.Empty) SortQuery += "WHERE Email LIKE '" + metroTextBox1.Text + "%' ";
+                    SortQuery += "ORDER BY '" + OrderBy + "'";
+                break;
 
-            return query;
+                default:
+                    SortQuery = "SELECT * FROM Users WHERE RoleId ='" + Role + "' ";
+                    if (metroTextBox1.Text != string.Empty) SortQuery += "AND Email LIKE '" + metroTextBox1.Text + "%' ";
+                    SortQuery += "ORDER BY '" + OrderBy + "'";
+                break;
+            }
+
+            return SortQuery;
          }
 
         private void SearchOnEnter(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                try
+                if (metroTextBox1.Text != string.Empty)
                 {
-                    metroComboBox2.Enabled = false;
-                    metroComboBox1.Enabled = false;
-                    e.SuppressKeyPress = true;
-                    query = "SELECT * FROM Users WHERE Email LIKE '" + metroTextBox1.Text + "%'";
-                    UsersLoad(query);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
+                    try
+                    {
+                        e.SuppressKeyPress = true;
+                        UsersLoad(SortBy());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
             }
         }
@@ -177,7 +184,7 @@ namespace SomeProject
 
         private void MetroComboboxes_ValueChange(object sender, EventArgs e)
         {
-            UsersLoad(SortBy(query));
+            UsersLoad(SortBy());
         }
 
         private void MetroButton1_Click(object sender, EventArgs e)
@@ -212,12 +219,12 @@ namespace SomeProject
 
         private void PictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
         {
-            metroComboBox2.Enabled = true;
-            metroComboBox1.Enabled = true;
-            metroComboBox2.SelectedIndex = 0;
-            metroComboBox1.SelectedIndex = 0;
-            metroTextBox1.Text = string.Empty;
-            UsersLoad("SELECT FirstName, LastName, Email, RoleID FROM Users");
+            UsersLoad(SortBy());
+            //metroComboBox2.Enabled = true;
+            //metroComboBox1.Enabled = true;
+            //metroComboBox2.SelectedIndex = 0;
+            //metroComboBox1.SelectedIndex = 0;
+            //metroTextBox1.Text = string.Empty;
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
@@ -239,12 +246,16 @@ namespace SomeProject
 
         private void BackLoad_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            UsersLoad(query);
+            LoaderPictureBox.Visible = true;
+            LoaderPictureBox.Enabled = true;
+            UsersCount();
+            UsersLoad(SortBy());
         }
 
         private void BackLoad_Completed(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
-            metroGrid1.DataSource = usersBindingSource;
+            //metroGrid1.DataSource = usersBindingSource;
+            metroGrid1.DataSource = wSRDataSetUsers.Tables[0];
             LoaderPictureBox.Visible = false;
             LoaderPictureBox.Enabled = false;
         }

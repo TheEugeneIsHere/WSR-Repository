@@ -12,8 +12,8 @@ namespace SomeProject
         public aCharity()
         {
             InitializeComponent();
-            timer1.Start();
             if (!backLoad.IsBusy) backLoad.RunWorkerAsync();
+            timer1.Start();
         }
 
         private void TimerTick(object sender, EventArgs e)
