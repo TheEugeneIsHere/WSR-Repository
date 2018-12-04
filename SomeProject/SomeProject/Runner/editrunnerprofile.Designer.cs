@@ -141,9 +141,9 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.Location = new System.Drawing.Point(23, 310);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(81, 19);
             this.metroLabel6.TabIndex = 36;
-            this.metroLabel6.Text = "Страна:";
+            this.metroLabel6.Text = "Код страны:";
             // 
             // metroLabel7
             // 
@@ -364,20 +364,20 @@
             this.metroLabel12.AutoSize = true;
             this.metroLabel12.Location = new System.Drawing.Point(135, 142);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel12.Size = new System.Drawing.Size(101, 19);
             this.metroLabel12.TabIndex = 36;
-            this.metroLabel12.Text = "мыло чувака";
+            this.metroLabel12.Text = "mail@mail.com";
             // 
             // metroComboBox1
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
             this.metroComboBox1.Items.AddRange(new object[] {
-            "Мужской",
-            "Женский"});
+            "Male",
+            "Female"});
             this.metroComboBox1.Location = new System.Drawing.Point(135, 230);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.PromptText = "Это лава";
+            this.metroComboBox1.PromptText = "Male";
             this.metroComboBox1.Size = new System.Drawing.Size(168, 29);
             this.metroComboBox1.TabIndex = 40;
             this.metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -395,9 +395,102 @@
             // 
             this.metroComboBox2.FormattingEnabled = true;
             this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.Items.AddRange(new object[] {
+            "AND",
+            "ARG",
+            "AUS",
+            "AUT",
+            "BEL",
+            "BOT",
+            "BRA",
+            "BUL",
+            "CAF",
+            "CAN",
+            "CHI",
+            "CHN",
+            "CIV",
+            "CMR",
+            "COL",
+            "CRO",
+            "CZE",
+            "DEN",
+            "DOM",
+            "ECU",
+            "EGY",
+            "ESA",
+            "ESP",
+            "EST",
+            "FIN",
+            "FRA",
+            "GBR",
+            "GBS",
+            "GEQ",
+            "GER",
+            "GRE",
+            "GUA",
+            "GUI",
+            "HKG",
+            "HON",
+            "HUN",
+            "INA",
+            "IND",
+            "IRL",
+            "ISR",
+            "ITA",
+            "JAM",
+            "JOR",
+            "JPN",
+            "KEN",
+            "KOR",
+            "KSA",
+            "LAT",
+            "LIE",
+            "LTU",
+            "LUX",
+            "MAC",
+            "MAD",
+            "MAS",
+            "MDA",
+            "MEX",
+            "MKD",
+            "MLI",
+            "MLT",
+            "MNE",
+            "MON",
+            "MRI",
+            "NCA",
+            "NED",
+            "NIG",
+            "NOR",
+            "NZL",
+            "PAN",
+            "PAR",
+            "PER",
+            "PHI",
+            "POL",
+            "POR",
+            "PUR",
+            "QAT",
+            "ROU",
+            "RSA",
+            "RUS",
+            "SEN",
+            "SIN",
+            "SUI",
+            "SVK",
+            "SWE",
+            "THA",
+            "TPE",
+            "TUR",
+            "UAE",
+            "URU",
+            "USA",
+            "VAT",
+            "VEN",
+            "VIE"});
             this.metroComboBox2.Location = new System.Drawing.Point(135, 300);
             this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.PromptText = "Uganda";
+            this.metroComboBox2.PromptText = "Выбрать";
             this.metroComboBox2.Size = new System.Drawing.Size(168, 29);
             this.metroComboBox2.TabIndex = 40;
             this.metroComboBox2.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -442,7 +535,7 @@
             this.groupBox1.Size = new System.Drawing.Size(270, 171);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Заборонено";
+            this.groupBox1.Text = "Wait in the next versions...";
             // 
             // editrunnerprofile
             // 
@@ -474,7 +567,8 @@
             this.Controls.Add(this.timerLabel);
             this.Name = "editrunnerprofile";
             this.Resizable = false;
-            this.Text = "Editing";
+            this.Text = "Редактирование профиля";
+            this.Load += new System.EventHandler(this.editrunnerprofile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);

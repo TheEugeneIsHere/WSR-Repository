@@ -19,6 +19,10 @@ namespace SomeProject
             " часов и " + TimeRemaining.Minutes + " минут до Нового Года";
             return Time;
         }
+        public string getMail()
+        {
+            return Mail;
+        }
 
         /* Бэтмобиль */
         public static SqlConnection AzureConnection()

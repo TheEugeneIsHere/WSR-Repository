@@ -123,6 +123,7 @@ namespace SomeProject
         {
             metroTextBox1.Text = "a.adkin@dayrep.net";
             metroTextBox2.Text = "1234";
+            login();
         }
 
         private void metroButton4_Click(object sender, EventArgs e)

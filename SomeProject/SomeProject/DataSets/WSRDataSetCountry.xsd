@@ -25,9 +25,9 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getCountryCodeTableAdapter" GeneratorDataComponentClassName="getCountryCodeTableAdapter" Name="getCountryCode" UserDataComponentName="getCountryCodeTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="WSRConnectionString (Settings)" DbObjectName="WSR.dbo.Country" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="WSRConnectionString (Settings)" DbObjectName="WSR.dbo.Country" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT CountryCode FROM dbo.Country</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -47,7 +47,7 @@
   <xs:element name="WSRDataSetCountry" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="WSRDataSetCountry" msprop:Generator_UserDSName="WSRDataSetCountry">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="getCountryName" msprop:Generator_TableClassName="getCountryNameDataTable" msprop:Generator_TableVarName="tablegetCountryName" msprop:Generator_RowChangedName="getCountryNameRowChanged" msprop:Generator_TablePropName="getCountryName" msprop:Generator_RowDeletingName="getCountryNameRowDeleting" msprop:Generator_RowChangingName="getCountryNameRowChanging" msprop:Generator_RowEvHandlerName="getCountryNameRowChangeEventHandler" msprop:Generator_RowDeletedName="getCountryNameRowDeleted" msprop:Generator_RowClassName="getCountryNameRow" msprop:Generator_UserTableName="getCountryName" msprop:Generator_RowEvArgName="getCountryNameRowChangeEvent">
+        <xs:element name="getCountryName" msprop:Generator_TableClassName="getCountryNameDataTable" msprop:Generator_TableVarName="tablegetCountryName" msprop:Generator_TablePropName="getCountryName" msprop:Generator_RowDeletingName="getCountryNameRowDeleting" msprop:Generator_RowChangingName="getCountryNameRowChanging" msprop:Generator_RowEvHandlerName="getCountryNameRowChangeEventHandler" msprop:Generator_RowDeletedName="getCountryNameRowDeleted" msprop:Generator_UserTableName="getCountryName" msprop:Generator_RowChangedName="getCountryNameRowChanged" msprop:Generator_RowEvArgName="getCountryNameRowChangeEvent" msprop:Generator_RowClassName="getCountryNameRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CountryName" msprop:Generator_ColumnVarNameInTable="columnCountryName" msprop:Generator_ColumnPropNameInRow="CountryName" msprop:Generator_ColumnPropNameInTable="CountryNameColumn" msprop:Generator_UserColumnName="CountryName">
@@ -60,7 +60,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="getCountryCode" msprop:Generator_TableClassName="getCountryCodeDataTable" msprop:Generator_TableVarName="tablegetCountryCode" msprop:Generator_TablePropName="getCountryCode" msprop:Generator_RowDeletingName="getCountryCodeRowDeleting" msprop:Generator_RowChangingName="getCountryCodeRowChanging" msprop:Generator_RowEvHandlerName="getCountryCodeRowChangeEventHandler" msprop:Generator_RowDeletedName="getCountryCodeRowDeleted" msprop:Generator_UserTableName="getCountryCode" msprop:Generator_RowChangedName="getCountryCodeRowChanged" msprop:Generator_RowEvArgName="getCountryCodeRowChangeEvent" msprop:Generator_RowClassName="getCountryCodeRow">
+        <xs:element name="getCountryCode" msprop:Generator_TableClassName="getCountryCodeDataTable" msprop:Generator_TableVarName="tablegetCountryCode" msprop:Generator_RowChangedName="getCountryCodeRowChanged" msprop:Generator_TablePropName="getCountryCode" msprop:Generator_RowDeletingName="getCountryCodeRowDeleting" msprop:Generator_RowChangingName="getCountryCodeRowChanging" msprop:Generator_RowEvHandlerName="getCountryCodeRowChangeEventHandler" msprop:Generator_RowDeletedName="getCountryCodeRowDeleted" msprop:Generator_RowClassName="getCountryCodeRow" msprop:Generator_UserTableName="getCountryCode" msprop:Generator_RowEvArgName="getCountryCodeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CountryCode" msprop:Generator_ColumnVarNameInTable="columnCountryCode" msprop:Generator_ColumnPropNameInRow="CountryCode" msprop:Generator_ColumnPropNameInTable="CountryCodeColumn" msprop:Generator_UserColumnName="CountryCode">

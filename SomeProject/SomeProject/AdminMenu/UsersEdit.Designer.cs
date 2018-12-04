@@ -472,10 +472,10 @@
             this.runnerCombo2.DisplayMember = "CountryCode";
             this.runnerCombo2.FormattingEnabled = true;
             this.runnerCombo2.ItemHeight = 23;
-            this.runnerCombo2.Location = new System.Drawing.Point(85, 120);
+            this.runnerCombo2.Location = new System.Drawing.Point(65, 120);
             this.runnerCombo2.Name = "runnerCombo2";
             this.runnerCombo2.PromptText = "Выбрать..";
-            this.runnerCombo2.Size = new System.Drawing.Size(114, 29);
+            this.runnerCombo2.Size = new System.Drawing.Size(134, 29);
             this.runnerCombo2.TabIndex = 58;
             this.runnerCombo2.UseSelectable = true;
             // 

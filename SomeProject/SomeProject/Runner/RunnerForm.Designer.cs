@@ -106,6 +106,7 @@
             // metroTile5
             // 
             this.metroTile5.ActiveControl = null;
+            this.metroTile5.Enabled = false;
             this.metroTile5.Location = new System.Drawing.Point(179, 199);
             this.metroTile5.Name = "metroTile5";
             this.metroTile5.Size = new System.Drawing.Size(500, 73);
@@ -118,7 +119,6 @@
             this.metroTile5.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile5.UseSelectable = true;
             this.metroTile5.UseTileImage = true;
-            this.metroTile5.Click += new System.EventHandler(this.metroTile5_Click);
             // 
             // pictureBox2
             // 

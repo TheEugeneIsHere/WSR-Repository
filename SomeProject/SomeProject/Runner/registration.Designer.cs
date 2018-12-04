@@ -473,7 +473,7 @@
             this.groupBox1.Size = new System.Drawing.Size(349, 173);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ЗАБОРОНЕНО";
+            this.groupBox1.Text = "Wait in the next versions...";
             // 
             // errorProvider2
             // 
