@@ -2,18 +2,18 @@
 
 namespace SomeProject
 {
-    public partial class success : MetroFramework.Forms.MetroForm
+    public partial class Success : MetroFramework.Forms.MetroForm
     {
-        public success()
+        public Success()
         {
             InitializeComponent();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Form1 f1 = new Form1();
+            var f1 = new Form1();
             f1.Show();
+            Close();
         }
     }
 }

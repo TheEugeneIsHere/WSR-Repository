@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class registration
+    partial class RunnerReg
     {
         /// <summary>
         /// Required designer variable.
@@ -68,7 +68,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // timerLabel
             // 
@@ -102,7 +102,7 @@
             this.metroLabel3.Size = new System.Drawing.Size(550, 19);
             this.metroLabel3.TabIndex = 5;
             this.metroLabel3.Text = "Пожалуйста, заполните всю информацию, чтобы зарегистрироваться в качестве бегуна";
-            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
+            this.metroLabel3.Click += new System.EventHandler(this.MetroLabel3_Click);
             // 
             // metroLabel4
             // 
@@ -189,7 +189,7 @@
             this.metroTextBox1.WaterMark = "Email";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox1_KeyPress);
+            this.metroTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MetroTextBox1_KeyPress);
             // 
             // metroTextBox2
             // 
@@ -222,7 +222,7 @@
             this.metroTextBox2.WaterMark = "Пароль";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox2_KeyPress);
+            this.metroTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MetroTextBox2_KeyPress);
             // 
             // metroTextBox3
             // 
@@ -255,7 +255,7 @@
             this.metroTextBox3.WaterMark = "Повторите пароль";
             this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox3_KeyPress);
+            this.metroTextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MetroTextBox3_KeyPress);
             // 
             // metroTextBox4
             // 
@@ -288,7 +288,7 @@
             this.metroTextBox4.WaterMark = "Имя";
             this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox4_KeyPress);
+            this.metroTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MetroTextBox4_KeyPress);
             // 
             // metroTextBox5
             // 
@@ -321,7 +321,7 @@
             this.metroTextBox5.WaterMark = "Фамилия";
             this.metroTextBox5.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox5.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox5_KeyPress);
+            this.metroTextBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MetroTextBox5_KeyPress);
             // 
             // metroTextBox7
             // 
@@ -401,7 +401,7 @@
             this.metroButton2.TabIndex = 9;
             this.metroButton2.Text = "Регистрация";
             this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.MetroButton2_Click);
             // 
             // metroButton3
             // 
@@ -413,7 +413,7 @@
             this.metroButton3.TabIndex = 10;
             this.metroButton3.Text = "Отмена";
             this.metroButton3.UseSelectable = true;
-            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
+            this.metroButton3.Click += new System.EventHandler(this.MetroButton3_Click);
             // 
             // metroDateTime1
             // 
@@ -459,7 +459,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // groupBox1
             // 

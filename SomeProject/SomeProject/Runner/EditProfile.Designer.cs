@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class editrunnerprofile
+    partial class EditProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click_1);
             // 
             // timerLabel
             // 
@@ -515,7 +515,7 @@
             // 
             this.metroButton2.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton2.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.metroButton2.Location = new System.Drawing.Point(304, 427);
+            this.metroButton2.Location = new System.Drawing.Point(290, 427);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(288, 28);
             this.metroButton2.TabIndex = 43;
@@ -566,7 +566,6 @@
             this.Name = "editrunnerprofile";
             this.Resizable = false;
             this.Text = "Редактирование профиля";
-            this.Load += new System.EventHandler(this.editrunnerprofile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -55,7 +55,7 @@ namespace SomeProject
 
         private void MetroTile1_Click(object sender, EventArgs e)
         {
-            ask ask = new ask();
+            Ask ask = new Ask();
             ask.ShowDialog();
             Hide();
         }

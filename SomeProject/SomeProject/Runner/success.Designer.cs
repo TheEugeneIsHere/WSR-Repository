@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class success
+    partial class Success
     {
         /// <summary>
         /// Required designer variable.
@@ -64,7 +64,7 @@
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "Ок";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // success
             // 

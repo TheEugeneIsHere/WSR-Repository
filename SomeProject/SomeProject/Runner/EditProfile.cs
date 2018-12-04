@@ -1,28 +1,29 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace SomeProject
 {
-    public partial class editrunnerprofile : MetroFramework.Forms.MetroForm
+    public partial class EditProfile : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = Сonnection.AzureConnection();
-        private void timer1_Tick(object sender, EventArgs e)
+
+        private void TimerTick(object sender, EventArgs e)
         {
             Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-
-        public editrunnerprofile()
+        public EditProfile()
         {
             Сonnection counter = new Сonnection();
             InitializeComponent();
-            timer1.Tick += timer1_Tick;
+            timer1.Tick += TimerTick;
             timer1.Start();
             metroLabel12.Text = counter.getMail();
             metroTextBox2.Text = counter.getName();
             metroTextBox3.Text = counter.getLname();
-            getgender();
+            GetGender();
             metroComboBox1.Text = gender;
             metroDateTime1.Value = ishdate;
             metroComboBox2.Text = contry;
@@ -31,13 +32,14 @@ namespace SomeProject
         string gender;
         string contry;
         DateTime ishdate;
-       private void getgender()
+
+       private void GetGender()
         {
             Сonnection counter = new Сonnection();
             con.Open();
             string strSQL;
             SqlCommand command = con.CreateCommand();
-            strSQL = ("SELECt @Gender=Gender,@DateOfBirth=DateOfBirth,@CountryCode=CountryCode FROM Runner WHERE email=@email");
+            strSQL = ("SELECT @Gender=Gender,@DateOfBirth=DateOfBirth,@CountryCode=CountryCode FROM Runner WHERE email=@email");
             SqlParameter Gender,date,country;
             command.CommandText = strSQL;
             Gender = command.Parameters.Add("@Gender", SqlDbType.VarChar, 20);
@@ -52,19 +54,15 @@ namespace SomeProject
             contry = Convert.ToString(country.Value);
             ishdate = Convert.ToDateTime(date.Value);
             con.Close();
-
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
+        private void PictureBox1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            RunnerForm run = new RunnerForm();
-            run.Visible = true;
-        }
-
-        private void editrunnerprofile_Load(object sender, EventArgs e)
-        {
-
+            var run = new RunnerForm
+            {
+                Visible = true
+            };
+            Hide();
         }
         
         /*

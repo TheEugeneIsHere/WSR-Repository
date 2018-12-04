@@ -1,6 +1,6 @@
 ﻿namespace SomeProject
 {
-    partial class regmar
+    partial class MarathonReg
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(regmar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarathonReg));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -157,8 +157,8 @@
             this.metroTextBox2.WaterMark = "$500";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox2.TextChanged += new System.EventHandler(this.metroTextBox2_TextChanged);
-            this.metroTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox2_KeyPress);
+            this.metroTextBox2.TextChanged += new System.EventHandler(this.MetroTextBox2_TextChanged);
+            this.metroTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MetroTextBox2_KeyPress);
             // 
             // metroRadioButton1
             // 
@@ -171,7 +171,7 @@
             this.metroRadioButton1.TabStop = true;
             this.metroRadioButton1.Text = "Вариант А($0): Номер бегуна+\r\nRFID браслет.";
             this.metroRadioButton1.UseSelectable = true;
-            this.metroRadioButton1.CheckedChanged += new System.EventHandler(this.metroRadioButton1_CheckedChanged);
+            this.metroRadioButton1.CheckedChanged += new System.EventHandler(this.MetroRadioButton1_CheckedChanged);
             // 
             // metroRadioButton2
             // 
@@ -182,7 +182,7 @@
             this.metroRadioButton2.TabIndex = 13;
             this.metroRadioButton2.Text = "Вариант В($20): вариант А+\r\nбейсболка+бутылка воды.";
             this.metroRadioButton2.UseSelectable = true;
-            this.metroRadioButton2.CheckedChanged += new System.EventHandler(this.metroRadioButton2_CheckedChanged);
+            this.metroRadioButton2.CheckedChanged += new System.EventHandler(this.MetroRadioButton2_CheckedChanged);
             // 
             // metroRadioButton3
             // 
@@ -193,7 +193,7 @@
             this.metroRadioButton3.TabIndex = 14;
             this.metroRadioButton3.Text = "Вариант С($45): вариант В+\r\nфутболка+сувенирный буклет.";
             this.metroRadioButton3.UseSelectable = true;
-            this.metroRadioButton3.CheckedChanged += new System.EventHandler(this.metroRadioButton3_CheckedChanged);
+            this.metroRadioButton3.CheckedChanged += new System.EventHandler(this.MetroRadioButton3_CheckedChanged);
             // 
             // metroLabel8
             // 
@@ -236,7 +236,7 @@
             this.bunifuCheckbox1.Name = "bunifuCheckbox1";
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 17;
-            this.bunifuCheckbox1.OnChange += new System.EventHandler(this.bunifuCheckbox1_OnChange);
+            this.bunifuCheckbox1.OnChange += new System.EventHandler(this.BunifuCheckbox1_OnChange);
             // 
             // bunifuCheckbox2
             // 
@@ -249,7 +249,7 @@
             this.bunifuCheckbox2.Name = "bunifuCheckbox2";
             this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox2.TabIndex = 17;
-            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
+            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.BunifuCheckbox2_OnChange);
             // 
             // bunifuCheckbox3
             // 
@@ -262,7 +262,7 @@
             this.bunifuCheckbox3.Name = "bunifuCheckbox3";
             this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox3.TabIndex = 17;
-            this.bunifuCheckbox3.OnChange += new System.EventHandler(this.bunifuCheckbox3_OnChange);
+            this.bunifuCheckbox3.OnChange += new System.EventHandler(this.BunifuCheckbox3_OnChange);
             // 
             // metroLabel10
             // 
@@ -317,7 +317,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // pictureBox1
             // 
@@ -329,7 +329,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -364,7 +364,7 @@
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.BunifuFlatButton1_Click);
             // 
             // regmar
             // 

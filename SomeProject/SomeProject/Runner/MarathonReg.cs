@@ -4,26 +4,26 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class regmar : MetroFramework.Forms.MetroForm
+    public partial class MarathonReg : MetroFramework.Forms.MetroForm
     {
-        public regmar()
+        public MarathonReg()
         {
             InitializeComponent();
-            timer1.Tick += timer1_Tick;
+            timer1.Tick += TimerTick;
             timer1.Start();
         }
-        // Distance не используется. А вдруг ты снова не знал? Азаза
-        int distance = 0, stoim=0,vznos = 0, variant = 0,itog=0;
+
+        int distance = 0, stoim = 0, vznos = 0, variant = 0, itog = 0;
         ErrorProvider error = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
         SqlConnection con = Сonnection.AzureConnection();
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
             Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             Hide();
             RunnerForm run = new RunnerForm
@@ -32,7 +32,7 @@ namespace SomeProject
             };
         }
 
-        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        private void BunifuCheckbox1_OnChange(object sender, EventArgs e)
         {
             if (bunifuCheckbox1.Checked == true)
             {
@@ -45,7 +45,7 @@ namespace SomeProject
             }
         }
 
-        private void metroRadioButton1_CheckedChanged(object sender, EventArgs e)
+        private void MetroRadioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (metroRadioButton1.Checked == true)
             {
@@ -55,7 +55,7 @@ namespace SomeProject
             }
         }
 
-        private void metroRadioButton2_CheckedChanged(object sender, EventArgs e)
+        private void MetroRadioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if (metroRadioButton2.Checked == true)
             {
@@ -67,19 +67,17 @@ namespace SomeProject
             }
         }
 
-        private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void MetroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
           
-            if (!Char.IsDigit(e.KeyChar)&& e.KeyChar != '\b')
+            if (!char.IsDigit(e.KeyChar)&& e.KeyChar != '\b')
             {
                 e.Handled = true;
             }
          
         }
 
-      
-
-        private void metroTextBox2_TextChanged(object sender, EventArgs e)
+        private void MetroTextBox2_TextChanged(object sender, EventArgs e)
         {
             if (metroTextBox2.Text == string.Empty)
             {
@@ -96,9 +94,7 @@ namespace SomeProject
             
         }
 
-    
-
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void BunifuFlatButton1_Click(object sender, EventArgs e)
         {
             int errorcount=0;
             string errorLog = "Исправьте ошибки:\n";
@@ -135,32 +131,27 @@ namespace SomeProject
                 string regdate = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
                 Random r = new Random();
                 int charityid = r.Next(1, 10);
-                id = generateid() + 1;
 
                 string query = ""; // Переменная не используется. Ну а вдруг ты не знал?
-                int shlish;//денис александрович, идите в жопу
-                MessageBox.Show("В теории вы зареганы, по факту система не работает...", "Продам гараж");
+                int shlish; //денис александрович, идите в жопу
+                Slishy(); // Сам иди :(((
+                MessageBox.Show("В теории вы зареганы, по факту система не работает...", "Продам гараж"); 
 
             }
         }
-        private void register(string query)
-        {
 
+        private void Slishy()
+        {
+            Console.WriteLine("Сам иди в жопа ахахахха");
+            Console.ReadKey();
         }
-        private int id;
-        private int generateid()
-        {
-            SqlCommand getid = new SqlCommand("select max([RegistrationId]) from registration", con);
-            con.Open();
-            id = Convert.ToInt32(getid.ExecuteScalar());
 
-            con.Close();
-            getid.Dispose();
-            return id;
+        private void Register(string query)
+        {
+
         }
        
-
-        private void metroRadioButton3_CheckedChanged(object sender, EventArgs e)
+        private void MetroRadioButton3_CheckedChanged(object sender, EventArgs e)
         {
             if (metroRadioButton3.Checked == true)
             {
@@ -172,7 +163,7 @@ namespace SomeProject
             }
         }
 
-        private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
+        private void BunifuCheckbox2_OnChange(object sender, EventArgs e)
         {
             if (bunifuCheckbox2.Checked == true)
             {
@@ -185,7 +176,7 @@ namespace SomeProject
             }
         }
 
-        private void bunifuCheckbox3_OnChange(object sender, EventArgs e)
+        private void BunifuCheckbox3_OnChange(object sender, EventArgs e)
         {
             if (bunifuCheckbox3.Checked == true)
             {
@@ -197,5 +188,6 @@ namespace SomeProject
                 label1.Text = itog + "$";
             }
         }
+
     }
 }

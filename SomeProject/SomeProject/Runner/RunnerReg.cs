@@ -5,43 +5,42 @@ using System.Windows.Forms;
 
 namespace SomeProject
 {
-    public partial class registration : MetroFramework.Forms.MetroForm
+    public partial class RunnerReg : MetroFramework.Forms.MetroForm
     {
-        public registration()
+        SqlConnection con = Сonnection.AzureConnection();
+
+        public RunnerReg()
         {
             InitializeComponent();
             this.Text = "MARATHON IS";
-            timer1.Tick += timer1_Tick;
+            timer1.Tick += TimerTick;
             timer1.Start();
            
         }
-        SqlConnection con = Сonnection.AzureConnection();
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
             Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form1 f1 = new Form1();
             f1.Show();
           }
 
-       
-
+        private DateTime born;
         private string mail;
         private string pas;
         private string nm;
         private string fnm;
         private string gender;
         private string country;
-        private DateTime born;
         private int id;
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void MetroButton2_Click(object sender, EventArgs e)
         {
             int errorcount = 0;
             string errorLog = "Исправьте ошибки:\n";
@@ -57,7 +56,6 @@ namespace SomeProject
                     errorLog += errorcount + ". Email-адрес уже зарегистрирован в системе\n";
                 }
                 con.Close();
-                isRegistered.Dispose();
             }
             catch (Exception ex)
             {
@@ -65,54 +63,63 @@ namespace SomeProject
                 con.Close();
                 MessageBox.Show(ex.ToString());
             }
+
             if (metroTextBox1.Text == "")
             {
                 errorProvider2.SetError(metroTextBox1, "Ошибка");
                 errorcount++;
                 errorLog += errorcount + ". Не введен Email\n";
             }
+
             if (metroTextBox2.Text == "")
             {
                 errorProvider2.SetError(metroTextBox2, "Ошибка");
                 errorcount++;
                 errorLog += errorcount + ". Не введен пароль\n";
             }
+
             if (metroTextBox3.Text == "")
             {
                 errorProvider2.SetError(metroTextBox3, "Ошибка");
                 errorcount++;
                 errorLog += errorcount + ". Не введен повтор пароля\n";
             }
+
             if (metroTextBox4.Text == "")
             {
                 errorProvider2.SetError(metroTextBox4, "Ошибка");
                 errorcount++;
                 errorLog += errorcount + ". Не введено имя\n";
             }
+
             if (metroTextBox5.Text == "")
             {
                 errorProvider2.SetError(metroTextBox5, "Ошибка");
                 errorcount++;
                 errorLog += errorcount + ". Не введена фамилия\n";
             }
+
             if (metroComboBox1.Text == "")
             {
                 errorProvider2.SetError(metroComboBox1, "Ошибка");
                 errorcount++;
                 errorLog += errorcount + ". Не выбран пол\n";
             }
+
             if (metroComboBox2.Text == "")
             {
                 errorProvider2.SetError(metroComboBox2, "Ошибка");
                 errorcount++;
                 errorLog += errorcount + ". Не выбрана страна\n";
             }
+
             if (metroTextBox2.Text != metroTextBox3.Text)
             {
                 errorProvider2.SetError(metroComboBox2, "Ошибка");
                 errorcount++;
                 errorLog += errorcount + ". Пароли не совпадают\n";
             }
+
             if (errorcount != 0)
             {
                 MessageBox.Show(errorLog, "Произошла ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -148,14 +155,16 @@ namespace SomeProject
                 born.ToString("yyyy - MM - dd");
 
                 /*запросик регистрации*/
-                id = generateid() + 1;
-                string query1 = "insert [Users]([Email],[FirstName],[LastName],[Password],[RoleId]) values " + "(N'" + mail + "',N'" + nm + "',N'" + fnm + "', N'" + pas + "', N'R')";
-                string query2 = "set IDENTITY_INSERT [runner] on insert [runner]([RunnerId],[Email],[Gender],[DateOfBirth],[CountryCode]) " + "values("+id+",N'"+mail + "',N'" + gender + "','" + born + "',N'" + country+ "'); SET IDENTITY_INSERT [runner] off";
-                useradd(query1); // Сначала вставка в Runner, затем в Users. Без IDENTITY (Переделайййй)
-                register(query2);
+                string query1 = "INSERT INTO Runner VALUES (N'" + mail + "',N'" + gender + "','" + born + "',N'" + country + "');";
+                string query2 = "INSERT INTO Users VALUES (N'" + mail + "',N'" + nm + "',N'" + fnm + "', N'" + pas + "', N'R')";
+                // По идее должно работать, хотя гарантировать я не могу. Ебанёт да не должно вроде
+                Register(query1); // Сначала вставка в Runner, затем в Users
+                UsersAdd(query2); 
+
             }
         }
-        private void useradd(string query)
+
+        private void UsersAdd(string query)
         {
             try
             {
@@ -170,7 +179,8 @@ namespace SomeProject
                 con.Close();
             }
         }
-        private void register(string query)
+
+        private void Register(string query)
         {
             try
             {
@@ -179,7 +189,7 @@ namespace SomeProject
                 register.ExecuteNonQuery();
                 con.Close();
                 this.Close();
-                success suc = new success();
+                Success suc = new Success();
                 suc.Show();
 
             }
@@ -190,18 +200,7 @@ namespace SomeProject
             }
         }
 
-        private int generateid()
-        {
-            SqlCommand getid = new SqlCommand("select max(runnerid) from runner",con);
-             con.Open();
-           id=Convert.ToInt32(getid.ExecuteScalar());
-            
-            con.Close();
-            getid.Dispose();
-            return id;
-        }
-
-        private void metroTextBox4_KeyPress(object sender, KeyPressEventArgs e)
+        private void MetroTextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
             {
@@ -214,7 +213,7 @@ namespace SomeProject
             else { errorProvider2.SetError(metroTextBox4, String.Empty); }
         }
 
-        private void metroTextBox5_KeyPress(object sender, KeyPressEventArgs e)
+        private void MetroTextBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 'A' || e.KeyChar > 'z') && e.KeyChar != '\b')
             {
@@ -227,7 +226,7 @@ namespace SomeProject
             else { errorProvider2.SetError(metroTextBox5, String.Empty); }
         }
 
-        private void metroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void MetroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
            
                 if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
@@ -240,7 +239,7 @@ namespace SomeProject
             else { errorProvider2.SetError(metroTextBox1, String.Empty); }
         }
 
-        private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void MetroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
             {
@@ -250,7 +249,7 @@ namespace SomeProject
             else { errorProvider2.SetError(metroTextBox2, String.Empty); }
         }
 
-        private void metroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        private void MetroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             
                 if ((e.KeyChar >= 'А') && (e.KeyChar <= 'я'))
@@ -263,12 +262,12 @@ namespace SomeProject
             else { errorProvider2.SetError(metroTextBox3, String.Empty); }
         }
 
-        private void metroLabel3_Click(object sender, EventArgs e)
+        private void MetroLabel3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void metroButton3_Click(object sender, EventArgs e)
+        private void MetroButton3_Click(object sender, EventArgs e)
         {
           
 

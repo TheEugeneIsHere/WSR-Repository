@@ -142,11 +142,11 @@
     <Compile Include="AdminMenu\VolunteerAdd.Designer.cs">
       <DependentUpon>VolunteerAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Runner\ask.cs">
+    <Compile Include="Runner\Ask.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Runner\ask.Designer.cs">
-      <DependentUpon>ask.cs</DependentUpon>
+    <Compile Include="Runner\Ask.Designer.cs">
+      <DependentUpon>Ask.cs</DependentUpon>
     </Compile>
     <Compile Include="BMIcalc.cs">
       <SubType>Form</SubType>
@@ -164,11 +164,11 @@
     <Compile Include="DataSets\WSRDataSetUsers.cs">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Runner\editrunnerprofile.cs">
+    <Compile Include="Runner\EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Runner\editrunnerprofile.Designer.cs">
-      <DependentUpon>editrunnerprofile.cs</DependentUpon>
+    <Compile Include="Runner\EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -194,11 +194,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Runner\moirez.cs">
+    <Compile Include="Runner\RunnerResults.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Runner\moirez.Designer.cs">
-      <DependentUpon>moirez.cs</DependentUpon>
+    <Compile Include="Runner\RunnerResults.Designer.cs">
+      <DependentUpon>RunnerResults.cs</DependentUpon>
     </Compile>
     <Compile Include="PasswordRecover.cs">
       <SubType>Form</SubType>
@@ -213,17 +213,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Runner\regmar.cs">
+    <Compile Include="Runner\MarathonReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Runner\regmar.Designer.cs">
-      <DependentUpon>regmar.cs</DependentUpon>
+    <Compile Include="Runner\MarathonReg.Designer.cs">
+      <DependentUpon>MarathonReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Runner\registration.cs">
+    <Compile Include="Runner\RunnerReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Runner\registration.Designer.cs">
-      <DependentUpon>registration.cs</DependentUpon>
+    <Compile Include="Runner\RunnerReg.Designer.cs">
+      <DependentUpon>RunnerReg.cs</DependentUpon>
     </Compile>
     <Compile Include="Runner\RunnerForm.cs">
       <SubType>Form</SubType>
@@ -231,11 +231,11 @@
     <Compile Include="Runner\RunnerForm.Designer.cs">
       <DependentUpon>RunnerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Runner\success.cs">
+    <Compile Include="Runner\Success.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Runner\success.Designer.cs">
-      <DependentUpon>success.cs</DependentUpon>
+    <Compile Include="Runner\Success.Designer.cs">
+      <DependentUpon>Success.cs</DependentUpon>
     </Compile>
     <Compile Include="DataSets\WSRDataSetCharity.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -281,8 +281,8 @@
     <EmbeddedResource Include="AdminMenu\VolunteerAdd.resx">
       <DependentUpon>VolunteerAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Runner\ask.resx">
-      <DependentUpon>ask.cs</DependentUpon>
+    <EmbeddedResource Include="Runner\Ask.resx">
+      <DependentUpon>Ask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BMIcalc.resx">
       <DependentUpon>BMIcalc.cs</DependentUpon>
@@ -290,8 +290,8 @@
     <EmbeddedResource Include="CoordinatorForm.resx">
       <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Runner\editrunnerprofile.resx">
-      <DependentUpon>editrunnerprofile.cs</DependentUpon>
+    <EmbeddedResource Include="Runner\EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -308,8 +308,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Runner\moirez.resx">
-      <DependentUpon>moirez.cs</DependentUpon>
+    <EmbeddedResource Include="Runner\RunnerResults.resx">
+      <DependentUpon>RunnerResults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PasswordRecover.resx">
       <DependentUpon>PasswordRecover.cs</DependentUpon>
@@ -319,17 +319,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Runner\regmar.resx">
-      <DependentUpon>regmar.cs</DependentUpon>
+    <EmbeddedResource Include="Runner\MarathonReg.resx">
+      <DependentUpon>MarathonReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Runner\registration.resx">
-      <DependentUpon>registration.cs</DependentUpon>
+    <EmbeddedResource Include="Runner\RunnerReg.resx">
+      <DependentUpon>RunnerReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Runner\RunnerForm.resx">
       <DependentUpon>RunnerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Runner\success.resx">
-      <DependentUpon>success.cs</DependentUpon>
+    <EmbeddedResource Include="Runner\Success.resx">
+      <DependentUpon>Success.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

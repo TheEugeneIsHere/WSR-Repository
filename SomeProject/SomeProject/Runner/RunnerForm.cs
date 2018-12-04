@@ -11,61 +11,61 @@ namespace SomeProject
         {
             InitializeComponent();
             this.Text = "MARATHON IS";
-            timer1.Tick += timer1_Tick;
+            timer1.Tick += TimerTick;
             timer1.Start();
-            greting();
+            Greting();
             metroLabel2.Text = "Добро пожаловать, " + fname + " " + lname;
             Сonnection.fname = fname;
             Сonnection.lname = lname;
-
-
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
             Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-        private void metroTile6_Click(object sender, EventArgs e)
+        private void MetroTile6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login log = new Login();
+            var log = new Login();
             log.Show();
+            Hide();
         }
 
-        private void metroTile2_Click(object sender, EventArgs e)
+        private void MetroTile2_Click(object sender, EventArgs e)
         {
-            regmar reg = new regmar();
-            this.Hide();
+            var reg = new MarathonReg();
             reg.ShowDialog();
+            Hide();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login log = new Login();
-            log.Visible = true;
+            var log = new Login
+            {
+                Visible = true
+            };
+            Hide();
         }
 
-        private void metroTile1_Click(object sender, EventArgs e)
+        private void MetroTile1_Click(object sender, EventArgs e)
         {
-            moirez moi = new moirez();
-            this.Hide();
+            var moi = new RunnerResults();
             moi.ShowDialog();
+            Hide();
         }
 
-
-
-        private void metroTile3_Click(object sender, EventArgs e)
+        private void MetroTile3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            editrunnerprofile edit = new editrunnerprofile();
+            var edit = new EditProfile();
             edit.ShowDialog();
+            Hide();
         }
+
         private string fname;
         private string lname;
-        private void greting()
+
+        private void Greting()
         {
             SqlConnection con = Сonnection.AzureConnection();
             con.Open();
@@ -74,7 +74,6 @@ namespace SomeProject
 
             strSQL=("SELECt @FirstName=FirstName,@LastName=LastName FROM Users WHERE email=@email and password=@password");
             
-           
             SqlCommand command = con.CreateCommand();
             command.CommandText = strSQL;
             SqlParameter FirstName, LastName;
@@ -88,5 +87,6 @@ namespace SomeProject
             fname = Convert.ToString(FirstName.Value);
             lname = Convert.ToString(LastName.Value);
         }
+
     }
 }
