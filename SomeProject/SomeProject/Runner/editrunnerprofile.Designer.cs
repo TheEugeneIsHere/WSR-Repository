@@ -377,7 +377,6 @@
             "Female"});
             this.metroComboBox1.Location = new System.Drawing.Point(135, 230);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.PromptText = "Male";
             this.metroComboBox1.Size = new System.Drawing.Size(168, 29);
             this.metroComboBox1.TabIndex = 40;
             this.metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -490,7 +489,6 @@
             "VIE"});
             this.metroComboBox2.Location = new System.Drawing.Point(135, 300);
             this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.PromptText = "Выбрать";
             this.metroComboBox2.Size = new System.Drawing.Size(168, 29);
             this.metroComboBox2.TabIndex = 40;
             this.metroComboBox2.Theme = MetroFramework.MetroThemeStyle.Light;

@@ -6,6 +6,7 @@ namespace SomeProject
 {
     public partial class RunnerForm : MetroFramework.Forms.MetroForm
     {
+        
         public RunnerForm()
         {
             InitializeComponent();
@@ -14,7 +15,10 @@ namespace SomeProject
             timer1.Start();
             greting();
             metroLabel2.Text = "Добро пожаловать, " + fname + " " + lname;
-           
+            Сonnection.fname = fname;
+            Сonnection.lname = lname;
+
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
