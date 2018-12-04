@@ -47,7 +47,6 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.charityTableAdapter = new SomeProject.DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.backLoad = new System.ComponentModel.BackgroundWorker();
             this.LoaderPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).BeginInit();
@@ -212,12 +211,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
-            // backLoad
-            // 
-            this.backLoad.WorkerSupportsCancellation = true;
-            this.backLoad.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackLoad_DoWork);
-            this.backLoad.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackLoad_Completed);
-            // 
             // LoaderPictureBox
             // 
             this.LoaderPictureBox.Cursor = System.Windows.Forms.Cursors.AppStarting;
@@ -267,7 +260,6 @@
         private DataSets.WSRDataSetCharity wSRDataSetCharity1;
         private System.Windows.Forms.BindingSource charityBindingSource;
         private DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter charityTableAdapter;
-        private System.ComponentModel.BackgroundWorker backLoad;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;

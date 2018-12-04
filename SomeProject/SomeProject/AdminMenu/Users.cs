@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SomeProject
@@ -12,9 +13,8 @@ namespace SomeProject
         public aUsers()
         {
             InitializeComponent();
-            metroGrid1.DataSource = null;
-            if (!backLoad.IsBusy) backLoad.RunWorkerAsync();
             timer1.Start();
+            UsersLoad(SortBy());
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -23,42 +23,31 @@ namespace SomeProject
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-        private void UsersCount()
+        private string UsersCount()
         {
-            try
-            {
-                con.Open();
-                SqlCommand usersCount = new SqlCommand("SELECT COUNT(*) FROM Users", con);
-                metroLabel3.Text = usersCount.ExecuteScalar().ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
+            con.Open();
+            SqlCommand usersCount = new SqlCommand("SELECT COUNT(*) FROM Users", con);
+            string count = usersCount.ExecuteScalar().ToString();
+            con.Close();
+            return count;
         }
 
-        private void UsersLoad(string query)
+        private async void UsersLoad(string query)
         {
-            try
+            metroGrid1.DataSource = null;
+
+            await Task.Factory.StartNew(() =>
             {
-                //if (backLoad.IsBusy) metroGrid1.DataSource = null;
                 con.Open();
                 SqlDataAdapter ad = new SqlDataAdapter(query, con);
                 ad.Fill(wSRDataSetUsers, "Users");
-                if (backLoad.IsBusy) backLoad.CancelAsync();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
                 con.Close();
-            }
+            });
+
+            metroGrid1.DataSource = usersBindingSource;
+            LoaderPictureBox.Visible = false;
+            LoaderPictureBox.Enabled = false;
+            metroLabel3.Text = UsersCount();
         }
 
         private string SortBy()
@@ -77,8 +66,8 @@ namespace SomeProject
             switch (metroComboBox1.Text)
             {
                 case "Фамилии": OrderBy = "LastName"; break;
-                case "Имени": OrderBy = "FirstName"; break;
-                default: OrderBy = "RoleId"; break;
+                case "Роли": OrderBy = "RoleId"; break;
+                default: OrderBy = "FirstName"; break;
             }
 
             switch (Role)
@@ -87,17 +76,17 @@ namespace SomeProject
                     SortQuery = "SELECT FirstName, LastName, Email, RoleID FROM Users ";
                     if (metroTextBox1.Text != string.Empty) SortQuery += "WHERE Email LIKE '" + metroTextBox1.Text + "%' ";
                     SortQuery += "ORDER BY '" + OrderBy + "'";
-                break;
+                    break;
 
                 default:
-                    SortQuery = "SELECT * FROM Users WHERE RoleId ='" + Role + "' ";
+                    SortQuery = "SELECT FirstName, LastName, Email, RoleID FROM Users WHERE RoleId ='" + Role + "' ";
                     if (metroTextBox1.Text != string.Empty) SortQuery += "AND Email LIKE '" + metroTextBox1.Text + "%' ";
                     SortQuery += "ORDER BY '" + OrderBy + "'";
-                break;
+                    break;
             }
 
             return SortQuery;
-         }
+        }
 
         private void SearchOnEnter(object sender, KeyEventArgs e)
         {
@@ -107,6 +96,8 @@ namespace SomeProject
                 {
                     try
                     {
+                        LoaderPictureBox.Visible = true;
+                        LoaderPictureBox.Enabled = true;
                         e.SuppressKeyPress = true;
                         UsersLoad(SortBy());
                     }
@@ -178,12 +169,14 @@ namespace SomeProject
                     MessageBox.Show("Это Вы :)", "Нам кажется, что..",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                    con.Close();
+                con.Close();
             }
         }
 
         private void MetroComboboxes_ValueChange(object sender, EventArgs e)
         {
+            LoaderPictureBox.Visible = true;
+            LoaderPictureBox.Enabled = true;
             UsersLoad(SortBy());
         }
 
@@ -219,12 +212,12 @@ namespace SomeProject
 
         private void PictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
         {
+            LoaderPictureBox.Visible = true;
+            LoaderPictureBox.Enabled = true;
+            metroTextBox1.Text = "";
+            metroComboBox1.Text = "Имени";
+            metroComboBox2.Text = "(Все роли)";
             UsersLoad(SortBy());
-            //metroComboBox2.Enabled = true;
-            //metroComboBox1.Enabled = true;
-            //metroComboBox2.SelectedIndex = 0;
-            //metroComboBox1.SelectedIndex = 0;
-            //metroTextBox1.Text = string.Empty;
         }
 
         private void GoodbyeUser(object sender, FormClosingEventArgs e)
@@ -244,21 +237,6 @@ namespace SomeProject
             }
         }
 
-        private void BackLoad_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-            LoaderPictureBox.Visible = true;
-            LoaderPictureBox.Enabled = true;
-            UsersCount();
-            UsersLoad(SortBy());
-        }
-
-        private void BackLoad_Completed(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
-        {
-            //metroGrid1.DataSource = usersBindingSource;
-            metroGrid1.DataSource = wSRDataSetUsers.Tables[0];
-            LoaderPictureBox.Visible = false;
-            LoaderPictureBox.Enabled = false;
-        }
     }
 
 }

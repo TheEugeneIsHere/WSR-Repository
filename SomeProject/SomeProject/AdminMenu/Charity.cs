@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SomeProject
@@ -12,7 +13,7 @@ namespace SomeProject
         public aCharity()
         {
             InitializeComponent();
-            if (!backLoad.IsBusy) backLoad.RunWorkerAsync();
+            CharityLoad();
             timer1.Start();
         }
 
@@ -22,25 +23,29 @@ namespace SomeProject
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-        private void CharityLoad()
+
+        private async void CharityLoad()
         {
-            try
+            await Task.Factory.StartNew(() =>
             {
-                con.Open();
-                metroGrid1.DataSource = null;
-                metroGrid1.Columns[0].DefaultCellStyle.NullValue = Properties.Resources.tile_Blago;
-                SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityName, CharityDescription, CharityLogo FROM Charity", con);
-                ad.Fill(wSRDataSetCharity1, "Charity");
-                backLoad.CancelAsync();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
+                try
+                {
+                    metroGrid1.DataSource = null;
+                    con.Open();
+                    metroGrid1.Columns[0].DefaultCellStyle.NullValue = Properties.Resources.tile_Blago;
+                    SqlDataAdapter ad = new SqlDataAdapter("SELECT CharityName, CharityDescription, CharityLogo FROM Charity", con);
+                    ad.Fill(wSRDataSetCharity1, "Charity");
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            });
+
+            metroGrid1.DataSource = charityBindingSource;
+            LoaderPictureBox.Visible = false;
+            LoaderPictureBox.Enabled = false;
         }
 
         private void MetroButton1_Click(object sender, EventArgs e)
@@ -80,16 +85,5 @@ namespace SomeProject
             }
         }
 
-        private void BackLoad_DoWork(object sender, DoWorkEventArgs e)
-        {
-            CharityLoad();
-        }
-
-        private void BackLoad_Completed(object sender, RunWorkerCompletedEventArgs e)
-        {
-            metroGrid1.DataSource = charityBindingSource;
-            LoaderPictureBox.Visible = false;
-            LoaderPictureBox.Enabled = false;
-        }
     }
 }
