@@ -7,7 +7,7 @@ namespace SomeProject
 {
     public partial class aUsers : MetroFramework.Forms.MetroForm
     {
-        //private static string query = "SELECT FirstName, LastName, Email, RoleID FROM Users";
+        private bool subscribedEvent = true;
         SqlConnection con = Сonnection.AzureConnection();
 
         public aUsers()
@@ -32,22 +32,28 @@ namespace SomeProject
             return count;
         }
 
-        private async void UsersLoad(string query)
+        private async void UsersLoad(string query) // Это асинхронный метод, который сортирует и загружает пользователей
         {
             metroGrid1.DataSource = null;
 
             await Task.Factory.StartNew(() =>
             {
                 con.Open();
-                SqlDataAdapter ad = new SqlDataAdapter(query, con);
-                ad.Fill(wSRDataSetUsers, "Users");
+                SqlDataAdapter ad = new SqlDataAdapter(query, con); 
+                ad.Fill(wSRDataSetUsers, "Users"); 
                 con.Close();
             });
 
-            metroGrid1.DataSource = usersBindingSource;
-            LoaderPictureBox.Visible = false;
+            metroGrid1.DataSource = usersBindingSource; 
+            LoaderPictureBox.Visible = false; 
             LoaderPictureBox.Enabled = false;
             metroLabel3.Text = UsersCount();
+            if (!subscribedEvent)
+            {                   
+                metroComboBox1.TextChanged += new EventHandler(MetroComboboxes_ValueChange);
+                metroComboBox2.TextChanged += new EventHandler(MetroComboboxes_ValueChange);
+                subscribedEvent = true; 
+            }
         }
 
         private string SortBy()
@@ -212,11 +218,17 @@ namespace SomeProject
 
         private void PictureBox3_Click(object sender, EventArgs e) // Обновление таблицы
         {
+            if (subscribedEvent) // Проверка, подписано ли событие 
+            {
+                metroComboBox1.TextChanged -= new EventHandler(MetroComboboxes_ValueChange); // Если да, отписываем
+                metroComboBox2.TextChanged -= new EventHandler(MetroComboboxes_ValueChange); // И у этого тоже
+                subscribedEvent = false; 
+            }
             LoaderPictureBox.Visible = true;
             LoaderPictureBox.Enabled = true;
             metroTextBox1.Text = "";
-            metroComboBox1.Text = "Имени";
-            metroComboBox2.Text = "(Все роли)";
+            metroComboBox1.Text = "Имени"; // Обновляем информацию элемента, для которого произведена отписка
+            metroComboBox2.Text = "(Все роли)"; // До начальных значений сортировки
             UsersLoad(SortBy());
         }
 
