@@ -36,7 +36,6 @@ namespace SomeProject
         private async void UsersLoadAsync(string query) // Это асинхронный метод, который сортирует и загружает пользователей
         {
             metroGrid1.DataSource = null;
-
             await Task.Factory.StartNew(() =>
             {
                 con.Open();
@@ -45,7 +44,7 @@ namespace SomeProject
                 con.Close();
             });
 
-            metroGrid1.DataSource = usersBindingSource; 
+            metroGrid1.DataSource = usersBindingSource;
             LoaderPictureBox.Visible = false; 
             LoaderPictureBox.Enabled = false;
             metroLabel3.Text = UsersCount();
