@@ -8,6 +8,7 @@ namespace SomeProject
         {
             InitializeComponent();
             timer1.Start();
+            metroPanel1.Visible = false;
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -25,5 +26,11 @@ namespace SomeProject
             Close();
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            metroPanel2.Visible = false;
+            metroPanel1.Visible = true;
+            label1.Text = "Насяльника на грид, толька мана запольниц треба";
+        }
     }
 }

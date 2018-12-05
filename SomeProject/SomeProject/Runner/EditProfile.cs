@@ -107,7 +107,13 @@ namespace SomeProject
 
         private void metroTextBox2_TextChanged(object sender, EventArgs e)
         {
-           errorProvider1.SetError(metroTextBox2,"");
+            metroButton2.Enabled = true;
+        }
+
+        private void EditProfile_Load(object sender, EventArgs e)
+        {
+            this.genderTableAdapter.Fill(this.wSRDataSetMAX.Gender);
+            this.countryTableAdapter.Fill(this.wSRDataSetMAX.Country);
         }
 
         /*

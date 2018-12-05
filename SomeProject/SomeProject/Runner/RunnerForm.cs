@@ -55,9 +55,10 @@ namespace SomeProject
 
         private void MetroTile3_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var EditForm = new EditProfile();
             EditForm.ShowDialog();
-            Hide();
+            
         }
 
         private string fname;

@@ -52,26 +52,26 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.genderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wSRDataSetMAXBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wSRDataSetMAX = new SomeProject.WSRDataSetMAX();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.wSRDataSetMAX = new SomeProject.WSRDataSetMAX();
-            this.wSRDataSetMAXBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.countryTableAdapter = new SomeProject.WSRDataSetMAXTableAdapters.CountryTableAdapter();
-            this.genderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.genderTableAdapter = new SomeProject.WSRDataSetMAXTableAdapters.GenderTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAXBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAXBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -396,6 +396,21 @@
             this.metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroComboBox1.UseSelectable = true;
             // 
+            // genderBindingSource
+            // 
+            this.genderBindingSource.DataMember = "Gender";
+            this.genderBindingSource.DataSource = this.wSRDataSetMAXBindingSource;
+            // 
+            // wSRDataSetMAXBindingSource
+            // 
+            this.wSRDataSetMAXBindingSource.DataSource = this.wSRDataSetMAX;
+            this.wSRDataSetMAXBindingSource.Position = 0;
+            // 
+            // wSRDataSetMAX
+            // 
+            this.wSRDataSetMAX.DataSetName = "WSRDataSetMAX";
+            this.wSRDataSetMAX.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // metroDateTime1
             // 
             this.metroDateTime1.Location = new System.Drawing.Point(135, 265);
@@ -417,6 +432,11 @@
             this.metroComboBox2.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroComboBox2.UseSelectable = true;
             // 
+            // countryBindingSource
+            // 
+            this.countryBindingSource.DataMember = "Country";
+            this.countryBindingSource.DataSource = this.wSRDataSetMAXBindingSource;
+            // 
             // metroToolTip1
             // 
             this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
@@ -436,6 +456,7 @@
             // 
             // metroButton2
             // 
+            this.metroButton2.Enabled = false;
             this.metroButton2.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.metroButton2.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.metroButton2.Location = new System.Drawing.Point(290, 427);
@@ -459,29 +480,9 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wait in the next versions...";
             // 
-            // wSRDataSetMAX
-            // 
-            this.wSRDataSetMAX.DataSetName = "WSRDataSetMAX";
-            this.wSRDataSetMAX.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // wSRDataSetMAXBindingSource
-            // 
-            this.wSRDataSetMAXBindingSource.DataSource = this.wSRDataSetMAX;
-            this.wSRDataSetMAXBindingSource.Position = 0;
-            // 
-            // countryBindingSource
-            // 
-            this.countryBindingSource.DataMember = "Country";
-            this.countryBindingSource.DataSource = this.wSRDataSetMAXBindingSource;
-            // 
             // countryTableAdapter
             // 
             this.countryTableAdapter.ClearBeforeFill = true;
-            // 
-            // genderBindingSource
-            // 
-            this.genderBindingSource.DataMember = "Gender";
-            this.genderBindingSource.DataSource = this.wSRDataSetMAXBindingSource;
             // 
             // genderTableAdapter
             // 
@@ -526,12 +527,12 @@
             this.Load += new System.EventHandler(this.EditProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAXBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAXBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
