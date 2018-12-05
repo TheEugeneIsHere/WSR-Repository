@@ -7,6 +7,7 @@ namespace SomeProject
         public CoordinatorForm()
         {
             InitializeComponent();
+            FormClosing += new FormClosingEventHandler(AppClose.GoodBye);
         }
     }
 }

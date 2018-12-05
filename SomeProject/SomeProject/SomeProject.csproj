@@ -88,6 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppClose.cs" />
     <Compile Include="InfoMenu\About.cs">
       <SubType>Form</SubType>
     </Compile>

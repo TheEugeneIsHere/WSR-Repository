@@ -7,14 +7,15 @@ namespace SomeProject
 {
     public partial class aUsers : MetroFramework.Forms.MetroForm
     {
-        private bool subscribedEvent = true;
         SqlConnection con = Сonnection.AzureConnection();
+        bool subscribedEvent = true;
 
         public aUsers()
         {
             InitializeComponent();
             timer1.Start();
             UsersLoad(SortBy());
+            FormClosing += new FormClosingEventHandler(AppClose.GoodBye);
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -230,23 +231,6 @@ namespace SomeProject
             metroComboBox1.Text = "Имени"; // Обновляем информацию элемента, для которого произведена отписка
             metroComboBox2.Text = "(Все роли)"; // До начальных значений сортировки
             UsersLoad(SortBy());
-        }
-
-        private void GoodbyeUser(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
-                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dialog == DialogResult.Yes)
-                {
-                    Application.OpenForms[0].Close();
-                }
-                else
-                {
-                    e.Cancel = true;
-                }
-            }
         }
 
     }

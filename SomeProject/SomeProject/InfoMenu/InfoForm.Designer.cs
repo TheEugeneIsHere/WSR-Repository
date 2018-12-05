@@ -194,7 +194,6 @@
             this.Name = "InfoForm";
             this.Resizable = false;
             this.Text = "MARATHON SKILLS 2k18";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             this.metroPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

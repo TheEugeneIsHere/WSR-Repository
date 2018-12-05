@@ -17,6 +17,7 @@ namespace SomeProject
         {
             InitializeComponent();
             timer1.Start();
+            FormClosing += new FormClosingEventHandler(AppClose.GoodBye);
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -140,23 +141,6 @@ namespace SomeProject
             };
             MainForm.Show();
             Hide();
-        }
-
-        private void GoodbyeUser(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
-                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dialog == DialogResult.Yes)
-                {
-                    Application.OpenForms[0].Close();
-                }
-                else
-                {
-                    e.Cancel = true;
-                }
-            }
         }
 
     }

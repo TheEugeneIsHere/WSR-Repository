@@ -178,7 +178,6 @@
             this.Resizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Administration Menu";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             ((System.ComponentModel.ISupportInitialize)(this.logoutPic)).EndInit();
             this.ResumeLayout(false);
 

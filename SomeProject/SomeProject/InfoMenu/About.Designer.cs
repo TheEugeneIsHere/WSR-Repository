@@ -232,7 +232,6 @@
             this.Name = "About";
             this.Resizable = false;
             this.Text = "MARATHON SKILLS 2k18";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodbyeUser);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();

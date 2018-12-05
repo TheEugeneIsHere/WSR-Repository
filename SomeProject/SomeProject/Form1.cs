@@ -5,6 +5,7 @@ namespace SomeProject
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
+        
         SqlConnection con = Сonnection.AzureConnection();
 
         public Form1()

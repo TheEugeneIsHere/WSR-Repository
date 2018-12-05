@@ -11,6 +11,7 @@ namespace SomeProject
             InitializeComponent();
             timer1.Start();
             LabelOnBox();
+            FormClosing += new FormClosingEventHandler(AppClose.GoodBye);
         }
 
         private void LabelOnBox()
@@ -35,23 +36,6 @@ namespace SomeProject
             InfoForm InfoMenu = new InfoForm();
             InfoMenu.Show();
             Hide();
-        }
-
-        private void GoodbyeUser(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult dialog = MessageBox.Show("Вы действительно желаете выйти из приложения?", "WSR: Выход",
-                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dialog == DialogResult.Yes)
-                {
-                    Application.OpenForms[0].Close();
-                }
-                else
-                {
-                    e.Cancel = true;
-                }
-            }
         }
 
         private void PictureBox5_Click(object sender, EventArgs e)
