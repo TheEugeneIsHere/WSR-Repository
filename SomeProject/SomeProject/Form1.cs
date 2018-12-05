@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SomeProject
 {
@@ -89,5 +90,9 @@ namespace SomeProject
             Hide();
         }
 
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms.Count > 0) Application.OpenForms[0].Close();
+        }
     }
 }

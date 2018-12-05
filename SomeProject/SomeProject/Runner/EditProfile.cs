@@ -71,15 +71,16 @@ namespace SomeProject
             string data = date.ToString("yyyy-MM-dd");
             if (metroTextBox8.Text == "")
             {
-                
-                query = @"update Users set Firstname='"+metroTextBox2.Text+"',LastName='"+metroTextBox3.Text + "';   update Runner set DateOfBirth = '"+data+"', CountryCode = '"+metroComboBox2.Text+"', Gender = '"+metroComboBox1.Text+"'; ";
+                query = @"UPDATE Users SET Firstname='"+metroTextBox2.Text+"',LastName='"+metroTextBox3.Text+"' WHERE Email = '"+metroLabel12.Text+"'; " +
+                    "UPDATE Runner SET DateOfBirth = '"+data+"',CountryCode ='"+metroComboBox2.Text+"',Gender ='"+metroComboBox1.Text+"' WHERE Email = '"+metroLabel12.Text+"'; ";
                 Edit(query);
             }
-            else
+            else // Все запросы исправлены - Бэтмен
             {
                 if (metroTextBox8.Text != "")
                 {
-                    query = @"update Users set Firstname='"+ metroTextBox2.Text + "',LastName='"+ metroTextBox3.Text + "', Password='"+metroTextBox8.Text+"'; update Runner set DateOfBirth = '"+data+"', CountryCode = '"+ metroComboBox2.Text + "', Gender = '"+ metroComboBox1.Text + "'; ";
+                    query = @"UPDATE Users set Firstname='"+ metroTextBox2.Text + "',LastName='"+ metroTextBox3.Text + "', Password='"+metroTextBox8.Text+"' WHERE Email = '"+metroLabel12.Text+"'; " +
+                        "UPDATE Runner SET DateOfBirth = '"+data+"',CountryCode = '"+ metroComboBox2.Text + "',Gender = '"+ metroComboBox1.Text + "' WHERE Email = '" + metroLabel12.Text + "'; ";
                     Edit(query);
                 }
             }

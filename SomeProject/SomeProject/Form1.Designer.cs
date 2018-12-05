@@ -180,6 +180,7 @@
             this.Resizable = false;
             this.Text = "MARATHON INFORMATION SYSTEM";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.ResumeLayout(false);
 
         }
