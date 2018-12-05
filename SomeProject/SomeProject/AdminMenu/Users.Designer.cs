@@ -57,6 +57,7 @@
             this.usersTableAdapter = new SomeProject.DataSets.WSRDataSetUsersTableAdapters.UsersTableAdapter();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.LoaderPictureBox = new System.Windows.Forms.PictureBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetUsers)).BeginInit();
@@ -388,11 +389,28 @@
             this.LoaderPictureBox.TabIndex = 49;
             this.LoaderPictureBox.TabStop = false;
             // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Enabled = false;
+            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel4.ForeColor = System.Drawing.Color.Red;
+            this.metroLabel4.Location = new System.Drawing.Point(131, 25);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(732, 50);
+            this.metroLabel4.TabIndex = 50;
+            this.metroLabel4.Text = "При обновлении, когда 0 значений (и возможно в других случаях) \r\n  ..остаётся пол" +
+    "зунок справа. Если прикоснуться вызывает какой-то там эксепшн";
+            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel4.UseCustomForeColor = true;
+            // 
             // aUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 514);
+            this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.LoaderPictureBox);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroGrid1);
@@ -452,5 +470,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn editUserButton;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.PictureBox LoaderPictureBox;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
     }
 }
