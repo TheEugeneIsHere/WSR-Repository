@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SomeProject
 {
@@ -63,7 +64,62 @@ namespace SomeProject
             };
             Hide();
         }
-        
+
+        private void EditProfile_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "wSRDataSetMAX.Gender". При необходимости она может быть перемещена или удалена.
+            this.genderTableAdapter.Fill(this.wSRDataSetMAX.Gender);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "wSRDataSetMAX.Country". При необходимости она может быть перемещена или удалена.
+            this.countryTableAdapter.Fill(this.wSRDataSetMAX.Country);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "wSRDataSetGLOBAL.Country". При необходимости она может быть перемещена или удалена.
+       
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            string query;
+            DateTime date = metroDateTime1.Value;
+            string data = date.ToString("yyyy-MM-dd");
+            if (metroTextBox8.Text == "")
+            {
+                
+                query = @"update Users set Firstname='"+metroTextBox2.Text+"',LastName='"+metroTextBox3.Text + "';   update Runner set DateOfBirth = '"+data+"', CountryCode = '"+metroComboBox2.Text+"', Gender = '"+metroComboBox1.Text+"'; ";
+                edit(query);
+            }
+            else
+            {
+                if (metroTextBox8.Text != "")
+                {
+                    query = @"update Users set Firstname='"+ metroTextBox2.Text + "',LastName='"+ metroTextBox3.Text + "', Password='"+metroTextBox8.Text+"'; update Runner set DateOfBirth = '"+data+"', CountryCode = '"+ metroComboBox2.Text + "', Gender = '"+ metroComboBox1.Text + "'; ";
+                    edit(query);
+                }
+            }
+        }
+        void edit(string query)
+        {
+            var ediprofile = new SqlCommand(query, con);
+            try
+            {
+                con.Open();
+                ediprofile.ExecuteNonQuery();
+                MessageBox.Show("Информация обновлена!");
+                con.Close();
+                ediprofile.Dispose();
+            }
+            catch (Exception ex)
+            {
+                ediprofile.Dispose();
+                con.Close();
+                MessageBox.Show(ex.ToString());
+            }
+            con.Close();
+        }
+
+        private void metroTextBox2_TextChanged(object sender, EventArgs e)
+        {
+           errorProvider1.SetError(metroTextBox2,"");
+        }
+
         /*
 update Users set Firstname='',LastName='';
 update Runner set DateOfBirth='',CountryCode='',Gender='';

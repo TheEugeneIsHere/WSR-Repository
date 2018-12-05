@@ -258,6 +258,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetVolunteer.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WSRDataSetMAX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSRDataSetMAX.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminMenu\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -385,6 +390,17 @@
     </None>
     <None Include="DataSets\WSRDataSetVolunteer.xss">
       <DependentUpon>WSRDataSetVolunteer.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetMAX.xsc">
+      <DependentUpon>WSRDataSetMAX.xsd</DependentUpon>
+    </None>
+    <None Include="WSRDataSetMAX.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WSRDataSetMAX.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSRDataSetMAX.xss">
+      <DependentUpon>WSRDataSetMAX.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
