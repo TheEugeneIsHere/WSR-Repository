@@ -164,7 +164,7 @@
             this.Controls.Add(this.timerLabel);
             this.Name = "RunnerForm";
             this.Resizable = false;
-            this.Text = "MARATHON IS..";
+            this.Text = "RunnerForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 

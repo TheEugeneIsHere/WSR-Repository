@@ -90,7 +90,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // metroLabel1
             // 
@@ -536,7 +535,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wait in the next versions...";
             // 
-            // EditProfile
+            // editrunnerprofile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -564,7 +563,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.timerLabel);
-            this.Name = "EditProfile";
+            this.Name = "editrunnerprofile";
             this.Resizable = false;
             this.Text = "Редактирование профиля";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

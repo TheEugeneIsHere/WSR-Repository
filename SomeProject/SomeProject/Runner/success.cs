@@ -11,8 +11,8 @@ namespace SomeProject
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            var MainMenu = new Form1();
-            MainMenu.Show();
+            var f1 = new Form1();
+            f1.Show();
             Close();
         }
     }

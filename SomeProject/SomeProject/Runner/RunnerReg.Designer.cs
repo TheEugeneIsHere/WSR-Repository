@@ -584,7 +584,7 @@
             this.metroComboBox2.TabIndex = 8;
             this.metroComboBox2.UseSelectable = true;
             // 
-            // RunnerReg
+            // registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -613,9 +613,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.timerLabel);
-            this.Name = "RunnerReg";
+            this.Name = "registration";
             this.Resizable = false;
-            this.Text = "MARATHON IS..";
+            this.Text = "registration";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
