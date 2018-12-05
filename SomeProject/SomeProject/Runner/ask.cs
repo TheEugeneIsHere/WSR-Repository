@@ -7,16 +7,12 @@ namespace SomeProject
         public Ask()
         {
             InitializeComponent();
-            this.Text = "MARATHON IS";
-            
-            timer1.Tick += TimerTick;
             timer1.Start();
-
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 

@@ -8,17 +8,14 @@ namespace SomeProject
     {
         SqlConnection con = Сonnection.AzureConnection();
 
-        private void TimerTick(object sender, EventArgs e)
-        {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
-            timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
-        }
+        string gender;
+        string contry;
+        DateTime ishdate;
 
         public EditProfile()
         {
-            Сonnection counter = new Сonnection();
+            var counter = new Сonnection();
             InitializeComponent();
-            timer1.Tick += TimerTick;
             timer1.Start();
             metroLabel12.Text = counter.getMail();
             metroTextBox2.Text = counter.getName();
@@ -29,16 +26,18 @@ namespace SomeProject
             metroComboBox2.Text = contry;
         }
 
-        string gender;
-        string contry;
-        DateTime ishdate;
-
-       private void GetGender()
+        private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection();
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
+            timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
+        }
+
+        private void GetGender()
+        {
+            var counter = new Сonnection();
             con.Open();
             string strSQL;
-            SqlCommand command = con.CreateCommand();
+            var command = con.CreateCommand();
             strSQL = ("SELECT @Gender=Gender,@DateOfBirth=DateOfBirth,@CountryCode=CountryCode FROM Runner WHERE email=@email");
             SqlParameter Gender,date,country;
             command.CommandText = strSQL;

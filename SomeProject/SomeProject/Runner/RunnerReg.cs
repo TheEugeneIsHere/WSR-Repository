@@ -12,39 +12,35 @@ namespace SomeProject
         public RunnerReg()
         {
             InitializeComponent();
-            this.Text = "MARATHON IS";
-            timer1.Tick += TimerTick;
             timer1.Start();
-           
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 f1 = new Form1();
-            f1.Show();
+            var MainMenu = new Form1();
+            MainMenu.Show();
+            Hide();
           }
 
-        private DateTime born;
-        private string mail;
-        private string pas;
-        private string nm;
-        private string fnm;
-        private string gender;
-        private string country;
-        private int id;
+        DateTime born;
+        string mail;
+        string pas;
+        string nm;
+        string fnm;
+        string gender;
+        string country;
 
         private void MetroButton2_Click(object sender, EventArgs e)
         {
             int errorcount = 0;
             string errorLog = "Исправьте ошибки:\n";
-            SqlCommand isRegistered = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email ='" + metroTextBox1.Text + "'", con);
+            var isRegistered = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email ='" + metroTextBox1.Text + "'", con);
             try
             {
                 con.Open();
@@ -131,7 +127,7 @@ namespace SomeProject
                 nm = metroTextBox4.Text;
                 fnm = metroTextBox5.Text;
                 /*получение кода страны*/
-                SqlCommand getCountryCode = new SqlCommand("SELECT @countrycode=countrycode FROM country WHERE countryname ='" + metroComboBox2.Text + "'", con);
+                var getCountryCode = new SqlCommand("SELECT @countrycode=countrycode FROM country WHERE countryname ='" + metroComboBox2.Text + "'", con);
                 try
                 {
                     con.Open();
@@ -160,7 +156,6 @@ namespace SomeProject
                 // По идее должно работать, хотя гарантировать я не могу. Ебанёт да не должно вроде
                 Register(query1); // Сначала вставка в Runner, затем в Users
                 UsersAdd(query2); 
-
             }
         }
 
@@ -169,7 +164,7 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlCommand add = new SqlCommand(query, con);
+                var add = new SqlCommand(query, con);
                 add.ExecuteNonQuery();
                 con.Close();
             }
@@ -185,11 +180,11 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlCommand register = new SqlCommand(query, con);
+                var register = new SqlCommand(query, con);
                 register.ExecuteNonQuery();
                 con.Close();
                 this.Close();
-                Success suc = new Success();
+                var suc = new Success();
                 suc.Show();
 
             }

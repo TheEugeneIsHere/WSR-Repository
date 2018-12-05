@@ -9,7 +9,6 @@ namespace SomeProject
         public MarathonReg()
         {
             InitializeComponent();
-            timer1.Tick += TimerTick;
             timer1.Start();
         }
 
@@ -19,17 +18,17 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Hide();
-            RunnerForm run = new RunnerForm
+            var run = new RunnerForm
             {
                 Visible = true
             };
+            Hide();
         }
 
         private void BunifuCheckbox1_OnChange(object sender, EventArgs e)
@@ -129,21 +128,13 @@ namespace SomeProject
                 itog = vznos + stoim + variant;
                 label1.Text = itog + "$";
                 string regdate = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
-                Random r = new Random();
+                var r = new Random();
                 int charityid = r.Next(1, 10);
 
                 string query = ""; // Переменная не используется. Ну а вдруг ты не знал?
                 int shlish; //денис александрович, идите в жопу
-                Slishy(); // Сам иди :(((
-                MessageBox.Show("В теории вы зареганы, по факту система не работает...", "Продам гараж"); 
-
+                MessageBox.Show("В теории вы зареганы, по факту система не работает...", "Продам гараж"); // Сам иди :(((
             }
-        }
-
-        private void Slishy()
-        {
-            Console.WriteLine("Сам иди в жопа ахахахха");
-            Console.ReadKey();
         }
 
         private void Register(string query)
