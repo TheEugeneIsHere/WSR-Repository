@@ -13,8 +13,8 @@ namespace SomeProject
             timer1.Start();
             Greting();
             metroLabel2.Text = "Добро пожаловать, " + fname + " " + lname;
-            Сonnection.fname = fname;
-            Сonnection.lname = lname;
+            Сonnection.Fname = fname;
+            Сonnection.Lname = lname;
         }
 
         private void TimerTick(object sender, EventArgs e)

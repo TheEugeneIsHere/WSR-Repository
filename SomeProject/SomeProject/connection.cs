@@ -8,21 +8,9 @@ namespace SomeProject
         /*уютный уголок максюши*/
         public static string Mail { get; set; } 
         public static string Password { get; set; }
-        //чувствую что то не так но по....
-        public static string fname { get; set; }
-        public static string lname { get; set; }
-        public string getMail()
-        {
-            return Mail;
-        }
-        public string getName()
-        {
-            return fname;
-        }
-        public string getLname()
-        {
-            return lname;
-        }
+        public static string Fname { get; set; }
+        public static string Lname { get; set; }
+        
         /* Уютный Готэм Дениса */
         private TimeSpan TimeRemaining = new DateTime(2018, 12, 31, 23, 59, 59) - DateTime.Now;
         public static string EditMail { get; set; }

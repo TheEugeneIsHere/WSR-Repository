@@ -15,12 +15,11 @@ namespace SomeProject
 
         public EditProfile()
         {
-            var counter = new Сonnection();
             InitializeComponent();
             timer1.Start();
-            metroLabel12.Text = counter.getMail();
-            metroTextBox2.Text = counter.getName();
-            metroTextBox3.Text = counter.getLname();
+            metroLabel12.Text = Сonnection.Mail;
+            metroTextBox2.Text = Сonnection.Fname;
+            metroTextBox3.Text = Сonnection.Lname;
             GetGender();
             metroComboBox1.Text = gender;
             metroDateTime1.Value = ishdate;
@@ -48,7 +47,7 @@ namespace SomeProject
             date.Direction = ParameterDirection.Output;
             country = command.Parameters.Add("@CountryCode", SqlDbType.VarChar, 20);
             country.Direction = ParameterDirection.Output;
-            command.Parameters.AddWithValue("@email", counter.getMail());
+            command.Parameters.AddWithValue("@email", Сonnection.Mail);
             command.ExecuteNonQuery();
             gender = Convert.ToString(Gender.Value);
             contry = Convert.ToString(country.Value);
@@ -65,16 +64,6 @@ namespace SomeProject
             Hide();
         }
 
-        private void EditProfile_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "wSRDataSetMAX.Gender". При необходимости она может быть перемещена или удалена.
-            this.genderTableAdapter.Fill(this.wSRDataSetMAX.Gender);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "wSRDataSetMAX.Country". При необходимости она может быть перемещена или удалена.
-            this.countryTableAdapter.Fill(this.wSRDataSetMAX.Country);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "wSRDataSetGLOBAL.Country". При необходимости она может быть перемещена или удалена.
-       
-        }
-
         private void metroButton2_Click(object sender, EventArgs e)
         {
             string query;
@@ -84,31 +73,32 @@ namespace SomeProject
             {
                 
                 query = @"update Users set Firstname='"+metroTextBox2.Text+"',LastName='"+metroTextBox3.Text + "';   update Runner set DateOfBirth = '"+data+"', CountryCode = '"+metroComboBox2.Text+"', Gender = '"+metroComboBox1.Text+"'; ";
-                edit(query);
+                Edit(query);
             }
             else
             {
                 if (metroTextBox8.Text != "")
                 {
                     query = @"update Users set Firstname='"+ metroTextBox2.Text + "',LastName='"+ metroTextBox3.Text + "', Password='"+metroTextBox8.Text+"'; update Runner set DateOfBirth = '"+data+"', CountryCode = '"+ metroComboBox2.Text + "', Gender = '"+ metroComboBox1.Text + "'; ";
-                    edit(query);
+                    Edit(query);
                 }
             }
         }
-        void edit(string query)
+
+        void Edit(string query)
         {
-            var ediprofile = new SqlCommand(query, con);
+            var ediеProfile = new SqlCommand(query, con);
             try
             {
                 con.Open();
-                ediprofile.ExecuteNonQuery();
+                ediеProfile.ExecuteNonQuery();
                 MessageBox.Show("Информация обновлена!");
                 con.Close();
-                ediprofile.Dispose();
+                ediеProfile.Dispose();
             }
             catch (Exception ex)
             {
-                ediprofile.Dispose();
+                ediеProfile.Dispose();
                 con.Close();
                 MessageBox.Show(ex.ToString());
             }

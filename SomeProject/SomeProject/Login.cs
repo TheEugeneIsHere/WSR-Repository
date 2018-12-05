@@ -54,23 +54,10 @@ namespace SomeProject
             {
                 if (dataReader.Read())
                 {
-                    //if ((string)dataReader["Roleid"] == "R")
-                    //{
-                    //    role = Role.R;
-
-                    //}
-                    //if ((string)dataReader["Roleid"] == "A" || (string)dataReader["Roleid"] == "O")
-                    //{
-                    //    role = Role.A;
-                    //}
-                    //if ((string)dataReader["Roleid"] == "C")
-                    //{
-                    //    role = Role.C;
-                    //}
-                    switch ((string)dataReader["RoleId"]) // Скучно ночью было, на работу не проверял
-                    { // Продам гараж
-                        case "R": role = Role.R; break; // если проверишь, удали ифы тада, со свитч интимнее и короче азаза
-                        case "A": role = Role.A; break; // А чем ещё заниматься ночью, как не рефакторить код ага
+                    switch ((string)dataReader["RoleId"])
+                    {
+                        case "R": role = Role.R; break;
+                        case "A": role = Role.A; break;
                         case "C": role = Role.C; break;
                         default: role = Role.Failed; break;
                     }
@@ -107,15 +94,7 @@ namespace SomeProject
                 }
                 else if (role == Role.R)
                 {
-                    // connection.mail = metroTextBox1.Text;
                     Сonnection.Password = metroTextBox2.Text;
-                    /* Из-за этих строк (Их расположения в IF роль = бегун у меня не работает приветствие
-                       Я особо не вникал, но как по мне без разницы бегун или нет, всё равно надо пихать в connection.mail
-                       Поэтому я Password здесь оставлю, ашто он не нужен если адмэн как по мне
-                       А connection.mail присвою в любом случае
-                       Если что-то из этого критично - пиши, намутим по-другому
-                       P.S. Я минут 40 всматривался в твой и свой код, не понимая что не так, пока не заметил что connection.mail
-                       ..находится в блоке If Runner ...... */
                     var form = new RunnerForm();
                     form.Show();
                     Hide();
