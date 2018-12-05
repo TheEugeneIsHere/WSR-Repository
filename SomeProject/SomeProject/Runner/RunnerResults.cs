@@ -7,19 +7,18 @@ namespace SomeProject
         public RunnerResults()
         {
             InitializeComponent();
-            timer1.Tick += TimerTick;
             timer1.Start();
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            RunnerForm run = new RunnerForm
+            var run = new RunnerForm
             {
                 Visible = true
             };

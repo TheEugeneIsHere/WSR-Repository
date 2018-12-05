@@ -10,8 +10,6 @@ namespace SomeProject
         public RunnerForm()
         {
             InitializeComponent();
-            this.Text = "MARATHON IS";
-            timer1.Tick += TimerTick;
             timer1.Start();
             Greting();
             metroLabel2.Text = "Добро пожаловать, " + fname + " " + lname;
@@ -21,7 +19,7 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
@@ -50,15 +48,15 @@ namespace SomeProject
 
         private void MetroTile1_Click(object sender, EventArgs e)
         {
-            var moi = new RunnerResults();
-            moi.ShowDialog();
+            var ResultsForm = new RunnerResults();
+            ResultsForm.ShowDialog();
             Hide();
         }
 
         private void MetroTile3_Click(object sender, EventArgs e)
         {
-            var edit = new EditProfile();
-            edit.ShowDialog();
+            var EditForm = new EditProfile();
+            EditForm.ShowDialog();
             Hide();
         }
 
