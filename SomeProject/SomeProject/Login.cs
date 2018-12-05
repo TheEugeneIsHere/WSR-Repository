@@ -10,35 +10,33 @@ namespace SomeProject
         public Login()
         {
             InitializeComponent();
-            this.Text = "MARATHON IS";
-            timer1.Tick += TimerTick;
             timer1.Start();
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void MetroButton2_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
-            f1.Show();
+            var MainForm = new Form1();
+            MainForm.Show();
             Hide();
             Сonnection.Mail = "";
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
-            f1.Show();
+            var MainForm = new Form1();
+            MainForm.Show();
             Hide();
         }
 
         enum Role { Failed, R, C, A }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
             login();
         }
@@ -56,18 +54,25 @@ namespace SomeProject
             {
                 if (dataReader.Read())
                 {
-                    if ((string)dataReader["Roleid"] == "R")
-                    {
-                        role = Role.R;
+                    //if ((string)dataReader["Roleid"] == "R")
+                    //{
+                    //    role = Role.R;
 
-                    }
-                    if ((string)dataReader["Roleid"] == "A" || (string)dataReader["Roleid"] == "O")
-                    {
-                        role = Role.A;
-                    }
-                    if ((string)dataReader["Roleid"] == "C")
-                    {
-                        role = Role.C;
+                    //}
+                    //if ((string)dataReader["Roleid"] == "A" || (string)dataReader["Roleid"] == "O")
+                    //{
+                    //    role = Role.A;
+                    //}
+                    //if ((string)dataReader["Roleid"] == "C")
+                    //{
+                    //    role = Role.C;
+                    //}
+                    switch ((string)dataReader["RoleId"]) // Скучно ночью было, на работу не проверял
+                    { // Продам гараж
+                        case "R": role = Role.R; break; // если проверишь, удали ифы тада, со свитч интимнее и короче азаза
+                        case "A": role = Role.A; break; // А чем ещё заниматься ночью, как не рефакторить код ага
+                        case "C": role = Role.C; break;
+                        default: role = Role.Failed; break;
                     }
                 }
             }
@@ -130,7 +135,7 @@ namespace SomeProject
         {
             metroTextBox1.Text = "leila.azedeva@mskills.com";
             metroTextBox2.Text = "MvTQ3itX";
-            login(); // Не за что ага
+            login();
         }
 
         private void metroLabel1_Click(object sender, EventArgs e)
@@ -170,7 +175,7 @@ namespace SomeProject
 
         private void ForgetLabel_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PasswordRecover password = new PasswordRecover();
+            var password = new PasswordRecover();
             password.ShowDialog();
         }
         /*конец временного мусора*/

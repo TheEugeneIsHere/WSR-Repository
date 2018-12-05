@@ -6,7 +6,7 @@ namespace SomeProject
 {
     public partial class BMIcalc : MetroFramework.Forms.MetroForm
     {
-        private static string gender;
+        string gender;
 
         public BMIcalc()
         {
@@ -17,14 +17,14 @@ namespace SomeProject
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1();
+            var MainForm = new Form1();
             MainForm.Show();
             Hide();
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 

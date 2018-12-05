@@ -14,20 +14,20 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Form1 MainMenu = new Form1();
+            var MainMenu = new Form1();
             MainMenu.Show();
             Hide();
         }
 
         private void MetroTile1_Click(object sender, EventArgs e)
         {
-            About about = new About();
+            var about = new About();
             about.Show();
             Hide();
         }

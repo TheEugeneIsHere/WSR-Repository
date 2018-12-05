@@ -22,15 +22,15 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         public static byte[] GetPhoto(string filePath)
         {
-            FileStream stream = new FileStream(
+            var stream = new FileStream(
                 filePath, FileMode.Open, FileAccess.Read);
-            BinaryReader reader = new BinaryReader(stream);
+            var reader = new BinaryReader(stream);
             byte[] photo = reader.ReadBytes((int)stream.Length);
 
             reader.Close();
@@ -44,7 +44,7 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlCommand com = new SqlCommand("INSERT INTO Charity (CharityName, CharityDescription, CharityLogo)" +
+                var com = new SqlCommand("INSERT INTO Charity (CharityName, CharityDescription, CharityLogo)" +
                     " VALUES (@CharityName, @CharityDescription, @CharityLogo)", con);
 
                 com.Parameters.Add("@CharityName", SqlDbType.NVarChar, 100).Value = metroTextBox1.Text;
@@ -62,7 +62,8 @@ namespace SomeProject
                 con.Close();
                 MessageBox.Show("Благотворительная организация успешно добавлена в систему WSR", "WSR: Информация",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                aCharity CharityForm = new aCharity
+
+                var CharityForm = new aCharity
                 {
                     Location = Location
                 };
@@ -88,7 +89,7 @@ namespace SomeProject
 
         private void MetroButton2_Click(object sender, EventArgs e)
         {
-            aCharity CharityForm = new aCharity
+            var CharityForm = new aCharity
             {
                 Location = Location
             };
@@ -98,13 +99,13 @@ namespace SomeProject
 
         private void MetroButton3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog imageSelector = new OpenFileDialog
+            var imageSelector = new OpenFileDialog
             {
                 Filter = "All files (*.*)|*.*|JPEG|*.jpg,*.jpeg,*.jpe,*.jfif|PNG|*.png",
                 Title = "Выберите логотип..",
             };
 
-            if (imageSelector.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (imageSelector.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
@@ -125,7 +126,7 @@ namespace SomeProject
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            aCharity CharityForm = new aCharity
+            var CharityForm = new aCharity
             {
                 Location = Location
             };
@@ -135,7 +136,7 @@ namespace SomeProject
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1
+            var MainForm = new Form1
             {
                 Location = Location
             };

@@ -14,7 +14,7 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
@@ -25,12 +25,12 @@ namespace SomeProject
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-
+            // Будет сделано позже
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            aVolunteer VolunteerForm = new aVolunteer
+            var VolunteerForm = new aVolunteer
             {
                 Location = Location
             };
@@ -40,7 +40,7 @@ namespace SomeProject
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1
+            var MainForm = new Form1
             {
                 Location = Location
             };

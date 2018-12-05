@@ -10,8 +10,8 @@ namespace SomeProject
 #pragma warning restore IDE1006
     {
         SqlConnection con = Сonnection.AzureConnection();
-        private static string query;
-        private static char Role;
+        string query;
+        char Role;
         
         public aUsersAdd()
         {
@@ -28,11 +28,12 @@ namespace SomeProject
                 SqlCommand register = new SqlCommand(query, con);
                 register.ExecuteNonQuery();
                 MessageBox.Show("Пользователь: " + metroTextBox3.Text + " добавлен в базу Информационной Системы WSR.", "WSR: Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                aUsers usersForm = new aUsers
+
+                var UsersForm = new aUsers
                 {
                     Location = Location
                 };
-                usersForm.Show();
+                UsersForm.Show();
                 Hide();
             }
             catch (Exception ex)
@@ -69,7 +70,7 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
@@ -113,7 +114,7 @@ namespace SomeProject
         {
             string errorLog = "Исправьте следующие ошибки: \n\n";
             int errorCount = 0;
-            SqlCommand isRegistered = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email ='" + metroTextBox1.Text + "'", con);
+            var isRegistered = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email ='" + metroTextBox1.Text + "'", con);
 
             try
             {
@@ -218,7 +219,7 @@ namespace SomeProject
 
                 if (metroPanel1.Enabled)
                 {
-                    SqlCommand getCode = new SqlCommand("SELECT CountryCode FROM Country WHERE CountryName = '" + runnerCombo2.Text + "'", con);
+                    var getCode = new SqlCommand("SELECT CountryCode FROM Country WHERE CountryName = '" + runnerCombo2.Text + "'", con);
                     string gender, countryCode;
                     gender = countryCode = "";
                     try
@@ -253,7 +254,7 @@ namespace SomeProject
                 try
                 {
                     con.Open();
-                    SqlDataAdapter ad = new SqlDataAdapter("SELECT CountryName FROM Country", con);
+                    var ad = new SqlDataAdapter("SELECT CountryName FROM Country", con);
                     ad.Fill(wSRDataSetCountry, "getCountryName");
                 }
                 catch (Exception ex)
@@ -269,7 +270,7 @@ namespace SomeProject
 
         private void BackToUsers_Click(object sender, EventArgs e)
         {
-            aUsers UsersForm = new aUsers
+            var UsersForm = new aUsers
             {
                 Location = Location
             };
@@ -279,7 +280,7 @@ namespace SomeProject
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1
+            var MainForm = new Form1
             {
                 Location = Location
             };

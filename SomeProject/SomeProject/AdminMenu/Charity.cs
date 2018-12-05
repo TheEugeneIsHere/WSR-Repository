@@ -13,19 +13,19 @@ namespace SomeProject
         public aCharity()
         {
             InitializeComponent();
-            CharityLoad();
+            CharityLoadAsync();
             timer1.Start();
             FormClosing += new FormClosingEventHandler(AppClose.GoodBye);
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
 
-        private async void CharityLoad()
+        private async void CharityLoadAsync()
         {
             await Task.Factory.StartNew(() =>
             {
@@ -51,7 +51,7 @@ namespace SomeProject
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            aCharityAdd CharityAddForm = new aCharityAdd
+            var CharityAddForm = new aCharityAdd
             {
                 Location = Location
             };
@@ -61,7 +61,7 @@ namespace SomeProject
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            AdminForm AdminMenu = new AdminForm
+            var AdminMenu = new AdminForm
             {
                 Location = Location
             };

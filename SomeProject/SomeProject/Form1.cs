@@ -50,41 +50,41 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private void MetroTile1_Click(object sender, EventArgs e)
         {
-            Ask ask = new Ask();
+            var ask = new Ask();
             ask.ShowDialog();
             Hide();
         }
 
         private void MetroTile4_Click(object sender, EventArgs e)
         {
-            Login log = new Login();
+            var log = new Login();
             log.Show();
             this.Hide();
         }
 
         private void MetroTile6_Click(object sender, EventArgs e)
         {
-            RunnerForm run = new RunnerForm();
+            var run = new RunnerForm();
             run.Show();
             Hide();
         }
 
         private void MetroTile7_Click(object sender, EventArgs e)
         {
-            BMIcalc bmiForm = new BMIcalc();
+            var bmiForm = new BMIcalc();
             bmiForm.Show();
             Hide();
         }
 
         private void MetroTile3_Click(object sender, EventArgs e)
         {
-            InfoForm InfoMenu = new InfoForm();
+            var InfoMenu = new InfoForm();
             InfoMenu.Show();
             Hide();
         }

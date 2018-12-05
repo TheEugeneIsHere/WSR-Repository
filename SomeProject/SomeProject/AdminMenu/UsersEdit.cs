@@ -7,7 +7,7 @@ namespace SomeProject
     public partial class aUsersEdit : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = Сonnection.AzureConnection();
-        private static char Role;
+        char Role;
 
         public aUsersEdit()
         {
@@ -25,7 +25,7 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
@@ -34,7 +34,7 @@ namespace SomeProject
             try
             {
 
-                SqlDataAdapter runnerInfo = new SqlDataAdapter("SELECT DateOfBirth, Gender, CountryCode, RunnerId FROM Runner WHERE Email = '" + metroLabel11.Text + "'", con);
+                var runnerInfo = new SqlDataAdapter("SELECT DateOfBirth, Gender, CountryCode, RunnerId FROM Runner WHERE Email = '" + metroLabel11.Text + "'", con);
                 runnerInfo.Fill(wsrDataSetUsers1, "Runner");
                 runnerInfo = new SqlDataAdapter("SELECT CountryCode FROM Country", con);
                 runnerInfo.Fill(wSRDataSetCountry, "getCountryCode");
@@ -63,7 +63,7 @@ namespace SomeProject
         {
             try
             {
-                SqlDataAdapter userInfo = new SqlDataAdapter("SELECT * FROM Users WHERE Email = '" + metroLabel11.Text + "'", con);
+                var userInfo = new SqlDataAdapter("SELECT * FROM Users WHERE Email = '" + metroLabel11.Text + "'", con);
                 userInfo.Fill(wsrDataSetUsers1, "Users");
                 userInfo1.Text = wsrDataSetUsers1.Tables[0].Rows[0][1].ToString();
                 userInfo2.Text = wsrDataSetUsers1.Tables[0].Rows[0][2].ToString();
@@ -121,7 +121,7 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlCommand updateQuery = new SqlCommand(query, con);
+                var updateQuery = new SqlCommand(query, con);
                 updateQuery.ExecuteNonQuery();
                 MessageBox.Show("Информация пользователя "+userInfo1.Text+" успешно обновлена.","WSR: Обновление", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -132,7 +132,7 @@ namespace SomeProject
             finally
             {
                 con.Close();
-                aUsers UsersForm = new aUsers
+                var UsersForm = new aUsers
                 {
                     Location = Location
                 };
@@ -192,11 +192,11 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlCommand command = new SqlCommand("dbo.sp_DeleteUser", con)
+                var command = new SqlCommand("dbo.sp_DeleteUser", con)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
                 };
-                SqlParameter userMail = new SqlParameter
+                var userMail = new SqlParameter
                 {
                     ParameterName = "@email",
                     Value = Сonnection.EditMail
@@ -206,7 +206,7 @@ namespace SomeProject
                 MessageBox.Show("Пользователь успешно удалён!", "WSR: Удаление",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-                aUsers UsersForm = new aUsers();
+                var UsersForm = new aUsers();
                 Location = Location;
                 UsersForm.Show();
                 Hide();
@@ -264,7 +264,7 @@ namespace SomeProject
 
         private void BackToUsers_Click(object sender, EventArgs e)
         {
-            aUsers UsersForm = new aUsers
+            var UsersForm = new aUsers
             {
                 Location = Location
             };
@@ -274,7 +274,7 @@ namespace SomeProject
 
         private void LogoutPic_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1
+            var MainForm = new Form1
             {
                 Location = Location
             };

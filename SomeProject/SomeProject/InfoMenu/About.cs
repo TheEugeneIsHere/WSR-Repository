@@ -21,26 +21,25 @@ namespace SomeProject
             pictureBox5.Image = Properties.Resources.map_PictureBoxLabel;
             pictureBox5.BackColor = Color.Transparent;
             pictureBox2.Controls.Add(pictureBox5);
-
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
     
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            InfoForm InfoMenu = new InfoForm();
+            var InfoMenu = new InfoForm();
             InfoMenu.Show();
             Hide();
         }
 
         private void PictureBox5_Click(object sender, EventArgs e)
         {
-            InteractiveMap IM = new InteractiveMap();
+            var IM = new InteractiveMap();
             IM.Show();
             Hide();
         }

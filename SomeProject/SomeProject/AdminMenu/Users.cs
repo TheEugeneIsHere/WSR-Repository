@@ -14,33 +14,33 @@ namespace SomeProject
         {
             InitializeComponent();
             timer1.Start();
-            UsersLoad(SortBy());
+            UsersLoadAsync(SortBy());
             FormClosing += new FormClosingEventHandler(AppClose.GoodBye);
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private string UsersCount()
         {
             con.Open();
-            SqlCommand usersCount = new SqlCommand("SELECT COUNT(*) FROM Users", con);
+            var usersCount = new SqlCommand("SELECT COUNT(*) FROM Users", con);
             string count = usersCount.ExecuteScalar().ToString();
             con.Close();
             return count;
         }
 
-        private async void UsersLoad(string query) // Это асинхронный метод, который сортирует и загружает пользователей
+        private async void UsersLoadAsync(string query) // Это асинхронный метод, который сортирует и загружает пользователей
         {
             metroGrid1.DataSource = null;
 
             await Task.Factory.StartNew(() =>
             {
                 con.Open();
-                SqlDataAdapter ad = new SqlDataAdapter(query, con); 
+                var ad = new SqlDataAdapter(query, con); 
                 ad.Fill(wSRDataSetUsers, "Users"); 
                 con.Close();
             });
@@ -106,7 +106,7 @@ namespace SomeProject
                         LoaderPictureBox.Visible = true;
                         LoaderPictureBox.Enabled = true;
                         e.SuppressKeyPress = true;
-                        UsersLoad(SortBy());
+                        UsersLoadAsync(SortBy());
                     }
                     catch (Exception ex)
                     {
@@ -142,7 +142,7 @@ namespace SomeProject
                                 }
                                 else
                                 {
-                                    aUsersEdit UsersEditForm = new aUsersEdit
+                                    var UsersEditForm = new aUsersEdit
                                     {
                                         Location = Location
                                     };
@@ -153,7 +153,7 @@ namespace SomeProject
                         }
                         else
                         {
-                            aUsersEdit UsersEditForm = new aUsersEdit
+                            var UsersEditForm = new aUsersEdit
                             {
                                 Location = Location
                             };
@@ -184,12 +184,12 @@ namespace SomeProject
         {
             LoaderPictureBox.Visible = true;
             LoaderPictureBox.Enabled = true;
-            UsersLoad(SortBy());
+            UsersLoadAsync(SortBy());
         }
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            aUsersAdd UsersAddForm = new aUsersAdd
+            var UsersAddForm = new aUsersAdd
             {
                 Location = Location
             };
@@ -199,7 +199,7 @@ namespace SomeProject
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            AdminForm AdminMenu = new AdminForm
+            var AdminMenu = new AdminForm
             {
                 Location = Location
             };
@@ -209,7 +209,7 @@ namespace SomeProject
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1
+            var MainForm = new Form1
             {
                 Location = Location
             };
@@ -230,7 +230,7 @@ namespace SomeProject
             metroTextBox1.Text = "";
             metroComboBox1.Text = "Имени"; // Обновляем информацию элемента, для которого произведена отписка
             metroComboBox2.Text = "(Все роли)"; // До начальных значений сортировки
-            UsersLoad(SortBy());
+            UsersLoadAsync(SortBy());
         }
 
     }

@@ -14,7 +14,7 @@ namespace SomeProject
             InitializeComponent();
             loginLabel.Text += GetLogin();
             timer1.Start();
-            FormClosing += new FormClosingEventHandler (AppClose.GoodBye);
+            FormClosing += new FormClosingEventHandler(AppClose.GoodBye);
         }
 
         private string GetLogin()

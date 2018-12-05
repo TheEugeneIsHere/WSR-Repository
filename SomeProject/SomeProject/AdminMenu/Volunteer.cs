@@ -22,7 +22,7 @@ namespace SomeProject
 
         private void TimerTick(object sender, EventArgs e)
         {
-            Сonnection counter = new Сonnection(); // Создание экземпляра класса Connection
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
@@ -31,7 +31,7 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlCommand usersCount = new SqlCommand("SELECT COUNT(*) FROM Volunteer", con);
+                var usersCount = new SqlCommand("SELECT COUNT(*) FROM Volunteer", con);
                 metroLabel3.Text = usersCount.ExecuteScalar().ToString();
             }
             catch (Exception ex)
@@ -49,7 +49,7 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlDataAdapter ad = new SqlDataAdapter(query, con);
+                var ad = new SqlDataAdapter(query, con);
                 ad.Fill(wSRDataSetVolunteer, "Volunteer");
             }
             catch (Exception ex)
@@ -64,7 +64,7 @@ namespace SomeProject
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            aVolunteerAdd VolunteerAddForm = new aVolunteerAdd
+            var VolunteerAddForm = new aVolunteerAdd
             {
                 Location = Location
             };
@@ -74,7 +74,7 @@ namespace SomeProject
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            AdminForm AdminForm = new AdminForm
+            var AdminForm = new AdminForm
             {
                 Location = Location
             };
@@ -84,7 +84,7 @@ namespace SomeProject
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 MainForm = new Form1
+            var MainForm = new Form1
             {
                 Location = Location
             };

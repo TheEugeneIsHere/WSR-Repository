@@ -199,7 +199,7 @@
             this.metroButton1.Text = "Login";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.UseStyleColors = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // metroButton2
             // 
@@ -211,7 +211,7 @@
             this.metroButton2.Text = "Cancel";
             this.metroButton2.UseSelectable = true;
             this.metroButton2.UseStyleColors = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.MetroButton2_Click);
             // 
             // pictureBox1
             // 
@@ -223,7 +223,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // metroButton3
             // 
@@ -281,7 +281,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Style = MetroFramework.MetroColorStyle.Default;
-            this.Text = " ";
+            this.Text = " MARATHON IS..";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

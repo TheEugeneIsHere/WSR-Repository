@@ -48,10 +48,10 @@ namespace SomeProject
             try
             {
                 con.Open();
-                SqlCommand request = new SqlCommand(query, con);
+                var request = new SqlCommand(query, con);
                 if (Convert.ToInt32(request.ExecuteScalar()) != 0)
                 {
-                    SmtpClient client = new SmtpClient("smtp.gmail.com", 25)
+                    var client = new SmtpClient("smtp.gmail.com", 25)
                     {
                         EnableSsl = true,
                         Credentials = new NetworkCredential("wsrsystems@gmail.com", "WSRpolitex")
