@@ -8,11 +8,13 @@ namespace WSRProject
     {
         
         SqlConnection con = Сonnection.AzureConnection();
+        static bool IsConnected = true;
 
         public Form1()
         {
             InitializeComponent();
-            Elements(IsConnectedToInternet()); // Проверка подключения к БД
+            if (IsConnected) Elements(IsConnectedToInternet()); // Проверка подключения к БД
+            else Elements(false); 
             timer1.Start();
         }
 
@@ -29,6 +31,7 @@ namespace WSRProject
             }
             catch
             {
+                IsConnected = false;
                 return false;
             }
             finally
@@ -43,9 +46,6 @@ namespace WSRProject
             metroLabel3.Enabled = !internet;
             metroLabel3.Visible = !internet;
             metroTile1.Enabled = internet;
-            //metroTile2.Enabled = internet;
-            metroTile3.Enabled = internet;
-            metroTile4.Enabled = internet;
             metroTile5.Enabled = internet;
         }
 
@@ -55,44 +55,38 @@ namespace WSRProject
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-        private void MetroTile1_Click(object sender, EventArgs e)
+        private void MetroTile1_Click(object sender, EventArgs e) // Хочу стать бегуном
         {
             var ask = new Ask();
             ask.ShowDialog();
             Hide();
         }
 
-        private void MetroTile4_Click(object sender, EventArgs e)
-        {
-            var log = new Login();
-            log.Show();
-            this.Hide();
-        }
-
-        private void MetroTile6_Click(object sender, EventArgs e)
-        {
-            var run = new RunnerForm();
-            run.Show();
-            Hide();
-        }
-
-        private void MetroTile7_Click(object sender, EventArgs e)
-        {
-            var bmiForm = new BMIcalc();
-            bmiForm.Show();
-            Hide();
-        }
-
-        private void MetroTile3_Click(object sender, EventArgs e)
+        private void MetroTile3_Click(object sender, EventArgs e) // Информация о марафоне
         {
             var InfoMenu = new InfoForm();
             InfoMenu.Show();
             Hide();
         }
 
+        private void MetroTile4_Click(object sender, EventArgs e) // Калькулятор ИМТ
+        {
+            var bmiForm = new BMIcalc();
+            bmiForm.Show();
+            Hide();
+        }
+
+        private void MetroTile5_Click(object sender, EventArgs e) // Вход в систему
+        {
+            var log = new Login();
+            log.Show();
+            Hide();
+        }
+
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (Application.OpenForms.Count > 0) Application.OpenForms[0].Close();
+            if (Application.OpenForms.Count > 0) Application.Exit();
         }
+
     }
 }

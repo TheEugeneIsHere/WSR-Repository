@@ -74,7 +74,7 @@
             this.metroTile5.Text = "LOGIN";
             this.metroTile5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile5.UseSelectable = true;
-            this.metroTile5.Click += new System.EventHandler(this.MetroTile4_Click);
+            this.metroTile5.Click += new System.EventHandler(this.MetroTile5_Click);
             // 
             // metroTile4
             // 
@@ -91,7 +91,7 @@
             this.metroTile4.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile4.UseSelectable = true;
             this.metroTile4.UseTileImage = true;
-            this.metroTile4.Click += new System.EventHandler(this.MetroTile7_Click);
+            this.metroTile4.Click += new System.EventHandler(this.MetroTile4_Click);
             // 
             // metroTile1
             // 
