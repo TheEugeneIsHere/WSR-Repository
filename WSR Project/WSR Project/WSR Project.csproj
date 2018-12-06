@@ -443,7 +443,6 @@
     <None Include="Resources\InteractiveMap.jpg" />
     <None Include="Resources\FormLoading.gif" />
     <Content Include="project_icon.ico" />
-    <Content Include="project_icon2.ico" />
     <Content Include="Resources\icons_back.png" />
     <None Include="Resources\icons_Results.png" />
     <None Include="Resources\icons_Pen.png" />
