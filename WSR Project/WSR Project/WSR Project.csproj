@@ -449,6 +449,7 @@
     <None Include="Resources\MarathonImage.jpg" />
     <None Include="Resources\InteractiveMap.jpg" />
     <None Include="Resources\FormLoading.gif" />
+    <Content Include="Resources\Azaza.wav" />
     <Content Include="Resources\project_icon.ico" />
     <Content Include="Resources\icons_back.png" />
     <None Include="Resources\icons_Results.png" />

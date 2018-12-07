@@ -14,7 +14,11 @@ namespace WSRProject
         {
             InitializeComponent();
             if (IsConnected) Elements(IsConnectedToInternet()); // Проверка подключения к БД
-            else Elements(false); 
+            else
+            {
+                Elements(false);
+                new System.Media.SoundPlayer(Properties.Resources.Azaza);
+            }
             timer1.Start();
         }
 
