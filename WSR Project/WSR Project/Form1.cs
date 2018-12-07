@@ -13,7 +13,8 @@ namespace WSRProject
         public Form1()
         {
             InitializeComponent();
-            Elements(IsConnectedToInternet()); // Проверка подключения к БД
+            if (IsConnected) Elements(IsConnectedToInternet()); // Проверка подключения к БД
+            else Elements(false);
             new System.Media.SoundPlayer(Properties.Resources.Azaza).Play(); // Ну это так, чисто поорать ахахах
             timer1.Start();
         }
