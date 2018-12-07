@@ -13,12 +13,8 @@ namespace WSRProject
         public Form1()
         {
             InitializeComponent();
-            if (IsConnected) Elements(IsConnectedToInternet()); // Проверка подключения к БД
-            else
-            {
-                Elements(false);
-                new System.Media.SoundPlayer(Properties.Resources.Azaza);
-            }
+            Elements(IsConnectedToInternet()); // Проверка подключения к БД
+            new System.Media.SoundPlayer(Properties.Resources.Azaza).Play(); // Ну это так, чисто поорать ахахах
             timer1.Start();
         }
 
@@ -92,5 +88,9 @@ namespace WSRProject
             if (Application.OpenForms.Count > 0) Application.Exit();
         }
 
+        private void metroTile6_Click(object sender, EventArgs e)
+        {
+            new System.Media.SoundPlayer(Properties.Resources.Azaza).Stop();
+        }
     }
 }
