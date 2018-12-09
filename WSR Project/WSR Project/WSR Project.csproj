@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Costura.Fody.3.2.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.3.2.0\build\Costura.Fody.props')" />
+  <Import Project="..\packages\Costura.Fody.3.2.1\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.3.2.1\build\Costura.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -61,11 +61,11 @@
   <PropertyGroup />
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>Resources\Bunifu_UI_v1.5.3.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="Costura, Version=3.2.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
-      <HintPath>..\packages\Costura.Fody.3.2.0\lib\net46\Costura.dll</HintPath>
+    <Reference Include="Costura, Version=3.2.1.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.3.2.1\lib\net40\Costura.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -149,6 +149,12 @@
     </Compile>
     <Compile Include="AdminMenu\VolunteerAdd.Designer.cs">
       <DependentUpon>VolunteerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Org.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Org.Designer.cs">
+      <DependentUpon>Org.cs</DependentUpon>
     </Compile>
     <Compile Include="Runner\Ask.cs">
       <SubType>Form</SubType>
@@ -293,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMenu\VolunteerAdd.resx">
       <DependentUpon>VolunteerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Org.resx">
+      <DependentUpon>Org.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Runner\Ask.resx">
       <DependentUpon>Ask.cs</DependentUpon>
@@ -444,6 +453,7 @@
     <None Include="Resources\aExit.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\карточка сбербунка.jpg" />
     <None Include="Resources\TeatroMunicipal.jpg" />
     <None Include="Resources\map_PictureBoxLabel.png" />
     <None Include="Resources\MarathonImage.jpg" />
@@ -487,12 +497,12 @@
   <PropertyGroup>
     <PostBuildEvent>"$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
-  <Import Project="..\packages\Fody.3.3.2\build\Fody.targets" Condition="Exists('..\packages\Fody.3.3.2\build\Fody.targets')" />
+  <Import Project="..\packages\Fody.3.3.3\build\Fody.targets" Condition="Exists('..\packages\Fody.3.3.3\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Fody.3.3.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.3.3.2\build\Fody.targets'))" />
-    <Error Condition="!Exists('..\packages\Costura.Fody.3.2.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.2.0\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Fody.3.3.3\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.3.3.3\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.3.2.1\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.2.1\build\Costura.Fody.props'))" />
   </Target>
 </Project>

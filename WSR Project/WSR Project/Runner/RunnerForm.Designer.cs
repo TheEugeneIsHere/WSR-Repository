@@ -119,6 +119,7 @@
             this.metroTile5.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile5.UseSelectable = true;
             this.metroTile5.UseTileImage = true;
+            this.metroTile5.Click += new System.EventHandler(this.metroTile5_Click);
             // 
             // pictureBox2
             // 

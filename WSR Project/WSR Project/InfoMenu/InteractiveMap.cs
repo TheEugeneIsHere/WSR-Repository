@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Threading;
 
 namespace WSRProject
 {
@@ -7,14 +8,49 @@ namespace WSRProject
         public InteractiveMap()
         {
             InitializeComponent();
-            //PointersLoad();
+        
+        }
+    
+
+        private void pictureBox8_Click(object sender, System.EventArgs e)
+        {
+            label1.Text = "Туалет";
+           
+           
         }
 
-        private void PointersLoad()
+        private void pictureBox3_Click(object sender, System.EventArgs e)
         {
-            //pointer1.BackColor = Color.Transparent;
-            //pointer1.Location = new Point(309, 242);
-            //mapBox.Controls.Add(pointer1);
+            label1.Text = "Пункт выдачи энергетических батончиков, напитков";
+        
+        }
+
+        private void pictureBox4_Click(object sender, System.EventArgs e)
+        {
+            label1.Text = "Медицинский пункт";
+        
+        }
+
+        private void pictureBox5_Click(object sender, System.EventArgs e)
+        {
+            label1.Text = "Стойка информации";
+        }
+
+        private void pictureBox1_Click(object sender, System.EventArgs e)
+        {
+            label1.Text = "Начало марафона";
+        }
+
+        private void pictureBox6_Click(object sender, System.EventArgs e)
+        {
+            label1.Text = "Пункт выдачи напитков";
+        }
+
+        private void pictureBox2_Click(object sender, System.EventArgs e)
+        {
+            var info = new InfoForm();
+            info.Show();
+            Hide();
         }
     }
 }

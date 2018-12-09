@@ -130,10 +130,7 @@ namespace WSRProject
                 string regdate = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
                 var r = new Random();
                 int charityid = r.Next(1, 10);
-
-                string query = ""; // Переменная не используется. Ну а вдруг ты не знал?
-                int shlish; //денис александрович, идите в жопу
-                MessageBox.Show("В теории вы зареганы, по факту система не работает...", "Продам гараж"); // Сам иди :(((
+                
             }
         }
 

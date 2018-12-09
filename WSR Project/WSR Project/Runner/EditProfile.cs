@@ -116,14 +116,6 @@ namespace WSRProject
             this.countryTableAdapter.Fill(this.wSRDataSetMAX.Country);
         }
 
-        /*
-update Users set Firstname='',LastName='';
-update Runner set DateOfBirth='',CountryCode='',Gender='';
-если пароль не пустой то
-в юзеры+=Password=''; иначе точка с запятой и скопачка ну и вагина, куда же без нее
-и капельку масла а то задирет
-добавить иконки типа штучку поменяли справа от контрола, по крайней мере попробовать, красота наше все
-*/
 
     }
 }

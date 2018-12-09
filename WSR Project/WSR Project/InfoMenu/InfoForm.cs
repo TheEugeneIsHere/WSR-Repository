@@ -32,5 +32,16 @@ namespace WSRProject
             Hide();
         }
 
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Данные о предыдщих марафонах не найдены в БД");
+        }
+
+        private void metroTile4_Click(object sender, EventArgs e)
+        {
+            var charorg = new Org();
+            charorg.Show();
+            Hide();
+        }
     }
 }

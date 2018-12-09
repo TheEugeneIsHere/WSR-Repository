@@ -106,7 +106,7 @@ namespace WSRProject
         private void metroButton3_Click(object sender, EventArgs e)
         {
             metroTextBox1.Text = "a.adkin@dayrep.net";
-            metroTextBox2.Text = "1234";
+            metroTextBox2.Text = "123";
             login();
         }
 

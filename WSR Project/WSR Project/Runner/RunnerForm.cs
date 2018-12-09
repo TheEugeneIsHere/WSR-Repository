@@ -32,9 +32,13 @@ namespace WSRProject
 
         private void MetroTile2_Click(object sender, EventArgs e)
         {
-            var reg = new MarathonReg();
-            reg.ShowDialog();
+            var reg = new MarathonReg
+            {
+                Location = Location
+            };
+            reg.Show();
             Hide();
+          
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
@@ -55,10 +59,12 @@ namespace WSRProject
 
         private void MetroTile3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var EditForm = new EditProfile();
-            EditForm.ShowDialog();
-            
+            var EditForm = new EditProfile()
+            {
+                Location = Location
+            };
+            EditForm.Show();
+            Hide();
         }
 
         private string fname;
@@ -68,11 +74,8 @@ namespace WSRProject
         {
             SqlConnection con = Сonnection.AzureConnection();
             con.Open();
-
             string  strSQL;
-
-            strSQL=("SELECt @FirstName=FirstName,@LastName=LastName FROM Users WHERE email=@email and password=@password");
-            
+            strSQL=("SELECt @FirstName=FirstName,@LastName=LastName FROM Users WHERE email=@email and password=@password");          
             SqlCommand command = con.CreateCommand();
             command.CommandText = strSQL;
             SqlParameter FirstName, LastName;
@@ -87,5 +90,9 @@ namespace WSRProject
             lname = Convert.ToString(LastName.Value);
         }
 
+        private void metroTile5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

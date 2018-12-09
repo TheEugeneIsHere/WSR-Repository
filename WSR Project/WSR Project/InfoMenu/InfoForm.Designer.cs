@@ -101,7 +101,6 @@
             // 
             this.metroTile4.ActiveControl = null;
             this.metroTile4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroTile4.Enabled = false;
             this.metroTile4.Location = new System.Drawing.Point(365, 179);
             this.metroTile4.Name = "metroTile4";
             this.metroTile4.PaintTileCount = false;
@@ -116,12 +115,12 @@
             this.metroTile4.UseSelectable = true;
             this.metroTile4.UseStyleColors = true;
             this.metroTile4.UseTileImage = true;
+            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
             // 
             // metroTile3
             // 
             this.metroTile3.ActiveControl = null;
             this.metroTile3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroTile3.Enabled = false;
             this.metroTile3.Location = new System.Drawing.Point(18, 179);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.PaintTileCount = false;
@@ -136,12 +135,12 @@
             this.metroTile3.UseSelectable = true;
             this.metroTile3.UseStyleColors = true;
             this.metroTile3.UseTileImage = true;
+            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
             this.metroTile2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroTile2.Enabled = false;
             this.metroTile2.Location = new System.Drawing.Point(365, 36);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.PaintTileCount = false;
