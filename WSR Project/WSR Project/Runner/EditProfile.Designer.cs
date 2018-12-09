@@ -54,7 +54,7 @@
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.genderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wSRDataSetMAXBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wSRDataSetMAX = new WSRProject.WSRDataSetMAX();
+            this.wSRDataSetMAX = new WSRProject.DataSets.WSRDataSetMAX();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,8 +62,8 @@
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.countryTableAdapter = new WSRProject.WSRDataSetMAXTableAdapters.CountryTableAdapter();
-            this.genderTableAdapter = new WSRProject.WSRDataSetMAXTableAdapters.GenderTableAdapter();
+            this.countryTableAdapter = new WSRProject.DataSets.WSRDataSetMAXTableAdapters.CountryTableAdapter();
+            this.genderTableAdapter = new WSRProject.DataSets.WSRDataSetMAXTableAdapters.GenderTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -235,7 +235,7 @@
             this.metroTextBox2.WaterMark = "Имя";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox2.TextChanged += new System.EventHandler(this.metroTextBox2_TextChanged);
+            this.metroTextBox2.TextChanged += new System.EventHandler(this.MetroTextBox2_TextChanged);
             // 
             // metroTextBox3
             // 
@@ -465,7 +465,7 @@
             this.metroButton2.TabIndex = 43;
             this.metroButton2.Text = "Сохранить изменения";
             this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.MetroButton2_Click);
             // 
             // groupBox1
             // 
@@ -473,6 +473,7 @@
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.metroButton1);
             this.groupBox1.Controls.Add(this.metroLabel7);
+            this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(559, 113);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(270, 171);
@@ -570,11 +571,11 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.BindingSource wSRDataSetMAXBindingSource;
-        private WSRDataSetMAX wSRDataSetMAX;
+        private DataSets.WSRDataSetMAX wSRDataSetMAX;
         private System.Windows.Forms.BindingSource countryBindingSource;
-        private WSRDataSetMAXTableAdapters.CountryTableAdapter countryTableAdapter;
+        private DataSets.WSRDataSetMAXTableAdapters.CountryTableAdapter countryTableAdapter;
         private System.Windows.Forms.BindingSource genderBindingSource;
-        private WSRDataSetMAXTableAdapters.GenderTableAdapter genderTableAdapter;
+        private DataSets.WSRDataSetMAXTableAdapters.GenderTableAdapter genderTableAdapter;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

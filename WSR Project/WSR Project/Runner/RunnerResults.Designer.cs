@@ -228,7 +228,7 @@
             this.metroButton1.TabIndex = 25;
             this.metroButton1.Text = "Тык меня";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // label1
             // 

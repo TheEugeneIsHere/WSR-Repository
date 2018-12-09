@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace WSRProject {
+namespace WSRProject.DataSets {
     
     
     /// <summary>
@@ -2080,7 +2080,7 @@ namespace WSRProject {
         }
     }
 }
-namespace WSRProject.WSRDataSetMAXTableAdapters {
+namespace WSRProject.DataSets.WSRDataSetMAXTableAdapters {
     
     
     /// <summary>

@@ -34,9 +34,8 @@ namespace WSRProject
 
         private void GetGender()
         {
-            var counter = new Сonnection();
-            con.Open();
             string strSQL;
+            con.Open();
             var command = con.CreateCommand();
             strSQL = ("SELECT @Gender=Gender,@DateOfBirth=DateOfBirth,@CountryCode=CountryCode FROM Runner WHERE email=@email");
             SqlParameter Gender,date,country;
@@ -64,7 +63,7 @@ namespace WSRProject
             Hide();
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void MetroButton2_Click(object sender, EventArgs e)
         {
             string query;
             DateTime date = metroDateTime1.Value;
@@ -106,7 +105,7 @@ namespace WSRProject
             con.Close();
         }
 
-        private void metroTextBox2_TextChanged(object sender, EventArgs e)
+        private void MetroTextBox2_TextChanged(object sender, EventArgs e)
         {
             metroButton2.Enabled = true;
         }

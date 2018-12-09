@@ -26,7 +26,7 @@ namespace WSRProject
             Close();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
             metroPanel2.Visible = false;
             metroPanel1.Visible = true;
