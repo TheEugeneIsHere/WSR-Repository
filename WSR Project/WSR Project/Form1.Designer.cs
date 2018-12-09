@@ -38,7 +38,6 @@
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroTile6 = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // timerLabel
@@ -162,26 +161,12 @@
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel3.UseCustomForeColor = true;
             // 
-            // metroTile6
-            // 
-            this.metroTile6.ActiveControl = null;
-            this.metroTile6.Location = new System.Drawing.Point(690, 317);
-            this.metroTile6.Name = "metroTile6";
-            this.metroTile6.Size = new System.Drawing.Size(159, 57);
-            this.metroTile6.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile6.TabIndex = 20;
-            this.metroTile6.Text = "Азаза выключить ахах";
-            this.metroTile6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile6.UseSelectable = true;
-            this.metroTile6.Click += new System.EventHandler(this.metroTile6_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(869, 508);
-            this.Controls.Add(this.metroTile6);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroTile1);
@@ -210,7 +195,6 @@
         private MetroFramework.Controls.MetroTile metroTile4;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTile metroTile6;
     }
 }
 
