@@ -10,28 +10,27 @@ using System.Windows.Forms;
 
 namespace WSRProject
 {
-    public partial class Org : MetroFramework.Forms.MetroForm
+    public partial class SponsorshipList : MetroFramework.Forms.MetroForm
     {
-        public Org()
+        public SponsorshipList()
         {
             InitializeComponent();
-        }
-
-        private void Org_Load(object sender, EventArgs e)
-        {
-            this.charityTableAdapter.Fill(this.wSRDataSetCharity.Charity);
-
         }
         private void TimerTick(object sender, EventArgs e)
         {
             var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void SponsorshipList_Load(object sender, EventArgs e)
         {
-            var info = new InfoForm();
-            info.Show();
+            this.sponsorshipTableAdapter.Fill(this.wSRDataSetMAX.Sponsorship);
+
+        }
+       
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var MainMenu = new Form1();
+            MainMenu.Show();
             Hide();
         }
     }

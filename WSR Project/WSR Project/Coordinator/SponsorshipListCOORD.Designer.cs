@@ -1,6 +1,6 @@
 ﻿namespace WSRProject
 {
-    partial class Org
+    partial class SponsorshipList
     {
         /// <summary>
         /// Required designer variable.
@@ -33,19 +33,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.charityLogoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.charityNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.charityDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.charityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wSRDataSetCharity = new WSRProject.DataSets.WSRDataSetCharity();
-            this.charityTableAdapter = new WSRProject.DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.sponsorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sponsorshipBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wSRDataSetMAXBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wSRDataSetMAX = new WSRProject.DataSets.WSRDataSetMAX();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.sponsorshipTableAdapter = new WSRProject.DataSets.WSRDataSetMAXTableAdapters.SponsorshipTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerLabel = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sponsorshipBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAXBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroGrid1
@@ -66,10 +68,9 @@
             this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.charityLogoDataGridViewImageColumn,
-            this.charityNameDataGridViewTextBoxColumn,
-            this.charityDescriptionDataGridViewTextBoxColumn});
-            this.metroGrid1.DataSource = this.charityBindingSource;
+            this.sponsorNameDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn});
+            this.metroGrid1.DataSource = this.sponsorshipBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -81,7 +82,7 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(93, 95);
+            this.metroGrid1.Location = new System.Drawing.Point(64, 79);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -95,55 +96,67 @@
             this.metroGrid1.RowHeadersVisible = false;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(630, 302);
+            this.metroGrid1.Size = new System.Drawing.Size(722, 318);
             this.metroGrid1.TabIndex = 0;
             // 
-            // charityLogoDataGridViewImageColumn
+            // sponsorNameDataGridViewTextBoxColumn
             // 
-            this.charityLogoDataGridViewImageColumn.DataPropertyName = "CharityLogo";
-            this.charityLogoDataGridViewImageColumn.HeaderText = "Логотип";
-            this.charityLogoDataGridViewImageColumn.Name = "charityLogoDataGridViewImageColumn";
-            this.charityLogoDataGridViewImageColumn.Width = 210;
+            this.sponsorNameDataGridViewTextBoxColumn.DataPropertyName = "SponsorName";
+            this.sponsorNameDataGridViewTextBoxColumn.HeaderText = "Имя спонсора";
+            this.sponsorNameDataGridViewTextBoxColumn.Name = "sponsorNameDataGridViewTextBoxColumn";
+            this.sponsorNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sponsorNameDataGridViewTextBoxColumn.Width = 350;
             // 
-            // charityNameDataGridViewTextBoxColumn
+            // amountDataGridViewTextBoxColumn
             // 
-            this.charityNameDataGridViewTextBoxColumn.DataPropertyName = "CharityName";
-            this.charityNameDataGridViewTextBoxColumn.HeaderText = "Название организации";
-            this.charityNameDataGridViewTextBoxColumn.Name = "charityNameDataGridViewTextBoxColumn";
-            this.charityNameDataGridViewTextBoxColumn.Width = 210;
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Взнос";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.amountDataGridViewTextBoxColumn.Width = 350;
             // 
-            // charityDescriptionDataGridViewTextBoxColumn
+            // sponsorshipBindingSource
             // 
-            this.charityDescriptionDataGridViewTextBoxColumn.DataPropertyName = "CharityDescription";
-            this.charityDescriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
-            this.charityDescriptionDataGridViewTextBoxColumn.Name = "charityDescriptionDataGridViewTextBoxColumn";
-            this.charityDescriptionDataGridViewTextBoxColumn.Width = 210;
+            this.sponsorshipBindingSource.DataMember = "Sponsorship";
+            this.sponsorshipBindingSource.DataSource = this.wSRDataSetMAXBindingSource;
             // 
-            // charityBindingSource
+            // wSRDataSetMAXBindingSource
             // 
-            this.charityBindingSource.DataMember = "Charity";
-            this.charityBindingSource.DataSource = this.wSRDataSetCharity;
+            this.wSRDataSetMAXBindingSource.DataSource = this.wSRDataSetMAX;
+            this.wSRDataSetMAXBindingSource.Position = 0;
             // 
-            // wSRDataSetCharity
+            // wSRDataSetMAX
             // 
-            this.wSRDataSetCharity.DataSetName = "WSRDataSetCharity";
-            this.wSRDataSetCharity.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.wSRDataSetMAX.DataSetName = "WSRDataSetMAX";
+            this.wSRDataSetMAX.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // charityTableAdapter
+            // metroLabel1
             // 
-            this.charityTableAdapter.ClearBeforeFill = true;
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(310, 51);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(145, 25);
+            this.metroLabel1.TabIndex = 1;
+            this.metroLabel1.Text = "Наши спонсоры";
             // 
-            // pictureBox2
+            // sponsorshipTableAdapter
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::WSRProject.Properties.Resources.icons_back;
-            this.pictureBox2.Location = new System.Drawing.Point(23, 57);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 35;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.sponsorshipTableAdapter.ClearBeforeFill = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::WSRProject.Properties.Resources.icons_back;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 57);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // timerLabel
             // 
@@ -161,35 +174,39 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
-            // Org
+            // SponsorshipList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.timerLabel);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroGrid1);
-            this.Name = "Org";
-            this.Text = "Благотворительные организации";
-            this.Load += new System.EventHandler(this.Org_Load);
+            this.Name = "SponsorshipList";
+            this.Text = "Спонсоры";
+            this.Load += new System.EventHandler(this.SponsorshipList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sponsorshipBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAXBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetMAX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private MetroFramework.Controls.MetroGrid metroGrid1;
-        private DataSets.WSRDataSetCharity wSRDataSetCharity;
-        private System.Windows.Forms.BindingSource charityBindingSource;
-        private DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter charityTableAdapter;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridViewImageColumn charityLogoDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn charityNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn charityDescriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource wSRDataSetMAXBindingSource;
+        private DataSets.WSRDataSetMAX wSRDataSetMAX;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.BindingSource sponsorshipBindingSource;
+        private DataSets.WSRDataSetMAXTableAdapters.SponsorshipTableAdapter sponsorshipTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sponsorNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroLabel timerLabel;
         private System.Windows.Forms.Timer timer1;
     }

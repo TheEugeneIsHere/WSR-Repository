@@ -59,6 +59,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // metroTile1
             // 
@@ -155,6 +156,7 @@
             this.metroTile2.UseSelectable = true;
             this.metroTile2.UseStyleColors = true;
             this.metroTile2.UseTileImage = true;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
             // metroLabel1
             // 
@@ -184,6 +186,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.ControlBox = false;
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.pictureBox1);
@@ -193,6 +196,7 @@
             this.Name = "InfoForm";
             this.Resizable = false;
             this.Text = "MARATHON SKILLS 2k18";
+            this.Load += new System.EventHandler(this.InfoForm_Load);
             this.metroPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

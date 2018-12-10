@@ -94,6 +94,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppClose.cs" />
+    <Compile Include="BMR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BMR.Designer.cs">
+      <DependentUpon>BMR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinator\ViewRunner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordinator\ViewRunner.Designer.cs">
+      <DependentUpon>ViewRunner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HowLong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HowLong.Designer.cs">
+      <DependentUpon>HowLong.cs</DependentUpon>
+    </Compile>
     <Compile Include="InfoMenu\About.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,10 +184,10 @@
     <Compile Include="BMIcalc.Designer.cs">
       <DependentUpon>BMIcalc.cs</DependentUpon>
     </Compile>
-    <Compile Include="CoordinatorForm.cs">
+    <Compile Include="Coordinator\CoordinatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CoordinatorForm.Designer.cs">
+    <Compile Include="Coordinator\CoordinatorForm.Designer.cs">
       <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
@@ -274,6 +292,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetMAX.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SponsorshipList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SponsorshipList.Designer.cs">
+      <DependentUpon>SponsorshipList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminMenu\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +322,12 @@
     <EmbeddedResource Include="AdminMenu\VolunteerAdd.resx">
       <DependentUpon>VolunteerAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BMR.resx">
+      <DependentUpon>BMR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HowLong.resx">
+      <DependentUpon>HowLong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Org.resx">
       <DependentUpon>Org.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,7 +337,7 @@
     <EmbeddedResource Include="BMIcalc.resx">
       <DependentUpon>BMIcalc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CoordinatorForm.resx">
+    <EmbeddedResource Include="Coordinator\CoordinatorForm.resx">
       <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Runner\EditProfile.resx">
@@ -350,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Runner\Success.resx">
       <DependentUpon>Success.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SponsorshipList.resx">
+      <DependentUpon>SponsorshipList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

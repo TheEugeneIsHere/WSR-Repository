@@ -33,12 +33,12 @@
             this.timerLabel = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroTile5 = new MetroFramework.Controls.MetroTile();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroTile6 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroTile6 = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // timerLabel
@@ -76,6 +76,39 @@
             this.metroTile5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile5.UseSelectable = true;
             this.metroTile5.Click += new System.EventHandler(this.MetroTile5_Click);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.metroLabel3.Enabled = false;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel3.ForeColor = System.Drawing.Color.Crimson;
+            this.metroLabel3.Location = new System.Drawing.Point(255, 53);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(360, 42);
+            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel3.TabIndex = 19;
+            this.metroLabel3.Text = "Отсутствует соединение с Интернетом";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel3.UseCustomForeColor = true;
+            // 
+            // metroTile6
+            // 
+            this.metroTile6.ActiveControl = null;
+            this.metroTile6.Location = new System.Drawing.Point(210, 388);
+            this.metroTile6.Name = "metroTile6";
+            this.metroTile6.Size = new System.Drawing.Size(450, 67);
+            this.metroTile6.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile6.TabIndex = 12;
+            this.metroTile6.Text = "BMR-калькулятор";
+            this.metroTile6.TileCount = 5;
+            this.metroTile6.TileImage = global::WSRProject.Properties.Resources.bmiCalc;
+            this.metroTile6.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile6.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile6.UseSelectable = true;
+            this.metroTile6.UseTileImage = true;
+            this.metroTile6.Click += new System.EventHandler(this.metroTile6_Click);
             // 
             // metroTile4
             // 
@@ -132,52 +165,19 @@
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
-            this.metroTile2.Enabled = false;
             this.metroTile2.Location = new System.Drawing.Point(210, 171);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(450, 67);
             this.metroTile2.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile2.TabIndex = 10;
-            this.metroTile2.Text = "Я хочу стать спонсором бегуна";
+            this.metroTile2.Text = "Просмотр спонсоров марафона";
             this.metroTile2.TileCount = 2;
             this.metroTile2.TileImage = global::WSRProject.Properties.Resources.icons_Crowdfouning;
             this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile2.UseSelectable = true;
             this.metroTile2.UseTileImage = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.metroLabel3.Enabled = false;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel3.ForeColor = System.Drawing.Color.Crimson;
-            this.metroLabel3.Location = new System.Drawing.Point(255, 53);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(360, 42);
-            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel3.TabIndex = 19;
-            this.metroLabel3.Text = "Отсутствует соединение с Интернетом";
-            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel3.UseCustomForeColor = true;
-            // 
-            // metroTile6
-            // 
-            this.metroTile6.ActiveControl = null;
-            this.metroTile6.Location = new System.Drawing.Point(210, 388);
-            this.metroTile6.Name = "metroTile6";
-            this.metroTile6.Size = new System.Drawing.Size(450, 67);
-            this.metroTile6.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile6.TabIndex = 12;
-            this.metroTile6.Text = "BMR-калькулятор";
-            this.metroTile6.TileCount = 5;
-            this.metroTile6.TileImage = global::WSRProject.Properties.Resources.bmiCalc;
-            this.metroTile6.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile6.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile6.UseSelectable = true;
-            this.metroTile6.UseTileImage = true;
-            this.metroTile6.Click += new System.EventHandler(this.MetroTile4_Click);
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
             // Form1
             // 

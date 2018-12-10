@@ -103,6 +103,7 @@ namespace WSRProject
         }
 
         /*временный мусор*/
+       
         private void metroButton3_Click(object sender, EventArgs e)
         {
             metroTextBox1.Text = "a.adkin@dayrep.net";
@@ -156,6 +157,13 @@ namespace WSRProject
         {
             var password = new PasswordRecover();
             password.ShowDialog();
+        }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            metroTextBox1.Text = "biz2222@mail.ru";
+            metroTextBox2.Text = "1234";
+            login();
         }
         /*конец временного мусора*/
     }

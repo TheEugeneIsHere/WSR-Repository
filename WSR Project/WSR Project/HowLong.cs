@@ -10,29 +10,30 @@ using System.Windows.Forms;
 
 namespace WSRProject
 {
-    public partial class Org : MetroFramework.Forms.MetroForm
+    public partial class HowLong : MetroFramework.Forms.MetroForm
     {
-        public Org()
+        public HowLong()
         {
             InitializeComponent();
         }
 
-        private void Org_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.charityTableAdapter.Fill(this.wSRDataSetCharity.Charity);
+            var run = new InfoForm
+            {
+                Visible = true
+            };
+            Hide();
+        }
+
+        private void HowLong_Load(object sender, EventArgs e)
+        {
 
         }
         private void TimerTick(object sender, EventArgs e)
         {
             var counter = new Сonnection(); // Создание экземпляра класса Connection
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            var info = new InfoForm();
-            info.Show();
-            Hide();
         }
     }
 }
