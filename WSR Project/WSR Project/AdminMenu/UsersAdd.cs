@@ -20,7 +20,7 @@ namespace WSRProject
             FormClosing += new FormClosingEventHandler(AppClose.GoodBye);
         }
 
-        private void UsersAdd(string query)
+        private void UserAdd(string query)
         {
             try
             {
@@ -244,7 +244,7 @@ namespace WSRProject
                         "', N'" + countryCode + "');";
                 }
 
-                UsersAdd(query);
+                UserAdd(query);
             }
 
         }
