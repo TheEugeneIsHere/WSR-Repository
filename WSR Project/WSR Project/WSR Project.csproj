@@ -93,23 +93,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppClose.cs" />
-    <Compile Include="BMR.cs">
+    <Compile Include="Classes\AppClose.cs" />
+    <Compile Include="MAIN FORM COMPONENTS\BMR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BMR.Designer.cs">
+    <Compile Include="MAIN FORM COMPONENTS\BMR.Designer.cs">
       <DependentUpon>BMR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Coordinator\ViewRunner.cs">
+    <Compile Include="InfoMenu\HowLong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Coordinator\ViewRunner.Designer.cs">
-      <DependentUpon>ViewRunner.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HowLong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HowLong.Designer.cs">
+    <Compile Include="InfoMenu\HowLong.Designer.cs">
       <DependentUpon>HowLong.cs</DependentUpon>
     </Compile>
     <Compile Include="InfoMenu\About.cs">
@@ -166,10 +160,10 @@
     <Compile Include="AdminMenu\VolunteerAdd.Designer.cs">
       <DependentUpon>VolunteerAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Org.cs">
+    <Compile Include="InfoMenu\Org.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Org.Designer.cs">
+    <Compile Include="InfoMenu\Org.Designer.cs">
       <DependentUpon>Org.cs</DependentUpon>
     </Compile>
     <Compile Include="Runner\Ask.cs">
@@ -178,10 +172,10 @@
     <Compile Include="Runner\Ask.Designer.cs">
       <DependentUpon>Ask.cs</DependentUpon>
     </Compile>
-    <Compile Include="BMIcalc.cs">
+    <Compile Include="MAIN FORM COMPONENTS\BMIcalc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BMIcalc.Designer.cs">
+    <Compile Include="MAIN FORM COMPONENTS\BMIcalc.Designer.cs">
       <DependentUpon>BMIcalc.cs</DependentUpon>
     </Compile>
     <Compile Include="Coordinator\CoordinatorForm.cs">
@@ -190,7 +184,7 @@
     <Compile Include="Coordinator\CoordinatorForm.Designer.cs">
       <DependentUpon>CoordinatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connection.cs" />
+    <Compile Include="Classes\Connection.cs" />
     <Compile Include="DataSets\WSRDataSetUsers.cs">
       <DependentUpon>WSRDataSetUsers.xsd</DependentUpon>
     </Compile>
@@ -200,10 +194,10 @@
     <Compile Include="Runner\EditProfile.Designer.cs">
       <DependentUpon>EditProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MAIN FORM COMPONENTS\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="MAIN FORM COMPONENTS\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="InfoMenu\InfoForm.cs">
@@ -218,10 +212,10 @@
     <Compile Include="InfoMenu\InteractiveMap.Designer.cs">
       <DependentUpon>InteractiveMap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Login%27s form\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Login%27s form\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Runner\RunnerResults.cs">
@@ -230,13 +224,13 @@
     <Compile Include="Runner\RunnerResults.Designer.cs">
       <DependentUpon>RunnerResults.cs</DependentUpon>
     </Compile>
-    <Compile Include="PasswordRecover.cs">
+    <Compile Include="Login%27s form\PasswordRecover.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PasswordRecover.Designer.cs">
+    <Compile Include="Login%27s form\PasswordRecover.Designer.cs">
       <DependentUpon>PasswordRecover.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -292,11 +286,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSRDataSetMAX.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SponsorshipList.cs">
+    <Compile Include="Coordinator\SponsCoord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SponsorshipList.Designer.cs">
+    <Compile Include="Coordinator\SponsCoord.Designer.cs">
+      <DependentUpon>SponsCoord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN FORM COMPONENTS\SponsorshipList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN FORM COMPONENTS\SponsorshipList.Designer.cs">
       <DependentUpon>SponsorshipList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinator\ViewRunner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordinator\ViewRunner.Designer.cs">
+      <DependentUpon>ViewRunner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinator\ViewRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordinator\ViewRegistration.Designer.cs">
+      <DependentUpon>ViewRegistration.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminMenu\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -322,19 +334,22 @@
     <EmbeddedResource Include="AdminMenu\VolunteerAdd.resx">
       <DependentUpon>VolunteerAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BMR.resx">
+    <EmbeddedResource Include="Coordinator\ViewRegistration.resx">
+      <DependentUpon>ViewRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN FORM COMPONENTS\BMR.resx">
       <DependentUpon>BMR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HowLong.resx">
+    <EmbeddedResource Include="InfoMenu\HowLong.resx">
       <DependentUpon>HowLong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Org.resx">
+    <EmbeddedResource Include="InfoMenu\Org.resx">
       <DependentUpon>Org.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Runner\Ask.resx">
       <DependentUpon>Ask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BMIcalc.resx">
+    <EmbeddedResource Include="MAIN FORM COMPONENTS\BMIcalc.resx">
       <DependentUpon>BMIcalc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Coordinator\CoordinatorForm.resx">
@@ -343,7 +358,7 @@
     <EmbeddedResource Include="Runner\EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="MAIN FORM COMPONENTS\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InfoMenu\About.resx">
@@ -355,13 +370,13 @@
     <EmbeddedResource Include="InfoMenu\InteractiveMap.resx">
       <DependentUpon>InteractiveMap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Login%27s form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Runner\RunnerResults.resx">
       <DependentUpon>RunnerResults.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PasswordRecover.resx">
+    <EmbeddedResource Include="Login%27s form\PasswordRecover.resx">
       <DependentUpon>PasswordRecover.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -381,8 +396,14 @@
     <EmbeddedResource Include="Runner\Success.resx">
       <DependentUpon>Success.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SponsorshipList.resx">
+    <EmbeddedResource Include="Coordinator\SponsCoord.resx">
+      <DependentUpon>SponsCoord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN FORM COMPONENTS\SponsorshipList.resx">
       <DependentUpon>SponsorshipList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coordinator\ViewRunner.resx">
+      <DependentUpon>ViewRunner.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -21,8 +21,22 @@ namespace WSRProject
 
         private void metroTile1_Click(object sender, System.EventArgs e)
         {
-            var sponsor = new SponsorshipList();
-            sponsor.Show();
+            var run = new ViewRunner();
+            run.Show();
+            Hide();
+        }
+
+        private void metroTile3_Click(object sender, System.EventArgs e)
+        {
+            var spons = new SponsCoord();
+            spons.Show();
+            Hide();
+        }
+
+        private void metroTile1_Click_1(object sender, System.EventArgs e)
+        {
+            var reg = new ViewRegistration();
+            reg.Show();
             Hide();
         }
     }
