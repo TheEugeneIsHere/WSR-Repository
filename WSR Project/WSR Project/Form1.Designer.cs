@@ -38,6 +38,7 @@
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroTile6 = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // timerLabel
@@ -161,12 +162,30 @@
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel3.UseCustomForeColor = true;
             // 
+            // metroTile6
+            // 
+            this.metroTile6.ActiveControl = null;
+            this.metroTile6.Location = new System.Drawing.Point(210, 388);
+            this.metroTile6.Name = "metroTile6";
+            this.metroTile6.Size = new System.Drawing.Size(450, 67);
+            this.metroTile6.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile6.TabIndex = 12;
+            this.metroTile6.Text = "BMR-калькулятор";
+            this.metroTile6.TileCount = 5;
+            this.metroTile6.TileImage = global::WSRProject.Properties.Resources.bmiCalc;
+            this.metroTile6.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile6.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile6.UseSelectable = true;
+            this.metroTile6.UseTileImage = true;
+            this.metroTile6.Click += new System.EventHandler(this.MetroTile4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.Controls.Add(this.metroTile6);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroTile1);
@@ -195,6 +214,7 @@
         private MetroFramework.Controls.MetroTile metroTile4;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroTile metroTile6;
     }
 }
 
