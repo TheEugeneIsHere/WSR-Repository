@@ -44,6 +44,7 @@
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.forgetLabel = new System.Windows.Forms.LinkLabel();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,7 +232,7 @@
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(120, 33);
             this.metroButton3.TabIndex = 9;
-            this.metroButton3.Text = "бегун";
+            this.metroButton3.Text = "Бегун";
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
@@ -241,7 +242,7 @@
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(120, 33);
             this.metroButton4.TabIndex = 9;
-            this.metroButton4.Text = "одмен";
+            this.metroButton4.Text = "Администратор";
             this.metroButton4.UseSelectable = true;
             this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
@@ -259,6 +260,16 @@
             this.forgetLabel.Text = "Забыли пароль?";
             this.forgetLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ForgetLabel_Clicked);
             // 
+            // metroButton5
+            // 
+            this.metroButton5.Location = new System.Drawing.Point(729, 324);
+            this.metroButton5.Name = "metroButton5";
+            this.metroButton5.Size = new System.Drawing.Size(120, 33);
+            this.metroButton5.TabIndex = 9;
+            this.metroButton5.Text = "Координатор";
+            this.metroButton5.UseSelectable = true;
+            this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +278,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.forgetLabel);
             this.Controls.Add(this.metroButton4);
+            this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroButton2);
@@ -304,5 +316,6 @@
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;
         private System.Windows.Forms.LinkLabel forgetLabel;
+        private MetroFramework.Controls.MetroButton metroButton5;
     }
 }

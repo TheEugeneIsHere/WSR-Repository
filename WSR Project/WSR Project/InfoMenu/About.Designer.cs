@@ -193,6 +193,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // timerLabel
             // 
@@ -223,6 +224,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.ControlBox = false;
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.pictureBox1);

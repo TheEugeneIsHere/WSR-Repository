@@ -22,6 +22,11 @@ namespace WSRProject
             this.charityTableAdapter.Fill(this.wSRDataSetCharity.Charity);
 
         }
+        private void TimerTick(object sender, EventArgs e)
+        {
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
+            timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
+        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {

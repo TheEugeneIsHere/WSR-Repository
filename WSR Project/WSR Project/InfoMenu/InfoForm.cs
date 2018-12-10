@@ -43,5 +43,17 @@ namespace WSRProject
             charorg.Show();
             Hide();
         }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            var hlong= new HowLong();
+            hlong.Show();
+            Hide();
+        }
+
+        private void InfoForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,6 +38,11 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editUserButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wSRDataSetUsers = new WSRProject.DataSets.WSRDataSetUsers();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
@@ -52,11 +57,6 @@
             this.usersTableAdapter = new WSRProject.DataSets.WSRDataSetUsersTableAdapters.UsersTableAdapter();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.LoaderPictureBox = new System.Windows.Forms.PictureBox();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editUserButton = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetUsers)).BeginInit();
@@ -166,6 +166,54 @@
             this.metroGrid1.TabIndex = 39;
             this.metroGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MetroGrid1_CellContentClick);
             // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email-адрес";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // roleIdDataGridViewTextBoxColumn
+            // 
+            this.roleIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.roleIdDataGridViewTextBoxColumn.DataPropertyName = "RoleId";
+            this.roleIdDataGridViewTextBoxColumn.HeaderText = "Роль";
+            this.roleIdDataGridViewTextBoxColumn.Name = "roleIdDataGridViewTextBoxColumn";
+            this.roleIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.roleIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.roleIdDataGridViewTextBoxColumn.Width = 36;
+            // 
+            // editUserButton
+            // 
+            this.editUserButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.editUserButton.HeaderText = "Редактировать";
+            this.editUserButton.Name = "editUserButton";
+            this.editUserButton.ReadOnly = true;
+            this.editUserButton.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.editUserButton.Text = "Edit";
+            this.editUserButton.UseColumnTextForButtonValue = true;
+            this.editUserButton.Width = 90;
+            // 
             // usersBindingSource
             // 
             this.usersBindingSource.DataMember = "Users";
@@ -268,7 +316,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = Properties.Resources.refresh_icon;
+            this.pictureBox3.Image = global::WSRProject.Properties.Resources.refresh_icon;
             this.pictureBox3.Location = new System.Drawing.Point(301, 396);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 29);
@@ -280,7 +328,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = Properties.Resources.aExit;
+            this.pictureBox2.Image = global::WSRProject.Properties.Resources.aExit;
             this.pictureBox2.Location = new System.Drawing.Point(811, 57);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
@@ -292,7 +340,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = Properties.Resources.icons_back;
+            this.pictureBox1.Image = global::WSRProject.Properties.Resources.icons_back;
             this.pictureBox1.Location = new System.Drawing.Point(38, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
@@ -332,7 +380,7 @@
             // 
             // LoaderPictureBox
             // 
-            this.LoaderPictureBox.Image = Properties.Resources.FormLoading;
+            this.LoaderPictureBox.Image = global::WSRProject.Properties.Resources.FormLoading;
             this.LoaderPictureBox.Location = new System.Drawing.Point(20, 113);
             this.LoaderPictureBox.Name = "LoaderPictureBox";
             this.LoaderPictureBox.Size = new System.Drawing.Size(829, 277);
@@ -340,59 +388,12 @@
             this.LoaderPictureBox.TabIndex = 49;
             this.LoaderPictureBox.TabStop = false;
             // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.firstNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email-адрес";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // roleIdDataGridViewTextBoxColumn
-            // 
-            this.roleIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.roleIdDataGridViewTextBoxColumn.DataPropertyName = "RoleId";
-            this.roleIdDataGridViewTextBoxColumn.HeaderText = "Роль";
-            this.roleIdDataGridViewTextBoxColumn.Name = "roleIdDataGridViewTextBoxColumn";
-            this.roleIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.roleIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.roleIdDataGridViewTextBoxColumn.Width = 36;
-            // 
-            // editUserButton
-            // 
-            this.editUserButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.editUserButton.HeaderText = "Редактировать";
-            this.editUserButton.Name = "editUserButton";
-            this.editUserButton.ReadOnly = true;
-            this.editUserButton.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.editUserButton.Text = "Edit";
-            this.editUserButton.UseColumnTextForButtonValue = true;
-            this.editUserButton.Width = 90;
-            // 
             // aUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 514);
+            this.ControlBox = false;
             this.Controls.Add(this.LoaderPictureBox);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroGrid1);

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Threading;
 
 namespace WSRProject
@@ -10,7 +11,11 @@ namespace WSRProject
             InitializeComponent();
         
         }
-    
+        private void TimerTick(object sender, EventArgs e)
+        {
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
+            timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
+        }
 
         private void pictureBox8_Click(object sender, System.EventArgs e)
         {

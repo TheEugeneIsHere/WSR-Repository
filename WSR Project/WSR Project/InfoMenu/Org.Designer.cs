@@ -33,16 +33,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.wSRDataSetCharity = new WSRProject.DataSets.WSRDataSetCharity();
-            this.charityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.charityTableAdapter = new WSRProject.DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.charityLogoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.charityNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.charityDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.charityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wSRDataSetCharity = new WSRProject.DataSets.WSRDataSetCharity();
+            this.charityTableAdapter = new WSRProject.DataSets.WSRDataSetCharityTableAdapters.CharityTableAdapter();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.timerLabel = new MetroFramework.Controls.MetroLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,34 +95,8 @@
             this.metroGrid1.RowHeadersVisible = false;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(630, 301);
+            this.metroGrid1.Size = new System.Drawing.Size(630, 302);
             this.metroGrid1.TabIndex = 0;
-            // 
-            // wSRDataSetCharity
-            // 
-            this.wSRDataSetCharity.DataSetName = "WSRDataSetCharity";
-            this.wSRDataSetCharity.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // charityBindingSource
-            // 
-            this.charityBindingSource.DataMember = "Charity";
-            this.charityBindingSource.DataSource = this.wSRDataSetCharity;
-            // 
-            // charityTableAdapter
-            // 
-            this.charityTableAdapter.ClearBeforeFill = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::WSRProject.Properties.Resources.icons_back;
-            this.pictureBox2.Location = new System.Drawing.Point(23, 57);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 35;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // charityLogoDataGridViewImageColumn
             // 
@@ -143,19 +119,62 @@
             this.charityDescriptionDataGridViewTextBoxColumn.Name = "charityDescriptionDataGridViewTextBoxColumn";
             this.charityDescriptionDataGridViewTextBoxColumn.Width = 210;
             // 
+            // charityBindingSource
+            // 
+            this.charityBindingSource.DataMember = "Charity";
+            this.charityBindingSource.DataSource = this.wSRDataSetCharity;
+            // 
+            // wSRDataSetCharity
+            // 
+            this.wSRDataSetCharity.DataSetName = "WSRDataSetCharity";
+            this.wSRDataSetCharity.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // charityTableAdapter
+            // 
+            this.charityTableAdapter.ClearBeforeFill = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::WSRProject.Properties.Resources.icons_back;
+            this.pictureBox2.Location = new System.Drawing.Point(23, 57);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 35;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // timerLabel
+            // 
+            this.timerLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.timerLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.timerLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.timerLabel.Location = new System.Drawing.Point(20, 400);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(760, 30);
+            this.timerLabel.TabIndex = 44;
+            this.timerLabel.Text = "Loading...";
+            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
+            // 
             // Org
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.metroGrid1);
             this.Name = "Org";
-            this.Text = "Org";
+            this.Text = "Благотворительные организации";
             this.Load += new System.EventHandler(this.Org_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSRDataSetCharity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -171,5 +190,7 @@
         private System.Windows.Forms.DataGridViewImageColumn charityLogoDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn charityNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn charityDescriptionDataGridViewTextBoxColumn;
+        private MetroFramework.Controls.MetroLabel timerLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -88,5 +88,18 @@ namespace WSRProject
             if (Application.OpenForms.Count > 0) Application.Exit();
         }
 
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            var Sponosrshiplist = new SponsorshipList();
+            Sponosrshiplist.Show();
+            Hide();
+        }
+
+        private void metroTile6_Click(object sender, EventArgs e)
+        {
+            var bmr = new BMR();
+            bmr.Show();
+            Hide();
+        }
     }
 }
