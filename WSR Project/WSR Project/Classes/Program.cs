@@ -17,7 +17,7 @@ namespace WSRProject
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new InteractiveMap());
+                Application.Run(new Form1());
             }
         }
     }

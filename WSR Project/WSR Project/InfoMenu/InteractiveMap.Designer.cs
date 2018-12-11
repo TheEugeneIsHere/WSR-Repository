@@ -352,7 +352,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.Transparent;
             this.button3.Image = global::WSRProject.Properties.Resources.Delete_80_icon_icons1;
-            this.button3.Location = new System.Drawing.Point(180, 16);
+            this.button3.Location = new System.Drawing.Point(180, 9);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(32, 32);
             this.button3.TabIndex = 2;
