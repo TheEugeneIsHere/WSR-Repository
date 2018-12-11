@@ -30,7 +30,7 @@ namespace WSRProject
             pictureBox2.Enabled = false;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             var MainMenu = new Form1();
             MainMenu.Show();

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WSRProject
 {
@@ -15,12 +8,23 @@ namespace WSRProject
         public Org()
         {
             InitializeComponent();
+            OrgLoadAsync();
+            timer1.Start();
         }
 
-        private void Org_Load(object sender, EventArgs e)
+        private async void OrgLoadAsync()
         {
-            this.charityTableAdapter.Fill(this.wSRDataSetCharity.Charity);
-
+            metroGrid1.Columns[0].DefaultCellStyle.NullValue = Properties.Resources.tile_Blago;
+            metroGrid1.DataSource = null;
+            LoaderPictureBox.Visible = true;
+            LoaderPictureBox.Enabled = true;
+            await Task.Factory.StartNew(() =>
+            {
+                charityTableAdapter.Fill(wSRDataSetCharity.Charity);
+            });
+            metroGrid1.DataSource = charityBindingSource;
+            LoaderPictureBox.Visible = false;
+            LoaderPictureBox.Enabled = false;
         }
         private void TimerTick(object sender, EventArgs e)
         {
@@ -28,7 +32,7 @@ namespace WSRProject
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
             var info = new InfoForm();
             info.Show();

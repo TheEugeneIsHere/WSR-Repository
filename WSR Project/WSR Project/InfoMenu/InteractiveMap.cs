@@ -11,7 +11,7 @@ namespace WSRProject
             InitializeComponent();
             pictureBox7.Controls.Add(pictureBox15);
             pictureBox15.Location = new Point(100, 234);
-      
+            timer1.Start();
         }
         private void TimerTick(object sender, EventArgs e)
         {
@@ -19,20 +19,20 @@ namespace WSRProject
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-        private void pictureBox2_Click(object sender, System.EventArgs e)
+        private void PictureBox2_Click(object sender, System.EventArgs e)
         {
             var info = new InfoForm();
             info.Show();
             Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             metroPanel1.Visible = false;
             label1.Visible = true;
         }
 
-        private void pictureBox4_Click_1(object sender, EventArgs e)
+        private void PictureBox4_Click_1(object sender, EventArgs e)
         {
             metroLabel8.Text = "Пункт №1";
             metroLabel2.Visible = true;
@@ -55,7 +55,7 @@ namespace WSRProject
             metroLabel3.Text = " - Энергетические \nбатончки";
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void PictureBox5_Click(object sender, EventArgs e)
         {
             metroLabel8.Text = "Пункт №2";
             metroLabel2.Visible = true;
@@ -82,7 +82,7 @@ namespace WSRProject
             metroLabel6.Text = " - Медицинская \nпомощь";
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void PictureBox6_Click(object sender, EventArgs e)
         {
             metroLabel8.Text = "Пункт №3";
             metroLabel2.Visible = true;
@@ -106,7 +106,7 @@ namespace WSRProject
           
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
+        private void PictureBox8_Click(object sender, EventArgs e)
         {
             metroLabel8.Text = "Пункт №4";
             metroLabel2.Visible = true;
@@ -133,12 +133,12 @@ namespace WSRProject
          
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void PictureBox7_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void PictureBox3_Click(object sender, EventArgs e)
         {
             metroLabel8.Text = "Пункт №6";
             metroLabel2.Visible = true;
@@ -161,7 +161,7 @@ namespace WSRProject
             metroLabel3.Text = " - Энергетические \nбатончки";
         }
 
-        private void pictureBox15_Click(object sender, EventArgs e)
+        private void PictureBox15_Click(object sender, EventArgs e)
         {
             metroLabel8.Text = "Начало марафона";
             metroLabel2.Visible = true;
@@ -182,7 +182,7 @@ namespace WSRProject
            
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             metroLabel8.Text = "Пункт №5";
             metroLabel2.Visible = true;
