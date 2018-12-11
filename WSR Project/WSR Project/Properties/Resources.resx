@@ -118,17 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bmiManSoSo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bmiManSoSo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons_Crowdfouning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons_Crowdfouning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="InteractiveMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InteractiveMap.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BMIman" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BMIman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="2number_2_3079" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2number_2_3079.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons_Results" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons_Results.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="6_number_3075" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6_number_3075.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="aExit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\aExit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,14 +139,17 @@
   <data name="refresh_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons_Crowdfouning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons_Crowdfouning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete-80_icon-icons.com_57340" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete-80_icon-icons.com_57340.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4number_4_3829" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4number_4_3829.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bmiWomanGood" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bmiWomanGood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="charityDefaultLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\charityDefaultLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="map-icon-drinks" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map-icon-drinks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tile_Blago" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tile_Blago.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,11 +157,17 @@
   <data name="BMIwoman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BMIwoman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="map-icon-drinks1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map-icon-drinks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tile_Inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tile_Inventory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FormLoading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FormLoading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bmiWomanLack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bmiWomanLack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="map-icon-toilets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map-icon-toilets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bmiManDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bmiManDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,26 +175,47 @@
   <data name="bmiWomanSoSo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bmiWomanSoSo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="charityDefaultLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\charityDefaultLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TeatroMunicipal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TeatroMunicipal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tile_Inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tile_Inventory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bmiCalc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bmiCalc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bmiManLack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bmiManLack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons_About" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons_About.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MarathonImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MarathonImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bmiWomanDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bmiWomanDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="карточка сбербунка" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\карточка сбербунка.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons_Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons_Run.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bmiWomanLack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bmiWomanLack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons_About" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons_About.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="map-icon-energy-bars" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map-icon-energy-bars.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons_Results" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons_Results.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bmiManSoSo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bmiManSoSo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="5_number_3827" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5_number_3827.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="map-icon-start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map-icon-start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bmiCalc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bmiCalc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tile_users" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tile_users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons_Pen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons_Pen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +226,11 @@
   <data name="bmiManBad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bmiManBad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tile_users" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tile_users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bmiManLack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bmiManLack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bmiManGood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bmiManGood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,16 +238,28 @@
   <data name="map_PictureBoxLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\map_PictureBoxLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bmiManGood" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bmiManGood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3number_3_3077" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3number_3_3077.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="map-icon-medical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map-icon-medical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bmiWomanDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bmiWomanDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="map-icon-information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map-icon-information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BMIman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BMIman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bmiWomanBad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bmiWomanBad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons_Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons_Run.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1number_1_3831" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1number_1_3831.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="карточка сбербунка" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\карточка сбербунка.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete-80_icon-icons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete-80_icon-icons.com_573401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
