@@ -67,7 +67,6 @@
             this.timerLabel.Text = "Loading...";
             this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.timerLabel.UseStyleColors = true;
-            this.timerLabel.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // metroLabel2
             // 
@@ -81,7 +80,6 @@
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "Форма авторизации";
             this.metroLabel2.UseStyleColors = true;
-            this.metroLabel2.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
             // metroLabel3
             // 
@@ -94,7 +92,6 @@
             this.metroLabel3.Text = "Пожалуйста, авторизуйтесь в системе, используя ваш адрес электронной почты и паро" +
     "ль";
             this.metroLabel3.UseStyleColors = true;
-            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // metroLabel4
             // 
@@ -106,7 +103,6 @@
             this.metroLabel4.TabIndex = 5;
             this.metroLabel4.Text = "Email:";
             this.metroLabel4.UseStyleColors = true;
-            this.metroLabel4.Click += new System.EventHandler(this.metroLabel4_Click);
             // 
             // metroLabel5
             // 
@@ -118,7 +114,6 @@
             this.metroLabel5.TabIndex = 5;
             this.metroLabel5.Text = "Password";
             this.metroLabel5.UseStyleColors = true;
-            this.metroLabel5.Click += new System.EventHandler(this.metroLabel5_Click);
             // 
             // metroTextBox1
             // 
@@ -153,7 +148,6 @@
             this.metroTextBox1.WaterMark = "Type your email here";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox1.Click += new System.EventHandler(this.metroTextBox1_Click);
             // 
             // metroTextBox2
             // 
@@ -188,7 +182,6 @@
             this.metroTextBox2.WaterMark = "Type your password here";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox2.Click += new System.EventHandler(this.metroTextBox2_Click);
             // 
             // metroButton1
             // 
