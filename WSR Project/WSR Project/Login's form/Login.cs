@@ -102,8 +102,14 @@ namespace WSRProject
             }
         }
 
+        private void ForgetLabel_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var password = new PasswordRecover();
+            password.ShowDialog();
+        }
+
         /*временный мусор*/
-       
+
         private void metroButton3_Click(object sender, EventArgs e)
         {
             metroTextBox1.Text = "a.adkin@dayrep.net";
@@ -116,47 +122,6 @@ namespace WSRProject
             metroTextBox1.Text = "leila.azedeva@mskills.com";
             metroTextBox2.Text = "MvTQ3itX";
             login();
-        }
-
-        private void metroLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroTextBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ForgetLabel_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var password = new PasswordRecover();
-            password.ShowDialog();
         }
 
         private void metroButton5_Click(object sender, EventArgs e)

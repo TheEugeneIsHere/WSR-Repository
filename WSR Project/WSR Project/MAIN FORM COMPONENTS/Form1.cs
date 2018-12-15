@@ -43,9 +43,9 @@ namespace WSRProject
 
         private void Elements(bool internet)
         {
-            metroLabel3.Enabled = !internet;
             metroLabel3.Visible = !internet;
             metroTile1.Enabled = internet;
+            metroTile2.Enabled = internet;
             metroTile5.Enabled = internet;
         }
 

@@ -67,7 +67,7 @@
             // metroTile5
             // 
             this.metroTile5.ActiveControl = null;
-            this.metroTile5.Location = new System.Drawing.Point(730, 397);
+            this.metroTile5.Location = new System.Drawing.Point(730, 409);
             this.metroTile5.Name = "metroTile5";
             this.metroTile5.Size = new System.Drawing.Size(85, 41);
             this.metroTile5.Style = MetroFramework.MetroColorStyle.Blue;
@@ -84,7 +84,7 @@
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel3.ForeColor = System.Drawing.Color.Crimson;
-            this.metroLabel3.Location = new System.Drawing.Point(255, 53);
+            this.metroLabel3.Location = new System.Drawing.Point(489, 25);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(360, 42);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Green;
@@ -96,7 +96,7 @@
             // metroTile6
             // 
             this.metroTile6.ActiveControl = null;
-            this.metroTile6.Location = new System.Drawing.Point(210, 388);
+            this.metroTile6.Location = new System.Drawing.Point(210, 366);
             this.metroTile6.Name = "metroTile6";
             this.metroTile6.Size = new System.Drawing.Size(450, 67);
             this.metroTile6.Style = MetroFramework.MetroColorStyle.Blue;
@@ -113,7 +113,7 @@
             // metroTile4
             // 
             this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(210, 317);
+            this.metroTile4.Location = new System.Drawing.Point(210, 295);
             this.metroTile4.Name = "metroTile4";
             this.metroTile4.Size = new System.Drawing.Size(450, 67);
             this.metroTile4.Style = MetroFramework.MetroColorStyle.Blue;
@@ -130,7 +130,7 @@
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(210, 98);
+            this.metroTile1.Location = new System.Drawing.Point(210, 76);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(450, 67);
             this.metroTile1.Style = MetroFramework.MetroColorStyle.Blue;
@@ -148,7 +148,7 @@
             // metroTile3
             // 
             this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(210, 244);
+            this.metroTile3.Location = new System.Drawing.Point(210, 222);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(450, 67);
             this.metroTile3.Style = MetroFramework.MetroColorStyle.Blue;
@@ -165,7 +165,7 @@
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(210, 171);
+            this.metroTile2.Location = new System.Drawing.Point(210, 149);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(450, 67);
             this.metroTile2.Style = MetroFramework.MetroColorStyle.Blue;

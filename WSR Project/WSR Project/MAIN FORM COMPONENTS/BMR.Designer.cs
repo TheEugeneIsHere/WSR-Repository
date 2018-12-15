@@ -215,7 +215,7 @@
             this.wCombo.MaxLength = 3;
             this.wCombo.Name = "wCombo";
             this.wCombo.PasswordChar = '\0';
-            this.wCombo.WaterMark = "75";
+            this.wCombo.PromptText = "75";
             this.wCombo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.wCombo.SelectedText = "";
             this.wCombo.SelectionLength = 0;
@@ -250,7 +250,7 @@
             this.hCombo.MaxLength = 3;
             this.hCombo.Name = "hCombo";
             this.hCombo.PasswordChar = '\0';
-            this.hCombo.WaterMark = "175";
+            this.hCombo.PromptText = "175";
             this.hCombo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.hCombo.SelectedText = "";
             this.hCombo.SelectionLength = 0;
@@ -285,7 +285,7 @@
             this.yCombo.MaxLength = 3;
             this.yCombo.Name = "yCombo";
             this.yCombo.PasswordChar = '\0';
-            this.yCombo.WaterMark = "20";
+            this.yCombo.PromptText = "20";
             this.yCombo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.yCombo.SelectedText = "";
             this.yCombo.SelectionLength = 0;
@@ -402,7 +402,6 @@
             this.groupBox2.Size = new System.Drawing.Size(356, 316);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // metroLabel16
             // 
@@ -418,6 +417,8 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // groupBox3

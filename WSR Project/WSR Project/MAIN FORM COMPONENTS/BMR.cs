@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WSRProject
@@ -15,6 +8,7 @@ namespace WSRProject
         public BMR()
         {
             InitializeComponent();
+            timer1.Start();
         }
         string result;
         private void metroButton1_Click(object sender, EventArgs e)
@@ -56,10 +50,6 @@ namespace WSRProject
         {
              double bmr = 447.593 + (9.247 * Convert.ToInt32(wCombo.Text)) + (3.098 * Convert.ToInt32(hCombo.Text) - (4.330 * Convert.ToInt32(yCombo.Text)));
             result = Convert.ToString(bmr);
-        }
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
         bool man = true;
         private void manBox_Click(object sender, EventArgs e)
