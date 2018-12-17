@@ -130,8 +130,8 @@ namespace WSRProject
                 string regdate = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
                 var r = new Random();
                 int charityid = r.Next(1, 10);
-                
             }
+            MessageBox.Show("Вы зерегистрированы..нет");
         }
 
         private void Register(string query)
