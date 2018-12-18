@@ -20,6 +20,12 @@ namespace WSRProject
             FormClosing += new FormClosingEventHandler(AppClose.GoodBye);
         }
 
+        private void TimerTick(object sender, EventArgs e)
+        {
+            var counter = new Сonnection(); // Создание экземпляра класса Connection
+            timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
+        }
+
         private void UserAdd(string query)
         {
             try
@@ -68,12 +74,6 @@ namespace WSRProject
                 metroPanel1.Visible = false;
                 metroPanel1.Enabled = false;
             }
-        }
-
-        private void TimerTick(object sender, EventArgs e)
-        {
-            var counter = new Сonnection(); // Создание экземпляра класса Connection
-            timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
         private void MetroTextBox1_KeyPress(object sender, KeyPressEventArgs e)

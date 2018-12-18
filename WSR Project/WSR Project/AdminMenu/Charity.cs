@@ -24,7 +24,6 @@ namespace WSRProject
             timerLabel.Text = counter.GetTime(); // Для доступа к публичному методу возвращаемого типа string
         }
 
-
         private async void CharityLoadAsync()
         {
             await Task.Factory.StartNew(() =>
