@@ -33,5 +33,16 @@ namespace WSRProject.Properties {
                 return ((string)(this["WSRConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=wsr.database.windows.net,1433;Initial Catalog=WSR;Persist Security In" +
+            "fo=True;User ID=Kursacheg;Password=Sharaga0264")]
+        public string WSRConnectionString1 {
+            get {
+                return ((string)(this["WSRConnectionString1"]));
+            }
+        }
     }
 }
