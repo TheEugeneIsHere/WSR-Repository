@@ -84,7 +84,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(129, 120);
+            this.metroLabel3.Location = new System.Drawing.Point(145, 120);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(559, 19);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Black;
@@ -227,6 +227,7 @@
             this.metroButton3.TabIndex = 9;
             this.metroButton3.Text = "Бегун";
             this.metroButton3.UseSelectable = true;
+            this.metroButton3.Visible = false;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroButton4
@@ -237,6 +238,7 @@
             this.metroButton4.TabIndex = 9;
             this.metroButton4.Text = "Администратор";
             this.metroButton4.UseSelectable = true;
+            this.metroButton4.Visible = false;
             this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
             // forgetLabel
@@ -245,7 +247,7 @@
             this.forgetLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.forgetLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.forgetLabel.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.forgetLabel.Location = new System.Drawing.Point(389, 340);
+            this.forgetLabel.Location = new System.Drawing.Point(392, 340);
             this.forgetLabel.Name = "forgetLabel";
             this.forgetLabel.Size = new System.Drawing.Size(94, 13);
             this.forgetLabel.TabIndex = 5;
@@ -261,6 +263,7 @@
             this.metroButton5.TabIndex = 9;
             this.metroButton5.Text = "Координатор";
             this.metroButton5.UseSelectable = true;
+            this.metroButton5.Visible = false;
             this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
             // Login

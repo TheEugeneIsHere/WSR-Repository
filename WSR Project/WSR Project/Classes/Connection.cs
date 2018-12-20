@@ -9,14 +9,14 @@ namespace WSRProject
         public static string Password { get; set; }
         public static string Fname { get; set; }
         public static string Lname { get; set; }
-        
-        private TimeSpan TimeRemaining = new DateTime(2018, 12, 31, 23, 59, 59) - DateTime.Now;
         public static string EditMail { get; set; }
+
+        private TimeSpan TimeRemaining = new DateTime(2018, 12, 31, 23, 59, 59) - DateTime.Now;
       
         public string GetTime()
         {
             string Time = TimeRemaining.Days + " дней " + TimeRemaining.Hours +
-            " часов и " + TimeRemaining.Minutes + " минут до Нового Года";
+            " часов и " + TimeRemaining.Minutes + " минут до Марафона";
             return Time;
         }
        
