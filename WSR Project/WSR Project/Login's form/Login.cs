@@ -34,7 +34,7 @@ namespace WSRProject
             Hide();
         }
 
-        enum Role { Failed, R, C, A }
+        enum Role { Failed, R, C, A, O }
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
@@ -59,6 +59,7 @@ namespace WSRProject
                         case "R": role = Role.R; break;
                         case "A": role = Role.A; break;
                         case "C": role = Role.C; break;
+                        case "O": role = Role.A; break;
                         default: role = Role.Failed; break;
                     }
                 }

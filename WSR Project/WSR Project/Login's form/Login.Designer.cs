@@ -227,7 +227,6 @@
             this.metroButton3.TabIndex = 9;
             this.metroButton3.Text = "Бегун";
             this.metroButton3.UseSelectable = true;
-            this.metroButton3.Visible = false;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroButton4
@@ -238,7 +237,6 @@
             this.metroButton4.TabIndex = 9;
             this.metroButton4.Text = "Администратор";
             this.metroButton4.UseSelectable = true;
-            this.metroButton4.Visible = false;
             this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
             // forgetLabel
@@ -263,7 +261,6 @@
             this.metroButton5.TabIndex = 9;
             this.metroButton5.Text = "Координатор";
             this.metroButton5.UseSelectable = true;
-            this.metroButton5.Visible = false;
             this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
             // Login
@@ -288,6 +285,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Login";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = " MARATHON IS..";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

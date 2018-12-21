@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WSRProject
@@ -13,32 +14,43 @@ namespace WSRProject
         public Form1()
         {
             InitializeComponent();
-            if (IsConnected) Elements(IsConnectedToInternet()); // Проверка подключения к БД
+            LoaderPic.Dock = DockStyle.Fill;
+            if (IsConnected) IsConnectedToInternet(); // Проверка подключения к БД
             else Elements(false);
             timer1.Start();
         }
 
-        private bool IsConnectedToInternet()
+        private async void IsConnectedToInternet()
         {
-            try
+            LoaderPic.Enabled = true;
+            LoaderPic.Visible = true;
+
+            await Task.Factory.StartNew(() =>
             {
-                con.Open();
-                if (con.State == System.Data.ConnectionState.Open)
+                try
                 {
-                    con.Close();
-                    return true;
+                    con.Open();
+                    if (con.State == System.Data.ConnectionState.Open)
+                    {
+                        con.Close();
+                        IsConnected = true;
+                    }
                 }
-            }
-            catch
-            {
-                IsConnected = false;
-                return false;
-            }
-            finally
-            {
+                catch
+                {
+                    IsConnected = false;
+                    con.Close();
+                }
                 con.Close();
+            });
+
+            LoaderPic.Enabled = false;
+            LoaderPic.Visible = false;
+            switch (IsConnected)
+            {
+                case true: Elements(true); break;
+                default: Elements(false); break;
             }
-            return false;
         }
 
         private void Elements(bool internet)
@@ -46,6 +58,7 @@ namespace WSRProject
             metroLabel3.Visible = !internet;
             metroTile1.Enabled = internet;
             metroTile2.Enabled = internet;
+            metroTile3.Enabled = internet;
             metroTile5.Enabled = internet;
         }
 

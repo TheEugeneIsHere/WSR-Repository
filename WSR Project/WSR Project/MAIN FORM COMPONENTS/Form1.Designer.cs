@@ -39,6 +39,8 @@
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.LoaderPic = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.LoaderPic)).BeginInit();
             this.SuspendLayout();
             // 
             // timerLabel
@@ -92,6 +94,7 @@
             this.metroLabel3.Text = "Отсутствует соединение с Интернетом";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel3.UseCustomForeColor = true;
+            this.metroLabel3.Visible = false;
             // 
             // metroTile6
             // 
@@ -179,12 +182,23 @@
             this.metroTile2.UseTileImage = true;
             this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
+            // LoaderPic
+            // 
+            this.LoaderPic.Image = global::WSRProject.Properties.Resources.FormLoading;
+            this.LoaderPic.Location = new System.Drawing.Point(449, 27);
+            this.LoaderPic.Name = "LoaderPic";
+            this.LoaderPic.Size = new System.Drawing.Size(46, 40);
+            this.LoaderPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LoaderPic.TabIndex = 20;
+            this.LoaderPic.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(869, 508);
+            this.Controls.Add(this.LoaderPic);
             this.Controls.Add(this.metroTile6);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile5);
@@ -200,6 +214,7 @@
             this.Text = "MARATHON INFORMATION SYSTEM";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.LoaderPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,6 +230,7 @@
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTile metroTile6;
+        private System.Windows.Forms.PictureBox LoaderPic;
     }
 }
 
