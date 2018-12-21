@@ -43,15 +43,19 @@ namespace WSRProject
         {
             try
             {
+                Random rnd = new Random();
+                int kek = rnd.Next(100, 6000);
                 con.Open();
-                var com = new SqlCommand("INSERT INTO Charity (CharityName, CharityDescription, CharityLogo)" +
-                    " VALUES (@CharityName, @CharityDescription, @CharityLogo)", con);
+                var com = new SqlCommand("INSERT INTO Charity (CharityId, CharityName, CharityDescription, CharityLogo) VALUES (@CharityId, @CharityName, @CharityDescription, @CharityLogo)", con);
 
+                com.Parameters.Add("@CharityId", SqlDbType.Int).Value = kek;
                 com.Parameters.Add("@CharityName", SqlDbType.NVarChar, 100).Value = metroTextBox1.Text;
                 com.Parameters.Add("@CharityDescription", SqlDbType.NVarChar, 2000).Value = metroTextBox2.Text;
                 com.Parameters.Add("@CharityLogo", SqlDbType.Image, photo.Length).Value = photo;
 
                 com.ExecuteNonQuery();
+                MessageBox.Show("Благотворительная организация успешно добавлена в систему WSR", "WSR: Информация",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -60,8 +64,6 @@ namespace WSRProject
             finally
             {
                 con.Close();
-                MessageBox.Show("Благотворительная организация успешно добавлена в систему WSR", "WSR: Информация",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 var CharityForm = new aCharity
                 {

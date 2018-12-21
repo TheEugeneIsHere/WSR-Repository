@@ -48,9 +48,12 @@ namespace WSRProject
         {
             try
             {
+                metroGrid1.DataSource = null;
                 con.Open();
                 var ad = new SqlDataAdapter(query, con);
+                wSRDataSetVolunteer.Tables[0].Clear();
                 ad.Fill(wSRDataSetVolunteer, "Volunteer");
+                metroGrid1.DataSource = volunteerBindingSource;
             }
             catch (Exception ex)
             {
